@@ -21,9 +21,10 @@ header {
   margin-top: 4rem;
 }
 
-.logo {
-  width: 10rem;
-  height: 10rem;
-  background-image: url(./img/rocket.svg);
-  background-size: contain;
+.material-icons {
+  font-family: 'Material Icons Round';
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
 }
