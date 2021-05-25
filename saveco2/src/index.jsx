@@ -4,6 +4,8 @@ import { Header } from './components/Header/Header';
 import { Button } from './components/Button/Button';
 import { Footer } from './components/Footer/Footer';
 import { Icon } from './components/Icon/Icon';
+import { Input } from './components/Input/Input';
+import { Nav } from './components/Nav/Nav';
 import './db.js';
 import './style.css';
 
@@ -33,7 +35,9 @@ const App = () => {
         <Header></Header>
         <main>
           <section className="starting-page__name">
-            <h1>Spočítej si CO2 stopu tvojí cesty</h1>
+            <h1>
+              Spočítej si CO<sub>2</sub> stopu tvojí cesty
+            </h1>
             <h2>a zjisti, kolik stromů tvá volba stojí. </h2>
             <Button>To mě zajímá</Button>
           </section>
@@ -43,34 +47,37 @@ const App = () => {
               <div className="form--from-to">
                 <Button>Jednorázově</Button>
                 <Button>Pravidelně</Button>
-                <label htmlFor="input--from">Odkud: </label>
-                <input
-                  id="input--from"
-                  name="odkud"
-                  type="text"
-                  value="České Budějovice"
+                <Input
+                  htmlFor={'input--from'}
+                  id={'input--from'}
+                  name={'odkud'}
+                  type={'text'}
+                  value={'České Budějovice'}
                   required
-                />
-                <label htmlFor="input--to">Kam: </label>
-                <input
-                  id="input--to"
-                  name="kam"
-                  type="text"
-                  value="Písek"
+                >
+                  Odkud:
+                </Input>
+                <Input
+                  htmlFor={'input--to'}
+                  id={'input--to'}
+                  name={'kam'}
+                  type={'text'}
+                  value={'Písek'}
                   required
-                />
+                >
+                  Kam:
+                </Input>
                 <p className="form--distance">
                   Chci <a href="#">zadat vzdálenost v km</a>.
                 </p>
               </div>
-              <label>
-                <input
-                  type="checkbox"
-                  name="round-trip"
-                  id="form--round-trip"
-                />
+              <Input
+                type={'checkbox'}
+                name={'round-trip'}
+                id={'form--round-trip'}
+              >
                 zpáteční cesta
-              </label>
+              </Input>
               <p>Zadaná vzdálenost: 100 km</p>
             </div>
             <div className="form--transport-type">
@@ -84,51 +91,49 @@ const App = () => {
             </div>
             <div className="form--fuel">
               <h3>Na co jezdíš?</h3>
-              <label>
-                <input type="radio" name="fuel" id="fuel--petrol" />
+              <Input type={'radio'} name={'fuel'} id={'fuel--petrol'}>
                 benzín
-              </label>
-              <label>
-                <input type="radio" name="fuel" id="fuel--diesel" />
+              </Input>
+              <Input type={'radio'} name={'fuel'} id={'fuel--diesel'}>
                 diesel
-              </label>
-              <label>
-                <input type="radio" name="fuel" id="fuel--hybrid" />
+              </Input>
+              <Input type={'radio'} name={'fuel'} id={'fuel--hybrid'}>
                 hybrid
-              </label>
-              <label>
-                <input type="radio" name="fuel" id="fuel--cng" />
+              </Input>
+              <Input type={'radio'} name={'fuel'} id={'fuel--cng'}>
                 CNG
-              </label>
-              <label>
-                <input type="radio" name="fuel" id="fuel--lpg" />
+              </Input>
+              <Input type={'radio'} name={'fuel'} id={'fuel--lpg'}>
                 LPG
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="fuel"
-                  id="fuel--battery-electric-vehicle"
-                />
+              </Input>
+              <Input
+                type={'radio'}
+                name={'fuel'}
+                id={'fuel--fuel--battery-electric-vehicle'}
+              >
                 elektro
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="pfuel"
-                  id="fuel--plug-in-hybrid-electric-vehicle"
-                />
+              </Input>
+              <Input
+                type={'radio'}
+                name={'fuel'}
+                id={'fuel--plug-in-hybrid-electric-vehicle'}
+              >
                 plug-in hybrid elektro
-              </label>
-              <label>
-                <input type="radio" name="fuel" id="fuel--unknown" />
+              </Input>
+              <Input type={'radio'} name={'fuel'} id={'fuel--unknown'}>
                 nevím / nic z uvedeného
-              </label>
+              </Input>
             </div>
             <div className="form--people">
               <h3>Počet cestujících</h3>
-              <label htmlFor="people--count">Kolik vás pojede?</label>
-              <input type="number" name="people--count" id="people--count" />
+              <Input
+                htmlFor={'people--count'}
+                id={'people--count'}
+                name={'people--count'}
+                type={'number'}
+              >
+                Kolik vás pojede?
+              </Input>
             </div>
             <div className="form__buttons">
               <Button>Spočítej</Button>
@@ -136,6 +141,56 @@ const App = () => {
             </div>
           </form>
         </main>
+        <Footer></Footer>
+      </div>
+      <div className="results">
+        <Header></Header>
+        <Nav>Zadat cestu</Nav>
+        <h2>
+          Jaká je CO<sub>2</sub> stopa tvojí cesty?
+        </h2>
+        <div className="results__selected-transport">
+          <p>
+            Výsledky pro <Icon iconType={icons[0].name}></Icon> benzin
+          </p>
+          <p>
+            Svojí cestou autem na trase České Budějovice - Písek a zpět
+            vyprodukuješ
+          </p>
+          <p>8,7</p>
+          <p>
+            kg CO<sub>2</sub>
+            <br />
+            na osobu
+          </p>
+          <p>
+            Kolik času potřebuje jeden strom, aby tebou vytvořené CO<sub>2</sub>
+            absorboval?
+          </p>
+          <p>4,7</p>
+          <p>měsíců</p>
+        </div>
+        <div className="results__alternatives">
+          <h3>Jsi si svojí volbou jistý? Zkus raději jednu z alternativ</h3>
+          <h4>Co takhle šlápnout do pedálů?</h4>
+          <Icon iconType={icons[5].name}></Icon>
+          <p>
+            1,5 kg CO<sub>2</sub> na osobu
+          </p>
+          <p>0,8 měsíců</p>
+        </div>
+        <div className="results__methodology">
+          <h3>Jak jsme na to přišli?</h3>
+          <p>
+            Počet kilometrů jsme vynásobili příslušným koeficientem podle
+            zvoleného dopravního prostředku a v případě auta také typu pohonu. U
+            pravidelných cest jsme toto číslo ještě vynásobili počtem cest za
+            jeden rok. Pokud vás cestuje více, u auta a motorky jsme množství CO
+            <sub>2</sub> převedli na 1 osobu, aby bylo možné jednotlivé dopravní
+            prostředky mezi sebou porovnávat.
+          </p>
+          <Button>Více k metodice</Button>
+        </div>
         <Footer></Footer>
       </div>
     </div>
