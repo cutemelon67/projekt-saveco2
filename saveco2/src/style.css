@@ -1,24 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap');
 
 * {
   box-sizing: border-box;
-}
-
-html {
-  font-family: 'Open Sans', sans-serif;
-}
-
-.container {
-  max-width: 26rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4rem;
 }
 
 .material-icons {
@@ -26,5 +9,32 @@ header {
 }
 
 body {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/*html {
+  background-image: url('road-large.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+*/
+
+.starting-page__name {
+  text-align: center;
+  margin: 1.875rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1rem;
 }
