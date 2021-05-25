@@ -5,7 +5,7 @@ export const Header = (props) => {
   return (
     <header>
       <img className="header__logo" src="" alt="saveCO2" />
-      <nav className="header__nav--language">
+      {/* <nav className="header__nav--language">
         <ul>
           <li>
             <img src="" alt="flag cs" />
@@ -19,7 +19,7 @@ export const Header = (props) => {
             <img src="" alt="flag de" /> Deutsch
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
   );
 };

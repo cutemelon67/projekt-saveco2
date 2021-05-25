@@ -4,6 +4,8 @@ import { Header } from './components/Header/index';
 import { Button } from './components/Button/index';
 import { Footer } from './components/Footer/index';
 import { Icon } from './components/Icon/index';
+import { useState } from 'react';
+import './db.js';
 import './style.css';
 
 const icons = [
@@ -18,6 +20,13 @@ const icons = [
   { name: 'directions_boat' },
 ];
 
+// firebase
+// const Trasa = () => {
+//   const [from, setFrom] = useState();
+
+//   return <></>;
+// };
+
 const App = () => {
   return (
     <div className="container">
@@ -26,7 +35,7 @@ const App = () => {
         <section className="page-name">
           <h1>Spočítej si CO2 stopu tvojí cesty</h1>
           <h2>a zjisti, kolik stromů tvá volba stojí. </h2>
-          <Button text={'To mě zajímá'}></Button>
+          <Button>text</Button>
         </section>
         <form action="">
           <div className="form--journey">
@@ -72,11 +81,11 @@ const App = () => {
           <div className="form--fuel">
             <h3>Na co jezdíš?</h3>
             <label>
-              <input type="radio" name="petrol" id="fuel--petrol" />
+              <input type="radio" name="fuel" id="fuel--petrol" />
               benzín
             </label>
             <label>
-              <input type="radio" name="diesel" id="fuel--diesel" />
+              <input type="radio" name="fuel" id="fuel--diesel" />
               diesel
             </label>
             <label>
@@ -124,6 +133,9 @@ const App = () => {
         </form>
       </main>
       <Footer></Footer>
+      <div>
+        <Trasa />
+      </div>
     </div>
   );
 };
