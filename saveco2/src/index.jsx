@@ -89,21 +89,21 @@ const App = () => {
               diesel
             </label>
             <label>
-              <input type="radio" name="hybrid" id="fuel--hybrid" />
+              <input type="radio" name="fuel" id="fuel--hybrid" />
               hybrid
             </label>
             <label>
-              <input type="radio" name="cng" id="fuel--cng" />
+              <input type="radio" name="fuel" id="fuel--cng" />
               CNG
             </label>
             <label>
-              <input type="radio" name="lpg" id="fuel--lpg" />
+              <input type="radio" name="fuel" id="fuel--lpg" />
               LPG
             </label>
             <label>
               <input
                 type="radio"
-                name="battery-electric-vehicle"
+                name="fuel"
                 id="fuel--battery-electric-vehicle"
               />
               elektro
@@ -111,13 +111,13 @@ const App = () => {
             <label>
               <input
                 type="radio"
-                name="plug-in-hybrid-electric-vehicle"
+                name="pfuel"
                 id="fuel--plug-in-hybrid-electric-vehicle"
               />
               plug-in hybrid elektro
             </label>
             <label>
-              <input type="radio" name="unknown" id="fuel--unknown" />
+              <input type="radio" name="fuel" id="fuel--unknown" />
               nevím / nic z uvedeného
             </label>
           </div>
