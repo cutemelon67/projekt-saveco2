@@ -45,32 +45,36 @@ const App = () => {
           <form action="">
             <div className="starting-page__form--journey">
               <h3>Tvoje cesta</h3>
+              <p className="form--distance">
+                Chci <a href="#">zadat vzdálenost v km</a>.
+              </p>
               <div className="form--from-to">
-                <Button>Jednorázově</Button>
-                <Button>Pravidelně</Button>
-                <Input
-                  htmlFor={'input--from'}
-                  id={'input--from'}
-                  name={'odkud'}
-                  type={'text'}
-                  value={'České Budějovice'}
-                  required
-                >
-                  Odkud:
-                </Input>
-                <Input
-                  htmlFor={'input--to'}
-                  id={'input--to'}
-                  name={'kam'}
-                  type={'text'}
-                  value={'Písek'}
-                  required
-                >
-                  Kam:
-                </Input>
-                <p className="form--distance">
-                  Chci <a href="#">zadat vzdálenost v km</a>.
-                </p>
+                <div className="form__buttons">
+                  <Button>Jednorázově</Button>
+                  <Button>Pravidelně</Button>
+                </div>
+                <div className="form__input">
+                  <Input
+                    htmlFor={'input--from'}
+                    id={'input--from'}
+                    name={'odkud'}
+                    type={'text'}
+                    value={'České Budějovice'}
+                    required
+                  >
+                    Odkud:
+                  </Input>
+                  <Input
+                    htmlFor={'input--to'}
+                    id={'input--to'}
+                    name={'kam'}
+                    type={'text'}
+                    value={'Písek'}
+                    required
+                  >
+                    Kam:
+                  </Input>
+                </div>
               </div>
               <Input
                 type={'checkbox'}
@@ -79,7 +83,7 @@ const App = () => {
               >
                 zpáteční cesta
               </Input>
-              <p>Zadaná vzdálenost: 100 km</p>
+              <p class="distance-result">Zadaná vzdálenost: 100 km</p>
             </div>
             <div className="starting-page__form--transport-type">
               <h3>Jak se přesuneš?</h3>

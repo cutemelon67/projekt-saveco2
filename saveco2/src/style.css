@@ -15,6 +15,7 @@ body {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
+  background-color: hsl(81.2, 37.8%, 91.2%);
 }
 
 /*html {
@@ -27,7 +28,10 @@ body {
 
 .starting-page__name {
   text-align: center;
-  margin: 1.875rem;
+  margin-top: 1.25rem;
+  margin-right: 1.875rem;
+  margin-bottom: 1.875rem;
+  margin-left: 1.875rem;
 }
 
 h1 {
@@ -37,4 +41,61 @@ h1 {
 
 h2 {
   font-size: 1rem;
+}
+
+h3 {
+  margin: 0;
+}
+
+.starting-page__form--journey {
+  margin-top: 1.25rem;
+  margin-left: 1.875rem;
+  margin-right: 1.875rem;
+  padding: 0.938rem 1.563rem;
+  background: white;
+}
+
+.form__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding: 0;
+}
+
+.form--from-to {
+  display: flex;
+  flex-direction: column;
+}
+
+.form--distance {
+  font-size: 0.875rem;
+  text-align: right;
+  margin-top: 0.625rem;
+}
+
+.distance-result {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.starting-page__form--transport-type {
+  margin-top: 0;
+  margin-left: 1.875rem;
+  margin-right: 1.875rem;
+  padding: 0.938rem 1.563rem;
+  background: white;
+}
+
+.transport-type--img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.material-icons {
+  flex-basis: 30%;
+  padding: 0;
+  margin: 0;
 }
