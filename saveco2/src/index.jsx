@@ -6,6 +6,7 @@ import { Footer } from './components/Footer/Footer';
 import { Icon } from './components/Icon/Icon';
 import { Input } from './components/Input/Input';
 import { Nav } from './components/Nav/Nav';
+import getResults from './components/Results/getResults';
 import MaterialIcon from 'react-google-material-icons';
 import './db.js';
 import './style.css';
@@ -83,7 +84,7 @@ const App = () => {
               >
                 zpáteční cesta
               </Input>
-              <p class="distance-result">Zadaná vzdálenost: 100 km</p>
+              <p className="distance-result">Zadaná vzdálenost: 100 km</p>
             </div>
             <div className="starting-page__form--transport-type">
               <h3>Jak se přesuneš?</h3>
@@ -114,9 +115,9 @@ const App = () => {
               <Input
                 type={'radio'}
                 name={'fuel'}
-                id={'fuel--fuel--battery-electric-vehicle'}
+                id={'fuel--battery-electric-vehicle'}
               >
-                elektro
+                elektromobil
               </Input>
               <Input
                 type={'radio'}
@@ -131,7 +132,6 @@ const App = () => {
             </div>
             <div className="starting-page__form--people">
               <h3>Počet cestujících</h3>
-              {/* button!!! */}
               <Input
                 htmlFor={'people--count'}
                 id={'people--count'}
@@ -427,7 +427,7 @@ const App = () => {
                 <td>0,09994</td>
               </tr>
               <tr>
-                <td>Kolo / e-bike</td>
+                <td>Kolo</td>
                 <td>-</td>
                 <td>0,01808</td>
               </tr>
@@ -479,7 +479,7 @@ const App = () => {
             <li>
               Letadlo (nad 3 700 km): vzdálenost v km * koeficient nad 3 700 km
             </li>
-            <li>Kolo / e-bike: vzdálenost v km * koeficient</li>
+            <li>Kolo: vzdálenost v km * koeficient</li>
             <li>Plavání: vzdálenost v km * koeficient</li>
             <li>Chůze: vzdálenost v km * koeficient</li>
             <li>Trajekt: vzdálenost v km * koeficient</li>
@@ -508,8 +508,8 @@ const App = () => {
         <div className="sources__container">
           <p className="sources__text">
             Koeficienty použité pro výpočet emisí CO<sub>2</sub> pro všechny
-            výše uvedené dopravní prostředky (s výjimkou kola, e-bike, plavání a
-            chůze) jsme převzali z dokumentu{' '}
+            výše uvedené dopravní prostředky (s výjimkou kola, plavání a chůze)
+            jsme převzali z dokumentu{' '}
             <a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2020">
               Greenhouse gas reporting: conversion factors 2020
             </a>
