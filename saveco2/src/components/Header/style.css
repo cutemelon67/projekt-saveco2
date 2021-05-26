@@ -1,0 +1,9 @@
+header {
+  height: 3.438rem;
+  background-color: hsl(81, 89.3%, 25.7%);
+}
+
+.header__logo {
+  width: 15%;
+  margin-left: 1.875rem;
+}

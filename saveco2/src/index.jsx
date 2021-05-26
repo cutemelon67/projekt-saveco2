@@ -40,18 +40,16 @@ const App = () => {
               Spočítej si CO<sub>2</sub> stopu tvojí cesty
             </h1>
             <h2>a zjisti, kolik stromů tvá volba stojí. </h2>
-            <Button>To mě zajímá</Button>
+            <Button btnType={'btn--primary'}>To mě zajímá</Button>
           </section>
           <form action="">
             <div className="starting-page__form--journey">
               <h3>Tvoje cesta</h3>
-              <p className="form--distance">
-                Chci <a href="#">zadat vzdálenost v km</a>.
-              </p>
+
               <div className="form--from-to">
                 <div className="form__buttons">
-                  <Button>Jednorázově</Button>
-                  <Button>Pravidelně</Button>
+                  <Button btnType={'btn--secondary'}>Jednorázově</Button>
+                  <Button btnType={'btn--secondary'}>Pravidelně</Button>
                 </div>
                 <div className="form__input">
                   <Input
@@ -75,6 +73,9 @@ const App = () => {
                     Kam:
                   </Input>
                 </div>
+                <p className="form--distance">
+                  Chci <a href="#">zadat vzdálenost v km</a>.
+                </p>
               </div>
               <Input
                 type={'checkbox'}
@@ -83,7 +84,7 @@ const App = () => {
               >
                 zpáteční cesta
               </Input>
-              <p class="distance-result">Zadaná vzdálenost: 100 km</p>
+              <p className="distance-result">Zadaná vzdálenost: 100 km</p>
             </div>
             <div className="starting-page__form--transport-type">
               <h3>Jak se přesuneš?</h3>
@@ -92,42 +93,47 @@ const App = () => {
                   return <Icon iconType={icon.name} key={icon.name}></Icon>;
                 })}
               </div>
-              <p>Zvolený dopravní prostředek: auto</p>
+              <p className="transport-result">
+                {' '}
+                Zvolený dopravní prostředek: auto
+              </p>
             </div>
             <div className="starting-page__form--fuel">
               <h3>Na co jezdíš?</h3>
-              <Input type={'radio'} name={'fuel'} id={'fuel--petrol'}>
-                benzín
-              </Input>
-              <Input type={'radio'} name={'fuel'} id={'fuel--diesel'}>
-                diesel
-              </Input>
-              <Input type={'radio'} name={'fuel'} id={'fuel--hybrid'}>
-                hybrid
-              </Input>
-              <Input type={'radio'} name={'fuel'} id={'fuel--cng'}>
-                CNG
-              </Input>
-              <Input type={'radio'} name={'fuel'} id={'fuel--lpg'}>
-                LPG
-              </Input>
-              <Input
-                type={'radio'}
-                name={'fuel'}
-                id={'fuel--fuel--battery-electric-vehicle'}
-              >
-                elektro
-              </Input>
-              <Input
-                type={'radio'}
-                name={'fuel'}
-                id={'fuel--plug-in-hybrid-electric-vehicle'}
-              >
-                plug-in hybrid elektro
-              </Input>
-              <Input type={'radio'} name={'fuel'} id={'fuel--unknown'}>
-                nevím / nic z uvedeného
-              </Input>
+              <div className="form--fuel">
+                <Input type={'radio'} name={'fuel'} id={'fuel--petrol'}>
+                  benzín
+                </Input>
+                <Input type={'radio'} name={'fuel'} id={'fuel--diesel'}>
+                  diesel
+                </Input>
+                <Input type={'radio'} name={'fuel'} id={'fuel--hybrid'}>
+                  hybrid
+                </Input>
+                <Input type={'radio'} name={'fuel'} id={'fuel--cng'}>
+                  CNG
+                </Input>
+                <Input type={'radio'} name={'fuel'} id={'fuel--lpg'}>
+                  LPG
+                </Input>
+                <Input
+                  type={'radio'}
+                  name={'fuel'}
+                  id={'fuel--fuel--battery-electric-vehicle'}
+                >
+                  elektro
+                </Input>
+                <Input
+                  type={'radio'}
+                  name={'fuel'}
+                  id={'fuel--plug-in-hybrid-electric-vehicle'}
+                >
+                  plug-in hybrid elektro
+                </Input>
+                <Input type={'radio'} name={'fuel'} id={'fuel--unknown'}>
+                  nevím / nic z uvedeného
+                </Input>
+              </div>
             </div>
             <div className="starting-page__form--people">
               <h3>Počet cestujících</h3>
@@ -141,9 +147,11 @@ const App = () => {
                 Kolik vás pojede?
               </Input>
             </div>
-            <div className="form__buttons">
-              <Button>Spočítej</Button>
-              <Button>Přidej dopravní prostředek</Button>
+            <div className="starting-page__form--buttons">
+              <div className="form__buttons">
+                <Button>Spočítej</Button>
+                <Button>Přidej dopravní prostředek</Button>
+              </div>
             </div>
           </form>
         </main>

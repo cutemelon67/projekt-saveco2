@@ -1,10 +1,11 @@
 import React from 'react';
 import './style.css';
+import logo from './img/saveco2-logo.svg';
 
 export const Header = (props) => {
   return (
     <header>
-      <img className="header__logo" src="img/favicon.png" alt="saveCO2" />
+      <img className="header__logo" src={logo} alt="saveCO2" />
       {/* <nav className="header__nav--language">
         <ul>
           <li>

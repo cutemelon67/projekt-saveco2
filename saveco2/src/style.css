@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap');
 
-* {
-  box-sizing: border-box;
-}
-
 .material-icons {
   font-family: 'Material Icons Round';
 }
@@ -28,10 +24,7 @@ body {
 
 .starting-page__name {
   text-align: center;
-  margin-top: 1.25rem;
-  margin-right: 1.875rem;
-  margin-bottom: 1.875rem;
-  margin-left: 1.875rem;
+  margin: 1.25rem 1.875rem 1.875rem 1.875rem;
 }
 
 h1 {
@@ -48,9 +41,7 @@ h3 {
 }
 
 .starting-page__form--journey {
-  margin-top: 1.25rem;
-  margin-left: 1.875rem;
-  margin-right: 1.875rem;
+  margin: 1.25rem 1.875rem 0 1.875rem;
   padding: 0.938rem 1.563rem;
   background: white;
 }
@@ -62,7 +53,7 @@ h3 {
   padding: 0;
 }
 
-.form--from-to {
+.form__input {
   display: flex;
   flex-direction: column;
 }
@@ -80,7 +71,7 @@ h3 {
 }
 
 .starting-page__form--transport-type {
-  margin-top: 0;
+  margin-top: 0 1.875rem 0 1.875rem;
   margin-left: 1.875rem;
   margin-right: 1.875rem;
   padding: 0.938rem 1.563rem;
@@ -90,12 +81,50 @@ h3 {
 .transport-type--img {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-content: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
 }
 
 .material-icons {
   flex-basis: 30%;
   padding: 0;
   margin: 0;
+}
+
+label {
+  margin: 0;
+}
+
+.transport-result {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.starting-page__form--fuel {
+  margin-top: 0;
+  margin-left: 1.875rem;
+  margin-right: 1.875rem;
+  padding: 0.938rem 1.563rem;
+  background: white;
+}
+
+.form--fuel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+}
+
+.starting-page__form--people {
+  margin-top: 0;
+  margin-left: 1.875rem;
+  margin-right: 1.875rem;
+  padding: 0.938rem 1.563rem;
+  background: white;
+}
+
+.starting-page__form--buttons {
+  margin: 0 1.875rem 0 1.875rem;
+  padding: 0.938rem 1.563rem;
 }
