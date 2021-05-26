@@ -3,9 +3,9 @@ import './style.css';
 
 // href doplnit
 
-export const Button = ({ href, children }) => {
+export const Button = ({ btnType, children }) => {
   return (
-    <button className="btn" type="button">
+    <button className={`btn ${btnType}`} type="button">
       {children}
     </button>
   );
