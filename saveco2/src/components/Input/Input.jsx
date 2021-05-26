@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 
 export const Input = ({ type, name, id, value, children }) => {
   if (type === 'number' || type === 'text') {

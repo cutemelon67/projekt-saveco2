@@ -6,6 +6,11 @@ import './style.css';
 // Note that size is an optional parameter which is use to set the font size of the icon. Default size is 24px.
 // <MaterialIcon icon="account_circle" size={48} />
 
-export const Icon = ({ iconType }) => {
-  return <MaterialIcon icon={iconType} size={48} />;
+export const Icon = ({ iconType, name, id, value }) => {
+  return (
+    <label>
+      <input id={id} name="transport-type--img" type="radio" />
+      {<MaterialIcon icon={iconType} size={48} />}
+    </label>
+  );
 };

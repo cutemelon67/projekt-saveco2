@@ -505,28 +505,28 @@ const App = () => {
           <p className="sources__text">
             Koeficienty použité pro výpočet emisí CO<sub>2</sub> pro všechny
             výše uvedené dopravní prostředky (s výjimkou kola, e-bike, plavání a
-            chůze) jsme převzali z dokumentu
+            chůze) jsme převzali z dokumentu{' '}
             <a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2020">
               Greenhouse gas reporting: conversion factors 2020
             </a>
             .
           </p>
           <p className="sources__text">
-            Množství CO2, které jeden dospělý strom absorbuje za rok:
+            Množství CO2, které jeden dospělý strom absorbuje za rok:{' '}
             <a href="https://www.eea.europa.eu/articles/forests-health-and-climate-change/key-facts/trees-help-tackle-climate-change">
               European Environment Agency
             </a>
             .
           </p>
           <p className="sources__text">
-            Mmnožství CO<sub>2</sub> uvolněného do atmosféry při dýchání:
+            Mmnožství CO<sub>2</sub> uvolněného do atmosféry při dýchání:{' '}
             <a href="https://www.sciencefocus.com/planet-earth/how-much-does-human-breathing-contribute-to-climate-change/">
               Science Focus
             </a>
             .
           </p>
           <p className="sources__text">
-            Množství CO<sub>2</sub> vyprodukovaného jízdou na kole:
+            Množství CO<sub>2</sub> vyprodukovaného jízdou na kole:{' '}
             <a href="https://www.ourstreetsmpls.org/does_bike_commuting_affect_your_carbon_footprint_and_how_much">
               Our Streets MPLS
             </a>
