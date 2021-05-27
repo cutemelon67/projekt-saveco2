@@ -3,9 +3,18 @@ import './style.css';
 
 // href doplnit
 
-export const Button = ({ btnType, children }) => {
+const classNames = require('classnames');
+
+export const Button = ({ className, type, children }) => {
   return (
-    <button className={`btn ${btnType}`} type="button">
+    <button
+      className={classNames(
+        'btn',
+        type === 'primary' ? 'btn--primary' : 'btn--secondary',
+        className,
+      )}
+      type="button"
+    >
       {children}
     </button>
   );
