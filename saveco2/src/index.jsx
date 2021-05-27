@@ -37,10 +37,12 @@ const App = () => {
         <Header></Header>
         <main>
           <section className="starting-page__name">
-            <h1>
+            <h1 className="starting-page__name--headline">
               Spočítej si CO<sub>2</sub> stopu tvojí cesty
             </h1>
-            <h2>a zjisti, kolik stromů tvá volba stojí. </h2>
+            <h2 className="starting-page__name--subheadline">
+              a zjisti, kolik stromů tvá volba stojí.{' '}
+            </h2>
             <Button btnType={'btn--primary'}>To mě zajímá</Button>
           </section>
           <form action="">
