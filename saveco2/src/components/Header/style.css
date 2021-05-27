@@ -1,9 +1,11 @@
 header {
   height: 3.438rem;
-  background-color: hsl(81, 89.3%, 25.7%);
+  background-color: hsl(86.4, 71.1%, 32.5%);
+  position: relative;
 }
 
 .header__logo {
   width: 15%;
   margin-left: 1.875rem;
+  position: absolute;
 }

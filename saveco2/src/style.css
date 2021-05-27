@@ -59,57 +59,85 @@ h3 {
 
 .starting-page__form--journey {
   margin: 1.25rem 1.875rem 0 1.875rem;
-  padding-top: 0.938rem;
   background: white;
+  padding: 0.063rem;
+}
+
+.btn--primary {
+  background-color: hsl(86.6, 71.2%, 43.5%);
+  color: white;
+  box-shadow: 2px 2px 4px #000000;
 }
 
 .form__buttons {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.25rem;
   padding: 0;
+}
+
+.btn--secondary {
+  flex: 50%;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.undefined {
+  flex: 50%;
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
 .form__input {
   display: flex;
   flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+#input--from {
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0, 5px solid black;
+  margin-bottom: 0.625rem;
+}
+
+#input--to {
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0, 5px solid black;
 }
 
 .form--distance {
   font-size: 0.875rem;
   text-align: right;
-  margin-top: 0.625rem;
+  margin: 0;
+  padding: 0.313rem;
 }
 
 .distance-result {
   text-align: center;
   font-weight: 700;
-  margin-bottom: 0;
+  margin: 0.625rem 0 0.625rem 0;
 }
 
 .starting-page__form--transport-type {
-  margin-top: 0 1.875rem 0 1.875rem;
-  margin-left: 1.875rem;
-  margin-right: 1.875rem;
-  padding: 0.938rem 1.563rem;
+  margin: 0 1.875rem 0 1.875rem;
   background: white;
+  padding: 0.063rem;
 }
 
 .transport-type--img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
 }
 
-.material-icons {
-  flex-basis: 30%;
-  padding: 0;
-  margin: 0;
+.transport-type--img [type='radio'] {
+  display: none;
 }
 
-label {
-  margin: 0;
+.transport-type--img.material-icons {
+  flex-basis: calc(100% / 3);
+  display: block;
 }
 
 .transport-result {
@@ -119,10 +147,7 @@ label {
 }
 
 .starting-page__form--fuel {
-  margin-top: 0;
-  margin-left: 1.875rem;
-  margin-right: 1.875rem;
-  padding: 0.938rem 1.563rem;
+  margin: 0 1.875rem 1.5rem 1.875rem;
   background: white;
 }
 
@@ -130,18 +155,30 @@ label {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .starting-page__form--people {
-  margin-top: 0;
-  margin-left: 1.875rem;
-  margin-right: 1.875rem;
-  padding: 0.938rem 1.563rem;
+  margin: 0 1.875rem;
   background: white;
 }
 
+.form--people {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
 .starting-page__form--buttons {
-  margin: 0 1.875rem 0 1.875rem;
   padding: 0.938rem 1.563rem;
+}
+
+/* Výsledky */
+
+.results__selected-transport {
+  margin: 0 1.875rem;
+}
+
+.results--header {
+  margin: 1.5rem 1.875rem 0 1.875rem;
+  text-align: center;
 }

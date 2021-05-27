@@ -43,7 +43,7 @@ const App = () => {
             <h2 className="starting-page__name--subheadline">
               a zjisti, kolik stromů tvá volba stojí.{' '}
             </h2>
-            <Button btnType={'btn--primary'}>To mě zajímá</Button>
+            <Button btnType={'btn--primary'}>Chci vědět víc</Button>
           </section>
           <form action="">
             <div className="starting-page__form--journey">
@@ -140,14 +140,16 @@ const App = () => {
             </div>
             <div className="starting-page__form--people">
               <h3>Počet cestujících</h3>
-              <Input
-                htmlFor={'people--count'}
-                id={'people--count'}
-                name={'people--count'}
-                type={'number'}
-              >
-                Kolik vás pojede?
-              </Input>
+              <div className="form--people">
+                <Input
+                  htmlFor={'people--count'}
+                  id={'people--count'}
+                  name={'people--count'}
+                  type={'number'}
+                >
+                  Kolik vás pojede?
+                </Input>
+              </div>
             </div>
             <div className="starting-page__form--buttons">
               <div className="form__buttons">
@@ -162,9 +164,9 @@ const App = () => {
       <div className="results">
         <Header></Header>
         <Nav>Zadat cestu</Nav>
-        <h2>
+        <h1 className="results--header">
           Jaká je CO<sub>2</sub> stopa tvojí cesty?
-        </h2>
+        </h1>
         <div className="results__selected-transport">
           <p>
             Výsledky pro <Icon iconType={icons[0].name}></Icon> benzin
