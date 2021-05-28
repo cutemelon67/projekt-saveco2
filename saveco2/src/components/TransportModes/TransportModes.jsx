@@ -1,18 +1,6 @@
 import React from 'react';
 import './transportModes.css';
 
-export const icons = [
-  { name: 'directions_car' },
-  { name: 'directions_bus' },
-  { name: 'train' },
-  { name: 'two_wheeler' },
-  { name: 'directions_walk' },
-  { name: 'pedal_bike' },
-  { name: 'flight' },
-  { name: 'subway' },
-  { name: 'directions_boat' },
-];
-
 // const vehicle = {
 //   CAR: 'auto',
 //   BUS: 'autobus',

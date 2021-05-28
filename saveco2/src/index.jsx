@@ -9,7 +9,12 @@ import { InputBtn, inputBtn } from './components/InputBtn/InputBtn';
 import { Nav } from './components/Nav/Nav';
 import getResults from './components/Results/getResults';
 import MaterialIcon from 'react-google-material-icons';
-import { icons } from '../src/components/TransportModes/TransportModes';
+import {
+  fuelType,
+  vehicleType,
+  vehicleInfo,
+} from './components/TransportModes/TransportModes';
+import { inputFromTo } from './components/InputField/InputField';
 import { Table } from './components/Table/Table';
 import './db.js';
 import './style.css';
@@ -46,26 +51,19 @@ const App = () => {
                   <Button type={'secondary'}>Pravidelně</Button>
                 </div>
                 <div className="form__input">
-                  <InputField
-                    htmlFor={'input--from'}
-                    id={'input--from'}
-                    name={'odkud'}
-                    type={'text'}
-                    value={'České Budějovice'}
-                    required
-                  >
-                    Odkud:
-                  </InputField>
-                  <InputField
-                    htmlFor={'input--to'}
-                    id={'input--to'}
-                    name={'kam'}
-                    type={'text'}
-                    value={'Písek'}
-                    required
-                  >
-                    Kam:
-                  </InputField>
+                  {Object.values(inputFromTo).map((input) => (
+                    <InputField
+                      htmlFor={input.htmlFor}
+                      id={input.id}
+                      name={input.name}
+                      type={input.type}
+                      value={input.value}
+                      required={input.required}
+                      key={input.id}
+                    >
+                      {input.text}
+                    </InputField>
+                  ))}
                 </div>
                 <p className="form--distance">
                   Chci <a href="#">zadat vzdálenost v km</a>.
@@ -83,9 +81,13 @@ const App = () => {
             <div className="starting-page__form--transport-type">
               <h3>Jak se přesuneš?</h3>
               <div className="transport-type--img">
-                {icons.map((icon) => {
-                  return <Icon iconType={icon.name} key={icon.name}></Icon>;
-                })}
+                {Object.values(vehicleType).map((type) => (
+                  <Icon
+                    id={vehicleInfo[type].text}
+                    iconType={vehicleInfo[type].icon}
+                    key={vehicleInfo[type].text}
+                  />
+                ))}
               </div>
               <p className="transport-result">
                 {' '}
@@ -95,6 +97,14 @@ const App = () => {
             <div className="starting-page__form--fuel">
               <h3>Na co jezdíš?</h3>
               <div className="form--fuel">
+                {/* {Object.values(fuelType).map((fuel) => {
+                  <InputBtn
+                    type={'radio'}
+                    name={'fuel'}
+                    id={fuel}
+                    key={fuel}
+                  ></InputBtn>;
+                })} */}
                 <InputBtn type={'radio'} name={'fuel'} id={'fuel--petrol'}>
                   benzín
                 </InputBtn>
@@ -160,7 +170,12 @@ const App = () => {
         </h1>
         <div className="results__selected-transport">
           <p>
-            Výsledky pro <Icon iconType={icons[0].name}></Icon> benzin
+            Výsledky pro{' '}
+            <MaterialIcon
+              icon={vehicleInfo[vehicleType.CAR].icon}
+              size={48}
+            ></MaterialIcon>{' '}
+            benzin
           </p>
           <p>
             Svojí cestou autem na trase České Budějovice - Písek a zpět
@@ -182,7 +197,10 @@ const App = () => {
         <div className="results__alternatives">
           <h3>Jsi si svojí volbou jistý? Zkus raději jednu z alternativ</h3>
           <h4>Co takhle šlápnout do pedálů?</h4>
-          <Icon iconType={icons[5].name}></Icon>
+          <MaterialIcon
+            icon={vehicleInfo[vehicleType.BIKE].icon}
+            size={48}
+          ></MaterialIcon>
           <p>
             1,5 kg CO<sub>2</sub> na osobu
           </p>
