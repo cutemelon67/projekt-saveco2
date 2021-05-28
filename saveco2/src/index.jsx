@@ -5,7 +5,7 @@ import { Button } from './components/Button/Button';
 import { Footer } from './components/Footer/Footer';
 import { Icon } from './components/Icon/Icon';
 import { InputField } from './components/InputField/InputField';
-import { InputBtn, inputBtn } from './components/InputBtn/InputBtn';
+import { InputBtn } from './components/InputBtn/InputBtn';
 import { Nav } from './components/Nav/Nav';
 import getResults from './components/Results/getResults';
 import MaterialIcon from 'react-google-material-icons';
@@ -18,6 +18,10 @@ import { inputFromTo } from './components/InputField/InputField';
 import { Table } from './components/Table/Table';
 import './db.js';
 import './style.css';
+import { SelectedTransport } from './components/SelectedTransport/SelectedTransport';
+import { Choice } from './components/Choice/Choice';
+import { Alternative } from './components/Alternative/Alternative';
+import { MethodologyResults } from './components/MethodologyResults/MethodologyResults';
 
 // firebase
 // const Trasa = () => {
@@ -169,42 +173,13 @@ const App = () => {
           Jaká je CO<sub>2</sub> stopa tvojí cesty?
         </h1>
         <div className="results__selected-transport">
-          <p>
-            Výsledky pro{' '}
-            <MaterialIcon
-              icon={vehicleInfo[vehicleType.CAR].icon}
-              size={48}
-            ></MaterialIcon>{' '}
-            benzin
-          </p>
-          <p>
-            Svojí cestou autem na trase České Budějovice - Písek a zpět
-            vyprodukuješ
-          </p>
-          <p>8,7</p>
-          <p>
-            kg CO<sub>2</sub>
-            <br />
-            na osobu
-          </p>
-          <p>
-            Kolik času potřebuje jeden strom, aby tebou vytvořené CO<sub>2</sub>
-            absorboval?
-          </p>
-          <p>4,7</p>
-          <p>měsíců</p>
+          <SelectedTransport />
         </div>
         <div className="results__alternatives">
-          <h3>Jsi si svojí volbou jistý? Zkus raději jednu z alternativ</h3>
-          <h4>Co takhle šlápnout do pedálů?</h4>
-          <MaterialIcon
-            icon={vehicleInfo[vehicleType.BIKE].icon}
-            size={48}
-          ></MaterialIcon>
-          <p>
-            1,5 kg CO<sub>2</sub> na osobu
-          </p>
-          <p>0,8 měsíců</p>
+          <Choice
+            text={'Jsi si svojí volbou jistý? Zkus raději jednu z alternativ'}
+          ></Choice>
+          <Alternative />
         </div>
         <div className="results__buttons">
           <Nav>Upravit trasu</Nav>
@@ -213,68 +188,50 @@ const App = () => {
           </Button>
         </div>
         <div className="results__methodology">
-          <h3>Jak jsme na to přišli?</h3>
-          <p>
-            Počet kilometrů jsme vynásobili příslušným koeficientem podle
-            zvoleného dopravního prostředku a v případě auta také typu pohonu. U
-            pravidelných cest jsme toto číslo ještě vynásobili počtem cest za
-            jeden rok. Pokud vás cestuje více, u auta a motorky jsme množství CO
-            <sub>2</sub> převedli na 1 osobu, aby bylo možné jednotlivé dopravní
-            prostředky mezi sebou porovnávat.
-          </p>
-          <Button type={'secondary'}>Více k metodice</Button>
+          <MethodologyResults />
         </div>
-        <div className="results__datesFacts">
-          <h2>Víte, že...</h2>
-          <div className="dateFacts__container">
-            <h3 className="dateFacts__heading">
-              Doprava představuje pětinu celosvětových emisí oxidu uhličitého
-              (CO<sub>2</sub>)
-            </h3>
-            <img
-              className="datesFacts__img"
-              src=""
-              alt="Intersection with a lot of traffic"
-            />
-            <p className="datesFacts__text">
-              Sektor dopravy tvoří přibližně 24 % světových emisí CO<sub>2</sub>
-              . Největší podíl na nich má silniční doprava (75 %). 45 % emisí CO
-              <sub>2</sub> přitom pochází z automobilů a autobusů, zbylých 29 %
-              pochází z nákladních vozidel. Letecká doprava příspívá 12 % a
-              železniční doprava tvoří pouze 1 % celovětových emisí.
-            </p>
-          </div>
-          <div className="dateFacts__container">
-            <h3 className="dateFacts__heading">Stromy jsou plíce planety</h3>
-            <img
-              className="datesFacts__img"
-              src=""
-              alt="Sunshine in the forest"
-            />
-            <p className="datesFacts__text">
-              Během jednoho roku dospělý strom přijme z atmosféry asi 22
-              kilogramů oxidu uhličitého (CO<sub>2</sub>) a výměnou uvolní
-              kyslík. Odhaduje se, že každý rok 1,3 milionu stromů odstraní ze
-              vzduchu více než 2 500 tun znečišťujících látek. Je tedy
-              pravděpodobné, že bez stromů bychom na této planetě vůbec nebyli
-              schopni žít.
-            </p>
-          </div>
-          <div className="dateFacts__container">
-            <h3 className="dateFacts__heading">
-              Důsledkem globálního oteplování ubývá v oceánech kyslík
-            </h3>
-            <img className="datesFacts__img" src="" alt="Turtle in the ocean" />
-            <p className="datesFacts__text">
-              Život téměř všech zvířat v oceánu závisí na dostupnosti kyslíku,
-              který se rozpouští jako plyn v mořské vodě. Oceán však již několik
-              desetiletí nepřetržitě kyslík ztrácí. Hlavním důvodem je globální
-              oteplování, které vede ke snížení rozpustnosti plynů, a tedy i
-              kyslíku. Studie ukazují, že tento proces bude pokračovat po
-              staletí, i kdyby všechny emise CO<sub>2</sub> byly okamžitě
-              zastaveny.
-            </p>
-          </div>
+        <div className="results__dataFacts">
+          <h3 className="dataFacts__heading">
+            Doprava představuje pětinu celosvětových emisí oxidu uhličitého (CO
+            <sub>2</sub>)
+          </h3>
+          <img
+            className="dataFacts__img"
+            src=""
+            alt="Intersection with a lot of traffic"
+          />
+          <p className="dataFacts__text">
+            Sektor dopravy tvoří přibližně 24 % světových emisí CO<sub>2</sub>.
+            Největší podíl na nich má silniční doprava (75 %). 45 % emisí CO
+            <sub>2</sub> přitom pochází z automobilů a autobusů, zbylých 29 %
+            pochází z nákladních vozidel. Letecká doprava příspívá 12 % a
+            železniční doprava tvoří pouze 1 % celovětových emisí.
+          </p>
+        </div>
+        <div className="dataFacts__container">
+          <h3 className="dataFacts__heading">Stromy jsou plíce planety</h3>
+          <img className="dataFacts__img" src="" alt="Sunshine in the forest" />
+          <p className="dataFacts__text">
+            Během jednoho roku dospělý strom přijme z atmosféry asi 22 kilogramů
+            oxidu uhličitého (CO<sub>2</sub>) a výměnou uvolní kyslík. Odhaduje
+            se, že každý rok 1,3 milionu stromů odstraní ze vzduchu více než 2
+            500 tun znečišťujících látek. Je tedy pravděpodobné, že bez stromů
+            bychom na této planetě vůbec nebyli schopni žít.
+          </p>
+        </div>
+        <div className="dataFacts__container">
+          <h3 className="dataFacts__heading">
+            Důsledkem globálního oteplování ubývá v oceánech kyslík
+          </h3>
+          <img className="datesFacts__img" src="" alt="Turtle in the ocean" />
+          <p className="dataFacts__text">
+            Život téměř všech zvířat v oceánu závisí na dostupnosti kyslíku,
+            který se rozpouští jako plyn v mořské vodě. Oceán však již několik
+            desetiletí nepřetržitě kyslík ztrácí. Hlavním důvodem je globální
+            oteplování, které vede ke snížení rozpustnosti plynů, a tedy i
+            kyslíku. Studie ukazují, že tento proces bude pokračovat po staletí,
+            i kdyby všechny emise CO<sub>2</sub> byly okamžitě zastaveny.
+          </p>
         </div>
         <Footer></Footer>
       </div>
