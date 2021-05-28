@@ -34,7 +34,7 @@ const App = () => {
             <h2 className="starting-page__name--subheadline">
               a zjisti, kolik stromů tvá volba stojí.{' '}
             </h2>
-            <Button btnType={'btn--primary'}>Chci vědět víc</Button>
+            <Button type={'primary'}>Chci vědět víc</Button>
           </section>
           <form action="">
             <div className="starting-page__form--journey">
@@ -132,14 +132,14 @@ const App = () => {
             <div className="starting-page__form--people">
               <h3>Počet cestujících</h3>
               <div className="form--people">
-                <Input
+                <InputField
                   htmlFor={'people--count'}
                   id={'people--count'}
                   name={'people--count'}
                   type={'number'}
                 >
                   Kolik vás pojede?
-                </Input>
+                </InputField>
               </div>
             </div>
             <div className="starting-page__form--buttons">
