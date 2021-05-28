@@ -4,24 +4,15 @@ import { Header } from './components/Header/Header';
 import { Button } from './components/Button/Button';
 import { Footer } from './components/Footer/Footer';
 import { Icon } from './components/Icon/Icon';
-import { Input } from './components/Input/Input';
+import { InputField } from './components/InputField/InputField';
+import { InputBtn, inputBtn } from './components/InputBtn/InputBtn';
 import { Nav } from './components/Nav/Nav';
 import getResults from './components/Results/getResults';
 import MaterialIcon from 'react-google-material-icons';
+import { icons } from '../src/components/TransportModes/TransportModes';
+import { Table } from './components/Table/Table';
 import './db.js';
 import './style.css';
-
-const icons = [
-  { name: 'directions_car' },
-  { name: 'directions_bus' },
-  { name: 'train' },
-  { name: 'two_wheeler' },
-  { name: 'directions_walk' },
-  { name: 'pedal_bike' },
-  { name: 'flight' },
-  { name: 'subway' },
-  { name: 'directions_boat' },
-];
 
 // firebase
 // const Trasa = () => {
@@ -37,7 +28,7 @@ const App = () => {
         <Header></Header>
         <main>
           <section className="starting-page__name">
-            <h1 className="starting-page__name--headline">
+            <h1>
               Spočítej si CO<sub>2</sub> stopu tvojí cesty
             </h1>
             <h2 className="starting-page__name--subheadline">
@@ -51,11 +42,11 @@ const App = () => {
 
               <div className="form--from-to">
                 <div className="form__buttons">
-                  <Button btnType={'btn--secondary'}>Jednorázově</Button>
-                  <Button btnType={'btn--secondary'}>Pravidelně</Button>
+                  <Button type={'secondary'}>Jednorázově</Button>
+                  <Button type={'secondary'}>Pravidelně</Button>
                 </div>
                 <div className="form__input">
-                  <Input
+                  <InputField
                     htmlFor={'input--from'}
                     id={'input--from'}
                     name={'odkud'}
@@ -64,8 +55,8 @@ const App = () => {
                     required
                   >
                     Odkud:
-                  </Input>
-                  <Input
+                  </InputField>
+                  <InputField
                     htmlFor={'input--to'}
                     id={'input--to'}
                     name={'kam'}
@@ -74,19 +65,19 @@ const App = () => {
                     required
                   >
                     Kam:
-                  </Input>
+                  </InputField>
                 </div>
                 <p className="form--distance">
                   Chci <a href="#">zadat vzdálenost v km</a>.
                 </p>
               </div>
-              <Input
+              <InputBtn
                 type={'checkbox'}
                 name={'round-trip'}
                 id={'form--round-trip'}
               >
                 zpáteční cesta
-              </Input>
+              </InputBtn>
               <p className="distance-result">Zadaná vzdálenost: 100 km</p>
             </div>
             <div className="starting-page__form--transport-type">
@@ -104,38 +95,38 @@ const App = () => {
             <div className="starting-page__form--fuel">
               <h3>Na co jezdíš?</h3>
               <div className="form--fuel">
-                <Input type={'radio'} name={'fuel'} id={'fuel--petrol'}>
+                <InputBtn type={'radio'} name={'fuel'} id={'fuel--petrol'}>
                   benzín
-                </Input>
-                <Input type={'radio'} name={'fuel'} id={'fuel--diesel'}>
+                </InputBtn>
+                <InputBtn type={'radio'} name={'fuel'} id={'fuel--diesel'}>
                   diesel
-                </Input>
-                <Input type={'radio'} name={'fuel'} id={'fuel--hybrid'}>
+                </InputBtn>
+                <InputBtn type={'radio'} name={'fuel'} id={'fuel--hybrid'}>
                   hybrid
-                </Input>
-                <Input type={'radio'} name={'fuel'} id={'fuel--cng'}>
+                </InputBtn>
+                <InputBtn type={'radio'} name={'fuel'} id={'fuel--cng'}>
                   CNG
-                </Input>
-                <Input type={'radio'} name={'fuel'} id={'fuel--lpg'}>
+                </InputBtn>
+                <InputBtn type={'radio'} name={'fuel'} id={'fuel--lpg'}>
                   LPG
-                </Input>
-                <Input
+                </InputBtn>
+                <InputBtn
                   type={'radio'}
                   name={'fuel'}
                   id={'fuel--battery-electric-vehicle'}
                 >
                   elektromobil
-                </Input>
-                <Input
+                </InputBtn>
+                <InputBtn
                   type={'radio'}
                   name={'fuel'}
                   id={'fuel--plug-in-hybrid-electric-vehicle'}
                 >
                   plug-in hybrid elektro
-                </Input>
-                <Input type={'radio'} name={'fuel'} id={'fuel--unknown'}>
+                </InputBtn>
+                <InputBtn type={'radio'} name={'fuel'} id={'fuel--unknown'}>
                   nevím / nic z uvedeného
-                </Input>
+                </InputBtn>
               </div>
             </div>
             <div className="starting-page__form--people">
@@ -153,8 +144,8 @@ const App = () => {
             </div>
             <div className="starting-page__form--buttons">
               <div className="form__buttons">
-                <Button>Spočítej</Button>
-                <Button>Přidej dopravní prostředek</Button>
+                <Button type="primary">Spočítej</Button>
+                <Button type="primary">Přidej dopravní prostředek</Button>
               </div>
             </div>
           </form>
@@ -199,7 +190,7 @@ const App = () => {
         </div>
         <div className="results__buttons">
           <Nav>Upravit trasu</Nav>
-          <Button>
+          <Button type={'secondary'}>
             Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
           </Button>
         </div>
@@ -213,7 +204,7 @@ const App = () => {
             <sub>2</sub> převedli na 1 osobu, aby bylo možné jednotlivé dopravní
             prostředky mezi sebou porovnávat.
           </p>
-          <Button btnType={'btn--secondary'}>Více k metodice</Button>
+          <Button type={'secondary'}>Více k metodice</Button>
         </div>
         <div className="results__datesFacts">
           <h2>Víte, že...</h2>
@@ -321,144 +312,7 @@ const App = () => {
             <sub>2</sub> pocházející z jídla činí 16 g na km.
           </p>
           <table className="methodology__table">
-            <thead>
-              <tr>
-                <th>Dopravní prostředek</th>
-                <th>
-                  kg CO<sub>2</sub>/km/vozidlo
-                </th>
-                <th>
-                  kg CO<sub>2</sub>/km/osoba
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Auto diesel (1 - 7 osob)</td>
-                <td>0,16660</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto diesel multivan (8 - 9 osob)</td>
-                <td>0,24527</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto benzín (1 - 7 osob)</td>
-                <td>0,17363</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto benzín multivan (8 - 9 osob)</td>
-                <td>0,21881</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto hybrid (1 - 9 osob)*</td>
-                <td>0,11433</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto CNG (1 - 7 osob)</td>
-                <td>0,17424</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto CNG multivan (8 - 9 osob)</td>
-                <td>0,24523</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto LPG (1 - 7 osob)</td>
-                <td>0,19707</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto LPG multivan (8 - 9 osob)</td>
-                <td>0,27104</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto průměr (1 - 7 osob)</td>
-                <td>0,17015</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto průměr multivan (8 - 9 osob)</td>
-                <td>0,24441</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto plug-in hybrid elektro (1 - 9 osob)*</td>
-                <td>0,09433</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto elektomobil (1 - 7 osob)</td>
-                <td>0,05274</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Auto elektromobil multivan (8 - 9 osob)</td>
-                <td>0,05497</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Motorka (1 - 2 osoby)</td>
-                <td>0,11115</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Autobus</td>
-                <td>-</td>
-                <td>0,10231</td>
-              </tr>
-              <tr>
-                <td>Zájezdový autobus</td>
-                <td>-</td>
-                <td>0,02679</td>
-              </tr>
-              <tr>
-                <td>Vlak</td>
-                <td>-</td>
-                <td>0,03659</td>
-              </tr>
-              <tr>
-                <td>Tramvaj / metro</td>
-                <td>-</td>
-                <td>0,02845</td>
-              </tr>
-              <tr>
-                <td>Letadlo (do 3 700 km)</td>
-                <td>-</td>
-                <td>0,08145</td>
-              </tr>
-              <tr>
-                <td>Letadlo (nad 3 700 km)</td>
-                <td>-</td>
-                <td>0,09994</td>
-              </tr>
-              <tr>
-                <td>Kolo</td>
-                <td>-</td>
-                <td>0,01808</td>
-              </tr>
-              <tr>
-                <td>Plavání</td>
-                <td>-</td>
-                <td>0,05767</td>
-              </tr>
-              <tr>
-                <td>Chůze</td>
-                <td>-</td>
-                <td>0,00833</td>
-              </tr>
-              <tr>
-                <td>Trajekt</td>
-                <td>-</td>
-                <td>0,11131</td>
-              </tr>
-            </tbody>
+            <Table />
           </table>
           <p className="methodology__note">
             * U automobilů s pohonem hybrid a plug-in hybrid elektro byl pro 8 –
@@ -565,7 +419,7 @@ const App = () => {
             </a>
           </p>
         </div>
-        <Button>
+        <Button type={'secondary'}>
           Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
         </Button>
         <Footer></Footer>

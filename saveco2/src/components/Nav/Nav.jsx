@@ -1,6 +1,6 @@
 import React from 'react';
 import MaterialIcon from 'react-google-material-icons';
-import './style.css';
+import './nav.css';
 
 export const Nav = ({ children }) => {
   return (
