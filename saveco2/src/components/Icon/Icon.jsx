@@ -6,6 +6,18 @@ import './icon.css';
 // Note that size is an optional parameter which is use to set the font size of the icon. Default size is 24px.
 // <MaterialIcon icon="account_circle" size={48} />
 
+// export const icons = [
+//   { name: 'directions_car' },
+//   { name: 'directions_bus' },
+//   { name: 'train' },
+//   { name: 'two_wheeler' },
+//   { name: 'directions_walk' },
+//   { name: 'pedal_bike' },
+//   { name: 'flight' },
+//   { name: 'subway' },
+//   { name: 'directions_boat' },
+// ];
+
 export const Icon = ({ iconType, id }) => {
   return (
     <label>

@@ -9,3 +9,24 @@ export const InputField = ({ type, name, id, value, children }) => {
     </>
   );
 };
+
+export const inputFromTo = {
+  FROM: {
+    htmlFor: 'input--from',
+    id: 'input--from',
+    name: 'from',
+    type: 'text',
+    value: 'České Budějovice',
+    required: false,
+    text: 'Odkud:',
+  },
+  TO: {
+    htmlFor: 'input--to',
+    id: 'input--to',
+    name: 'to',
+    type: 'text',
+    value: 'Písek',
+    required: false,
+    text: 'Kam:',
+  },
+};
