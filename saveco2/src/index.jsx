@@ -33,7 +33,7 @@ const App = () => {
         <Header></Header>
         <main>
           <section className="starting-page__name">
-            <h1>
+            <h1 className="starting-page__name--headline">
               Spočítej si CO<sub>2</sub> stopu tvojí cesty
             </h1>
             <h2 className="starting-page__name--subheadline">
@@ -164,10 +164,11 @@ const App = () => {
       </div>
       <div className="results">
         <Header></Header>
-        <Nav>Zadat cestu</Nav>
-        <h1 className="results--header">
+
+        <h2 className="results--header">
           Jaká je CO<sub>2</sub> stopa tvojí cesty?
-        </h1>
+        </h2>
+        <Nav>Zadat cestu</Nav>
         <div className="results__selected-transport">
           <p>
             Výsledky pro{' '}
@@ -177,22 +178,33 @@ const App = () => {
             ></MaterialIcon>{' '}
             benzin
           </p>
-          <p>
-            Svojí cestou autem na trase České Budějovice - Písek a zpět
-            vyprodukuješ
-          </p>
-          <p>8,7</p>
-          <p>
-            kg CO<sub>2</sub>
-            <br />
-            na osobu
-          </p>
-          <p>
-            Kolik času potřebuje jeden strom, aby tebou vytvořené CO<sub>2</sub>
-            absorboval?
-          </p>
-          <p>4,7</p>
-          <p>měsíců</p>
+          <div className="results__selected-transport--results">
+            <p>
+              Svojí cestou autem na trase
+              <br />
+              <strong>České Budějovice - Písek a zpět</strong>
+              <br />
+              vyprodukuješ
+            </p>
+            <div className="results__selected-transport--results-co2">
+              <p className="results-co2-number">8,7</p>
+              <p>
+                kg CO<sub>2</sub>
+                <br />
+                na osobu
+              </p>
+            </div>
+
+            <div className="results__selected-transport--tree-text">
+              <p>
+                Kolik času potřebuje jeden strom, aby tebou vytvořené CO
+                <sub>2</sub>
+                absorboval?
+              </p>
+              <p>4,7</p>
+              <p>měsíců</p>
+            </div>
+          </div>
         </div>
         <div className="results__alternatives">
           <h3>Jsi si svojí volbou jistý? Zkus raději jednu z alternativ</h3>

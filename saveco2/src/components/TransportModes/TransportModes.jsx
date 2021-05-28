@@ -13,7 +13,7 @@ import './transportModes.css';
 //   FERRY: 'trajekt',
 // };
 
-const vehicleType = {
+export const vehicleType = {
   CAR: 'car',
   BUS: 'bus',
   TRAIN: 'train',
@@ -25,7 +25,7 @@ const vehicleType = {
   FERRY: 'ferry',
 };
 
-const fuelType = {
+export const fuelType = {
   PETROL: 'benzín',
   DIESEL: 'diesel',
   HYBRID: 'hybrid',
@@ -36,13 +36,13 @@ const fuelType = {
   UNKNOWN: 'nevím / nic z uvedeného',
 };
 
-const carSize = {
+export const carSize = {
   SMALL: 'small',
   LARGE: 'large',
 };
 
 // zahrnout do komponenty Icon + hlavní jsx
-const vehicleInfo = {
+export const vehicleInfo = {
   [vehicleType.CAR]: {
     label: [vehicleType.CAR],
     icon: 'directions_car',
