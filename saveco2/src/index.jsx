@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 import { FormPage } from './components/FormPage/FormPage';
 import { ResultsPage } from './components/ResultsPage/ResultsPage';
@@ -15,11 +15,18 @@ import './style.css';
 // };
 
 const App = () => {
+  const [result, setResult] = useState({});
+
   return (
     <div className="container">
-      <FormPage />
-      <ResultsPage />
-      <MethodologyPage />
+      {
+        result ? (
+          <ResultsPage result={result} />
+        ) : (
+          <FormPage result={result} setResult={setResult} />
+        )
+        // <MethodologyPage />
+      }
     </div>
   );
 };

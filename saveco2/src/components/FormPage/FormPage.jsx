@@ -12,9 +12,17 @@ import {
   vehicleInfo,
 } from '../TransportModes/TransportModes';
 import { inputFromTo } from '../InputField/InputField';
+import { inputDistance } from '../InputField/InputField';
+import { useForm } from 'react-hook-form';
 import './formPage.css';
 
-export const FormPage = (props) => {
+export const FormPage = ({ result, setResult }) => {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data) => {
+    alert(JSON.stringify(data));
+  };
+
   return (
     <>
       <div className="starting-page">
@@ -29,7 +37,7 @@ export const FormPage = (props) => {
             </h2>
             <Button variant={'primary'}>Chci vědět víc</Button>
           </section>
-          <form action="">
+          <form onSubmit={() => handleSubmit(onSubmit)}>
             <div className="starting-page__form--journey">
               <h3>Tvoje cesta</h3>
 
@@ -48,10 +56,23 @@ export const FormPage = (props) => {
                       value={input.value}
                       required={input.required}
                       key={input.id}
+                      register={register}
                     >
                       {input.text}
                     </InputField>
                   ))}
+                  <InputField
+                    htmlFor={inputDistance.htmlFor}
+                    id={inputDistance.id}
+                    name={inputDistance.name}
+                    type={inputDistance.type}
+                    value={inputDistance.value}
+                    required={inputDistance.required}
+                    key={inputDistance.id}
+                    register={register}
+                  >
+                    {inputDistance.text}
+                  </InputField>
                 </div>
                 <p className="form--distance">
                   Chci <a href="#">zadat vzdálenost v km</a>.
@@ -103,6 +124,7 @@ export const FormPage = (props) => {
                   id={'people--count'}
                   name={'people--count'}
                   type={'number'}
+                  register={register}
                 >
                   Kolik vás pojede?
                 </InputField>
@@ -110,7 +132,11 @@ export const FormPage = (props) => {
             </div>
             <div className="starting-page__form--buttons">
               <div className="form__buttons--submit">
-                <Button variant={'primary'} className={'standard'}>
+                <Button
+                  variant={'primary'}
+                  className={'standard'}
+                  type={'submit'}
+                >
                   Spočítej
                 </Button>
                 <Button className={'standard'}>

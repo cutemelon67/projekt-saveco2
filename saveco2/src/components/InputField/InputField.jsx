@@ -1,13 +1,21 @@
 import React from 'react';
 import './inputField.css';
 
-export const InputField = ({ type, name, id, value, children, className }) => {
+export const InputField = ({
+  label,
+  type,
+  name,
+  id,
+  value,
+  className,
+  register,
+}) => {
   return (
     <>
       <label className={className} htmlFor={id}>
-        {children}
+        {label}
       </label>
-      <input id={id} name={name} type={type} value={value} />
+      <input {...register(label, { id }, { name }, { type }, { value })} />
     </>
   );
 };
@@ -31,4 +39,14 @@ export const inputFromTo = {
     required: false,
     text: 'Kam:',
   },
+};
+
+export const inputDistance = {
+  htmlFor: 'input--distance',
+  id: 'input--distance',
+  name: 'distance',
+  type: 'text',
+  value: 100,
+  required: false,
+  text: 'Vzdálenost (km):',
 };
