@@ -4,7 +4,6 @@ import { FormPage } from './components/FormPage/FormPage';
 import { ResultsPage } from './components/ResultsPage/ResultsPage';
 import { MethodologyPage } from './components/MethodologyPage/MethodologyPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import getResults from './components/Results/getResults';
 import './db.js';
 import './style.css';
 
@@ -22,15 +21,13 @@ const App = () => {
     <Router>
       <div className="container">
         <Switch>
-          {Object.keys(result).length ? (
-            <Route path="/results" component={ResultsPage} exact>
-              <ResultsPage result={result} />
-            </Route>
-          ) : (
-            <Route path="/" component={FormPage}>
-              <FormPage result={result} setResult={setResult} />
-            </Route>
-          )}
+          <Route exact path="/results" component={ResultsPage}>
+            <ResultsPage result={result} />
+          </Route>
+
+          <Route exact path="/" component={FormPage}>
+            <FormPage result={result} setResult={setResult} />
+          </Route>
           <Route path="/methodology" component={MethodologyPage}>
             <MethodologyPage />
           </Route>

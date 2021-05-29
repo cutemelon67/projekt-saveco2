@@ -5,7 +5,7 @@ import { Footer } from '../Footer/Footer';
 import { Icon } from '../Icon/Icon';
 import { InputField } from '../InputField/InputField';
 import { InputBtn } from '../InputBtn/InputBtn';
-import getResults from '../Results/getResults';
+import { getResults } from '../Results/getResults';
 import {
   fuelType,
   vehicleType,
@@ -14,14 +14,22 @@ import {
 import { inputFromTo } from '../InputField/InputField';
 import { inputDistance } from '../InputField/InputField';
 import { useForm } from 'react-hook-form';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom';
 import './formPage.css';
 
 export const FormPage = ({ result, setResult }) => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    defaultValues: React.useMemo(() => {
+      return result;
+    }, [result]),
+  });
+
+  const history = useHistory();
+  console.log(result);
 
   const onSubmit = (data) => {
     setResult(data);
+    history.push('/results');
   };
 
   return (
@@ -99,6 +107,7 @@ export const FormPage = ({ result, setResult }) => {
                     iconType={vehicleInfo[type].icon}
                     key={vehicleInfo[type].text}
                     className={'transport-type--icon'}
+                    required={true}
                     register={register}
                     defaultValue={result.name}
                   />
@@ -119,6 +128,7 @@ export const FormPage = ({ result, setResult }) => {
                       name={'fuel'}
                       id={key}
                       key={key}
+                      required={true}
                       register={register}
                       defaultValue={result.name}
                     >
@@ -136,6 +146,7 @@ export const FormPage = ({ result, setResult }) => {
                   id={'people--count'}
                   name={'people--count'}
                   type={'number'}
+                  required={true}
                   register={register}
                   defaultValue={result.name}
                 >
@@ -150,7 +161,7 @@ export const FormPage = ({ result, setResult }) => {
                   className={'standard'}
                   type={'submit'}
                 >
-                  <Link to="/results">Spočítej</Link>
+                  Spočítej
                 </Button>
                 <Button className={'standard'}>
                   Přidej dopravní prostředek

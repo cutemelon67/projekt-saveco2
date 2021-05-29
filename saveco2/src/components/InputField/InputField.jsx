@@ -8,17 +8,19 @@ export const InputField = ({
   id,
   className,
   register,
+  required,
 }) => {
   return (
     <>
       <label className={className} htmlFor={id}>
         {children}
       </label>
-      <input {...register(name)} type={type} id={id} />
+      <input {...register(name)} type={type} id={id} required={required} />
     </>
   );
 };
 
+// změnit na required: true -> až bude na stránce jen jedna možnost
 export const inputFromTo = {
   FROM: {
     htmlFor: 'input--from',
@@ -46,6 +48,6 @@ export const inputDistance = {
   name: 'distance',
   type: 'text',
   value: 100,
-  required: false,
+  required: true,
   text: 'Vzdálenost (km):',
 };
