@@ -20,7 +20,7 @@ const App = () => {
   return (
     <div className="container">
       {
-        result ? (
+        Object.keys(result).length ? (
           <ResultsPage result={result} />
         ) : (
           <FormPage result={result} setResult={setResult} />

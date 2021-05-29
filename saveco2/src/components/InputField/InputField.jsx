@@ -2,20 +2,19 @@ import React from 'react';
 import './inputField.css';
 
 export const InputField = ({
-  label,
+  children,
   type,
   name,
   id,
-  value,
   className,
   register,
 }) => {
   return (
     <>
       <label className={className} htmlFor={id}>
-        {label}
+        {children}
       </label>
-      <input {...register(label, { id }, { name }, { type }, { value })} />
+      <input {...register(name)} type={type} id={id} />
     </>
   );
 };
