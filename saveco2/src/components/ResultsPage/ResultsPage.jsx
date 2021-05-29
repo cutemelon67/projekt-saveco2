@@ -30,7 +30,7 @@ export const ResultsPage = (props) => {
         </div>
         <div className="results__buttons">
           <Nav>Upravit trasu</Nav>
-          <Button type={'secondary'}>
+          <Button>
             Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
           </Button>
         </div>

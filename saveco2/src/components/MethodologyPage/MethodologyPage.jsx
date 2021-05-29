@@ -24,7 +24,7 @@ export const MethodologyPage = (props) => {
         <div className="sources__container">
           <Sources />
         </div>
-        <Button type={'secondary'}>
+        <Button>
           Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
         </Button>
         <Footer></Footer>
