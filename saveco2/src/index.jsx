@@ -101,46 +101,13 @@ const App = () => {
             <div className="starting-page__form--fuel">
               <h3>Na co jezdíš?</h3>
               <div className="form--fuel">
-                {/* {Object.values(fuelType).map((fuel) => {
-                  <InputBtn
-                    type={'radio'}
-                    name={'fuel'}
-                    id={fuel}
-                    key={fuel}
-                  ></InputBtn>;
-                })} */}
-                <InputBtn type={'radio'} name={'fuel'} id={'fuel--petrol'}>
-                  benzín
-                </InputBtn>
-                <InputBtn type={'radio'} name={'fuel'} id={'fuel--diesel'}>
-                  diesel
-                </InputBtn>
-                <InputBtn type={'radio'} name={'fuel'} id={'fuel--hybrid'}>
-                  hybrid
-                </InputBtn>
-                <InputBtn type={'radio'} name={'fuel'} id={'fuel--cng'}>
-                  CNG
-                </InputBtn>
-                <InputBtn type={'radio'} name={'fuel'} id={'fuel--lpg'}>
-                  LPG
-                </InputBtn>
-                <InputBtn
-                  type={'radio'}
-                  name={'fuel'}
-                  id={'fuel--battery-electric-vehicle'}
-                >
-                  elektromobil
-                </InputBtn>
-                <InputBtn
-                  type={'radio'}
-                  name={'fuel'}
-                  id={'fuel--plug-in-hybrid-electric-vehicle'}
-                >
-                  plug-in hybrid elektro
-                </InputBtn>
-                <InputBtn type={'radio'} name={'fuel'} id={'fuel--unknown'}>
-                  nevím / nic z uvedeného
-                </InputBtn>
+                {Object.entries(fuelType).map(([key, fuel]) => {
+                  return (
+                    <InputBtn type={'radio'} name={'fuel'} id={key} key={key}>
+                      {fuel}
+                    </InputBtn>
+                  );
+                })}
               </div>
             </div>
             <div className="starting-page__form--people">

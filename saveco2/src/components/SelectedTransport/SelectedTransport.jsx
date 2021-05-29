@@ -24,7 +24,7 @@ export const SelectedTransport = () => {
         na osobu
       </p>
       <p>
-        Kolik času potřebuje jeden strom, aby tebou vytvořené CO<sub>2</sub>
+        Kolik času potřebuje jeden strom, aby tebou vytvořené CO<sub>2</sub>{' '}
         absorboval?
       </p>
       <p>4,7</p>

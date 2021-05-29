@@ -12,7 +12,7 @@ export const Alternative = () => {
         size={48}
       ></MaterialIcon>
       <p>
-        1,5 kg CO<sub>2</sub> na osobu
+        1,5 kg CO<sub>2</sub> &nbsp; na osobu
       </p>
       <p>0,8 měsíců</p>
     </>
