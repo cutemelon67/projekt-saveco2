@@ -41,9 +41,9 @@ export const FormPage = ({ result, setResult }) => {
             <h1 className="starting-page__name--headline">
               Spočítej si CO<sub>2</sub> stopu tvojí cesty
             </h1>
-            <h2 className="starting-page__name--subheadline">
+            <h3 className="starting-page__name--subheadline">
               a zjisti, kolik stromů tvá volba stojí.{' '}
-            </h2>
+            </h3>
             <Button variant={'primary'}>Chci vědět víc</Button>
           </section>
           <form onSubmit={handleSubmit(onSubmit)}>
