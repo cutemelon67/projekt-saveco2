@@ -21,7 +21,7 @@ export const StartingPage = (props) => {
         <Header></Header>
         <main>
           <section className="starting-page__name">
-            <h1>
+            <h1 className="starting-page__name--headline">
               Spočítej si CO<sub>2</sub> stopu tvojí cesty
             </h1>
             <h2 className="starting-page__name--subheadline">
