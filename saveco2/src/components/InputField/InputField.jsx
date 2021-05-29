@@ -1,10 +1,12 @@
 import React from 'react';
 import './inputField.css';
 
-export const InputField = ({ type, name, id, value, children }) => {
+export const InputField = ({ type, name, id, value, children, className }) => {
   return (
     <>
-      <label htmlFor={id}>{children}</label>
+      <label className={className} htmlFor={id}>
+        {children}
+      </label>
       <input id={id} name={name} type={type} value={value} />
     </>
   );
