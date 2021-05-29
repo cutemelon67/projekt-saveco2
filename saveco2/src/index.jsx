@@ -21,21 +21,17 @@ const App = () => {
   return (
     <Router>
       <div className="container">
-        {/*<Switch>
-          {Object.keys(result).length ? (
-            <Route path="/results" component={ResultsPage} exact>
-              <ResultsPage result={result} />
-            </Route>
-          ) : (
-            <Route path="/" component={FormPage}>
-              <FormPage result={result} setResult={setResult} />
-            </Route>
-          )}
+        <Switch>
+          <Route exact path="/results" component={ResultsPage}>
+            <ResultsPage result={result} />
+          </Route>
+          <Route exact path="/" component={FormPage}>
+            <FormPage result={result} setResult={setResult} />
+          </Route>
           <Route path="/methodology" component={MethodologyPage}>
             <MethodologyPage />
           </Route>
-          </Switch>*/}
-        <ResultsPage result={result} />
+        </Switch>
       </div>
     </Router>
   );
