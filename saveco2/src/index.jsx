@@ -21,7 +21,7 @@ const App = () => {
   return (
     <Router>
       <div className="container">
-        <Switch>
+        {/*<Switch>
           {Object.keys(result).length ? (
             <Route path="/results" component={ResultsPage} exact>
               <ResultsPage result={result} />
@@ -34,7 +34,8 @@ const App = () => {
           <Route path="/methodology" component={MethodologyPage}>
             <MethodologyPage />
           </Route>
-        </Switch>
+          </Switch>*/}
+        <ResultsPage result={result} />
       </div>
     </Router>
   );

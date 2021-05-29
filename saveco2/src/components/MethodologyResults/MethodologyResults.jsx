@@ -11,10 +11,10 @@ export const MethodologyResults = () => {
         dopravního prostředku a v případě auta také typu pohonu. U pravidelných
         cest jsme toto číslo ještě vynásobili počtem cest za jeden rok. Pokud
         vás cestuje více, u auta a motorky jsme množství CO
-        <sub>2</sub> převedli na 1 osobu, aby bylo možné jednotlivé dopravní
+        <sub>2</sub> převedli na jednu osobu, aby bylo možné jednotlivé dopravní
         prostředky mezi sebou porovnávat.
       </p>
-      <Button type={'secondary'}>Více k metodice</Button>
+      <Button className={'btn--center'}>Více k metodice</Button>
     </>
   );
 };

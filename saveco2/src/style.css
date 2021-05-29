@@ -238,3 +238,30 @@ h3 {
 .results__alternatives {
   margin: 1.5rem 1.875rem 0 1.875rem;
 }
+
+/*Methodology Results*/
+
+.results__methodology {
+  margin: 1.5rem 1.875rem 0 1.875rem;
+  border: 5px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1.5rem;
+}
+
+.results__methodology p {
+  text-align: justify;
+  padding: 1.25rem;
+  margin: 0;
+}
+
+.results__methodology h3 {
+  padding-top: 0.625rem;
+  text-align: center;
+}
+
+.btn--center {
+  max-width: 200px;
+  margin-top: 0;
+}
