@@ -15,17 +15,17 @@ export const DataFacts = (props) => {
             src={imgTraffic}
             alt="Intersection with a lot of traffic"
           />
-          <h3 className="dataFacts__heading--traffic">
-            Doprava představuje pětinu celosvětových emisí oxidu uhličitého (CO
-            <sub>2</sub>)
+          <h3 className="dataFacts__heading--text">
+            Doprava představuje pětinu celosvětových emisí oxidu uhličitého
           </h3>
         </div>
         <p className="dataFacts__text">
-          Sektor dopravy tvoří přibližně 24 % světových emisí CO<sub>2</sub>.
-          Největší podíl na nich má silniční doprava (75 %). 45 % emisí CO
-          <sub>2</sub> přitom pochází z automobilů a autobusů, zbylých 29 %
-          pochází z nákladních vozidel. Letecká doprava příspívá 12 % a
-          železniční doprava tvoří pouze 1 % celovětových emisí.
+          Sektor dopravy tvoří přibližně <strong>24 % </strong> světových emisí
+          oxidu ohličitého (CO<sub>2</sub>) . Největší podíl na nich má silniční
+          doprava (75 %). 45 % emisí CO
+          <sub>2</sub> pochází přitom z automobilů a autobusů, zbylých 29 %
+          tvoří nákladní doprava. Letecká doprava příspívá 12 % a železniční
+          doprava tvoří 1 % celovětových emisí.
         </p>
       </div>
       <div className="dataFacts__container">
@@ -35,12 +35,13 @@ export const DataFacts = (props) => {
             src={imgTrees}
             alt="Sunshine in the forest"
           />
-          <h3 className="dataFacts__heading--traffic">
+          <h3 className="dataFacts__heading--text">
             Stromy jsou plíce planety
           </h3>
         </div>
         <p className="dataFacts__text">
-          Během jednoho roku dospělý strom přijme z atmosféry asi 22 kilogramů
+          Během jednoho roku dospělý strom přijme z atmosféry asi{' '}
+          <strong>22 kilogramů </strong>
           oxidu uhličitého (CO<sub>2</sub>) a výměnou uvolní kyslík. Odhaduje
           se, že každý rok 1,3 milionu stromů odstraní ze vzduchu více než 2 500
           tun znečišťujících látek. Je tedy pravděpodobné, že bez stromů bychom
@@ -54,17 +55,18 @@ export const DataFacts = (props) => {
             src={imgTurtle}
             alt="Turtle in the ocean"
           />
-          <h3 className="dataFacts__heading--traffic">
+          <h3 className="dataFacts__heading--text">
             Důsledkem globálního oteplování ubývá v oceánech kyslík
           </h3>
         </div>
         <p className="dataFacts__text">
           Život téměř všech zvířat v oceánu závisí na dostupnosti kyslíku, který
           se rozpouští jako plyn v mořské vodě. Oceán však již několik
-          desetiletí nepřetržitě kyslík ztrácí. Hlavním důvodem je globální
-          oteplování, které vede ke snížení rozpustnosti plynů, a tedy i
-          kyslíku. Studie ukazují, že tento proces bude pokračovat po staletí, i
-          kdyby všechny emise CO<sub>2</sub> byly okamžitě zastaveny.
+          desetiletí nepřetržitě kyslík ztrácí. Hlavním důvodem je{' '}
+          <strong>globální oteplování</strong>, které vede ke snížení
+          rozpustnosti plynů, a tedy i kyslíku. Studie ukazují, že tento proces
+          bude pokračovat po staletí, i kdyby všechny emise oxidu ohličitého (CO
+          <sub>2</sub>) byly okamžitě zastaveny.
         </p>
       </div>
     </>
