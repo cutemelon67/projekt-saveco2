@@ -18,9 +18,9 @@ import './icon.css';
 //   { name: 'directions_boat' },
 // ];
 
-export const Icon = ({ iconType, id }) => {
+export const Icon = ({ iconType, id, className }) => {
   return (
-    <label>
+    <label className={className}>
       <input id={id} name="transport-type--img" type="radio" />
       {<MaterialIcon icon={iconType} size={48} />}
     </label>

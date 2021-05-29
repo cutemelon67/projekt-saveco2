@@ -10,7 +10,7 @@ body {
   margin: 0;
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: black;
   background-color: white;
 }
@@ -38,11 +38,12 @@ h1 {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 0;
 }
 
 h3 {
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -124,6 +125,13 @@ h3 {
   padding: 0.063rem;
 }
 
+.transport-type--icon {
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
 .transport-type--img {
   display: flex;
   flex-wrap: wrap;
@@ -143,7 +151,7 @@ h3 {
 .transport-result {
   text-align: center;
   font-weight: 700;
-  margin-bottom: 0;
+  margin: 1.5rem 0;
 }
 
 .starting-page__form--fuel {
@@ -191,16 +199,17 @@ h3 {
   text-align: center;
 }
 
-.results__selected-transport--results {
+.selected-transport__text {
   border: 5px solid hsl(86.4, 71.1%, 32.5%);
 }
 
-.results__selected-transport--results > p {
+.selected-transport__text > p {
   margin-top: 0;
   text-align: left;
+  margin-bottom: 0;
 }
 
-.results__selected-transport--results-co2 {
+.selected-transport__values {
   display: flex;
   justify-content: center;
 }
@@ -215,6 +224,10 @@ h3 {
 .results-co2-number {
   font-size: 36px;
   font-weight: 800;
+}
+
+.results-co2-number > p {
+  margin: 0;
 }
 
 /* Alternatives*/

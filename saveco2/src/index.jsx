@@ -36,14 +36,14 @@ const App = () => {
             <h1 className="starting-page__name--headline">
               Spočítej si CO<sub>2</sub> stopu tvojí cesty
             </h1>
-            <h2 className="starting-page__name--subheadline">
+            <h3 className="starting-page__name--subheadline">
               a zjisti, kolik stromů tvá volba stojí.{' '}
-            </h2>
+            </h3>
             <Button type={'primary'}>Chci vědět víc</Button>
           </section>
           <form action="">
             <div className="starting-page__form--journey">
-              <h3>Tvoje cesta</h3>
+              <h2>Tvoje cesta</h2>
 
               <div className="form--from-to">
                 <div className="form__buttons">
@@ -79,13 +79,14 @@ const App = () => {
               <p className="distance-result">Zadaná vzdálenost: 100 km</p>
             </div>
             <div className="starting-page__form--transport-type">
-              <h3>Jak se přesuneš?</h3>
+              <h2>Jak se přesuneš?</h2>
               <div className="transport-type--img">
                 {Object.values(vehicleType).map((type) => (
                   <Icon
                     id={vehicleInfo[type].text}
                     iconType={vehicleInfo[type].icon}
                     key={vehicleInfo[type].text}
+                    className={'transport-type--icon'}
                   />
                 ))}
               </div>
@@ -95,7 +96,7 @@ const App = () => {
               </p>
             </div>
             <div className="starting-page__form--fuel">
-              <h3>Na co jezdíš?</h3>
+              <h2>Na co jezdíš?</h2>
               <div className="form--fuel">
                 {/* {Object.values(fuelType).map((fuel) => {
                   <InputBtn
@@ -178,7 +179,7 @@ const App = () => {
             ></MaterialIcon>{' '}
             benzin
           </p>
-          <div className="results__selected-transport--results">
+          <div className="selected-transport__text">
             <p>
               Svojí cestou autem na trase
               <br />
@@ -186,7 +187,7 @@ const App = () => {
               <br />
               vyprodukuješ
             </p>
-            <div className="results__selected-transport--results-co2">
+            <div className="selected-transport__values">
               <p className="results-co2-number">8,7</p>
               <p>
                 kg CO<sub>2</sub>
@@ -201,8 +202,10 @@ const App = () => {
                 <sub>2</sub>
                 absorboval?
               </p>
-              <p>4,7</p>
-              <p>měsíců</p>
+              <div className="selected-transport__values">
+                <p>4,7</p>
+                <p>měsíců</p>
+              </div>
             </div>
           </div>
         </div>
