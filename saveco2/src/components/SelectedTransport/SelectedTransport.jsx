@@ -14,7 +14,7 @@ export const SelectedTransport = () => {
         ></MaterialIcon>{' '}
         benzin
       </p>
-      <div className="results__selected-transport--results">
+      <div className="results__selected-transport--details">
         <p>
           Svojí cestou autem na trase
           <br />
@@ -22,8 +22,8 @@ export const SelectedTransport = () => {
           <br />
           vyprodukuješ
         </p>
-        <div className="results__selected-transport--results-co2">
-          <p className="results-co2-number">8,7</p>
+        <div className="selected-transport__values">
+          <p className="values--number">8,7</p>
           <p>
             kg CO<sub>2</sub>
             <br />
@@ -31,13 +31,13 @@ export const SelectedTransport = () => {
           </p>
         </div>
 
-        <div className="results__selected-transport--tree-text">
+        <div className="selected-transport__values">
           <p>
             Kolik času potřebuje jeden strom, aby tebou vytvořené CO
             <sub>2</sub>
             absorboval?
           </p>
-          <p>4,7</p>
+          <p className="values--number">4,7</p>
           <p>měsíců</p>
         </div>
       </div>

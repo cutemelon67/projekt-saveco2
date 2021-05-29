@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { StartingPage } from './components/StartingPage/StartingPage';
+import { FormPage } from './components/FormPage/FormPage';
 import { ResultsPage } from './components/ResultsPage/ResultsPage';
 import { MethodologyPage } from './components/MethodologyPage/MethodologyPage';
 import getResults from './components/Results/getResults';
@@ -17,7 +17,7 @@ import './style.css';
 const App = () => {
   return (
     <div className="container">
-      <StartingPage />
+      <FormPage />
       <ResultsPage />
       <MethodologyPage />
     </div>

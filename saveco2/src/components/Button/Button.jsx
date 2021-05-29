@@ -5,15 +5,15 @@ import './style.css';
 
 const classNames = require('classnames');
 
-export const Button = ({ className, type, children }) => {
+export const Button = ({ className, type, variant, children }) => {
   return (
     <button
       className={classNames(
         'btn',
-        type === 'primary' ? 'btn--primary' : 'btn--secondary',
+        variant === 'primary' ? 'btn--primary' : 'btn--secondary',
         className,
       )}
-      type="button"
+      type={type}
     >
       {children}
     </button>
