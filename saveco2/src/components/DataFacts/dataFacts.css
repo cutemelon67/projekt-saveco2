@@ -1,0 +1,29 @@
+.dataFacts__img {
+  width: 100%;
+}
+
+.dataFacts__text {
+  text-align: justify;
+  padding: 0;
+  margin: 1rem 1.875rem 2rem 1.875rem;
+}
+
+.container__img {
+  position: relative;
+  text-align: center;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.dataFacts__heading--traffic {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  opacity: 60%;
+}
+
+.dataFacts_section-name {
+}

@@ -37,7 +37,7 @@ export const ResultsPage = (props) => {
         <div className="results__methodology">
           <MethodologyResults />
         </div>
-        <div className="results__dataFacts">
+        <div className="results__data-facts">
           <DataFacts />
         </div>
         <Footer></Footer>

@@ -1,20 +1,25 @@
 import React from 'react';
 import './dataFacts.css';
+import imgTraffic from './img/traffic_small.jpg';
+import imgTrees from './img/trees_small.jpg';
+import imgTurtle from './img/turtle_small.jpg';
 
 export const DataFacts = (props) => {
   return (
     <>
-      <h2>Víte, že...</h2>
+      <h2 className="dataFacts_section-name">Víte, že...</h2>
       <div className="dataFacts__container">
-        <h3 className="dataFacts__heading">
-          Doprava představuje pětinu celosvětových emisí oxidu uhličitého (CO
-          <sub>2</sub>)
-        </h3>
-        <img
-          className="dataFacts__img"
-          src=""
-          alt="Intersection with a lot of traffic"
-        />
+        <div className="container__img">
+          <img
+            className="dataFacts__img"
+            src={imgTraffic}
+            alt="Intersection with a lot of traffic"
+          />
+          <h3 className="dataFacts__heading--traffic">
+            Doprava představuje pětinu celosvětových emisí oxidu uhličitého (CO
+            <sub>2</sub>)
+          </h3>
+        </div>
         <p className="dataFacts__text">
           Sektor dopravy tvoří přibližně 24 % světových emisí CO<sub>2</sub>.
           Největší podíl na nich má silniční doprava (75 %). 45 % emisí CO
@@ -24,8 +29,16 @@ export const DataFacts = (props) => {
         </p>
       </div>
       <div className="dataFacts__container">
-        <h3 className="dataFacts__heading">Stromy jsou plíce planety</h3>
-        <img className="dataFacts__img" src="" alt="Sunshine in the forest" />
+        <div className="container__img">
+          <img
+            className="dataFacts__img"
+            src={imgTrees}
+            alt="Sunshine in the forest"
+          />
+          <h3 className="dataFacts__heading--traffic">
+            Stromy jsou plíce planety
+          </h3>
+        </div>
         <p className="dataFacts__text">
           Během jednoho roku dospělý strom přijme z atmosféry asi 22 kilogramů
           oxidu uhličitého (CO<sub>2</sub>) a výměnou uvolní kyslík. Odhaduje
@@ -35,10 +48,16 @@ export const DataFacts = (props) => {
         </p>
       </div>
       <div className="dataFacts__container">
-        <h3 className="dataFacts__heading">
-          Důsledkem globálního oteplování ubývá v oceánech kyslík
-        </h3>
-        <img className="datesFacts__img" src="" alt="Turtle in the ocean" />
+        <div className="container__img">
+          <img
+            className="dataFacts__img"
+            src={imgTurtle}
+            alt="Turtle in the ocean"
+          />
+          <h3 className="dataFacts__heading--traffic">
+            Důsledkem globálního oteplování ubývá v oceánech kyslík
+          </h3>
+        </div>
         <p className="dataFacts__text">
           Život téměř všech zvířat v oceánu závisí na dostupnosti kyslíku, který
           se rozpouští jako plyn v mořské vodě. Oceán však již několik
