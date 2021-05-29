@@ -14,7 +14,7 @@ export const MethodologyPage = (props) => {
     <>
       <div className="methodology">
         <Header></Header>
-        <Nav>Výsledky</Nav>
+        <Nav href="/results">Výsledky</Nav>
         <div className="methodology__container">
           <Methodology />
         </div>

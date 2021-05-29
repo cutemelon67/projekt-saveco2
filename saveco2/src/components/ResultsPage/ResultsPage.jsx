@@ -10,6 +10,7 @@ import { Choice } from '../Choice/Choice';
 import { Alternative } from '../Alternative/Alternative';
 import { MethodologyResults } from '../MethodologyResults/MethodologyResults';
 import { DataFacts } from '../DataFacts/DataFacts';
+import { Link } from 'react-router-dom';
 import './resultsPage.css';
 
 export const ResultsPage = (props) => {
@@ -20,7 +21,7 @@ export const ResultsPage = (props) => {
         <h2 className="results--header">
           Jaká je CO<sub>2</sub> stopa tvojí cesty?
         </h2>
-        <Nav>Zadat cestu</Nav>
+        <Nav href={'/'}>Zadat trasu</Nav>
         <div className="results__selected-transport">
           <SelectedTransport />
         </div>
@@ -29,7 +30,7 @@ export const ResultsPage = (props) => {
           <Alternative />
         </div>
         <div className="results__buttons">
-          <Nav>Upravit trasu</Nav>
+          <Nav href="/">Upravit trasu</Nav>
           <Button>
             Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
           </Button>
