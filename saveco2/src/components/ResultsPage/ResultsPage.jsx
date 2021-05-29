@@ -17,10 +17,10 @@ export const ResultsPage = (props) => {
     <>
       <div className="results">
         <Header></Header>
-        <Nav>Zadat cestu</Nav>
-        <h1 className="results--header">
+        <h2 className="results--header">
           Jaká je CO<sub>2</sub> stopa tvojí cesty?
-        </h1>
+        </h2>
+        <Nav>Zadat cestu</Nav>
         <div className="results__selected-transport">
           <SelectedTransport />
         </div>

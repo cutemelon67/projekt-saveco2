@@ -10,7 +10,7 @@ body {
   margin: 0;
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: black;
   background-color: white;
 }
@@ -38,11 +38,12 @@ h1 {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 0;
 }
 
 h3 {
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -69,15 +70,20 @@ h3 {
   box-shadow: 2px 2px 4px #000000;
 }
 
+.btn--secondary {
+  flex: 50%;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
 .form__buttons {
   display: flex;
   padding: 0;
 }
 
-.btn--secondary {
-  flex: 50%;
-  margin-left: 1px;
-  margin-right: 1px;
+.form__buttons--calc {
+  display: flex;
+  flex-direction: column;
 }
 
 .undefined {
@@ -124,6 +130,13 @@ h3 {
   padding: 0.063rem;
 }
 
+.transport-type--icon {
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
 .transport-type--img {
   display: flex;
   flex-wrap: wrap;
@@ -143,7 +156,7 @@ h3 {
 .transport-result {
   text-align: center;
   font-weight: 700;
-  margin-bottom: 0;
+  margin: 1.5rem 0;
 }
 
 .starting-page__form--fuel {
@@ -168,17 +181,66 @@ h3 {
   margin-top: 1.5rem;
 }
 
+.people--count {
+  flex: 50%;
+}
+
 .starting-page__form--buttons {
   padding: 0.938rem 1.563rem;
 }
 
 /* Výsledky */
 
+/* Selected Transport*/
+
 .results__selected-transport {
   margin: 0 1.875rem;
 }
 
 .results--header {
-  margin: 1.5rem 1.875rem 0 1.875rem;
   text-align: center;
+  background-image: url(img/road-small-cut.jpg);
+  color: white;
+  padding: 2.5rem;
+}
+
+.results__selected-transport > p {
+  text-align: center;
+}
+
+.selected-transport__text {
+  border: 5px solid hsl(86.4, 71.1%, 32.5%);
+}
+
+.selected-transport__text > p {
+  margin-top: 0;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.selected-transport__values {
+  display: flex;
+  justify-content: center;
+}
+
+.results__selected-transport--results-co2 p {
+  margin: 0;
+  padding: 0;
+  flex-basis: 50%;
+  align-self: center;
+}
+
+.results-co2-number {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.results-co2-number > p {
+  margin: 0;
+}
+
+/* Alternatives*/
+
+.results__alternatives {
+  margin: 1.5rem 1.875rem 0 1.875rem;
 }

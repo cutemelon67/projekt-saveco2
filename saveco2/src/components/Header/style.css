@@ -5,7 +5,8 @@ header {
 }
 
 .header__logo {
-  width: 15%;
-  margin-left: 1.875rem;
+  width: 5.938rem;
   position: absolute;
+  top: 0.782rem;
+  left: 1.3rem;
 }

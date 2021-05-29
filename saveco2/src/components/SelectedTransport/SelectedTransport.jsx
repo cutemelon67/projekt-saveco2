@@ -14,21 +14,33 @@ export const SelectedTransport = () => {
         ></MaterialIcon>{' '}
         benzin
       </p>
-      <p>
-        Svojí cestou autem na trase České Budějovice - Písek a zpět vyprodukuješ
-      </p>
-      <p>8,7</p>
-      <p>
-        kg CO<sub>2</sub>
-        <br />
-        na osobu
-      </p>
-      <p>
-        Kolik času potřebuje jeden strom, aby tebou vytvořené CO<sub>2</sub>{' '}
-        absorboval?
-      </p>
-      <p>4,7</p>
-      <p>měsíců</p>
+      <div className="results__selected-transport--results">
+        <p>
+          Svojí cestou autem na trase
+          <br />
+          <strong>České Budějovice - Písek a zpět</strong>
+          <br />
+          vyprodukuješ
+        </p>
+        <div className="results__selected-transport--results-co2">
+          <p className="results-co2-number">8,7</p>
+          <p>
+            kg CO<sub>2</sub>
+            <br />
+            na osobu
+          </p>
+        </div>
+
+        <div className="results__selected-transport--tree-text">
+          <p>
+            Kolik času potřebuje jeden strom, aby tebou vytvořené CO
+            <sub>2</sub>
+            absorboval?
+          </p>
+          <p>4,7</p>
+          <p>měsíců</p>
+        </div>
+      </div>
     </>
   );
 };
