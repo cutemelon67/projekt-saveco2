@@ -14,17 +14,18 @@ import {
 import { inputFromTo } from '../InputField/InputField';
 import { inputDistance } from '../InputField/InputField';
 import { useForm } from 'react-hook-form';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import './formPage.css';
 
 export const FormPage = ({ result, setResult }) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+    setResult(data);
   };
 
   return (
-    <>
+    <Router>
       <div className="starting-page">
         <Header></Header>
         <main>
@@ -37,7 +38,7 @@ export const FormPage = ({ result, setResult }) => {
             </h2>
             <Button variant={'primary'}>Chci vědět víc</Button>
           </section>
-          <form onSubmit={() => handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="starting-page__form--journey">
               <h3>Tvoje cesta</h3>
 
@@ -53,10 +54,10 @@ export const FormPage = ({ result, setResult }) => {
                       id={input.id}
                       name={input.name}
                       type={input.type}
-                      value={input.value}
                       required={input.required}
                       key={input.id}
                       register={register}
+                      defaultValue={result.name}
                     >
                       {input.text}
                     </InputField>
@@ -66,10 +67,10 @@ export const FormPage = ({ result, setResult }) => {
                     id={inputDistance.id}
                     name={inputDistance.name}
                     type={inputDistance.type}
-                    value={inputDistance.value}
                     required={inputDistance.required}
                     key={inputDistance.id}
                     register={register}
+                    defaultValue={result.name}
                   >
                     {inputDistance.text}
                   </InputField>
@@ -82,6 +83,8 @@ export const FormPage = ({ result, setResult }) => {
                 type={'checkbox'}
                 name={'round-trip'}
                 id={'form--round-trip'}
+                register={register}
+                defaultValue={result.name}
               >
                 zpáteční cesta
               </InputBtn>
@@ -96,6 +99,8 @@ export const FormPage = ({ result, setResult }) => {
                     iconType={vehicleInfo[type].icon}
                     key={vehicleInfo[type].text}
                     className={'transport-type--icon'}
+                    register={register}
+                    defaultValue={result.name}
                   />
                 ))}
               </div>
@@ -109,7 +114,14 @@ export const FormPage = ({ result, setResult }) => {
               <div className="form--fuel">
                 {Object.entries(fuelType).map(([key, fuel]) => {
                   return (
-                    <InputBtn type={'radio'} name={'fuel'} id={key} key={key}>
+                    <InputBtn
+                      type={'radio'}
+                      name={'fuel'}
+                      id={key}
+                      key={key}
+                      register={register}
+                      defaultValue={result.name}
+                    >
                       {fuel}
                     </InputBtn>
                   );
@@ -125,6 +137,7 @@ export const FormPage = ({ result, setResult }) => {
                   name={'people--count'}
                   type={'number'}
                   register={register}
+                  defaultValue={result.name}
                 >
                   Kolik vás pojede?
                 </InputField>
@@ -137,7 +150,7 @@ export const FormPage = ({ result, setResult }) => {
                   className={'standard'}
                   type={'submit'}
                 >
-                  Spočítej
+                  <Link to="/results">Spočítej</Link>
                 </Button>
                 <Button className={'standard'}>
                   Přidej dopravní prostředek
@@ -148,6 +161,6 @@ export const FormPage = ({ result, setResult }) => {
         </main>
         <Footer></Footer>
       </div>
-    </>
+    </Router>
   );
 };

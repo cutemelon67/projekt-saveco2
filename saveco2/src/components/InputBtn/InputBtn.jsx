@@ -1,11 +1,11 @@
 import React from 'react';
 import './inputBtn.css';
 
-export const InputBtn = ({ type, name, id, value, children }) => {
+export const InputBtn = ({ children, type, name, id, className, register }) => {
   return (
     <>
-      <label>
-        <input id={id} name={name} type={type} />
+      <label className={className}>
+        <input {...register(name)} id={id} type={type} />
         {children}
       </label>
     </>

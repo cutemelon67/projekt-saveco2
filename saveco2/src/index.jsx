@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { FormPage } from './components/FormPage/FormPage';
 import { ResultsPage } from './components/ResultsPage/ResultsPage';
 import { MethodologyPage } from './components/MethodologyPage/MethodologyPage';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import getResults from './components/Results/getResults';
 import './db.js';
 import './style.css';
@@ -18,16 +19,24 @@ const App = () => {
   const [result, setResult] = useState({});
 
   return (
-    <div className="container">
-      {
-        Object.keys(result).length ? (
-          <ResultsPage result={result} />
-        ) : (
-          <FormPage result={result} setResult={setResult} />
-        )
-        // <MethodologyPage />
-      }
-    </div>
+    <Router>
+      <div className="container">
+        <Switch>
+          {Object.keys(result).length ? (
+            <Route path="/results" component={ResultsPage} exact>
+              <ResultsPage result={result} />
+            </Route>
+          ) : (
+            <Route path="/" component={FormPage}>
+              <FormPage result={result} setResult={setResult} />
+            </Route>
+          )}
+          <Route path="/methodology" component={MethodologyPage}>
+            <MethodologyPage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 render(<App />, document.querySelector('#app'));
