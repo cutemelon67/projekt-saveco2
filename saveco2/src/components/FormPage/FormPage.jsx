@@ -12,9 +12,9 @@ import {
   vehicleInfo,
 } from '../TransportModes/TransportModes';
 import { inputFromTo } from '../InputField/InputField';
-import './startingPage.css';
+import './formPage.css';
 
-export const StartingPage = (props) => {
+export const FormPage = (props) => {
   return (
     <>
       <div className="starting-page">
@@ -27,7 +27,7 @@ export const StartingPage = (props) => {
             <h2 className="starting-page__name--subheadline">
               a zjisti, kolik stromů tvá volba stojí.{' '}
             </h2>
-            <Button type={'primary'}>Chci vědět víc</Button>
+            <Button variant={'primary'}>Chci vědět víc</Button>
           </section>
           <form action="">
             <div className="starting-page__form--journey">
@@ -35,8 +35,8 @@ export const StartingPage = (props) => {
 
               <div className="form--from-to">
                 <div className="form__buttons">
-                  <Button type={'secondary'}>Jednorázově</Button>
-                  <Button type={'secondary'}>Pravidelně</Button>
+                  <Button>Jednorázově</Button>
+                  <Button>Pravidelně</Button>
                 </div>
                 <div className="form__input">
                   {Object.values(inputFromTo).map((input) => (
@@ -74,6 +74,7 @@ export const StartingPage = (props) => {
                     id={vehicleInfo[type].text}
                     iconType={vehicleInfo[type].icon}
                     key={vehicleInfo[type].text}
+                    className={'transport-type--icon'}
                   />
                 ))}
               </div>
@@ -108,9 +109,13 @@ export const StartingPage = (props) => {
               </div>
             </div>
             <div className="starting-page__form--buttons">
-              <div className="form__buttons">
-                <Button type="primary">Spočítej</Button>
-                <Button type="primary">Přidej dopravní prostředek</Button>
+              <div className="form__buttons--submit">
+                <Button variant={'primary'} className={'standard'}>
+                  Spočítej
+                </Button>
+                <Button className={'standard'}>
+                  Přidej dopravní prostředek
+                </Button>
               </div>
             </div>
           </form>

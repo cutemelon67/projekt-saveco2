@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './header.css';
 import logo from './img/saveco2-logo.svg';
 
 export const Header = (props) => {
