@@ -12,7 +12,7 @@ export const SelectedTransport = () => {
           icon={vehicleInfo[vehicleType.CAR].icon}
           size={48}
         ></MaterialIcon>{' '}
-        benzin
+        benzín
       </p>
       <div className="results__selected-transport--details">
         <p>
@@ -31,12 +31,11 @@ export const SelectedTransport = () => {
           </p>
         </div>
 
+        <p>
+          Na absorbci tebou vytvořeného CO
+          <sub>2</sub>&nbsp; potřebuje jeden strom
+        </p>
         <div className="selected-transport__values">
-          <p>
-            Kolik času potřebuje jeden strom, aby tebou vytvořené CO
-            <sub>2</sub>
-            absorboval?
-          </p>
           <p className="values--number">4,7</p>
           <p>měsíců</p>
         </div>

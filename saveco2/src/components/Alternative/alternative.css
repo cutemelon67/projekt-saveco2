@@ -1,0 +1,42 @@
+.results__alternative-transport {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.alternative-transport__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.alternative-transport__details p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.alternative-transport__graph {
+  flex: 0 0 5rem;
+  background-color: lightgray;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+}
+
+/*
+.skill__bar {
+  flex: 0 0 30rem;
+  background-color: lightgray;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+}
+
+.skill__progress {
+  background-color: #444;
+  width: 50%;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+}
+*/

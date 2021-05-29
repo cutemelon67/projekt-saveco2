@@ -204,7 +204,7 @@ h3 {
   padding: 2.5rem;
 }
 
-.results__selected-transport > p {
+.results__selected-transport + p {
   text-align: center;
 }
 
@@ -212,14 +212,25 @@ h3 {
   border: 5px solid hsl(86.4, 71.1%, 32.5%);
 }
 
+.results__selected-transport--details > p {
+  margin: 0;
+  text-align: left;
+}
+
 .selected-transport__values {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .values--number {
   font-size: 36px;
   font-weight: 800;
+  margin: 0;
+}
+
+.values--number + p {
+  margin: 0;
 }
 
 /* Alternatives*/

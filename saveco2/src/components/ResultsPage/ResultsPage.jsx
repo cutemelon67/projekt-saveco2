@@ -25,9 +25,7 @@ export const ResultsPage = (props) => {
           <SelectedTransport />
         </div>
         <div className="results__alternatives">
-          <Choice
-            text={'Jsi si svojí volbou jistý? Zkus raději jednu z alternativ'}
-          ></Choice>
+          <Choice></Choice>
           <Alternative />
         </div>
         <div className="results__buttons">
