@@ -148,15 +148,16 @@ const App = () => {
                   id={'people--count'}
                   name={'people--count'}
                   type={'number'}
+                  className={'people--count'}
                 >
                   Kolik vás pojede?
                 </InputField>
               </div>
             </div>
             <div className="starting-page__form--buttons">
-              <div className="form__buttons">
+              <div className="form__buttons-calc">
                 <Button type="primary">Spočítej</Button>
-                <Button type="primary">Přidej dopravní prostředek</Button>
+                <Button type="secondary">Přidej dopravní prostředek</Button>
               </div>
             </div>
           </form>
