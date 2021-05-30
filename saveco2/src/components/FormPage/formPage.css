@@ -12,7 +12,7 @@
 
 /*Chci vědět víc*/
 .btn--primary {
-  background-color: hsl(86.6, 71.2%, 43.5%);
+  background-color: hsl(86.4, 71.1%, 32.5%);
   color: white;
   box-shadow: 2px 2px 4px #000000;
 }
@@ -42,12 +42,14 @@
 .btn.btn--secondary.random:active,
 .btn.btn--secondary.random:hover {
   background-color: hsl(86.6, 71.2%, 43.5%);
+  border: 1px solid hsl(86.6, 71.2%, 43.5%);
   color: white;
 }
 
 .btn.btn--secondary.regular:active,
 .btn.btn--secondary.regular:hover {
   background-color: hsl(86.6, 71.2%, 43.5%);
+  border: 1px solid hsl(86.6, 71.2%, 43.5%);
   color: white;
 }
 
@@ -188,7 +190,8 @@
 /*Spočítej*/
 .btn.btn--primary.standard {
   box-shadow: none;
-  border: 1px solid hsl(86.6, 71.2%, 43.5%);
+  border: 1px solid hsl(86.4, 71.1%, 32.5%);
+  background-color: hsl(86.4, 71.1%, 32.5%);
   margin-bottom: 0.625rem;
 }
 
@@ -200,13 +203,14 @@
 
 /*Přidej dopravní prostředek*/
 .btn.btn--secondary.standard {
-  border: 2px solid hsl(86.6, 71.2%, 43.5%);
+  border: 1px solid hsl(86.6, 71.2%, 43.5%);
   margin-top: 0;
 }
 
 .btn.btn--secondary.standard:active,
 .btn.btn--secondary.standard:hover {
-  background-color: hsl(87, 55.6%, 85.9%);
-  border: 2px solid hsl(86.6, 71.2%, 43.5%);
+  background-color: hsl(86.6, 71.2%, 43.5%);
+  border: 1px solid hsl(86.6, 71.2%, 43.5%);
   margin-top: 0;
+  color: white;
 }

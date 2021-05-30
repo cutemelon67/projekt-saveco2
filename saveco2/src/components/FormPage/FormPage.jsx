@@ -97,7 +97,7 @@ export const FormPage = ({ userData, setUserData }) => {
         <main>
           <section className="starting-page__name">
             <h1 className="starting-page__name--headline">
-              Spočítej si CO<sub>2</sub> stopu tvojí cesty
+              SPOČÍTEJ SI CO<sub>2</sub> STOPU TVOJÍ CESTY
             </h1>
             <h3 className="starting-page__name--subheadline">
               a zjisti, kolik stromů tvá volba stojí.{' '}
@@ -113,7 +113,7 @@ export const FormPage = ({ userData, setUserData }) => {
                 });
               }}
             >
-              Chci vědět víc
+              CHCI VĚDĚT VÍC
             </Button>
           </section>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -123,10 +123,10 @@ export const FormPage = ({ userData, setUserData }) => {
               <div className="form--from-to">
                 <div className="form__buttons">
                   <Button type={'button'} className={'random'}>
-                    Jednorázově
+                    JEDNORÁZOVĚ
                   </Button>
                   <Button type={'button'} className={'regular'}>
-                    Pravidelně
+                    PRAVIDELNĚ
                   </Button>
                 </div>
                 <div className="form__input">
@@ -236,10 +236,10 @@ export const FormPage = ({ userData, setUserData }) => {
                   className={'standard'}
                   type={'submit'}
                 >
-                  Spočítej
+                  SPOČÍTEJ
                 </Button>
                 <Button type={'submit'} className={'standard'}>
-                  Přidej dopravní prostředek
+                  PŘIDEJ DOPRAVNÍ PROSTŘEDEK
                 </Button>
               </div>
             </div>

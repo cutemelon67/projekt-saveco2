@@ -14,7 +14,7 @@
 }
 
 .results__selected-transport--details {
-  border: 5px solid hsl(86.4, 71.1%, 32.5%);
+  background-color: hsl(87, 55.6%, 85.9%);
 }
 
 .results__selected-transport--details > p {
@@ -27,7 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .values--number {
