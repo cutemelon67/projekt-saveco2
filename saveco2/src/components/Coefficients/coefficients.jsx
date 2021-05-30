@@ -17,7 +17,10 @@ export const coefficients = {
       [carSize.SMALL]: 0.1666,
       [carSize.LARGE]: 0.24527,
     },
-    [fuelType.HYBRID]: 0.11433,
+    [fuelType.HYBRID]: {
+      [carSize.SMALL]: 0.11433,
+      [carSize.LARGE]: 0.11433,
+    },
     [fuelType.CNG]: {
       [carSize.SMALL]: 0.17424,
       [carSize.LARGE]: 0.24523,
@@ -30,7 +33,10 @@ export const coefficients = {
       [carSize.SMALL]: 0.05274,
       [carSize.LARGE]: 0.05497,
     },
-    [fuelType.PLUGIN]: 0.09433,
+    [fuelType.PLUGIN]: {
+      [carSize.SMALL]: 0.09433,
+      [carSize.LARGE]: 0.09433,
+    },
     [fuelType.UNKNOWN]: {
       [carSize.SMALL]: 0.17015,
       [carSize.LARGE]: 0.24441,

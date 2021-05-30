@@ -35,7 +35,7 @@ export const getResults = ({
     distance = distance * 2;
   }
 
-  console.log(carResults(100, 1, 'PETROL'));
+  console.log(carResults(distance, peopleCount, fuel));
 
   return results;
 };
