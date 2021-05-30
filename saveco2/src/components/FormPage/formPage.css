@@ -124,7 +124,7 @@
 }
 
 .transport-type--img [type='radio'] {
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 .transport-result {
