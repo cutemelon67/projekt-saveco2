@@ -100,6 +100,7 @@
 }
 
 .transport-type--icon:active,
+.transport-type--icon:focus,
 .transport-type--icon:hover {
   color: hsl(86.6, 71.2%, 43.5%);
   border-radius: 50%;
