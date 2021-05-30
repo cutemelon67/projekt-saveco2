@@ -35,7 +35,7 @@ export const getResults = ({
     distance = distance * 2;
   }
 
-  console.log(carResults(distance, peopleCount, fuel));
+  // console.log(carResults(distance, peopleCount, fuel));
 
   return results;
 };
@@ -47,7 +47,8 @@ const carResults = ({ distance, peopleCount, fuel }) => {
   // const [tree, setTree] = useState(0);
   const treeAbsorption = 22;
   // převod počtu osob na celé číslo:
-  peopleCount = parseInt(peopleCount);
+
+  console.log(peopleCount);
   // validace zadání počtu osob a min / max počet osob:
   if (!(peopleCount && peopleCount > 0 && peopleCount <= 9)) {
     return;

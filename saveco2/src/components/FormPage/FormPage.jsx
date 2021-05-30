@@ -7,8 +7,13 @@ import { InputField } from '../InputField/InputField';
 import { InputBtn } from '../InputBtn/InputBtn';
 import { getResults } from '../getResults/getResults';
 import {
-  fuelType,
   vehicleType,
+  fuelType,
+  fuelInfo,
+  carSize,
+  busType,
+  busInfo,
+  flightType,
   vehicleInfo,
 } from '../TransportModes/TransportModes';
 import { inputFromTo } from '../InputField/InputField';
@@ -73,7 +78,7 @@ export const FormPage = ({ userData, setUserData }) => {
     setValue('peopleCount', 1);
     setValue('transportType', 'car');
     setValue('roundTrip', false);
-    setValue('fuel', 'PETROL');
+    setValue('fuel', 'petrol');
   }, []);
 
   console.log(userData);
@@ -181,19 +186,19 @@ export const FormPage = ({ userData, setUserData }) => {
             <div className="starting-page__form--fuel">
               <h2>Na co jezdíš?</h2>
               <div className="form--fuel">
-                {Object.entries(fuelType).map(([key, fuel]) => {
+                {Object.values(fuelType).map((fuel) => {
                   return (
                     <InputBtn
                       type={'radio'}
                       name={'fuel'}
-                      id={key}
-                      key={key}
+                      id={fuel}
+                      key={fuel}
                       required={true}
                       register={register}
                       defaultValue={userData.name}
                       className={'form--fuel-radio'}
                     >
-                      {fuel}
+                      {fuelInfo[fuel]}
                     </InputBtn>
                   );
                 })}

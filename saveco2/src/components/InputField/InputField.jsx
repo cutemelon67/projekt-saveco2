@@ -57,6 +57,6 @@ export const inputDistance = {
   name: 'distance',
   type: 'number',
   value: 100,
-  required: true,
+  required: false,
   text: 'Vzdálenost (km):',
 };
