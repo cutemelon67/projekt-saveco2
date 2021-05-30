@@ -20,7 +20,7 @@ export const DataFacts = (props) => {
           </h3>
         </div>
         <p className="dataFacts__text">
-          Sektor dopravy tvoří přibližně <strong>24 % </strong> světových emisí
+          Sektor dopravy tvoří přibližně <strong>24 % světových emisí </strong>
           oxidu ohličitého (CO<sub>2</sub>) . Největší podíl na nich má silniční
           doprava (75 %). 45 % emisí CO
           <sub>2</sub> pochází přitom z automobilů a autobusů, zbylých 29 %
@@ -40,8 +40,8 @@ export const DataFacts = (props) => {
           </h3>
         </div>
         <p className="dataFacts__text">
-          Během jednoho roku dospělý strom přijme z atmosféry asi{' '}
-          <strong>22 kilogramů </strong>
+          Během jednoho roku <strong>dospělý strom přijme </strong>z atmosféry
+          asi <strong>22 kilogramů </strong>
           oxidu uhličitého (CO<sub>2</sub>) a výměnou uvolní kyslík. Odhaduje
           se, že každý rok 1,3 milionu stromů odstraní ze vzduchu více než 2 500
           tun znečišťujících látek. Je tedy pravděpodobné, že bez stromů bychom
