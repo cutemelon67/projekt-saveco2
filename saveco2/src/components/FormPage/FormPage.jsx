@@ -5,7 +5,7 @@ import { Footer } from '../Footer/Footer';
 import { Icon } from '../Icon/Icon';
 import { InputField } from '../InputField/InputField';
 import { InputBtn } from '../InputBtn/InputBtn';
-import { getResults } from '../Results/getResults';
+import { getResults } from '../getResults/getResults';
 import {
   fuelType,
   vehicleType,
@@ -44,7 +44,9 @@ export const FormPage = ({ result, setResult }) => {
             <h3 className="starting-page__name--subheadline">
               a zjisti, kolik stromů tvá volba stojí.{' '}
             </h3>
-            <Button variant={'primary'}>Chci vědět víc</Button>
+            <Button type={'button'} variant={'primary'}>
+              Chci vědět víc
+            </Button>
           </section>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="starting-page__form--journey">
@@ -52,8 +54,12 @@ export const FormPage = ({ result, setResult }) => {
 
               <div className="form--from-to">
                 <div className="form__buttons">
-                  <Button className={'random'}>Jednorázově</Button>
-                  <Button className={'regular'}>Pravidelně</Button>
+                  <Button type={'button'} className={'random'}>
+                    Jednorázově
+                  </Button>
+                  <Button type={'button'} className={'regular'}>
+                    Pravidelně
+                  </Button>
                 </div>
                 <div className="form__input">
                   {Object.values(inputFromTo).map((input) => (
@@ -164,7 +170,7 @@ export const FormPage = ({ result, setResult }) => {
                 >
                   Spočítej
                 </Button>
-                <Button className={'standard'}>
+                <Button type={'submit'} className={'standard'}>
                   Přidej dopravní prostředek
                 </Button>
               </div>

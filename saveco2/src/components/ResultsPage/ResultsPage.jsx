@@ -3,7 +3,7 @@ import { Header } from '../Header/Header';
 import { Button } from '../Button/Button';
 import { Footer } from '../Footer/Footer';
 import { Nav } from '../Nav/Nav';
-import getResults from '../Results/getResults';
+import getResults from '../getResults/getResults';
 import MaterialIcon from 'react-google-material-icons';
 import { SelectedTransport } from '../SelectedTransport/SelectedTransport';
 import { Choice } from '../Choice/Choice';
@@ -31,9 +31,12 @@ export const ResultsPage = (props) => {
         </div>
         <div className="results__buttons">
           <Nav href="/">Upravit trasu</Nav>
-          <Button>
-            Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
-          </Button>
+          <Link to={'/'}>
+            <Button>
+              Zadej novou trasu{' '}
+              <MaterialIcon icon={'chevron_right'} size={12} />
+            </Button>
+          </Link>
         </div>
         <div className="results__methodology">
           <MethodologyResults />
