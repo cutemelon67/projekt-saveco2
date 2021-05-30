@@ -48,67 +48,16 @@ h3 {
   margin: 0;
 }
 
-.starting-page__name--headline {
-  color: white;
-  text-shadow: 2px 2px 4px #000000;
-}
-
-.starting-page__name--subheadline {
-  color: white;
-  text-shadow: 2px 2px 4px #000000;
-  margin-top: 1.4rem;
-}
-
-/* Výsledky */
-
-/* Selected Transport*/
-
-.results--header {
-  text-align: center;
-  background-image: url(img/road-small-cut.jpg);
-  color: white;
-  padding: 2.5rem;
-}
-
-.results__selected-transport + p {
-  text-align: center;
-}
-
-.results__selected-transport--details {
-  border: 5px solid hsl(86.4, 71.1%, 32.5%);
-}
-
-.results__selected-transport--details > p {
-  margin: 0;
-  text-align: left;
-}
-
-.selected-transport__values {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.values--number {
-  font-size: 36px;
-  font-weight: 800;
-  margin: 0;
-}
-
-.values--number + p {
-  margin: 0;
-}
-
 /* Alternatives*/
 
 .results__alternatives {
-  margin-top: 1.5rem;
+  margin: 1.5rem 1.875rem 0 1.875rem;
 }
 
 /*Methodology Results*/
 
 .results__methodology {
-  margin-top: 1.5rem;
+  margin: 1.5rem 1.875rem 0 1.875rem;
   border: 5px solid lightgray;
   display: flex;
   flex-direction: column;
@@ -130,4 +79,10 @@ h3 {
 .btn--center {
   max-width: 200px;
   margin-top: 0;
+  border: 2px solid hsl(86.6, 71.2%, 43.5%);
+}
+.btn--center:active,
+.btn--center:hover {
+  background-color: hsl(87, 55.6%, 85.9%);
+  border: 2px solid hsl(86.6, 71.2%, 43.5%);
 }

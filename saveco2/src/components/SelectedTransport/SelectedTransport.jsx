@@ -6,14 +6,16 @@ import './selectedTransport.css';
 export const SelectedTransport = () => {
   return (
     <>
-      <p>
-        Výsledky pro{' '}
-        <MaterialIcon
-          icon={vehicleInfo[vehicleType.CAR].icon}
-          size={48}
-        ></MaterialIcon>{' '}
-        benzín
-      </p>
+      <div className="results__selected-transport--overview">
+        <p>Výsledky pro </p>
+        <div>
+          <MaterialIcon
+            icon={vehicleInfo[vehicleType.CAR].icon}
+            size={48}
+          ></MaterialIcon>{' '}
+        </div>
+        <p>benzín</p>
+      </div>
       <div className="results__selected-transport--details">
         <p>
           Svojí cestou autem na trase

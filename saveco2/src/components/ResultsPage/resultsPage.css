@@ -1,1 +1,41 @@
+/* Selected Transport*/
 
+.results--header {
+  text-align: center;
+  background-image: url(img/road_small_cut.jpg);
+  color: white;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+/* Results - Výsledky pro */
+.results__selected-transport {
+  margin: 0 1.875rem;
+}
+
+.results__selected-transport--details {
+  border: 5px solid hsl(86.4, 71.1%, 32.5%);
+}
+
+.results__selected-transport--details > p {
+  margin: 0;
+  padding: 0.938rem;
+  text-align: justify;
+}
+
+.selected-transport__values {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 1.25px;
+}
+
+.values--number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.selected-transport__values p {
+  margin-top: 0;
+}
