@@ -1,0 +1,115 @@
+/*Chci vědět víc*/
+.btn--primary {
+  background-color: hsl(86.6, 71.2%, 43.5%);
+  color: white;
+  box-shadow: 2px 2px 4px #000000;
+}
+
+.btn--primary:active {
+  background-color: hsl(86.6, 71.2%, 21.8%);
+}
+
+.btn--primary:hover {
+  background-color: hsl(86.6, 71.2%, 21.8%);
+}
+
+/* Jednorázově, Pravidelně*/
+.form__buttons {
+  display: flex;
+  padding: 0;
+}
+
+.btn--secondary {
+  flex: 50%;
+  margin-left: 1px;
+  margin-right: 1px;
+  border: 2px solid hsl(86.6, 71.2%, 43.5%);
+}
+
+/*Jednorázově*/
+.btn.btn--secondary.random:active,
+.btn.btn--secondary.random:hover {
+  background-color: hsl(86.6, 71.2%, 43.5%);
+  color: white;
+}
+
+.btn.btn--secondary.regular:active,
+.btn.btn--secondary.regular:hover {
+  background-color: hsl(86.6, 71.2%, 43.5%);
+  color: white;
+}
+
+/* Zvolený dopravní */
+.transport-result {
+  text-align: center;
+  font-weight: 700;
+  margin: 1.5rem 0;
+}
+
+/* Na co jezdíš*/
+.starting-page__form--fuel {
+  margin-bottom: 1.5rem;
+  background: white;
+}
+
+.form--fuel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.form--fuel-radio {
+  width: calc(100% / 3);
+  margin-top: 1.25rem;
+}
+
+/*Kolik vás pojede?*/
+
+.starting-page__form--people {
+  background: white;
+}
+
+.form--people {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.people--count {
+  flex: 50%;
+}
+
+/*Spočítej, Přidej dopravní prostředek*/
+.starting-page__form--buttons {
+  padding: 0.938rem 1.563rem;
+}
+
+.form__buttons--submit {
+  display: flex;
+  flex-direction: column;
+}
+
+/*Spočítej*/
+.btn.btn--primary.standard {
+  box-shadow: none;
+  border: 1px solid hsl(86.6, 71.2%, 43.5%);
+  margin-bottom: 0.625rem;
+}
+
+.btn.btn--primary.standard:active,
+.btn.btn--primary.standard:hover {
+  background-color: hsl(86.6, 71.2%, 21.8%);
+  border: 1px solid hsl(86.6, 71.2%, 21.8%);
+}
+
+/*Přidej dopravní prostředek*/
+.btn.btn--secondary.standard {
+  border: 2px solid hsl(86.6, 71.2%, 43.5%);
+  margin-top: 0;
+}
+
+.btn.btn--secondary.standard:active,
+.btn.btn--secondary.standard:hover {
+  background-color: hsl(87, 55.6%, 85.9%);
+  border: 2px solid hsl(87, 55.6%, 85.9%);
+}

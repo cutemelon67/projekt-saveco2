@@ -60,36 +60,12 @@ h3 {
 }
 
 .starting-page__form--journey {
-  margin: 1.25rem 1.875rem 0 1.875rem;
+  margin-top: 1.25rem;
   background: white;
   padding: 0.063rem;
 }
 
-.btn--primary {
-  background-color: hsl(86.6, 71.2%, 43.5%);
-  color: white;
-  box-shadow: 2px 2px 4px #000000;
-}
-
-.btn--secondary {
-  flex: 50%;
-  margin-left: 1px;
-  margin-right: 1px;
-}
-
-/* spočítej */
-.form__buttons--submit {
-  display: flex;
-  flex-direction: column;
-}
-
-/* jednorázově, pravidelně*/
-.form__buttons {
-  display: flex;
-  padding: 0;
-}
-
-/* odkud kam*/
+/* Odkud, Kam, Vzdálenost */
 .form__input {
   display: flex;
   flex-direction: column;
@@ -107,6 +83,14 @@ h3 {
   font-size: 1rem;
   padding: 0.625rem;
   border: 0, 5px solid black;
+  margin-bottom: 0.625rem;
+}
+
+#input--distance {
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0, 5px solid black;
+  margin-bottom: 0.625rem;
 }
 
 .form--distance {
@@ -123,8 +107,6 @@ h3 {
 }
 
 .starting-page__form--transport-type {
-  margin: 0 1.875rem 0 1.875rem;
-  background: white;
   padding: 0.063rem;
 }
 
@@ -146,54 +128,9 @@ h3 {
   display: none;
 }
 
-.transport-type--img.material-icons {
-  flex-basis: calc(100% / 3);
-  display: block;
-}
-
-.transport-result {
-  text-align: center;
-  font-weight: 700;
-  margin: 1.5rem 0;
-}
-
-.starting-page__form--fuel {
-  margin: 0 1.875rem 1.5rem 1.875rem;
-  background: white;
-}
-
-.form--fuel {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 1.5rem;
-}
-
-.starting-page__form--people {
-  margin: 0 1.875rem;
-  background: white;
-}
-
-.form--people {
-  display: flex;
-  margin-top: 1.5rem;
-}
-
-.people--count {
-  flex: 50%;
-}
-
-.starting-page__form--buttons {
-  padding: 0.938rem 1.563rem;
-}
-
 /* Výsledky */
 
 /* Selected Transport*/
-
-.results__selected-transport {
-  margin: 0 1.875rem;
-}
 
 .results--header {
   text-align: center;
@@ -234,13 +171,13 @@ h3 {
 /* Alternatives*/
 
 .results__alternatives {
-  margin: 1.5rem 1.875rem 0 1.875rem;
+  margin-top: 1.5rem;
 }
 
 /*Methodology Results*/
 
 .results__methodology {
-  margin: 1.5rem 1.875rem 0 1.875rem;
+  margin-top: 1.5rem;
   border: 5px solid lightgray;
   display: flex;
   flex-direction: column;

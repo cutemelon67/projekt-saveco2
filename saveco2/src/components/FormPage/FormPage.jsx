@@ -48,12 +48,12 @@ export const FormPage = ({ result, setResult }) => {
           </section>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="starting-page__form--journey">
-              <h3>Tvoje cesta</h3>
+              <h2>Tvoje cesta</h2>
 
               <div className="form--from-to">
                 <div className="form__buttons">
-                  <Button>Jednorázově</Button>
-                  <Button>Pravidelně</Button>
+                  <Button className={'random'}>Jednorázově</Button>
+                  <Button className={'regular'}>Pravidelně</Button>
                 </div>
                 <div className="form__input">
                   {Object.values(inputFromTo).map((input) => (
@@ -99,7 +99,7 @@ export const FormPage = ({ result, setResult }) => {
               <p className="distance-result">Zadaná vzdálenost: 100 km</p>
             </div>
             <div className="starting-page__form--transport-type">
-              <h3>Jak se přesuneš?</h3>
+              <h2>Jak se přesuneš?</h2>
               <div className="transport-type--img">
                 {Object.values(vehicleType).map((type) => (
                   <Icon
@@ -119,7 +119,7 @@ export const FormPage = ({ result, setResult }) => {
               </p>
             </div>
             <div className="starting-page__form--fuel">
-              <h3>Na co jezdíš?</h3>
+              <h2>Na co jezdíš?</h2>
               <div className="form--fuel">
                 {Object.entries(fuelType).map(([key, fuel]) => {
                   return (
@@ -131,6 +131,7 @@ export const FormPage = ({ result, setResult }) => {
                       required={true}
                       register={register}
                       defaultValue={result.name}
+                      className={'form--fuel-radio'}
                     >
                       {fuel}
                     </InputBtn>
@@ -139,7 +140,7 @@ export const FormPage = ({ result, setResult }) => {
               </div>
             </div>
             <div className="starting-page__form--people">
-              <h3>Počet cestujících</h3>
+              <h2>Počet cestujících</h2>
               <div className="form--people">
                 <InputField
                   htmlFor={'people--count'}
