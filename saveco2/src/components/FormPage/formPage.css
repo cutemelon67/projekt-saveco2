@@ -39,35 +39,111 @@
   color: white;
 }
 
-/* Zvolený dopravní */
-.transport-result {
+/* Starting page - Tvoje cesta*/
+.starting-page__form--journey {
+  background: white;
+  padding: 0.063rem;
+  margin: 1.5rem 1.875rem 0 1.875rem;
+}
+
+.form__input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+#input--from {
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0, 5px solid black;
+  margin-bottom: 0.625rem;
+}
+
+#input--to {
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0, 5px solid black;
+  margin-bottom: 0.625rem;
+}
+
+#input--distance {
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0, 5px solid black;
+  margin-bottom: 0.625rem;
+}
+
+.form--distance {
+  font-size: 0.875rem;
+  text-align: right;
+  margin: 0;
+  padding: 0.313rem;
+}
+
+.distance-result {
   text-align: center;
   font-weight: 700;
-  margin: 1.5rem 0;
+  margin-bottom: 0;
 }
 
-/* Na co jezdíš*/
-.starting-page__form--fuel {
-  margin-bottom: 1.5rem;
-  background: white;
+/* Starting page - Jak se přesuneš?*/
+.starting-page__form--transport-type {
+  padding: 0.063rem;
+  margin: 1.5rem 1.875rem 0 1.875rem;
 }
 
-.form--fuel {
+.transport-type--icon {
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.transport-type--img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 1.5rem;
 }
 
+.transport-type--img [type='radio'] {
+  display: none;
+}
+
+.transport-result {
+  text-align: center;
+  font-weight: 700;
+  margin: 1.5rem 0;
+}
+
+/* Starting page - Na co jezdíš*/
+.starting-page__form--fuel {
+  margin: 0 1.875rem;
+}
+
+.form--fuel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+}
+
 .form--fuel-radio {
   width: calc(100% / 3);
   margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
 }
 
-/*Kolik vás pojede?*/
+.form--fuel-radio input {
+  margin-right: 5px;
+  margin-left: 0;
+}
+
+/*Starting page - Počet cestujících*/
 
 .starting-page__form--people {
-  background: white;
+  margin: 1.5rem 1.875rem;
 }
 
 .form--people {
@@ -79,9 +155,9 @@
   flex: 50%;
 }
 
-/*Spočítej, Přidej dopravní prostředek*/
+/*Starting page - Spočítej, Přidej dopravní prostředek*/
 .starting-page__form--buttons {
-  padding: 0.938rem 1.563rem;
+  margin: 1.5rem 1.875rem;
 }
 
 .form__buttons--submit {
@@ -111,5 +187,6 @@
 .btn.btn--secondary.standard:active,
 .btn.btn--secondary.standard:hover {
   background-color: hsl(87, 55.6%, 85.9%);
-  border: 2px solid hsl(87, 55.6%, 85.9%);
+  border: 2px solid hsl(86.6, 71.2%, 43.5%);
+  margin-top: 0;
 }
