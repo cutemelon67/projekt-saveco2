@@ -18,7 +18,7 @@ import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom';
 import './formPage.css';
 
 export const FormPage = ({ result, setResult }) => {
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit, watch } = useForm({
     defaultValues: React.useMemo(() => {
       return result;
     }, [result]),
@@ -30,6 +30,7 @@ export const FormPage = ({ result, setResult }) => {
   const onSubmit = (data) => {
     setResult(data);
     history.push('/results');
+    console.log(watch);
   };
 
   return (
