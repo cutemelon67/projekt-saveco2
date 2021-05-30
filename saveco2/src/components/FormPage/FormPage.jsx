@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from '../Header/Header';
 import { Button } from '../Button/Button';
 import { Footer } from '../Footer/Footer';
@@ -23,6 +23,40 @@ export const FormPage = ({ userData, setUserData }) => {
       return userData;
     }, [userData]),
   });
+
+  const watchAllFields = watch();
+  const watchedFrom = watch('from');
+  const watchedTo = watch('to');
+
+  const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+  const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=MY_API_KEY`;
+
+  useEffect(() => {
+    const delayedWatch = setTimeout(() => {
+      if (watchedFrom.length >= 2 && watchedTo.length >= 2) {
+        fetch(proxyurl + URL)
+          .then((response) => response.json())
+          .then((json) => {
+            // pokud json.rows neexistuje - nespadne
+            const distanceFromGMInMeters =
+              json?.rows?.[0]?.elements?.[0]?.distance?.value;
+            console.log(json);
+            console.log(distanceFromGMInMeters);
+            if (!distanceFromGMInMeters) {
+              setValue('distance', 0);
+            } else {
+              const distanceFromGM = parseInt(distanceFromGMInMeters / 1000);
+              setValue('distance', distanceFromGM);
+              console.log(distanceFromGM);
+            }
+          });
+      } else {
+        return;
+      }
+    }, 3000);
+
+    return () => clearTimeout(delayedWatch);
+  }, [watchedFrom, watchedTo]);
 
   // pro vypisování vzdálenosti a vybraného dopravního prostředku
 
@@ -116,11 +150,6 @@ export const FormPage = ({ userData, setUserData }) => {
                   Chci <a href="#">zadat vzdálenost v km</a>.
                 </p>
               </div>
-              <Button
-                type={'submit'}
-                className={'standard'}
-                onClick={getDistance}
-              ></Button>
               <InputBtn
                 type={'checkbox'}
                 name={'roundTrip'}
