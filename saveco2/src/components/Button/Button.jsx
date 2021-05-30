@@ -5,7 +5,7 @@ import './style.css';
 
 const classNames = require('classnames');
 
-export const Button = ({ className, type, variant, children }) => {
+export const Button = ({ className, type, variant, children, onClick }) => {
   return (
     <button
       className={classNames(
@@ -14,6 +14,7 @@ export const Button = ({ className, type, variant, children }) => {
         className,
       )}
       type={type}
+      onClick={onClick}
     >
       {children}
     </button>

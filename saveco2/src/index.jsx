@@ -22,7 +22,7 @@ const App = () => {
       <div className="container">
         <Switch>
           <Route exact path="/results" component={ResultsPage}>
-            <ResultsPage result={result} />
+            <ResultsPage result={result} setResult={setResult} />
           </Route>
           <Route exact path="/" component={FormPage}>
             <FormPage result={result} setResult={setResult} />

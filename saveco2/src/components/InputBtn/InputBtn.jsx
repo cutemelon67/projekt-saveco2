@@ -13,7 +13,13 @@ export const InputBtn = ({
   return (
     <>
       <label className={className}>
-        <input {...register(name)} id={id} type={type} required={required} />
+        <input
+          {...register(name)}
+          id={id}
+          type={type}
+          required={required}
+          defaultValue={id}
+        />
         {children}
       </label>
     </>

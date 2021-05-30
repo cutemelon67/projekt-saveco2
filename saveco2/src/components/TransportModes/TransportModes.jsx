@@ -31,9 +31,9 @@ export const fuelType = {
   HYBRID: 'hybrid',
   CNG: 'CNG',
   LPG: 'LPG',
-  BEV: 'elektromobil',
-  PLUGIN: 'plug in hybrid elektro',
-  UNKNOWN: 'nevím / nic z uvedeného',
+  BEV: 'elektro',
+  PLUGIN: 'plug in hybrid',
+  UNKNOWN: 'jiné',
 };
 
 export const carSize = {

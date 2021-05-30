@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../Button/Button';
+import { Link } from 'react-router-dom';
 import './methodologyResults.css';
 
 export const MethodologyResults = () => {
@@ -14,7 +15,9 @@ export const MethodologyResults = () => {
         <sub>2</sub> převedli na jednu osobu, aby bylo možné jednotlivé dopravní
         prostředky mezi sebou porovnávat.
       </p>
-      <Button className={'btn--center'}>Více k metodice</Button>
+      <Link to="/methodology">
+        <Button className={'btn--center'}>Více k metodice</Button>
+      </Link>
     </>
   );
 };

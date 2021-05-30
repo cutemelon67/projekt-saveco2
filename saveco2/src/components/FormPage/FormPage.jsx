@@ -112,15 +112,12 @@ export const FormPage = ({ result, setResult }) => {
                     id={vehicleInfo[type].text}
                     iconType={vehicleInfo[type].icon}
                     key={vehicleInfo[type].text}
-                    className={'transport-type--icon'}
-                    required={true}
                     register={register}
                     defaultValue={result.name}
                   />
                 ))}
               </div>
               <p className="transport-result">
-                {' '}
                 Zvolený dopravní prostředek: auto
               </p>
             </div>
