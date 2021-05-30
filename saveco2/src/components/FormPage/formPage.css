@@ -83,7 +83,7 @@
 .distance-result {
   text-align: center;
   font-weight: 700;
-  margin-bottom: 0;
+  margin: 2rem 0 0 0;
 }
 
 /* Starting page - Jak se přesuneš?*/
@@ -99,11 +99,18 @@
   margin-top: 1.25rem;
 }
 
+.transport-type--icon:active,
+.transport-type--icon:hover {
+  color: hsl(86.6, 71.2%, 43.5%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .transport-type--img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
 .transport-type--img [type='radio'] {
@@ -113,7 +120,7 @@
 .transport-result {
   text-align: center;
   font-weight: 700;
-  margin: 1.5rem 0;
+  margin: 2.5rem 0 1.5rem 0;
 }
 
 /* Starting page - Na co jezdíš*/
@@ -125,7 +132,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-top: 1.5rem;
 }
 
 .form--fuel-radio {
@@ -136,7 +142,7 @@
 }
 
 .form--fuel-radio input {
-  margin-right: 5px;
+  margin-right: 0.313rem;
   margin-left: 0;
 }
 
@@ -149,10 +155,14 @@
 .form--people {
   display: flex;
   margin-top: 1.5rem;
+  align-items: center;
 }
 
-.people--count {
-  flex: 50%;
+#people--count {
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0, 5px solid black;
+  margin-left: 0.313rem;
 }
 
 /*Starting page - Spočítej, Přidej dopravní prostředek*/
