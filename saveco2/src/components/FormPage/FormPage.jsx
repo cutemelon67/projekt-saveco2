@@ -25,7 +25,6 @@ export const FormPage = ({ userData, setUserData }) => {
   });
 
   // pro vypisování vzdálenosti a vybraného dopravního prostředku
-  // const watchAllFields = watch();
 
   const history = useHistory();
   console.log(userData);
@@ -117,6 +116,11 @@ export const FormPage = ({ userData, setUserData }) => {
                   Chci <a href="#">zadat vzdálenost v km</a>.
                 </p>
               </div>
+              <Button
+                type={'submit'}
+                className={'standard'}
+                onClick={getDistance}
+              ></Button>
               <InputBtn
                 type={'checkbox'}
                 name={'roundTrip'}
