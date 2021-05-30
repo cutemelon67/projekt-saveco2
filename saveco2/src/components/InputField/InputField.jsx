@@ -46,7 +46,7 @@ export const inputDistance = {
   htmlFor: 'input--distance',
   id: 'input--distance',
   name: 'distance',
-  type: 'text',
+  type: 'number',
   value: 100,
   required: true,
   text: 'Vzdálenost (km):',

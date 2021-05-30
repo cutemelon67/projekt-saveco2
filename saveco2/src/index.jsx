@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { FormPage } from './components/FormPage/FormPage';
 import { ResultsPage } from './components/ResultsPage/ResultsPage';
 import { MethodologyPage } from './components/MethodologyPage/MethodologyPage';
+import { ScrollToTop } from './components/ScrollToTop/ScrollToTop';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './db.js';
 import './style.css';
@@ -19,6 +20,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="container">
         <Switch>
           <Route exact path="/results" component={ResultsPage}>

@@ -34,11 +34,12 @@ export const MethodologyPage = ({ result, setResult }) => {
         <div className="sources__container">
           <Sources />
         </div>
-        <Link to="/">
+        <Link to={'/'}>
           <Button>
             Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
           </Button>
         </Link>
+
         <Footer></Footer>
       </div>
     </>
