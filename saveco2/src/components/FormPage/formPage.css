@@ -123,9 +123,9 @@
   margin-top: 0;
 }
 
-.transport-type--img [type='radio'] {
+/* .transport-type--img [type='radio'] {
   visibility: hidden;
-}
+} */
 
 .transport-result {
   text-align: center;

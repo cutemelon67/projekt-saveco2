@@ -7,7 +7,7 @@ import {
   flightType,
 } from '../TransportModes/TransportModes';
 
-const coeficients = {
+export const coefficients = {
   [vehicleType.CAR]: {
     [fuelType.PETROL]: {
       [carSize.SMALL]: 0.17363,

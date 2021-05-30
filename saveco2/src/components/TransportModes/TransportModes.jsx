@@ -26,14 +26,25 @@ export const vehicleType = {
 };
 
 export const fuelType = {
-  PETROL: 'benzín',
+  PETROL: 'petrol',
   DIESEL: 'diesel',
   HYBRID: 'hybrid',
   CNG: 'CNG',
   LPG: 'LPG',
   BEV: 'elektro',
-  PLUGIN: 'plug in hybrid',
-  UNKNOWN: 'jiné',
+  PLUGIN: 'plugInHybrid',
+  UNKNOWN: 'other',
+};
+
+export const fuelInfo = {
+  [fuelType.PETROL]: 'benzín',
+  [fuelType.DIESEL]: 'diesel',
+  [fuelType.HYBRID]: 'hybrid',
+  [fuelType.CNG]: 'CNG',
+  [fuelType.LPG]: 'LPG',
+  [fuelType.BEV]: 'elektro',
+  [fuelType.PLUGIN]: 'plug in hybrid',
+  [fuelType.UNKNOWN]: 'jiné',
 };
 
 export const carSize = {
@@ -42,8 +53,13 @@ export const carSize = {
 };
 
 export const busType = {
-  STANDARD: 'autobus',
-  HOLIDAY: 'zájezdový autobus',
+  STANDARD: 'bus',
+  HOLIDAY: 'holidayBus',
+};
+
+export const busInfo = {
+  [busType.STANDARD]: 'autobus',
+  [busType.HOLIDAY]: 'zájezdový autobus',
 };
 
 export const flightType = {

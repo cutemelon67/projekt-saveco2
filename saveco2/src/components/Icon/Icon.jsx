@@ -22,7 +22,7 @@ export const Icon = ({ iconType, id, register, required }) => {
   return (
     <label className={'transport-type--icon'}>
       <input
-        {...register('transport-type--icon')}
+        {...register('transportType')}
         id={id}
         type="radio"
         required={true}

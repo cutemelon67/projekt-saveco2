@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Header } from '../Header/Header';
 import { Button } from '../Button/Button';
 import { Footer } from '../Footer/Footer';
@@ -18,7 +18,7 @@ import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom';
 import './formPage.css';
 
 export const FormPage = ({ userData, setUserData }) => {
-  const { register, handleSubmit, watch } = useForm({
+  const { register, handleSubmit, watch, setValue } = useForm({
     defaultValues: React.useMemo(() => {
       return userData;
     }, [userData]),
@@ -34,6 +34,16 @@ export const FormPage = ({ userData, setUserData }) => {
     setUserData(data);
     history.push('/results');
   };
+
+  useEffect(() => {
+    setValue('distance', 100);
+    setValue('peopleCount', 1);
+    setValue('transportType', 'car');
+    setValue('roundTrip', false);
+    setValue('fuel', 'PETROL');
+  }, []);
+
+  console.log(userData);
 
   return (
     <Router>
@@ -109,7 +119,7 @@ export const FormPage = ({ userData, setUserData }) => {
               </div>
               <InputBtn
                 type={'checkbox'}
-                name={'round-trip'}
+                name={'roundTrip'}
                 id={'form--round-trip'}
                 register={register}
                 defaultValue={userData.name}
@@ -162,7 +172,7 @@ export const FormPage = ({ userData, setUserData }) => {
                 <InputField
                   htmlFor={'people--count'}
                   id={'people--count'}
-                  name={'people--count'}
+                  name={'peopleCount'}
                   type={'number'}
                   required={true}
                   register={register}
