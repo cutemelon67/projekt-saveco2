@@ -18,15 +18,15 @@ import './icon.css';
 //   { name: 'directions_boat' },
 // ];
 
-export const Icon = ({ iconType, id, register }) => {
+export const Icon = ({ iconType, id, register, required }) => {
   return (
     <label className={'transport-type--icon'}>
       <input
-        {...register(id)}
+        {...register('transport-type--icon')}
         id={id}
-        name="transport-type--icon"
         type="radio"
         required={true}
+        defaultValue={id}
       />
       {<MaterialIcon icon={iconType} size={48} />}
     </label>

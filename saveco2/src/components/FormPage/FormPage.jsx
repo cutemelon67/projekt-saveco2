@@ -24,13 +24,15 @@ export const FormPage = ({ result, setResult }) => {
     }, [result]),
   });
 
+  // pro vypisování vzdálenosti a vybraného dopravního prostředku
+  const watchAllFields = watch();
+
   const history = useHistory();
   console.log(result);
 
   const onSubmit = (data) => {
     setResult(data);
     history.push('/results');
-    console.log(watch);
   };
 
   return (
@@ -96,7 +98,7 @@ export const FormPage = ({ result, setResult }) => {
                     key={inputDistance.id}
                     register={register}
                     defaultValue={result.name}
-                    options={{ min: 0 }}
+                    min={'0'}
                   >
                     {inputDistance.text}
                   </InputField>
@@ -119,13 +121,13 @@ export const FormPage = ({ result, setResult }) => {
             <div className="starting-page__form--transport-type">
               <h2>Jak se přesuneš?</h2>
               <div className="transport-type--img">
-                {Object.values(vehicleType).map((type) => (
+                {Object.entries(vehicleInfo).map(([key, value]) => (
                   <Icon
-                    id={vehicleInfo[type].text}
-                    iconType={vehicleInfo[type].icon}
-                    key={vehicleInfo[type].text}
+                    id={key}
+                    iconType={value.icon}
+                    key={value.text}
                     register={register}
-                    defaultValue={result.name}
+                    defaultChecked={result.name}
                   />
                 ))}
               </div>
@@ -165,7 +167,8 @@ export const FormPage = ({ result, setResult }) => {
                   required={true}
                   register={register}
                   defaultValue={result.name}
-                  options={{ min: 1, max: 9 }}
+                  min={'1'}
+                  max={9}
                 >
                   Kolik vás pojede?
                 </InputField>

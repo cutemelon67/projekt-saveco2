@@ -9,7 +9,8 @@ export const InputField = ({
   className,
   register,
   required,
-  options = {},
+  min,
+  max,
 }) => {
   return (
     <>
@@ -17,10 +18,12 @@ export const InputField = ({
         {children}
       </label>
       <input
-        {...register(name, options)}
+        {...register(name)}
         type={type}
         id={id}
         required={required}
+        min={min}
+        max={max}
       />
     </>
   );
