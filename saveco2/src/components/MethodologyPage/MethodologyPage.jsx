@@ -14,17 +14,15 @@ export const MethodologyPage = ({ result, setResult }) => {
   const history = useHistory();
 
   const onSubmit = (data) => {
-    setResult(data);
-    history.push('/results');
+    setResult({});
+    history.push('/');
   };
 
   return (
     <>
       <div className="methodology">
         <Header></Header>
-        <Nav href={'/results'} onClick={onSubmit}>
-          Výsledky
-        </Nav>
+        <Nav href={'/results'}>Výsledky</Nav>
         <div className="methodology__container">
           <Methodology />
         </div>
@@ -34,11 +32,10 @@ export const MethodologyPage = ({ result, setResult }) => {
         <div className="sources__container">
           <Sources />
         </div>
-        <Link to={'/'}>
-          <Button>
-            Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
-          </Button>
-        </Link>
+
+        <Button onClick={onSubmit}>
+          Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
+        </Button>
 
         <Footer></Footer>
       </div>

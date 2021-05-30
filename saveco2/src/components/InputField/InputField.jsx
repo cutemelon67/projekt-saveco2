@@ -9,13 +9,19 @@ export const InputField = ({
   className,
   register,
   required,
+  options = {},
 }) => {
   return (
     <>
       <label className={className} htmlFor={id}>
         {children}
       </label>
-      <input {...register(name)} type={type} id={id} required={required} />
+      <input
+        {...register(name, options)}
+        type={type}
+        id={id}
+        required={required}
+      />
     </>
   );
 };

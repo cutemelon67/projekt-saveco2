@@ -30,7 +30,7 @@ const App = () => {
             <FormPage result={result} setResult={setResult} />
           </Route>
           <Route path="/methodology" component={MethodologyPage}>
-            <MethodologyPage />
+            <MethodologyPage setResult={setResult} />
           </Route>
         </Switch>
       </div>

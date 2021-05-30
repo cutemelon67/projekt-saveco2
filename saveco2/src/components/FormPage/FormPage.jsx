@@ -45,13 +45,23 @@ export const FormPage = ({ result, setResult }) => {
             <h3 className="starting-page__name--subheadline">
               a zjisti, kolik stromů tvá volba stojí.{' '}
             </h3>
-            <Button type={'button'} variant={'primary'}>
+            <Button
+              type={'button'}
+              variant={'primary'}
+              onClick={() => {
+                const anchorTarget = document.getElementById('form__heading');
+                anchorTarget.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                });
+              }}
+            >
               Chci vědět víc
             </Button>
           </section>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="starting-page__form--journey">
-              <h2>Tvoje cesta</h2>
+              <h2 id="form__heading">Tvoje cesta</h2>
 
               <div className="form--from-to">
                 <div className="form__buttons">
@@ -86,6 +96,7 @@ export const FormPage = ({ result, setResult }) => {
                     key={inputDistance.id}
                     register={register}
                     defaultValue={result.name}
+                    options={{ min: 0 }}
                   >
                     {inputDistance.text}
                   </InputField>
@@ -154,6 +165,7 @@ export const FormPage = ({ result, setResult }) => {
                   required={true}
                   register={register}
                   defaultValue={result.name}
+                  options={{ min: 1, max: 9 }}
                 >
                   Kolik vás pojede?
                 </InputField>
