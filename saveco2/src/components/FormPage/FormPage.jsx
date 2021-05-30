@@ -17,21 +17,21 @@ import { useForm } from 'react-hook-form';
 import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom';
 import './formPage.css';
 
-export const FormPage = ({ result, setResult }) => {
+export const FormPage = ({ userData, setUserData }) => {
   const { register, handleSubmit, watch } = useForm({
     defaultValues: React.useMemo(() => {
-      return result;
-    }, [result]),
+      return userData;
+    }, [userData]),
   });
 
   // pro vypisování vzdálenosti a vybraného dopravního prostředku
-  const watchAllFields = watch();
+  // const watchAllFields = watch();
 
   const history = useHistory();
-  console.log(result);
+  console.log(userData);
 
   const onSubmit = (data) => {
-    setResult(data);
+    setUserData(data);
     history.push('/results');
   };
 
@@ -84,7 +84,7 @@ export const FormPage = ({ result, setResult }) => {
                       required={input.required}
                       key={input.id}
                       register={register}
-                      defaultValue={result.name}
+                      defaultValue={userData.name}
                     >
                       {input.text}
                     </InputField>
@@ -97,7 +97,7 @@ export const FormPage = ({ result, setResult }) => {
                     required={inputDistance.required}
                     key={inputDistance.id}
                     register={register}
-                    defaultValue={result.name}
+                    defaultValue={userData.name}
                     min={'0'}
                   >
                     {inputDistance.text}
@@ -112,7 +112,7 @@ export const FormPage = ({ result, setResult }) => {
                 name={'round-trip'}
                 id={'form--round-trip'}
                 register={register}
-                defaultValue={result.name}
+                defaultValue={userData.name}
               >
                 zpáteční cesta
               </InputBtn>
@@ -127,7 +127,7 @@ export const FormPage = ({ result, setResult }) => {
                     iconType={value.icon}
                     key={value.text}
                     register={register}
-                    defaultChecked={result.name}
+                    defaultChecked={userData.name}
                   />
                 ))}
               </div>
@@ -147,7 +147,7 @@ export const FormPage = ({ result, setResult }) => {
                       key={key}
                       required={true}
                       register={register}
-                      defaultValue={result.name}
+                      defaultValue={userData.name}
                       className={'form--fuel-radio'}
                     >
                       {fuel}
@@ -166,7 +166,7 @@ export const FormPage = ({ result, setResult }) => {
                   type={'number'}
                   required={true}
                   register={register}
-                  defaultValue={result.name}
+                  defaultValue={userData.name}
                   min={'1'}
                   max={9}
                 >

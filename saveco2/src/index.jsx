@@ -8,15 +8,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './db.js';
 import './style.css';
 
-// firebase
-// const Trasa = () => {
-//   const [from, setFrom] = useState();
-
-//   return <></>;
-// };
-
 const App = () => {
-  const [result, setResult] = useState({});
+  const [userData, setUserData] = useState({});
 
   return (
     <Router>
@@ -24,13 +17,13 @@ const App = () => {
       <div className="container">
         <Switch>
           <Route exact path="/results" component={ResultsPage}>
-            <ResultsPage result={result} setResult={setResult} />
+            <ResultsPage userData={userData} setUserData={setUserData} />
           </Route>
           <Route exact path="/" component={FormPage}>
-            <FormPage result={result} setResult={setResult} />
+            <FormPage userData={userData} setUserData={setUserData} />
           </Route>
           <Route path="/methodology" component={MethodologyPage}>
-            <MethodologyPage setResult={setResult} />
+            <MethodologyPage setUserData={setUserData} />
           </Route>
         </Switch>
       </div>

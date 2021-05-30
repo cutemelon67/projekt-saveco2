@@ -10,11 +10,11 @@ import { Sources } from '../Sources/Sources';
 import { Link, useHistory } from 'react-router-dom';
 import './methodologyPage.css';
 
-export const MethodologyPage = ({ result, setResult }) => {
+export const MethodologyPage = ({ userData, setUserData }) => {
   const history = useHistory();
 
   const onSubmit = (data) => {
-    setResult({});
+    setUserData({});
     history.push('/');
   };
 

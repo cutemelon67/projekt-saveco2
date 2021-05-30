@@ -3,21 +3,25 @@ import { Header } from '../Header/Header';
 import { Button } from '../Button/Button';
 import { Footer } from '../Footer/Footer';
 import { Nav } from '../Nav/Nav';
-import getResults from '../getResults/getResults';
+import { getResults } from '../getResults/getResults';
 import MaterialIcon from 'react-google-material-icons';
 import { SelectedTransport } from '../SelectedTransport/SelectedTransport';
 import { Choice } from '../Choice/Choice';
 import { Alternative } from '../Alternative/Alternative';
 import { MethodologyResults } from '../MethodologyResults/MethodologyResults';
 import { DataFacts } from '../DataFacts/DataFacts';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './resultsPage.css';
 
-export const ResultsPage = ({ result, setResult }) => {
+export const ResultsPage = ({ userData, setUserData }) => {
   const history = useHistory();
 
+  console.log(userData);
+  const calculatedResult = getResults(userData);
+  console.log(calculatedResult);
+
   const onSubmit = (data) => {
-    setResult({});
+    setUserData({});
     history.push('/');
   };
 
