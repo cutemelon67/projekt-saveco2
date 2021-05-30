@@ -35,7 +35,13 @@ export const getResults = ({
     distance = distance * 2;
   }
 
-  // console.log(carResults(distance, peopleCount, fuel));
+  if (transportType === 'car') {
+    return carResults({ distance, peopleCount, fuel });
+  }
+
+  if (transportType === 'train') {
+    return trainResults({ distance });
+  }
 
   return results;
 };
@@ -43,12 +49,10 @@ export const getResults = ({
 const carResults = ({ distance, peopleCount, fuel }) => {
   let emmissions;
   let tree;
-  // const [emmissions, setEmmissions] = useState(0);
-  // const [tree, setTree] = useState(0);
+
   const treeAbsorption = 22;
   // převod počtu osob na celé číslo:
 
-  console.log(peopleCount);
   // validace zadání počtu osob a min / max počet osob:
   if (!(peopleCount && peopleCount > 0 && peopleCount <= 9)) {
     return;
@@ -59,6 +63,22 @@ const carResults = ({ distance, peopleCount, fuel }) => {
     (distance * coefficients[vehicleType.CAR][fuel][calculatedCarSize]) /
       peopleCount,
   );
+
+  tree = roundResults(emmissions / treeAbsorption);
+
+  return {
+    emmissions,
+    tree,
+  };
+};
+
+const trainResults = ({ distance }) => {
+  let emmissions;
+  let tree;
+
+  const treeAbsorption = 22;
+
+  emmissions = roundResults(distance * coefficients[vehicleType.TRAIN]);
 
   tree = roundResults(emmissions / treeAbsorption);
 

@@ -29,16 +29,23 @@ export const FormPage = ({ userData, setUserData }) => {
     }, [userData]),
   });
 
-  const watchAllFields = watch();
+  // const watchAllFields = watch();
   const watchedFrom = watch('from');
   const watchedTo = watch('to');
 
   const proxyurl = 'https://cors-anywhere.herokuapp.com/';
-  const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=MY_API_KEY`;
+  // const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=${process.env.GOOGLE_MAPS_API_KEY}`;
+
+  console.log(URL);
 
   useEffect(() => {
     const delayedWatch = setTimeout(() => {
-      if (watchedFrom.length >= 2 && watchedTo.length >= 2) {
+      if (
+        watchedFrom &&
+        watchedFrom.length >= 2 &&
+        watchedTo &&
+        watchedTo.length >= 2
+      ) {
         fetch(proxyurl + URL)
           .then((response) => response.json())
           .then((json) => {
@@ -73,13 +80,13 @@ export const FormPage = ({ userData, setUserData }) => {
     history.push('/results');
   };
 
-  useEffect(() => {
-    setValue('distance', 100);
-    setValue('peopleCount', 1);
-    setValue('transportType', 'car');
-    setValue('roundTrip', false);
-    setValue('fuel', 'petrol');
-  }, []);
+  // useEffect(() => {
+  //   setValue('distance', 100);
+  //   setValue('peopleCount', 1);
+  //   setValue('transportType', 'car');
+  //   setValue('roundTrip', false);
+  //   setValue('fuel', 'petrol');
+  // }, []);
 
   console.log(userData);
 
