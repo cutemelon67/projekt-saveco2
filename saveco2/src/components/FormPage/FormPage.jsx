@@ -18,7 +18,7 @@ import {
 } from '../TransportModes/TransportModes';
 import { inputFromTo } from '../InputField/InputField';
 import { inputDistance } from '../InputField/InputField';
-import { FormButtons } from '../FormButtons/FormButtons';
+import { FormButtons, journeyTypeButtons } from '../FormButtons/FormButtons';
 import { useForm } from 'react-hook-form';
 import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom';
 import './formPage.css';
@@ -122,7 +122,15 @@ export const FormPage = ({ userData, setUserData }) => {
               <h2 id="form__heading">Tvoje cesta</h2>
               <div className="form--from-to">
                 <div className="form__buttons">
-                  <FormButtons></FormButtons>
+                  {Object.entries(journeyTypeButtons).map(([key, value]) => (
+                    <FormButtons
+                      id={key}
+                      key={value.id}
+                      register={register}
+                      defaultChecked={userData.id}
+                      text={value.text}
+                    />
+                  ))}
                 </div>
                 <div className="form__input">
                   {Object.values(inputFromTo).map((input) => (

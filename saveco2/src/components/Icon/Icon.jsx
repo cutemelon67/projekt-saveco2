@@ -18,9 +18,9 @@ import './icon.css';
 //   { name: 'directions_boat' },
 // ];
 
-export const Icon = ({ iconType, id, register, required }) => {
+export const Icon = ({ iconType, id, register }) => {
   return (
-    <label className={'transport-type--icon'}>
+    <label className="transport-type--icon">
       <input
         {...register('transportType')}
         id={id}

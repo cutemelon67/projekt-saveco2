@@ -1,38 +1,35 @@
 import React from 'react';
-import { Button } from '../Button/Button';
 import './formButtons.css';
 
-export const FormButtons = () => {
+export const FormButtons = ({ register, id, text }) => {
   return (
     <>
       <label className="form__buttons--journey-type">
         <input
-          // {...register('journeyType')}
+          {...register('journeyType')}
           type="radio"
           name="journeyType"
-          id="single-journey"
-          required
+          id={id}
+          required={true}
+          defaultValue={id}
         />
         {
-          <Button type={'button'} className={'random'}>
-            JEDNORÁZOVĚ
-          </Button>
-        }
-      </label>
-      <label className="form__buttons--journey-type">
-        <input
-          // {...register('journeyType')}
-          type="radio"
-          name="journeyType"
-          id="regular-journey"
-          required
-        />
-        {
-          <Button type={'button'} className={'regular'}>
-            PRAVIDELNĚ
-          </Button>
+          <button type="button" className="btn--secondary">
+            {text}
+          </button>
         }
       </label>
     </>
   );
+};
+
+export const journeyTypeButtons = {
+  singleJourney: {
+    id: 'singleJourney',
+    text: 'JEDNORÁZOVĚ',
+  },
+  regularJourney: {
+    id: 'regularJourney',
+    text: 'PRAVIDELNĚ',
+  },
 };
