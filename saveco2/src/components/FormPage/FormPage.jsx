@@ -18,6 +18,7 @@ import {
 } from '../TransportModes/TransportModes';
 import { inputFromTo } from '../InputField/InputField';
 import { inputDistance } from '../InputField/InputField';
+import { FormButtons } from '../FormButtons/FormButtons';
 import { useForm } from 'react-hook-form';
 import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom';
 import './formPage.css';
@@ -119,15 +120,9 @@ export const FormPage = ({ userData, setUserData }) => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="starting-page__form--journey">
               <h2 id="form__heading">Tvoje cesta</h2>
-
               <div className="form--from-to">
                 <div className="form__buttons">
-                  <Button type={'button'} className={'random'}>
-                    JEDNORÁZOVĚ
-                  </Button>
-                  <Button type={'button'} className={'regular'}>
-                    PRAVIDELNĚ
-                  </Button>
+                  <FormButtons></FormButtons>
                 </div>
                 <div className="form__input">
                   {Object.values(inputFromTo).map((input) => (
