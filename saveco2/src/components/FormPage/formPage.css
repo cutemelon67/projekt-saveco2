@@ -1,4 +1,13 @@
 /*Headline, Background*/
+
+.starting-page__name {
+  text-align: center;
+  background-image: url(img/road_small.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 3.125rem;
+}
 .starting-page__name--headline {
   color: white;
   text-shadow: 2px 2px 4px #000000;
@@ -55,7 +64,7 @@
 .starting-page__form--journey {
   background: white;
   padding: 0.063rem;
-  margin: 1.5rem 1.875rem 0 1.875rem;
+  margin: 1.5rem 1.875rem 1.875rem;
 }
 
 .form__input {
@@ -99,6 +108,7 @@
 .starting-page__form--transport-type {
   padding: 0.063rem;
   margin: 1.5rem 1.875rem 0 1.875rem;
+  background-color: white;
 }
 
 .transport-type--icon {
@@ -130,12 +140,13 @@
 .transport-result {
   text-align: center;
   font-weight: 700;
-  margin: 2.5rem 0 1.5rem 0;
+  margin: 2.5rem 0 0 0;
 }
 
 /* Starting page - Na co jezdíš*/
 .starting-page__form--fuel {
   margin: 0 1.875rem;
+  background-color: white;
 }
 
 .form--fuel {
@@ -160,6 +171,7 @@
 
 .starting-page__form--people {
   margin: 1.5rem 1.875rem;
+  background-color: white;
 }
 
 .form--people {
@@ -213,4 +225,86 @@
   border: 1px solid hsl(86.6, 71.2%, 43.5%);
   margin-top: 0;
   color: white;
+}
+
+/* Media Query - Screen */
+
+/*.container {
+  max-width: 1200px;
+}
+*/
+
+@media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
+  body {
+    background-image: url(img/road_large.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .starting-page__main--container {
+    display: flex;
+    padding: 0 100px;
+    align-items: flex-start;
+  }
+
+  .starting-page__name {
+    background-image: none;
+    margin-top: 100px;
+    flex: 50%;
+  }
+
+  .starting-page__form {
+    flex: 50%;
+    align-self: center;
+    margin-top: 100px;
+  }
+
+  .starting-page__name--headline {
+    font-size: 50px;
+    line-height: 5rem;
+    text-align: left;
+  }
+
+  .starting-page__name--subheadline {
+    font-size: 25px;
+    margin-top: 1.4rem;
+    text-align: left;
+  }
+
+  /*Chci vědět víc*/
+
+  /*Tvoje cesta*/
+  .starting-page__form--journey {
+    padding: 35px;
+    box-shadow: 2px 2px 4px #000000;
+    margin-bottom: 0;
+  }
+
+  /*Jak se přesuneš?*/
+  .starting-page__form--transport-type {
+    padding: 35px;
+    box-shadow: 2px 2px 4px #000000;
+    margin-top: 0;
+  }
+
+  /*Na co jezdíš*/
+  .starting-page__form--fuel {
+    padding: 35px;
+    box-shadow: 2px 2px 4px #000000;
+  }
+
+  /*Počet cestujících*/
+  .starting-page__form--people {
+    padding: 35px;
+    box-shadow: 2px 2px 4px #000000;
+    margin-top: 0;
+  }
+
+  /*Přidej dopravní prostředek*/
+  .btn.btn--secondary.standard {
+    box-shadow: 2px 2px 4px #000000;
+  }
+
+  /*Spočítej, Přidej dopravní prostředek*/
 }

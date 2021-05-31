@@ -95,158 +95,163 @@ export const FormPage = ({ userData, setUserData }) => {
     <Router>
       <div className="starting-page">
         <Header></Header>
-        <main>
-          <section className="starting-page__name">
-            <h1 className="starting-page__name--headline">
-              SPOČÍTEJ SI CO<sub>2</sub> STOPU TVOJÍ CESTY
-            </h1>
-            <h3 className="starting-page__name--subheadline">
-              a zjisti, kolik stromů tvá volba stojí.{' '}
-            </h3>
-            <Button
-              type={'button'}
-              variant={'primary'}
-              onClick={() => {
-                const anchorTarget = document.getElementById('form__heading');
-                anchorTarget.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start',
-                });
-              }}
+        <main className="starting-page__main">
+          <div className="starting-page__main--container">
+            <section className="starting-page__name">
+              <h1 className="starting-page__name--headline">
+                SPOČÍTEJ SI CO<sub>2</sub> STOPU TVOJÍ CESTY
+              </h1>
+              <h3 className="starting-page__name--subheadline">
+                a zjisti, kolik stromů tvá volba stojí.{' '}
+              </h3>
+              <Button
+                type={'button'}
+                variant={'primary'}
+                onClick={() => {
+                  const anchorTarget = document.getElementById('form__heading');
+                  anchorTarget.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                  });
+                }}
+              >
+                CHCI VĚDĚT VÍC
+              </Button>
+            </section>
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="starting-page__form"
             >
-              CHCI VĚDĚT VÍC
-            </Button>
-          </section>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="starting-page__form--journey">
-              <h2 id="form__heading">Tvoje cesta</h2>
-              <div className="form--from-to">
-                <div className="form__buttons">
-                  {Object.entries(journeyTypeButtons).map(([key, value]) => (
-                    <FormButtons
-                      id={key}
-                      key={value.id}
+              <div className="starting-page__form--journey">
+                <h2 id="form__heading">Tvoje cesta</h2>
+                <div className="form--from-to">
+                  <div className="form__buttons">
+                    {Object.entries(journeyTypeButtons).map(([key, value]) => (
+                      <FormButtons
+                        id={key}
+                        key={value.id}
+                        register={register}
+                        defaultChecked={userData.id}
+                        text={value.text}
+                      />
+                    ))}
+                  </div>
+                  <div className="form__input">
+                    {Object.values(inputFromTo).map((input) => (
+                      <InputField
+                        htmlFor={input.htmlFor}
+                        id={input.id}
+                        name={input.name}
+                        type={input.type}
+                        required={input.required}
+                        key={input.id}
+                        register={register}
+                        defaultValue={userData.name}
+                      >
+                        {input.text}
+                      </InputField>
+                    ))}
+                    <InputField
+                      htmlFor={inputDistance.htmlFor}
+                      id={inputDistance.id}
+                      name={inputDistance.name}
+                      type={inputDistance.type}
+                      required={inputDistance.required}
+                      key={inputDistance.id}
                       register={register}
-                      defaultChecked={userData.id}
-                      text={value.text}
+                      defaultValue={userData.name}
+                      min={'0'}
+                    >
+                      {inputDistance.text}
+                    </InputField>
+                  </div>
+                  <p className="form--distance">
+                    Chci <a href="#">zadat vzdálenost v km</a>.
+                  </p>
+                </div>
+                <InputBtn
+                  type={'checkbox'}
+                  name={'roundTrip'}
+                  id={'form--round-trip'}
+                  register={register}
+                  defaultValue={userData.name}
+                >
+                  zpáteční cesta
+                </InputBtn>
+                <p className="distance-result">Zadaná vzdálenost: 100 km</p>
+              </div>
+              <div className="starting-page__form--transport-type">
+                <h2>Jak se přesuneš?</h2>
+                <div className="transport-type--img">
+                  {Object.entries(vehicleInfo).map(([key, value]) => (
+                    <Icon
+                      id={key}
+                      iconType={value.icon}
+                      key={value.text}
+                      register={register}
+                      defaultChecked={userData.name}
                     />
                   ))}
                 </div>
-                <div className="form__input">
-                  {Object.values(inputFromTo).map((input) => (
-                    <InputField
-                      htmlFor={input.htmlFor}
-                      id={input.id}
-                      name={input.name}
-                      type={input.type}
-                      required={input.required}
-                      key={input.id}
-                      register={register}
-                      defaultValue={userData.name}
-                    >
-                      {input.text}
-                    </InputField>
-                  ))}
-                  <InputField
-                    htmlFor={inputDistance.htmlFor}
-                    id={inputDistance.id}
-                    name={inputDistance.name}
-                    type={inputDistance.type}
-                    required={inputDistance.required}
-                    key={inputDistance.id}
-                    register={register}
-                    defaultValue={userData.name}
-                    min={'0'}
-                  >
-                    {inputDistance.text}
-                  </InputField>
-                </div>
-                <p className="form--distance">
-                  Chci <a href="#">zadat vzdálenost v km</a>.
+                <p className="transport-result">
+                  Zvolený dopravní prostředek: auto
                 </p>
               </div>
-              <InputBtn
-                type={'checkbox'}
-                name={'roundTrip'}
-                id={'form--round-trip'}
-                register={register}
-                defaultValue={userData.name}
-              >
-                zpáteční cesta
-              </InputBtn>
-              <p className="distance-result">Zadaná vzdálenost: 100 km</p>
-            </div>
-            <div className="starting-page__form--transport-type">
-              <h2>Jak se přesuneš?</h2>
-              <div className="transport-type--img">
-                {Object.entries(vehicleInfo).map(([key, value]) => (
-                  <Icon
-                    id={key}
-                    iconType={value.icon}
-                    key={value.text}
+              <div className="starting-page__form--fuel">
+                <h2>Na co jezdíš?</h2>
+                <div className="form--fuel">
+                  {Object.values(fuelType).map((fuel) => {
+                    return (
+                      <InputBtn
+                        type={'radio'}
+                        name={'fuel'}
+                        id={fuel}
+                        key={fuel}
+                        required={true}
+                        register={register}
+                        defaultValue={userData.name}
+                        className={'form--fuel-radio'}
+                      >
+                        {fuelInfo[fuel]}
+                      </InputBtn>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="starting-page__form--people">
+                <h2>Počet cestujících</h2>
+                <div className="form--people">
+                  <InputField
+                    htmlFor={'people--count'}
+                    id={'people--count'}
+                    name={'peopleCount'}
+                    type={'number'}
+                    required={true}
                     register={register}
-                    defaultChecked={userData.name}
-                  />
-                ))}
+                    defaultValue={userData.name}
+                    min={'1'}
+                    max={9}
+                  >
+                    Kolik vás pojede?
+                  </InputField>
+                </div>
               </div>
-              <p className="transport-result">
-                Zvolený dopravní prostředek: auto
-              </p>
-            </div>
-            <div className="starting-page__form--fuel">
-              <h2>Na co jezdíš?</h2>
-              <div className="form--fuel">
-                {Object.values(fuelType).map((fuel) => {
-                  return (
-                    <InputBtn
-                      type={'radio'}
-                      name={'fuel'}
-                      id={fuel}
-                      key={fuel}
-                      required={true}
-                      register={register}
-                      defaultValue={userData.name}
-                      className={'form--fuel-radio'}
-                    >
-                      {fuelInfo[fuel]}
-                    </InputBtn>
-                  );
-                })}
+              <div className="starting-page__form--buttons">
+                <div className="form__buttons--submit">
+                  <Button
+                    variant={'primary'}
+                    className={'standard'}
+                    type={'submit'}
+                  >
+                    SPOČÍTEJ
+                  </Button>
+                  <Button type={'submit'} className={'standard'}>
+                    PŘIDEJ DOPRAVNÍ PROSTŘEDEK
+                  </Button>
+                </div>
               </div>
-            </div>
-            <div className="starting-page__form--people">
-              <h2>Počet cestujících</h2>
-              <div className="form--people">
-                <InputField
-                  htmlFor={'people--count'}
-                  id={'people--count'}
-                  name={'peopleCount'}
-                  type={'number'}
-                  required={true}
-                  register={register}
-                  defaultValue={userData.name}
-                  min={'1'}
-                  max={9}
-                >
-                  Kolik vás pojede?
-                </InputField>
-              </div>
-            </div>
-            <div className="starting-page__form--buttons">
-              <div className="form__buttons--submit">
-                <Button
-                  variant={'primary'}
-                  className={'standard'}
-                  type={'submit'}
-                >
-                  SPOČÍTEJ
-                </Button>
-                <Button type={'submit'} className={'standard'}>
-                  PŘIDEJ DOPRAVNÍ PROSTŘEDEK
-                </Button>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </main>
         <Footer></Footer>
       </div>

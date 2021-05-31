@@ -23,15 +23,6 @@ body {
 }
 */
 
-.starting-page__name {
-  text-align: center;
-  background-image: url(img/road-small.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: 3.125rem;
-}
-
 h1 {
   font-size: 2rem;
   margin: 0;
@@ -46,4 +37,10 @@ h2 {
 h3 {
   font-size: 1rem;
   margin: 0;
+}
+
+@media (max-width: 1023px) {
+  .hidden-mobile {
+    display: none;
+  }
 }

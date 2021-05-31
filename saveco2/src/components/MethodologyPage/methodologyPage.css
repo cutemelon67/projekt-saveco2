@@ -8,6 +8,9 @@
 .methodology__heading {
   text-align: center;
   background-image: url(img/road_small_cut.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: white;
   padding-top: 2.5rem;
   padding-bottom: 1rem;
