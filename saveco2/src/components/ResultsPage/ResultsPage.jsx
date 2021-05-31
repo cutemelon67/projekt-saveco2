@@ -42,15 +42,15 @@ export const ResultsPage = ({ userData, setUserData }) => {
           <Choice></Choice>
           <Alternative />
         </div>
+        <div className="results__methodology">
+          <MethodologyResults />
+        </div>
         <div className="results__buttons">
           <Nav href="/">Upravit trasu</Nav>
 
           <Button onClick={onSubmit}>
             Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
           </Button>
-        </div>
-        <div className="results__methodology">
-          <MethodologyResults />
         </div>
         <div className="results__data-facts">
           <DataFacts />

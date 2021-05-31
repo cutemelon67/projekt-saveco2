@@ -1,6 +1,7 @@
 import React from 'react';
 import { vehicleInfo, vehicleType } from '../TransportModes/TransportModes';
 import MaterialIcon from 'react-google-material-icons';
+import { tree } from './img/saveco2-tree-icon.svg';
 import './selectedTransport.css';
 
 export const SelectedTransport = () => {
@@ -24,6 +25,7 @@ export const SelectedTransport = () => {
           <br />
           vyprodukuješ
         </p>
+        <div className="alternative-transport__graph--bar"></div>
         <div className="selected-transport__values">
           <p className="values--number">8,7</p>
           <p>
@@ -32,6 +34,7 @@ export const SelectedTransport = () => {
             na osobu
           </p>
         </div>
+        <div className="alternative-transport__graph--bar"></div>
 
         <p>
           Na absorbci tebou vytvořeného CO
@@ -41,6 +44,7 @@ export const SelectedTransport = () => {
           <p className="values--number">4,7</p>
           <p>měsíců</p>
         </div>
+        {/* <img src={tree} alt="tree" /> */}
       </div>
     </>
   );

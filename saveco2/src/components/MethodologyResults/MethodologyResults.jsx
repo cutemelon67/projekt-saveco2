@@ -1,11 +1,13 @@
 import React from 'react';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
+import MaterialIcon from 'react-google-material-icons';
 import './methodologyResults.css';
 
 export const MethodologyResults = () => {
   return (
     <>
+      <MaterialIcon icon={'info'} size={48} />
       <h3>Jak jsme na to přišli?</h3>
       <p>
         Počet kilometrů jsme vynásobili příslušným koeficientem podle zvoleného
