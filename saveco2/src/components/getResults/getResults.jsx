@@ -31,10 +31,8 @@ export const getResults = ({
     return;
   }
 
-  if (RoundTrip === true) {
+  if (RoundTrip !== false) {
     distance = distance * 2;
-  } else {
-    distance;
   }
 
   if (transportType === 'car') {
@@ -86,8 +84,6 @@ const carResults = ({ distance, peopleCount, fuel }) => {
   if (!(peopleCount && peopleCount > 0 && peopleCount <= 9)) {
     return;
   }
-
-  console.log(peopleCount);
 
   const calculatedCarSize = peopleCount <= 7 ? carSize.SMALL : carSize.LARGE;
   emmissions = roundResults(
