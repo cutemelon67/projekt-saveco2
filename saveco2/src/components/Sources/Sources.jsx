@@ -6,15 +6,15 @@ export const Sources = (props) => {
     <>
       <p className="sources__text">
         Koeficienty použité pro výpočet emisí CO<sub>2</sub> pro všechny výše
-        uvedené dopravní prostředky (s výjimkou kola, plavání a chůze) jsme
-        převzali z dokumentu{' '}
+        uvedené dopravní prostředky (s&nbsp;výjimkou kola, plavání a chůze) jsme
+        převzali z&nbsp;dokumentu{' '}
         <a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2020">
           Greenhouse gas reporting: conversion factors 2020
         </a>
         .
       </p>
       <p className="sources__text">
-        Množství CO2, které jeden dospělý strom absorbuje za rok:{' '}
+        Množství CO<sub>2</sub>, které jeden dospělý strom absorbuje za rok:{' '}
         <a href="https://www.eea.europa.eu/articles/forests-health-and-climate-change/key-facts/trees-help-tackle-climate-change">
           European Environment Agency
         </a>
@@ -37,7 +37,7 @@ export const Sources = (props) => {
       <h3>Data a fakta</h3>
       <p className="sources__text">
         <a href="https://www.eurekalert.org/pub_releases/2021-04/hcfo-lco041621.php">
-          Long-term consequences of CO<sub>2</sub> emissions
+          Long-term consequences of&nbsp;CO<sub>2</sub> emissions
         </a>
       </p>
       <p className="sources__text">

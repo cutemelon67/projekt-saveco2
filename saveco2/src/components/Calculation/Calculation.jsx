@@ -6,35 +6,44 @@ export const Calculation = (props) => {
     <>
       <h2 className="calculation__heading">Výpočet</h2>
       <p className="calculation__text">
-        Vzdálenost jsme získali od uživatele buď zadáním místa odjezdu (odkud) a
-        příjezdu (kam) nebo uvedením konkrétní vzdálenosti. V případě zpáteční
-        cesty jsme tuto vzdálenost vynásobili dvěma.
+        Vzdálenost jsme získali od uživatele buď zadáním místa odjezdu (odkud)
+        a&nbsp;příjezdu (kam) nebo uvedením konkrétní vzdálenosti.
+        V&nbsp;případě zpáteční cesty jsme tuto vzdálenost vynásobili dvěma.
       </p>
       <ul className="calculation__list">
         <li>
-          Auto: (vzdálenost v km * koeficient dle pohonu) / počet cestujících
+          Auto: (vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient dle
+          pohonu)&nbsp;/&nbsp;počet cestujících
         </li>
-        <li>Motorka: (vzdálenost v km * koeficient) / počet cestujících</li>
         <li>
-          Autobus / zájezdový autobus: vzdálenost v km * koeficient podle druhu
-          autobusu
+          Motorka: (vzdálenost
+          v&nbsp;km&nbsp;*&nbsp;koeficient)&nbsp;/&nbsp;počet cestujících
         </li>
-        <li>Vlak: vzdálenost v km * koeficient</li>
-        <li>Tramvaj / metro: vzdálenost v km * koeficient</li>
-        <li>Letadlo (do 3 700 km): vzdálenost v km * koeficient do 3 700 km</li>
         <li>
-          Letadlo (nad 3 700 km): vzdálenost v km * koeficient nad 3 700 km
+          Autobus / zájezdový autobus: vzdálenost
+          v&nbsp;km&nbsp;*&nbsp;koeficient podle druhu autobusu
         </li>
-        <li>Kolo: vzdálenost v km * koeficient</li>
-        <li>Plavání: vzdálenost v km * koeficient</li>
-        <li>Chůze: vzdálenost v km * koeficient</li>
-        <li>Trajekt: vzdálenost v km * koeficient</li>
+        <li>Vlak: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
+        <li>Tramvaj / metro: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
+        <li>
+          Letadlo (do 3&nbsp;700 km): vzdálenost
+          v&nbsp;km&nbsp;*&nbsp;koeficient do 3&nbsp;700 km
+        </li>
+        <li>
+          Letadlo (nad 3&nbsp;700 km): vzdálenost
+          v&nbsp;km&nbsp;*&nbsp;koeficient nad 3&nbsp;700 km
+        </li>
+        <li>Kolo: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
+        <li>Plavání: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
+        <li>Chůze: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
+        <li>Trajekt: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
       </ul>
       <h2 className="calculation__heading">Pravidelná cesta</h2>
       <p className="calculation__text">
         Pokud uživatel zvolil pravidelnou cestu, vynásobili jsme celkovou trasu
-        počtem opakování za určitý časový úsek, a následně jsme tuto hodnotu
-        převedli na vzdálenost, kterou uživatel ujede nebo ujde za jeden rok:
+        počtem opakování za určitý časový úsek, a&nbsp;následně jsme tuto
+        hodnotu převedli na vzdálenost, kterou uživatel ujede nebo ujde za jeden
+        rok:
       </p>
       <ul className="calculation__list">
         <li>
@@ -46,7 +55,7 @@ export const Calculation = (props) => {
           vzdálenost ještě číslem 12
         </li>
         <li>
-          u týdenní frekvence jsme získanou vzdálenost vynásobili číslem 52
+          u&nbsp;týdenní frekvence jsme získanou vzdálenost vynásobili číslem 52
         </li>
       </ul>
     </>

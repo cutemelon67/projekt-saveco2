@@ -1,7 +1,7 @@
 import React from 'react';
 import { vehicleInfo, vehicleType } from '../TransportModes/TransportModes';
 import MaterialIcon from 'react-google-material-icons';
-import { tree } from './img/saveco2-tree-icon.svg';
+import tree from './img/saveco2-tree-icon.svg';
 import './selectedTransport.css';
 
 export const SelectedTransport = () => {
@@ -21,7 +21,7 @@ export const SelectedTransport = () => {
         <p>
           Svojí cestou autem na trase
           <br />
-          <strong>České Budějovice - Písek a zpět</strong>
+          <strong>České Budějovice&nbsp;-&nbsp;Písek a zpět</strong>
           <br />
           vyprodukuješ
         </p>
@@ -44,7 +44,7 @@ export const SelectedTransport = () => {
           <p className="values--number">4,7</p>
           <p>měsíců</p>
         </div>
-        {/* <img src={tree} alt="tree" /> */}
+        <img src={tree} alt="tree" />
       </div>
     </>
   );

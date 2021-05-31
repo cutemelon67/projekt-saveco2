@@ -12,12 +12,12 @@ export const Table = () => {
             prostředek
           </th>
           <th>
-            kg CO<sub>2</sub>/km/
+            kg&nbsp;CO<sub>2</sub>/km/
             <br />
             vozidlo
           </th>
           <th>
-            kg CO<sub>2</sub>/km/
+            kg&nbsp;CO<sub>2</sub>/km/
             <br />
             osoba
           </th>
@@ -25,77 +25,77 @@ export const Table = () => {
       </thead>
       <tbody>
         <tr>
-          <td>Auto diesel (1 - 7 osob)</td>
+          <td>Auto diesel (1&nbsp;-&nbsp;7&nbsp;osob)</td>
           <td>0,16660</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto diesel multivan (8 - 9 osob)</td>
+          <td>Auto diesel multivan (8&nbsp;-&nbsp;9&nbsp;osob)</td>
           <td>0,24527</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto benzín (1 - 7 osob)</td>
+          <td>Auto benzín (1&nbsp;-&nbsp;7&nbsp;osob)</td>
           <td>0,17363</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto benzín multivan (8 - 9 osob)</td>
+          <td>Auto benzín multivan (8&nbsp;-&nbsp;9&nbsp;osob)</td>
           <td>0,21881</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto hybrid (1 - 9 osob)*</td>
+          <td>Auto hybrid (1&nbsp;-&nbsp;9&nbsp;osob)*</td>
           <td>0,11433</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto CNG (1 - 7 osob)</td>
+          <td>Auto CNG (1&nbsp;-&nbsp;7&nbsp;osob)</td>
           <td>0,17424</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto CNG multivan (8 - 9 osob)</td>
+          <td>Auto CNG multivan (8&nbsp;-&nbsp;9&nbsp;osob)</td>
           <td>0,24523</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto LPG (1 - 7 osob)</td>
+          <td>Auto LPG (1&nbsp;-&nbsp;7&nbsp;osob)</td>
           <td>0,19707</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto LPG multivan (8 - 9 osob)</td>
+          <td>Auto LPG multivan (8&nbsp;-&nbsp;9&nbsp;osob)</td>
           <td>0,27104</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto průměr (1 - 7 osob)</td>
+          <td>Auto průměr (1&nbsp;-&nbsp;7&nbsp;osob)</td>
           <td>0,17015</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto průměr multivan (8 - 9 osob)</td>
+          <td>Auto průměr multivan (8&nbsp;-&nbsp;9&nbsp;osob)</td>
           <td>0,24441</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto plug-in hybrid elektro (1 - 9 osob)*</td>
+          <td>Auto plug-in hybrid elektro (1&nbsp;-&nbsp;9&nbsp;osob)*</td>
           <td>0,09433</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto elektomobil (1 - 7 osob)</td>
+          <td>Auto elektomobil (1&nbsp;-&nbsp;7&nbsp;osob)</td>
           <td>0,05274</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto elektromobil multivan (8 - 9 osob)</td>
+          <td>Auto elektromobil multivan (8&nbsp;-&nbsp;9&nbsp;osob)</td>
           <td>0,05497</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Motorka (1 - 2 osoby)</td>
+          <td>Motorka (1&nbsp;-&nbsp;2&nbsp;osoby)</td>
           <td>0,11115</td>
           <td>-</td>
         </tr>
@@ -120,12 +120,12 @@ export const Table = () => {
           <td>0,02845</td>
         </tr>
         <tr>
-          <td>Letadlo (do 3 700 km)</td>
+          <td>Letadlo (do 3&nbsp;700 km)</td>
           <td>-</td>
           <td>0,08145</td>
         </tr>
         <tr>
-          <td>Letadlo (nad 3 700 km)</td>
+          <td>Letadlo (nad 3&nbsp;700 km)</td>
           <td>-</td>
           <td>0,09994</td>
         </tr>

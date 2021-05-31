@@ -20,12 +20,13 @@ export const DataFacts = (props) => {
           </h3>
         </div>
         <p className="dataFacts__text">
-          Sektor dopravy tvoří přibližně <strong>24 % světových emisí </strong>
+          Sektor dopravy tvoří přibližně{' '}
+          <strong>24&nbsp;% světových emisí </strong>
           oxidu ohličitého (CO<sub>2</sub>) . Největší podíl na nich má silniční
-          doprava (75 %). 45 % emisí CO
-          <sub>2</sub> pochází přitom z automobilů a autobusů, zbylých 29 %
-          tvoří nákladní doprava. Letecká doprava příspívá 12 % a železniční
-          doprava tvoří 1 % celovětových emisí.
+          doprava (75&nbsp;%). 45&nbsp;% emisí CO
+          <sub>2</sub> pochází přitom z&nbsp;automobilů a&nbsp;autobusů, zbylých
+          29&nbsp;% tvoří nákladní doprava. Letecká doprava příspívá 12&nbsp;% a
+          železniční doprava tvoří 1&nbsp;% celovětových emisí.
         </p>
       </div>
       <div className="dataFacts__container">
@@ -40,12 +41,12 @@ export const DataFacts = (props) => {
           </h3>
         </div>
         <p className="dataFacts__text">
-          Během jednoho roku <strong>dospělý strom přijme </strong>z atmosféry
-          asi <strong>22 kilogramů </strong>
+          Během jednoho roku <strong>dospělý strom přijme </strong>
+          z&nbsp;atmosféry asi <strong>22&nbsp;kilogramů </strong>
           oxidu uhličitého (CO<sub>2</sub>) a výměnou uvolní kyslík. Odhaduje
-          se, že každý rok 1,3 milionu stromů odstraní ze vzduchu více než 2 500
-          tun znečišťujících látek. Je tedy pravděpodobné, že bez stromů bychom
-          na této planetě vůbec nebyli schopni žít.
+          se, že každý rok 1,3 milionu stromů odstraní ze&nbsp;vzduchu více než
+          2&nbsp;500 tun znečišťujících látek. Je tedy pravděpodobné, že bez
+          stromů bychom na této planetě vůbec nebyli schopni žít.
         </p>
       </div>
       <div className="dataFacts__container">
@@ -56,16 +57,17 @@ export const DataFacts = (props) => {
             alt="Turtle in the ocean"
           />
           <h3 className="dataFacts__heading--text">
-            Důsledkem globálního oteplování ubývá v oceánech kyslík
+            Důsledkem globálního oteplování ubývá v&nbsp;oceánech kyslík
           </h3>
         </div>
         <p className="dataFacts__text">
-          Život téměř všech zvířat v oceánu závisí na dostupnosti kyslíku, který
-          se rozpouští jako plyn v mořské vodě. Oceán však již několik
-          desetiletí nepřetržitě kyslík ztrácí. Hlavním důvodem je{' '}
-          <strong>globální oteplování</strong>, které vede ke snížení
-          rozpustnosti plynů, a tedy i kyslíku. Studie ukazují, že tento proces
-          bude pokračovat po staletí, i kdyby všechny emise oxidu ohličitého (CO
+          Život téměř všech zvířat v&nbsp;oceánu závisí na dostupnosti kyslíku,
+          který se rozpouští jako plyn v&nbsp;mořské vodě. Oceán však již
+          několik desetiletí nepřetržitě kyslík ztrácí. Hlavním důvodem je{' '}
+          <strong>globální oteplování</strong>, které vede ke&nbsp;snížení
+          rozpustnosti plynů, a tedy i&nbsp;kyslíku. Studie ukazují, že tento
+          proces bude pokračovat po staletí, i&nbsp;kdyby všechny emise oxidu
+          ohličitého (CO
           <sub>2</sub>) byly okamžitě zastaveny.
         </p>
       </div>
