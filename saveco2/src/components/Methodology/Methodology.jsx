@@ -5,9 +5,6 @@ import { Table } from '../Table/Table';
 export const Methodology = (props) => {
   return (
     <>
-      <h2 className="methodology__heading">
-        Koeficienty použité pro výpočet emisí CO<sub>2</sub>
-      </h2>
       <p className="methodology__text">
         Tabulka níže obsahuje přehled koeficientů pro jednotlivé dopravní
         prostředky. U většiny dopravních prostředků používáme průměrný

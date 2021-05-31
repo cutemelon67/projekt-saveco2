@@ -22,21 +22,25 @@ export const MethodologyPage = ({ userData, setUserData }) => {
     <>
       <div className="methodology">
         <Header></Header>
+        <h2 className="methodology__heading">
+          Koeficienty použité pro výpočet emisí CO<sub>2</sub>
+        </h2>
         <Nav href={'/results'}>Výsledky</Nav>
         <div className="methodology__container">
           <Methodology />
         </div>
+
         <div className="calculation__container">
           <Calculation />
         </div>
         <div className="sources__container">
           <Sources />
         </div>
-
-        <Button onClick={onSubmit}>
-          Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
-        </Button>
-
+        <div className="methodology__button">
+          <Button onClick={onSubmit}>
+            Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
+          </Button>
+        </div>
         <Footer></Footer>
       </div>
     </>

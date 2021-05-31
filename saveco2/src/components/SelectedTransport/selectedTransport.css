@@ -1,5 +1,13 @@
 .results__selected-transport--overview {
   display: flex;
   margin: 1rem 0;
-  justify-content: space-between;
+  align-items: center;
+}
+
+.results__selected-transport--overview p {
+  margin-right: 10px;
+}
+
+.results__selected-transport--overview div {
+  margin-right: 10px;
 }

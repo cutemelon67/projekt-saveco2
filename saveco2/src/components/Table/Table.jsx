@@ -6,12 +6,20 @@ export const Table = () => {
     <>
       <thead>
         <tr>
-          <th>Dopravní prostředek</th>
           <th>
-            kg CO<sub>2</sub>/km/vozidlo
+            Dopravní
+            <br />
+            prostředek
           </th>
           <th>
-            kg CO<sub>2</sub>/km/osoba
+            kg CO<sub>2</sub>/km/
+            <br />
+            vozidlo
+          </th>
+          <th>
+            kg CO<sub>2</sub>/km/
+            <br />
+            osoba
           </th>
         </tr>
       </thead>

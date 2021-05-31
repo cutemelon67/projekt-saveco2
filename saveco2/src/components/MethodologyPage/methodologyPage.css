@@ -1,0 +1,52 @@
+/*Methodology container*/
+
+.methodology__container {
+  margin: 1.5rem 1.5rem 0 1.5rem;
+  text-align: justify;
+}
+
+.methodology__heading {
+  text-align: center;
+  background-image: url(img/road_small_cut.jpg);
+  color: white;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.methodology__list {
+  padding: 0 1.5rem;
+  text-align: left;
+}
+
+.calculation__container {
+  margin: 1.5rem 1.875rem 0 1.875rem;
+  text-align: justify;
+}
+
+.calculation__list {
+  padding: 0 1.5rem;
+  text-align: left;
+}
+
+.sources__container {
+  margin: 1.5rem 1.875rem 0 1.875rem;
+  text-align: justify;
+}
+
+.sources__text {
+  text-align: left;
+}
+
+.methodology__button {
+  margin: 1.5rem 1.875rem 1.5rem 1.875rem;
+}
+
+.methodology__button .btn--secondary {
+  width: 100%;
+}
+
+.methodology__button .btn--secondary:active,
+.methodology__button .btn--secondary:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
