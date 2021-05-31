@@ -6,7 +6,7 @@ import { Nav } from '../Nav/Nav';
 import { getResults } from '../getResults/getResults';
 import MaterialIcon from 'react-google-material-icons';
 import { SelectedTransport } from '../SelectedTransport/SelectedTransport';
-import { Choice } from '../Choice/Choice';
+import { ChoiceStandard, ChoiceGreat, ChoiceMissing } from '../Choice/Choice';
 import { Alternative } from '../Alternative/Alternative';
 import { MethodologyResults } from '../MethodologyResults/MethodologyResults';
 import { DataFacts } from '../DataFacts/DataFacts';
@@ -39,7 +39,7 @@ export const ResultsPage = ({ userData, setUserData }) => {
           <SelectedTransport />
         </div>
         <div className="results__alternatives">
-          <Choice></Choice>
+          <ChoiceStandard></ChoiceStandard>
           <Alternative />
         </div>
         <div className="results__methodology">

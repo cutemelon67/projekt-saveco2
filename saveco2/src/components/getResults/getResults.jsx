@@ -31,8 +31,10 @@ export const getResults = ({
     return;
   }
 
-  if (RoundTrip !== false) {
+  if (RoundTrip === true) {
     distance = distance * 2;
+  } else {
+    distance;
   }
 
   if (transportType === 'car') {
@@ -84,6 +86,8 @@ const carResults = ({ distance, peopleCount, fuel }) => {
   if (!(peopleCount && peopleCount > 0 && peopleCount <= 9)) {
     return;
   }
+
+  console.log(peopleCount);
 
   const calculatedCarSize = peopleCount <= 7 ? carSize.SMALL : carSize.LARGE;
   emmissions = roundResults(
@@ -194,13 +198,13 @@ const bikeResults = ({ distance }) => {
   };
 };
 
-const planeResults = ({ distance }) => {
+const planeResults = ({ distance, RoundTrip }) => {
   let emmissions;
   let tree;
 
   const treeAbsorption = 22;
 
-  const oneWayDistance = RoundTrip ? distance / 2 : distance;
+  const oneWayDistance = RoundTrip === false ? distance : distance / 2;
   const distanceCoefficient =
     oneWayDistance <= 3700 ? flightType.SHORTHAUL : flightType.LONGHAUL;
   emmissions = roundResults(

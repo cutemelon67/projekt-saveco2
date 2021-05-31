@@ -1,10 +1,14 @@
 import React from 'react';
 import { vehicleInfo, vehicleType } from '../TransportModes/TransportModes';
 import MaterialIcon from 'react-google-material-icons';
-import tree from './img/saveco2-tree-icon.svg';
+import treeIcon from './img/saveco2-tree-icon.svg';
+import { useForm } from 'react-hook-form';
+import { getResults } from '../getResults/getResults';
 import './selectedTransport.css';
+import { ResultsPage } from '../ResultsPage/ResultsPage';
 
-export const SelectedTransport = () => {
+export const SelectedTransport = ({ userData, setUserData }) => {
+  const { register, watch, setValue } = useForm();
   return (
     <>
       <div className="results__selected-transport--overview">
@@ -27,7 +31,7 @@ export const SelectedTransport = () => {
         </p>
         <div className="alternative-transport__graph--bar"></div>
         <div className="selected-transport__values">
-          <p className="values--number">8,7</p>
+          <p className="values--number">7,8</p>
           <p>
             kg CO<sub>2</sub>
             <br />
@@ -44,7 +48,7 @@ export const SelectedTransport = () => {
           <p className="values--number">4,7</p>
           <p>měsíců</p>
         </div>
-        <img src={tree} alt="tree" />
+        <img src={treeIcon} alt="tree" />
       </div>
     </>
   );
