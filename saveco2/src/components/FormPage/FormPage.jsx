@@ -133,7 +133,11 @@ export const FormPage = ({ userData, setUserData }) => {
                         register={register}
                         defaultChecked={userData.id}
                         text={value.text}
-                      />
+                      >
+                        <Button variant={'secondary'} type={'button'}>
+                          {value.text}
+                        </Button>
+                      </FormButtons>
                     ))}
                   </div>
                   <div className="form__input">
