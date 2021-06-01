@@ -20,17 +20,17 @@
 }
 
 /*Chci vědět víc*/
-.btn--primary {
+.btn.btn--primary.main {
   background-color: hsl(86.4, 71.1%, 32.5%);
   color: white;
-  box-shadow: 2px 2px 4px #000000;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
 }
 
-.btn--primary:active {
+.btn--primary.main:active {
   background-color: hsl(86.6, 71.2%, 21.8%);
 }
 
-.btn--primary:hover {
+.btn--primary.main:hover {
   background-color: hsl(86.6, 71.2%, 21.8%);
 }
 
@@ -64,7 +64,7 @@
 .starting-page__form--journey {
   background: white;
   padding: 0.063rem;
-  margin: 1.5rem 1.875rem 1.875rem;
+  margin: 1.5rem 1.875rem;
 }
 
 .form__input {
@@ -106,8 +106,7 @@
 
 /* Starting page - Jak se přesuneš?*/
 .starting-page__form--transport-type {
-  padding: 0.063rem;
-  margin: 1.5rem 1.875rem 0 1.875rem;
+  margin: 1.5rem 1.875rem;
   background-color: white;
 }
 
@@ -133,9 +132,13 @@
   margin-top: 0;
 }
 
-/* .transport-type--img [type='radio'] {
+.transport-type--img [type='radio'] {
   visibility: hidden;
-} */
+}
+
+.transport-type--img input [type='radio']:checked {
+  visibility: hidden;
+}
 
 .transport-result {
   text-align: center;
@@ -145,7 +148,7 @@
 
 /* Starting page - Na co jezdíš*/
 .starting-page__form--fuel {
-  margin: 0 1.875rem;
+  margin: 1.5rem 1.875rem;
   background-color: white;
 }
 
@@ -190,7 +193,7 @@
 
 /*Starting page - Spočítej, Přidej dopravní prostředek*/
 .starting-page__form--buttons {
-  margin: 1.5rem 1.875rem;
+  margin: 1.5rem 1.875rem 2rem 1.875rem;
 }
 
 .form__buttons--submit {
@@ -205,6 +208,7 @@
   background-color: hsl(86.4, 71.1%, 32.5%);
   margin-bottom: 0.625rem;
   margin-top: 1rem;
+  color: white;
 }
 
 .btn.btn--primary.standard:active,
@@ -244,67 +248,67 @@
 
   .starting-page__main--container {
     display: flex;
-    padding: 0 100px;
+    padding: 0 6.25rem;
     align-items: flex-start;
   }
 
   .starting-page__name {
     background-image: none;
-    margin-top: 100px;
-    flex: 50%;
+    margin-top: 6.25rem;
+    flex-basis: calc(100%2);
   }
 
   .starting-page__form {
-    flex: 50%;
+    flex-basis: calc(100%2);
     align-self: center;
-    margin-top: 100px;
+    margin-top: 6.25rem;
   }
 
   .starting-page__name--headline {
-    font-size: 50px;
+    font-size: 3.125rem;
     line-height: 5rem;
     text-align: left;
   }
 
   .starting-page__name--subheadline {
-    font-size: 25px;
+    font-size: 1.563rem;
     margin-top: 1.4rem;
     text-align: left;
   }
 
   /*Chci vědět víc*/
+  .btn.btn--primary.main {
+    display: none;
+  }
 
   /*Tvoje cesta*/
   .starting-page__form--journey {
-    padding: 35px;
-    box-shadow: 2px 2px 4px #000000;
-    margin-bottom: 0;
+    padding: 1.875rem;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
 
   /*Jak se přesuneš?*/
   .starting-page__form--transport-type {
-    padding: 35px;
-    box-shadow: 2px 2px 4px #000000;
-    margin-top: 0;
+    padding: 1.875rem;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
 
   /*Na co jezdíš*/
   .starting-page__form--fuel {
-    padding: 35px;
-    box-shadow: 2px 2px 4px #000000;
+    padding: 1.875rem;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
 
   /*Počet cestujících*/
   .starting-page__form--people {
-    padding: 35px;
-    box-shadow: 2px 2px 4px #000000;
-    margin-top: 0;
+    padding: 1.875rem;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
+  /*Starting page - Spočítej, Přidej dopravní prostředek*/
 
   /*Přidej dopravní prostředek*/
   .btn.btn--secondary.standard {
-    box-shadow: 2px 2px 4px #000000;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+    flex-basis: calc(100%2);
   }
-
-  /*Spočítej, Přidej dopravní prostředek*/
 }
