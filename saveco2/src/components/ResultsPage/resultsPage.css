@@ -11,38 +11,6 @@
   padding-bottom: 1rem;
 }
 
-/* Results - Výsledky pro */
-.results__selected-transport {
-  margin: 0 1.875rem;
-}
-
-.results__selected-transport--details {
-  background-color: hsl(87, 55.6%, 85.9%);
-}
-
-.results__selected-transport--details > p {
-  margin: 0;
-  padding: 0.938rem;
-  text-align: justify;
-}
-
-.selected-transport__values {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 1.25rem;
-}
-
-.values--number {
-  font-size: 2.25rem;
-  font-weight: 800;
-  margin: 0 1.25rem 0 0;
-}
-
-.selected-transport__values p {
-  margin-top: 0;
-}
-
 /*Results buttons*/
 .results__buttons {
   margin: 0 1.875rem;
@@ -62,4 +30,28 @@
 .results__buttons .btn.btn--secondary:hover {
   cursor: pointer;
   background-color: lightgray;
+}
+
+/*Screen*/
+
+@media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
+  .results--header {
+    background-image: none;
+    margin-left: 6.25rem;
+    margin-right: 6.25rem;
+  }
+
+  .results--header nav {
+    margin-left: 6.25rem;
+    margin-right: 6.25rem;
+  }
+
+  .nav a,
+  .nav .material-icons {
+    color: white;
+  }
+
+  .nav .material-icons {
+    color: white;
+  }
 }

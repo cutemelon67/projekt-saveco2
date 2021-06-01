@@ -48,7 +48,7 @@ export const SelectedTransport = ({ emmissions, tree }) => {
           <p className="values--number">4,7</p>
           <p>měsíců</p>
         </div>
-        <img src={treeIcon} alt="tree" />
+        <img className="material-icons__tree" src={treeIcon} alt="tree" />
       </div>
     </>
   );

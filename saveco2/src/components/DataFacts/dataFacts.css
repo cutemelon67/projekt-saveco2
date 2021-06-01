@@ -30,7 +30,28 @@
   width: 80%;
 }
 
-.dataFacts_section-name {
+.dataFacts__section-name {
   margin: 1.5rem 1.875rem;
   text-align: center;
+}
+
+@media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
+  .dataFacts__section-name--screen {
+    display: flex;
+  }
+
+  .dataFacts__container {
+    flex-basis: calc (100%/3);
+  }
+
+  .results__data-facts {
+    margin-left: 6.25rem;
+    margin-right: 6.25rem;
+  }
+
+  .dataFacts__text {
+    background-color: white;
+    margin: 0;
+    padding: 0.938rem;
+  }
 }

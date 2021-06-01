@@ -1,3 +1,4 @@
+/* Selected transport - Výsledky pro */
 .results__selected-transport--overview {
   display: flex;
   margin: 1rem 0;
@@ -10,4 +11,57 @@
 
 .results__selected-transport--overview div {
   margin-right: 10px;
+}
+
+/* Selected transport - Rámeček */
+.results__selected-transport {
+  margin: 0 1.875rem;
+}
+
+.results__selected-transport--details {
+  background-color: hsl(87, 55.6%, 85.9%);
+}
+
+.results__selected-transport--details > p {
+  margin: 0;
+  padding: 0.938rem;
+  text-align: justify;
+}
+
+.selected-transport__values {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1.25rem;
+}
+
+.values--number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin: 0 1.25rem 0 0;
+}
+
+.selected-transport__values p {
+  margin-top: 0;
+}
+
+@media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
+  .results__selected-transport {
+    margin-left: 6.25rem;
+    margin-right: 6.25rem;
+  }
+
+  .results__selected-transport--overview {
+    color: white;
+  }
+
+  .results__selected-transport--details {
+    background-color: white;
+    display: flex;
+    align-items: center;
+  }
+
+  .material-icons__tree {
+    height: 80px;
+  }
 }
