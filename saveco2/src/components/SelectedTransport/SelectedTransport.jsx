@@ -3,12 +3,12 @@ import { vehicleInfo, vehicleType } from '../TransportModes/TransportModes';
 import MaterialIcon from 'react-google-material-icons';
 import treeIcon from './img/saveco2-tree-icon.svg';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 import { getResults } from '../getResults/getResults';
 import './selectedTransport.css';
 import { ResultsPage } from '../ResultsPage/ResultsPage';
 
-export const SelectedTransport = ({ userData, setUserData }) => {
-  const { register, watch, setValue } = useForm();
+export const SelectedTransport = ({ emmissions, tree }) => {
   return (
     <>
       <div className="results__selected-transport--overview">
