@@ -119,7 +119,6 @@ export const FormPage = ({ userData, setUserData }) => {
                     block: 'start',
                   });
                 }}
-                className={'main'}
               >
                 CHCI VĚDĚT VÍC
               </Button>

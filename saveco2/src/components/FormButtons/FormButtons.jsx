@@ -1,7 +1,7 @@
 import React from 'react';
 import './formButtons.css';
 
-export const FormButtons = ({ children, register, id, text }) => {
+export const FormButtons = ({ children, register, id }) => {
   return (
     <>
       <label className="form__buttons--journey-type">

@@ -78,8 +78,6 @@ export const getResults = ({
     return ferryResults({ distance });
   }
 
-  console.log(journeyType);
-
   // jednorázová vs. pravidelná cesta:
   if (journeyType === 'singleJourney') {
     return results;

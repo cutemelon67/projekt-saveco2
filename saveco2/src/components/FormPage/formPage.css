@@ -45,7 +45,7 @@
   border: 1px solid black;
 }
 
-/*Jednorázově*/
+/* Jednorázově
 .btn.btn--secondary.random:active,
 .btn.btn--secondary.random:hover {
   background-color: hsl(86.6, 71.2%, 43.5%);
@@ -58,7 +58,7 @@
   background-color: hsl(86.6, 71.2%, 43.5%);
   border: 1px solid hsl(86.6, 71.2%, 43.5%);
   color: white;
-}
+} */
 
 /* Starting page - Tvoje cesta*/
 .starting-page__form--journey {
