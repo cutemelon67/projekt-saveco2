@@ -22,19 +22,26 @@ export const getResults = ({
   peopleCount,
   roundTrip,
   transportType,
+  journeyType,
+  frequencyPeriod,
+  frequencyCount,
 }) => {
   const results = {};
+
   // převod vzdálenosti na float:
   distance = parseFloat(distance);
+
   // validace zadané vzdálenosti:
   if (!(distance && distance > 0)) {
     return;
   }
 
+  // výpočet vzdálenosti v případě zpáteční cesty:
   if (roundTrip !== false) {
     distance = distance * 2;
   }
 
+  // výsledky podle jednotlivých dopravních prostředků:
   if (transportType === 'car') {
     return carResults({ distance, peopleCount, fuel });
   }
@@ -71,7 +78,20 @@ export const getResults = ({
     return ferryResults({ distance });
   }
 
-  return results;
+  console.log(journeyType);
+
+  // jednorázová vs. pravidelná cesta:
+  if (journeyType === 'singleJourney') {
+    return results;
+  } else {
+    if (frequencyPeriod === 'year') {
+      return results.map((result) => result * frequencyCount);
+    } else if (frequencyPeriod === 'month') {
+      return results.map((result) => result * frequencyCount * 12);
+    } else {
+      return results.map((result) => result * frequencyCount * 52);
+    }
+  }
 };
 
 const carResults = ({ distance, peopleCount, fuel }) => {
