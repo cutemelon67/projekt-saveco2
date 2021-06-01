@@ -20,7 +20,7 @@ export const getResults = ({
   distance,
   fuel,
   peopleCount,
-  RoundTrip,
+  roundTrip,
   transportType,
 }) => {
   const results = {};
@@ -31,7 +31,7 @@ export const getResults = ({
     return;
   }
 
-  if (RoundTrip !== false) {
+  if (roundTrip !== false) {
     distance = distance * 2;
   }
 
@@ -60,7 +60,7 @@ export const getResults = ({
   }
 
   if (transportType === 'plane') {
-    return planeResults({ distance });
+    return planeResults({ distance, roundTrip });
   }
 
   if (transportType === 'subway') {
@@ -105,7 +105,7 @@ const busResults = ({ distance, busType }) => {
 
   const treeAbsorption = 22;
 
-  if (busType.STANDARD === 'bus') {
+  if (busType === 'bus') {
     emmissions = roundResults(
       distance * coefficients[vehicleType.BUS][busType.STANDARD],
     );
@@ -194,18 +194,23 @@ const bikeResults = ({ distance }) => {
   };
 };
 
-const planeResults = ({ distance, RoundTrip }) => {
+const planeResults = ({ distance, roundTrip }) => {
   let emmissions;
   let tree;
 
   const treeAbsorption = 22;
 
-  const oneWayDistance = RoundTrip === false ? distance : distance / 2;
-  const distanceCoefficient =
-    oneWayDistance <= 3700 ? flightType.SHORTHAUL : flightType.LONGHAUL;
-  emmissions = roundResults(
-    distance * coefficients[vehicleType.PLANE][distanceCoefficient],
-  );
+  const oneWayDistance = roundTrip !== false ? distance / 2 : distance;
+
+  if (distance <= 3700 || oneWayDistance <= 3700) {
+    emmissions = roundResults(
+      distance * coefficients[vehicleType.PLANE][flightType.SHORTHAUL],
+    );
+  } else {
+    emmissions = roundResults(
+      distance * coefficients[vehicleType.PLANE][flightType.LONGHAUL],
+    );
+  }
 
   tree = roundResults(emmissions / treeAbsorption);
 
