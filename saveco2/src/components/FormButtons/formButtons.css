@@ -1,3 +1,7 @@
 /* .form__buttons--journey-type [type='radio'] {
   visibility: hidden;
 } */
+
+input[type='radio']:checked + button {
+  background-color: red;
+}
