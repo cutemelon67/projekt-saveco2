@@ -5,6 +5,7 @@ import { Footer } from '../Footer/Footer';
 import { Icon } from '../Icon/Icon';
 import { InputField } from '../InputField/InputField';
 import { InputBtn } from '../InputBtn/InputBtn';
+import { InputSelect } from '../InputSelect/InputSelect';
 import { getResults } from '../getResults/getResults';
 import {
   vehicleType,
@@ -234,10 +235,34 @@ export const FormPage = ({ userData, setUserData }) => {
                     register={register}
                     defaultValue={userData.name}
                     min={'1'}
-                    max={9}
+                    max={'9'}
                   >
                     Kolik vás pojede?
                   </InputField>
+                </div>
+              </div>
+              <div className="starting-page__form--frequency">
+                <h2>Četnost jízd</h2>
+                <div className="form--frequency">
+                  <InputField
+                    htmlFor={'frequency--count'}
+                    id={'frequency--count'}
+                    name={'frequencyCount'}
+                    type={'number'}
+                    required={true}
+                    register={register}
+                    defaultValue={userData.name}
+                    min={'1'}
+                  >
+                    Jak často se takto přesouváš?
+                  </InputField>
+                </div>
+                <p>krát</p>
+                <div className="frequency--period">
+                  <InputSelect
+                    register={register}
+                    defaultValue={userData.name}
+                  ></InputSelect>
                 </div>
               </div>
               <div className="starting-page__form--buttons">
