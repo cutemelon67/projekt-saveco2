@@ -77,6 +77,7 @@ export const FormPage = ({ userData, setUserData }) => {
     watchedRoundTrip === false ? watch('distance') : watch('distance') * 2;
   const watchedTransportType = watch('transportType');
 
+  // ukládání a logování dat z formuláře:
   const history = useHistory();
   console.log(userData);
 
