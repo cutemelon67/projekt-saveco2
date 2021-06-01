@@ -1,17 +1,17 @@
 import React from 'react';
 import './transportModes.css';
 
-// const vehicle = {
-//   CAR: 'auto',
-//   BUS: 'autobus',
-//   TRAIN: 'vlak',
-//   MOTORBIKE: 'motorka',
-//   WALK: 'pěšky',
-//   BIKE: 'kolo',
-//   PLANE: 'letadlo',
-//   TRAM: 'tramvaj/metro',
-//   FERRY: 'trajekt',
-// };
+export const vehicle = {
+  car: 'auto',
+  bus: 'autobus',
+  train: 'vlak',
+  motorbike: 'motorka',
+  walk: 'pěšky',
+  bike: 'kolo',
+  plane: 'letadlo',
+  subway: 'tramvaj/metro',
+  ferry: 'trajekt',
+};
 
 export const vehicleType = {
   CAR: 'car',

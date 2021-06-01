@@ -16,6 +16,7 @@ import {
   busInfo,
   flightType,
   vehicleInfo,
+  vehicle,
 } from '../TransportModes/TransportModes';
 import { inputFromTo } from '../InputField/InputField';
 import { inputDistance } from '../InputField/InputField';
@@ -37,8 +38,6 @@ export const FormPage = ({ userData, setUserData }) => {
 
   const proxyurl = 'https://cors-anywhere.herokuapp.com/';
   // const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=${process.env.GOOGLE_MAPS_API_KEY}`;
-
-  console.log(URL);
 
   useEffect(() => {
     const delayedWatch = setTimeout(() => {
@@ -73,6 +72,10 @@ export const FormPage = ({ userData, setUserData }) => {
   }, [watchedFrom, watchedTo]);
 
   // pro vypisování vzdálenosti a vybraného dopravního prostředku
+  const watchedRoundTrip = watch('roundTrip');
+  const watchedDistance =
+    watchedRoundTrip === false ? watch('distance') : watch('distance') * 2;
+  const watchedTransportType = watch('transportType');
 
   const history = useHistory();
   console.log(userData);
@@ -156,6 +159,9 @@ export const FormPage = ({ userData, setUserData }) => {
                         {input.text}
                       </InputField>
                     ))}
+                    <p className="form--distance">
+                      Chci <Link to="#">zadat vzdálenost v&nbsp;km</Link>.
+                    </p>
                     <InputField
                       htmlFor={inputDistance.htmlFor}
                       id={inputDistance.id}
@@ -171,7 +177,7 @@ export const FormPage = ({ userData, setUserData }) => {
                     </InputField>
                   </div>
                   <p className="form--distance">
-                    Chci <a href="#">zadat vzdálenost v km</a>.
+                    Chci <Link to="#">zadat, odkud a kam pojedu</Link>.
                   </p>
                 </div>
                 <InputBtn
@@ -183,7 +189,11 @@ export const FormPage = ({ userData, setUserData }) => {
                 >
                   zpáteční cesta
                 </InputBtn>
-                <p className="distance-result">Zadaná vzdálenost: 100 km</p>
+                <p className="distance-result">
+                  {watchedDistance
+                    ? `Zadaná vzdálenost: ${watchedDistance} km`
+                    : `Zadaná vzdálenost:`}
+                </p>
               </div>
               <div className="starting-page__form--transport-type">
                 <h2>Jak se přesuneš?</h2>
@@ -199,7 +209,7 @@ export const FormPage = ({ userData, setUserData }) => {
                   ))}
                 </div>
                 <p className="transport-result">
-                  Zvolený dopravní prostředek: auto
+                  Zvolený dopravní prostředek: {[vehicle[watchedTransportType]]}
                 </p>
               </div>
               <div className="starting-page__form--fuel">
@@ -218,6 +228,27 @@ export const FormPage = ({ userData, setUserData }) => {
                         className={'form--fuel-radio'}
                       >
                         {fuelInfo[fuel]}
+                      </InputBtn>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="starting-page__form--bus-type">
+                <h2>Jakým druhem autobusu?</h2>
+                <div className="form--fuel">
+                  {Object.values(busType).map((bus) => {
+                    return (
+                      <InputBtn
+                        type={'radio'}
+                        name={'busType'}
+                        id={bus}
+                        key={bus}
+                        required={true}
+                        register={register}
+                        defaultValue={userData.name}
+                        className={'form--bus-type-radio'}
+                      >
+                        {busInfo[bus]}
                       </InputBtn>
                     );
                   })}
