@@ -170,6 +170,24 @@
   margin-left: 0;
 }
 
+/*Starting page - Jakým druhem autobusu*/
+.starting-page__form--bus-type {
+  margin: 1.5rem 1.875rem;
+  background-color: white;
+}
+
+.form--bus-type-radio {
+  width: calc(100% / 2);
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.form--bus-type-radio input {
+  margin-right: 0.313rem;
+  margin-left: 0;
+}
+
 /*Starting page - Počet cestujících*/
 
 .starting-page__form--people {
@@ -189,6 +207,46 @@
   border: 0, 5px solid black;
   margin-left: 1rem;
   flex-grow: 1;
+}
+
+/*Starting page - Četnost jízd*/
+.starting-page__form--frequency {
+  margin: 1.5rem 1.875rem;
+  background-color: white;
+}
+
+.starting-page__form--frequency h2 {
+  margin-top: 1.25rem;
+}
+
+.frequency--count-details {
+  display: flex;
+  align-items: center;
+}
+
+.frequency--count-details p {
+  margin-top: 0;
+}
+
+#frequency--count {
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0, 5px solid black;
+  margin-right: 1rem;
+  flex-grow: calc(100% / 3);
+}
+
+/* krát*/
+#frequency--period {
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0, 5px solid black;
+  margin-left: 1rem;
+  /*flex-grow: 1;*/
+}
+
+.form--frequency p {
+  margin-bottom: 0;
 }
 
 /*Starting page - Spočítej, Přidej dopravní prostředek*/
@@ -295,6 +353,11 @@
 
   /*Na co jezdíš*/
   .starting-page__form--fuel {
+    padding: 1.875rem;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+  }
+  /*Jakým druhem autobusu*/
+  .starting-page__form--bus-type {
     padding: 1.875rem;
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }

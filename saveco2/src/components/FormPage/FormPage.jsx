@@ -119,6 +119,7 @@ export const FormPage = ({ userData, setUserData }) => {
                     block: 'start',
                   });
                 }}
+                className={'main'}
               >
                 CHCI VĚDĚT VÍC
               </Button>
@@ -276,26 +277,31 @@ export const FormPage = ({ userData, setUserData }) => {
               <div className="starting-page__form--frequency">
                 <h2>Četnost jízd</h2>
                 <div className="form--frequency">
-                  <InputField
-                    htmlFor={'frequency--count'}
-                    id={'frequency--count'}
-                    name={'frequencyCount'}
-                    type={'number'}
-                    required={true}
-                    register={register}
-                    defaultValue={userData.name}
-                    min={'1'}
-                  >
-                    Jak často se takto přesouváš?
-                  </InputField>
+                  <p>Jak často se takto přesouváš?</p>
+                  <div className="frequency--count-details">
+                    <InputField
+                      htmlFor={'frequency--count'}
+                      id={'frequency--count'}
+                      name={'frequencyCount'}
+                      type={'number'}
+                      required={true}
+                      register={register}
+                      defaultValue={userData.name}
+                      min={'1'}
+                    ></InputField>
+                    <p>krát</p>
+                    <InputSelect
+                      register={register}
+                      defaultValue={userData.name}
+                    ></InputSelect>
+                  </div>
                 </div>
-                <p>krát</p>
-                <div className="frequency--period">
+                {/*<div className="frequency--period">
                   <InputSelect
                     register={register}
                     defaultValue={userData.name}
                   ></InputSelect>
-                </div>
+                </div>*/}
               </div>
               <div className="starting-page__form--buttons">
                 <div className="form__buttons--submit">
