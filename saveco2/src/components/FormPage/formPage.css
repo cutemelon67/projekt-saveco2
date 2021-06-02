@@ -215,10 +215,6 @@
   background-color: white;
 }
 
-.starting-page__form--frequency h2 {
-  margin-top: 1.25rem;
-}
-
 .frequency--count-details {
   display: flex;
   align-items: center;
@@ -233,16 +229,20 @@
   padding: 0.625rem;
   border: 0, 5px solid black;
   margin-right: 1rem;
-  flex-grow: calc(100% / 3);
+  flex: 1 1 calc(100% / 3);
 }
 
-/* krát*/
+#frequency--count p {
+  flex: 1 1 calc(100% / 3);
+}
+
+/* za rok/za měsíc*/
 #frequency--period {
   font-size: 1rem;
   padding: 0.625rem;
   border: 0, 5px solid black;
   margin-left: 1rem;
-  /*flex-grow: 1;*/
+  flex: 1 1 calc(100% / 3);
 }
 
 .form--frequency p {
@@ -306,20 +306,23 @@
 
   .starting-page__main--container {
     display: flex;
-    padding: 0 6.25rem;
-    align-items: flex-start;
+    justify-content: center;
   }
 
   .starting-page__name {
     background-image: none;
-    margin-top: 6.25rem;
-    flex-basis: calc(100%2);
+    margin: 6.25rem 0 0 0;
+    padding: 30px;
+    width: 30%;
   }
 
   .starting-page__form {
-    flex-basis: calc(100%2);
+    width: 50%;
     align-self: center;
     margin-top: 6.25rem;
+    width: 30%;
+    background-color: white;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
 
   .starting-page__name--headline {
@@ -342,31 +345,31 @@
   /*Tvoje cesta*/
   .starting-page__form--journey {
     padding: 1.875rem;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
 
   /*Jak se přesuneš?*/
   .starting-page__form--transport-type {
     padding: 1.875rem;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
 
   /*Na co jezdíš*/
   .starting-page__form--fuel {
     padding: 1.875rem;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
   /*Jakým druhem autobusu*/
   .starting-page__form--bus-type {
     padding: 1.875rem;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
 
   /*Počet cestujících*/
   .starting-page__form--people {
     padding: 1.875rem;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
+
+  /*Četnost jízd*/
+  .starting-page__form--frequency {
+  }
+
   /*Starting page - Spočítej, Přidej dopravní prostředek*/
 
   /*Přidej dopravní prostředek*/

@@ -83,10 +83,10 @@ export const FormPage = ({ userData, setUserData }) => {
     history.push('/results');
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     setValue('peopleCount', 1);
     setValue('fuel', 'petrol');
-  }, []);
+  }, []);*/
 
   console.log(userData);
 

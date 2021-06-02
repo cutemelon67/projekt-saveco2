@@ -38,10 +38,14 @@
 @media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
   .dataFacts__section-name--screen {
     display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    overflow: hidden;
+    margin-bottom: 100px;
   }
 
   .dataFacts__container {
-    flex-basis: calc (100%/3);
+    width: 30%;
   }
 
   .results__data-facts {
@@ -53,5 +57,6 @@
     background-color: white;
     margin: 0;
     padding: 0.938rem;
+    height: 100%;
   }
 }
