@@ -3,35 +3,43 @@ import { vehicleInfo, vehicleType } from '../TransportModes/TransportModes';
 import MaterialIcon from 'react-google-material-icons';
 import treeIcon from './img/saveco2-tree-icon.svg';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
 import { getResults } from '../getResults/getResults';
 import './selectedTransport.css';
 import { ResultsPage } from '../ResultsPage/ResultsPage';
 
-export const SelectedTransport = ({ emmissions, tree }) => {
+export const SelectedTransport = ({
+  emmissions,
+  tree,
+  journeyDistance,
+  userData,
+}) => {
+  const { from, to, distance, roundTrip, fuel, transportType, journeyType } =
+    userData;
+
   return (
     <>
       <div className="results__selected-transport--overview">
         <p>Výsledky pro </p>
         <div>
-          <MaterialIcon
-            icon={vehicleInfo[vehicleType.CAR].icon}
-            size={48}
-          ></MaterialIcon>{' '}
+          <MaterialIcon icon={transportType.icon} size={48}></MaterialIcon>{' '}
         </div>
-        <p>benzín</p>
+        <p>{fuel}</p>
       </div>
       <div className="results__selected-transport--details">
         <p>
-          Svojí cestou autem na trase
+          Svojí {journeyType === 'regularJourney' ? ' pravidelnou ' : ''} cestou
+          na trase
           <br />
-          <strong>České Budějovice&nbsp;-&nbsp;Písek a zpět</strong>
+          <strong>
+            {distance ? `${distance} km` : `${from} - ${to}`}
+            {roundTrip ? ' a zpět ' : null}
+          </strong>
           <br />
           vyprodukuješ
         </p>
         <div className="alternative-transport__graph--bar"></div>
         <div className="selected-transport__values">
-          <p className="values--number">7,8</p>
+          <p className="values--number">{emmissions}</p>
           <p>
             kg CO<sub>2</sub>
             <br />
@@ -45,8 +53,8 @@ export const SelectedTransport = ({ emmissions, tree }) => {
           <sub>2</sub>&nbsp; potřebuje jeden strom
         </p>
         <div className="selected-transport__values">
-          <p className="values--number">4,7</p>
-          <p>měsíců</p>
+          <p className="values--number">{tree}</p>
+          <p>měsíc(e/ů)</p>
         </div>
         <img className="material-icons__tree" src={treeIcon} alt="tree" />
       </div>

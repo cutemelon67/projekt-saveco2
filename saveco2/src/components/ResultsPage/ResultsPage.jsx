@@ -7,24 +7,23 @@ import { getResults } from '../getResults/getResults';
 import MaterialIcon from 'react-google-material-icons';
 import { SelectedTransport } from '../SelectedTransport/SelectedTransport';
 import { ChoiceStandard, ChoiceGreat, ChoiceMissing } from '../Choice/Choice';
-import { Alternative } from '../Alternative/Alternative';
+import { Alternatives } from '../Alternative/Alternative';
 import { MethodologyResults } from '../MethodologyResults/MethodologyResults';
 import { DataFacts } from '../DataFacts/DataFacts';
 import { useHistory } from 'react-router-dom';
+import { getJourneyDistance } from '../getResults/getResults';
 import './resultsPage.css';
 
 export const ResultsPage = ({ userData, setUserData }) => {
   const history = useHistory();
 
-  const { emmissions, tree } = getResults(userData);
+  const journeyDistance = getJourneyDistance(userData);
+
+  const { emmissions, tree } = getResults(userData, journeyDistance);
 
   if (!emmissions || !tree) {
     return <p> Výsledky se po cestě někde zatoulaly.</p>;
   }
-
-  console.log(userData);
-  const calculatedResult = getResults(userData);
-  console.log(calculatedResult);
 
   const onSubmit = (data) => {
     setUserData({});
@@ -42,11 +41,16 @@ export const ResultsPage = ({ userData, setUserData }) => {
           Zadat trasu
         </Nav>
         <div className="results__selected-transport">
-          <SelectedTransport emmissions={emmissions} tree={tree} />
+          <SelectedTransport
+            emmissions={emmissions}
+            tree={tree}
+            journeyDistance={journeyDistance}
+            userData={userData}
+          />
         </div>
         <div className="results__alternatives">
           <ChoiceStandard></ChoiceStandard>
-          <Alternative />
+          <Alternatives userData={userData}></Alternatives>
         </div>
         <div className="results__methodology">
           <MethodologyResults />

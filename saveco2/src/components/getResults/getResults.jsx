@@ -13,18 +13,13 @@ const roundResults = (number) => {
   return Math.round(number * 10) / 10;
 };
 
-export const getResults = ({
-  distance,
-  fuel,
-  peopleCount,
+export const getJourneyDistance = ({
   roundTrip,
-  transportType,
+  distance,
   journeyType,
-  frequencyPeriod,
   frequencyCount,
+  frequencyPeriod,
 }) => {
-  let results = {};
-
   // převod vzdálenosti na float:
   distance = parseFloat(distance);
 
@@ -50,48 +45,65 @@ export const getResults = ({
       distance = distance * frequencyCount * 52;
     }
   }
+  return distance;
+};
+
+// userData + journeyDistance:
+export const getResults = (
+  {
+    fuel,
+    peopleCount,
+    roundTrip,
+    transportType,
+    journeyType,
+    frequencyPeriod,
+    frequencyCount,
+  },
+  journeyDistance,
+) => {
+  let results = {};
 
   // výsledky podle jednotlivých dopravních prostředků:
   if (transportType === 'car') {
-    results = carResults({ distance, peopleCount, fuel });
+    results = carResults({ journeyDistance, peopleCount, fuel });
   }
 
   if (transportType === 'bus') {
-    results = busResults({ distance });
+    results = busResults({ journeyDistance });
   }
 
   if (transportType === 'train') {
-    results = trainResults({ distance });
+    results = trainResults({ journeyDistance });
   }
 
   if (transportType === 'motorbike') {
-    results = motorbikeResults({ distance, peopleCount });
+    results = motorbikeResults({ journeyDistance, peopleCount });
   }
 
   if (transportType === 'walk') {
-    results = walkResults({ distance });
+    results = walkResults({ journeyDistance });
   }
 
   if (transportType === 'bike') {
-    results = bikeResults({ distance });
+    results = bikeResults({ journeyDistance });
   }
 
   if (transportType === 'plane') {
-    results = planeResults({ distance });
+    results = planeResults({ journeyDistance });
   }
 
   if (transportType === 'subway') {
-    results = subwayResults({ distance });
+    results = subwayResults({ journeyDistance });
   }
 
   if (transportType === 'ferry') {
-    results = ferryResults({ distance });
+    results = ferryResults({ journeyDistance });
   }
 
   return results;
 };
 
-const carResults = ({ distance, peopleCount, fuel }) => {
+export const carResults = ({ journeyDistance, peopleCount, fuel }) => {
   let emmissions;
   let tree;
 
@@ -104,7 +116,7 @@ const carResults = ({ distance, peopleCount, fuel }) => {
 
   const calculatedCarSize = peopleCount <= 7 ? carSize.SMALL : carSize.LARGE;
   emmissions = roundResults(
-    (distance * coefficients[vehicleType.CAR][fuel][calculatedCarSize]) /
+    (journeyDistance * coefficients[vehicleType.CAR][fuel][calculatedCarSize]) /
       peopleCount,
   );
 
@@ -116,13 +128,13 @@ const carResults = ({ distance, peopleCount, fuel }) => {
   };
 };
 
-const busResults = ({ distance }) => {
+export const busResults = ({ journeyDistance }) => {
   let emmissions;
   let tree;
 
   const treeAbsorption = 22;
 
-  emmissions = roundResults(distance * coefficients[vehicleType.BUS]);
+  emmissions = roundResults(journeyDistance * coefficients[vehicleType.BUS]);
 
   tree = roundResults(emmissions / treeAbsorption);
 
@@ -132,13 +144,13 @@ const busResults = ({ distance }) => {
   };
 };
 
-const trainResults = ({ distance }) => {
+export const trainResults = ({ journeyDistance }) => {
   let emmissions;
   let tree;
 
   const treeAbsorption = 22;
 
-  emmissions = roundResults(distance * coefficients[vehicleType.TRAIN]);
+  emmissions = roundResults(journeyDistance * coefficients[vehicleType.TRAIN]);
 
   tree = roundResults(emmissions / treeAbsorption);
 
@@ -148,7 +160,7 @@ const trainResults = ({ distance }) => {
   };
 };
 
-const motorbikeResults = ({ distance, peopleCount }) => {
+export const motorbikeResults = ({ journeyDistance, peopleCount }) => {
   let emmissions;
   let tree;
 
@@ -160,7 +172,7 @@ const motorbikeResults = ({ distance, peopleCount }) => {
   }
 
   emmissions = roundResults(
-    (distance * coefficients[vehicleType.MOTORBIKE]) / peopleCount,
+    (journeyDistance * coefficients[vehicleType.MOTORBIKE]) / peopleCount,
   );
 
   tree = roundResults(emmissions / treeAbsorption);
@@ -171,13 +183,13 @@ const motorbikeResults = ({ distance, peopleCount }) => {
   };
 };
 
-const walkResults = ({ distance }) => {
+export const walkResults = ({ journeyDistance }) => {
   let emmissions;
   let tree;
 
   const treeAbsorption = 22;
 
-  emmissions = roundResults(distance * coefficients[vehicleType.WALK]);
+  emmissions = roundResults(journeyDistance * coefficients[vehicleType.WALK]);
 
   tree = roundResults(emmissions / treeAbsorption);
 
@@ -187,13 +199,13 @@ const walkResults = ({ distance }) => {
   };
 };
 
-const bikeResults = ({ distance }) => {
+export const bikeResults = ({ journeyDistance }) => {
   let emmissions;
   let tree;
 
   const treeAbsorption = 22;
 
-  emmissions = roundResults(distance * coefficients[vehicleType.BIKE]);
+  emmissions = roundResults(journeyDistance * coefficients[vehicleType.BIKE]);
 
   tree = roundResults(emmissions / treeAbsorption);
 
@@ -203,13 +215,13 @@ const bikeResults = ({ distance }) => {
   };
 };
 
-const planeResults = ({ distance, roundTrip }) => {
+export const planeResults = ({ journeyDistance, roundTrip }) => {
   let emmissions;
   let tree;
 
   const treeAbsorption = 22;
 
-  emmissions = roundResults(distance * coefficients[vehicleType.PLANE]);
+  emmissions = roundResults(journeyDistance * coefficients[vehicleType.PLANE]);
 
   tree = roundResults(emmissions / treeAbsorption);
 
@@ -219,13 +231,13 @@ const planeResults = ({ distance, roundTrip }) => {
   };
 };
 
-const subwayResults = ({ distance }) => {
+export const subwayResults = ({ journeyDistance }) => {
   let emmissions;
   let tree;
 
   const treeAbsorption = 22;
 
-  emmissions = roundResults(distance * coefficients[vehicleType.SUBWAY]);
+  emmissions = roundResults(journeyDistance * coefficients[vehicleType.SUBWAY]);
 
   tree = roundResults(emmissions / treeAbsorption);
 
@@ -235,13 +247,13 @@ const subwayResults = ({ distance }) => {
   };
 };
 
-const ferryResults = ({ distance }) => {
+export const ferryResults = ({ journeyDistance }) => {
   let emmissions;
   let tree;
 
   const treeAbsorption = 22;
 
-  emmissions = roundResults(distance * coefficients[vehicleType.FERRY]);
+  emmissions = roundResults(journeyDistance * coefficients[vehicleType.FERRY]);
 
   tree = roundResults(emmissions / treeAbsorption);
 
