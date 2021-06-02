@@ -5,9 +5,6 @@ import {
   fuelType,
   fuelInfo,
   carSize,
-  busType,
-  busInfo,
-  flightType,
   vehicleInfo,
 } from '../TransportModes/TransportModes';
 import './getResults.css';
@@ -47,7 +44,7 @@ export const getResults = ({
   }
 
   if (transportType === 'bus') {
-    return busResults({ distance, busType });
+    return busResults({ distance });
   }
 
   if (transportType === 'train') {
@@ -67,7 +64,7 @@ export const getResults = ({
   }
 
   if (transportType === 'plane') {
-    return planeResults({ distance, roundTrip });
+    return planeResults({ distance });
   }
 
   if (transportType === 'subway') {
@@ -117,21 +114,13 @@ const carResults = ({ distance, peopleCount, fuel }) => {
   };
 };
 
-const busResults = ({ distance, busType }) => {
+const busResults = ({ distance }) => {
   let emmissions;
   let tree;
 
   const treeAbsorption = 22;
 
-  if (busType === 'bus') {
-    emmissions = roundResults(
-      distance * coefficients[vehicleType.BUS][busType.STANDARD],
-    );
-  } else {
-    emmissions = roundResults(
-      distance * coefficients[vehicleType.BUS][busType.HOLIDAY],
-    );
-  }
+  emmissions = roundResults(distance * coefficients[vehicleType.BUS]);
 
   tree = roundResults(emmissions / treeAbsorption);
 
@@ -218,17 +207,7 @@ const planeResults = ({ distance, roundTrip }) => {
 
   const treeAbsorption = 22;
 
-  const oneWayDistance = roundTrip !== false ? distance / 2 : distance;
-
-  if (distance <= 3700 || oneWayDistance <= 3700) {
-    emmissions = roundResults(
-      distance * coefficients[vehicleType.PLANE][flightType.SHORTHAUL],
-    );
-  } else {
-    emmissions = roundResults(
-      distance * coefficients[vehicleType.PLANE][flightType.LONGHAUL],
-    );
-  }
+  emmissions = roundResults(distance * coefficients[vehicleType.PLANE]);
 
   tree = roundResults(emmissions / treeAbsorption);
 

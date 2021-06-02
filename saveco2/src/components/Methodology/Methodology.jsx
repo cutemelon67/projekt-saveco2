@@ -22,13 +22,16 @@ export const Methodology = (props) => {
         1&nbsp;km).
       </p>
       <p className="methodology__text">
-        V&nbsp;případě letadla se koeficient liší pro krátké (short-haul) a
-        dlouhé (long-haul) lety. Pro usnadnění zadávání dat ze&nbsp;strany
-        uživatele jsme nebrali v&nbsp;potaz třídu, ve&nbsp;které uživatel
-        cestuje, a vycházíme tedy z&nbsp;průměrných hodnot. Uvedené koeficienty
-        nezahrnují WTT (= well-to-tank) koeficienty spojené s&nbsp;těžbou,
-        rafinací nebo přepravou jednotlivých paliv ani CO<sub>2</sub>{' '}
-        vyprodukované při výrobě jednotlivých dopravních prostředků.
+        V&nbsp;případě letadla se jsme použili koeficinet pro dlouhé (long-haul)
+        lety. Pro usnadnění zadávání dat ze&nbsp;strany uživatele jsme nebrali
+        v&nbsp;potaz třídu, ve&nbsp;které uživatel cestuje, a vycházíme tedy
+        z&nbsp;průměrných hodnot.
+      </p>
+      <p>
+        Uvedené koeficienty nezahrnují WTT (= well-to-tank) koeficienty spojené
+        s&nbsp;těžbou, rafinací nebo přepravou jednotlivých paliv ani CO
+        <sub>2</sub> vyprodukované při výrobě jednotlivých dopravních
+        prostředků.
       </p>
       <p className="methodology__text">
         Pro stanovení koeficientu pro chůzi, běh a plavání jsme vycházeli

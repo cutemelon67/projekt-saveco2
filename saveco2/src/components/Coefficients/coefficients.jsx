@@ -3,8 +3,6 @@ import {
   vehicleType,
   fuelType,
   carSize,
-  busType,
-  flightType,
 } from '../TransportModes/TransportModes';
 
 export const coefficients = {
@@ -42,18 +40,12 @@ export const coefficients = {
       [carSize.LARGE]: 0.24441,
     },
   },
-  [vehicleType.BUS]: {
-    [busType.STANDARD]: 0.10231,
-    [busType.HOLIDAY]: 0.02679,
-  },
+  [vehicleType.BUS]: 0.10231,
   [vehicleType.TRAIN]: 0.03659,
   [vehicleType.MOTORBIKE]: 0.11115,
   [vehicleType.WALK]: 0.00833,
   [vehicleType.BIKE]: 0.01808,
-  [vehicleType.PLANE]: {
-    [flightType.SHORTHAUL]: 0.08145,
-    [flightType.LONGHAUL]: 0.09994,
-  },
+  [vehicleType.PLANE]: 0.09994,
   [vehicleType.SUBWAY]: 0.02845,
   [vehicleType.FERRY]: 0.11131,
 };

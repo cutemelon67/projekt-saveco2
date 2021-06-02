@@ -19,20 +19,10 @@ export const Calculation = (props) => {
           Motorka: (vzdálenost
           v&nbsp;km&nbsp;*&nbsp;koeficient)&nbsp;/&nbsp;počet cestujících
         </li>
-        <li>
-          Autobus / zájezdový autobus: vzdálenost
-          v&nbsp;km&nbsp;*&nbsp;koeficient podle druhu autobusu
-        </li>
+        <li>Autobus: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
         <li>Vlak: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
         <li>Tramvaj / metro: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
-        <li>
-          Letadlo (do 3&nbsp;700 km): vzdálenost
-          v&nbsp;km&nbsp;*&nbsp;koeficient do 3&nbsp;700 km
-        </li>
-        <li>
-          Letadlo (nad 3&nbsp;700 km): vzdálenost
-          v&nbsp;km&nbsp;*&nbsp;koeficient nad 3&nbsp;700 km
-        </li>
+        <li>Letadlo: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
         <li>Kolo: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
         <li>Plavání: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>
         <li>Chůze: vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient</li>

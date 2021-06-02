@@ -52,22 +52,6 @@ export const carSize = {
   LARGE: 'large',
 };
 
-export const busType = {
-  STANDARD: 'bus',
-  HOLIDAY: 'holidayBus',
-};
-
-export const busInfo = {
-  [busType.STANDARD]: 'autobus',
-  [busType.HOLIDAY]: 'zájezdový autobus',
-};
-
-export const flightType = {
-  SHORTHAUL: 'shorthaul',
-  LONGHAUL: 'longhaul',
-};
-
-// zahrnout do komponenty Icon + hlavní jsx
 export const vehicleInfo = {
   [vehicleType.CAR]: {
     icon: 'directions_car',

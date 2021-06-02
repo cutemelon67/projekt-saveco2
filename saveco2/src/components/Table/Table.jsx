@@ -105,11 +105,6 @@ export const Table = () => {
           <td>0,10231</td>
         </tr>
         <tr>
-          <td>Zájezdový autobus</td>
-          <td>-</td>
-          <td>0,02679</td>
-        </tr>
-        <tr>
           <td>Vlak</td>
           <td>-</td>
           <td>0,03659</td>
@@ -120,12 +115,7 @@ export const Table = () => {
           <td>0,02845</td>
         </tr>
         <tr>
-          <td>Letadlo (do 3&nbsp;700 km)</td>
-          <td>-</td>
-          <td>0,08145</td>
-        </tr>
-        <tr>
-          <td>Letadlo (nad 3&nbsp;700 km)</td>
+          <td>Letadlo</td>
           <td>-</td>
           <td>0,09994</td>
         </tr>

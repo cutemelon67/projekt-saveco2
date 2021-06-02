@@ -12,9 +12,6 @@ import {
   fuelType,
   fuelInfo,
   carSize,
-  busType,
-  busInfo,
-  flightType,
   vehicleInfo,
   vehicle,
 } from '../TransportModes/TransportModes';
@@ -89,7 +86,6 @@ export const FormPage = ({ userData, setUserData }) => {
   useEffect(() => {
     setValue('peopleCount', 1);
     setValue('fuel', 'petrol');
-    setValue('busType', 'bus');
   }, []);
 
   console.log(userData);
@@ -233,27 +229,7 @@ export const FormPage = ({ userData, setUserData }) => {
                   })}
                 </div>
               </div>
-              <div className="starting-page__form--bus-type">
-                <h2>Jakým druhem autobusu?</h2>
-                <div className="form--fuel">
-                  {Object.values(busType).map((bus) => {
-                    return (
-                      <InputBtn
-                        type={'radio'}
-                        name={'busType'}
-                        id={bus}
-                        key={bus}
-                        required={true}
-                        register={register}
-                        defaultValue={userData.name}
-                        className={'form--bus-type-radio'}
-                      >
-                        {busInfo[bus]}
-                      </InputBtn>
-                    );
-                  })}
-                </div>
-              </div>
+
               <div className="starting-page__form--people">
                 <h2>Počet cestujících</h2>
                 <div className="form--people">
