@@ -307,27 +307,28 @@
   .starting-page__main--container {
     display: flex;
     justify-content: center;
+    max-width: 1300px;
+    margin: auto;
   }
 
   .starting-page__name {
     background-image: none;
     margin: 6.25rem 0 0 0;
-    padding: 30px;
-    width: 30%;
+    padding-right: 30px;
+    width: 50%;
   }
 
   .starting-page__form {
-    width: 50%;
     align-self: center;
     margin-top: 6.25rem;
-    width: 30%;
+    width: 25%;
     background-color: white;
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
 
   .starting-page__name--headline {
-    font-size: 3.125rem;
-    line-height: 5rem;
+    font-size: 4.5rem;
+    line-height: 1.5;
     text-align: left;
   }
 
@@ -342,33 +343,32 @@
     display: none;
   }
 
-  /*Tvoje cesta*/
+  /*Tvoje cesta
   .starting-page__form--journey {
     padding: 1.875rem;
-  }
+  }*/
 
-  /*Jak se přesuneš?*/
+  /*Jak se přesuneš?
   .starting-page__form--transport-type {
     padding: 1.875rem;
-  }
+  }*/
 
-  /*Na co jezdíš*/
+  /*Na co jezdíš
   .starting-page__form--fuel {
     padding: 1.875rem;
-  }
-  /*Jakým druhem autobusu*/
+  }*/
+
+  /*Jakým druhem autobusu
   .starting-page__form--bus-type {
     padding: 1.875rem;
-  }
+  }*/
 
-  /*Počet cestujících*/
+  /*Počet cestujících
   .starting-page__form--people {
     padding: 1.875rem;
-  }
+  }*/
 
   /*Četnost jízd*/
-  .starting-page__form--frequency {
-  }
 
   /*Starting page - Spočítej, Přidej dopravní prostředek*/
 
