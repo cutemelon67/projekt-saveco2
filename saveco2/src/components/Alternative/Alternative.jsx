@@ -77,12 +77,6 @@ const AlternativeHeadingPlugin = () => (
   <h4>Nebo plug-in hybrid elektro? Alespoň na tebe nebude pršet! </h4>
 );
 
-const AlternativeHeadingHolidayBus = () => (
-  <h4>
-    Zeptej se v&nbsp;cestovce na autobus a poznej další účastníky zájezdu.{' '}
-  </h4>
-);
-
 const AlternativeHeadingSwim = () => <h4>To snad přeplaveš, ne?</h4>;
 
 const AlternativeHeadingPlane = () => (
