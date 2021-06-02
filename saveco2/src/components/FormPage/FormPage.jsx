@@ -92,8 +92,8 @@ export const FormPage = ({ userData, setUserData }) => {
 
   return (
     <Router>
+      <Header></Header>
       <div className="starting-page">
-        <Header></Header>
         <main className="starting-page__main">
           <div className="starting-page__main--container">
             <section className="starting-page__name">
@@ -134,9 +134,7 @@ export const FormPage = ({ userData, setUserData }) => {
                         defaultChecked={userData.id}
                         text={value.text}
                       >
-                        <Button variant={'secondary'} type={'button'}>
-                          {value.text}
-                        </Button>
+                        {value.text}
                       </FormButtons>
                     ))}
                   </div>
@@ -294,8 +292,8 @@ export const FormPage = ({ userData, setUserData }) => {
             </form>
           </div>
         </main>
-        <Footer></Footer>
       </div>
+      <Footer></Footer>
     </Router>
   );
 };

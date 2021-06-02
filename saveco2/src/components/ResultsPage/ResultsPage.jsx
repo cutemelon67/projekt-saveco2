@@ -7,7 +7,7 @@ import { getResults } from '../getResults/getResults';
 import MaterialIcon from 'react-google-material-icons';
 import { SelectedTransport } from '../SelectedTransport/SelectedTransport';
 import { ChoiceStandard, ChoiceGreat, ChoiceMissing } from '../Choice/Choice';
-import { Alternatives } from '../Alternative/Alternative';
+// import { Alternatives } from '../Alternatives/Alternatives';
 import { MethodologyResults } from '../MethodologyResults/MethodologyResults';
 import { DataFacts } from '../DataFacts/DataFacts';
 import { useHistory } from 'react-router-dom';
@@ -32,8 +32,8 @@ export const ResultsPage = ({ userData, setUserData }) => {
 
   return (
     <>
+      <Header></Header>
       <div className="results">
-        <Header></Header>
         <h2 className="results--header">
           Jaká je CO<sub>2</sub> stopa tvojí cesty?
         </h2>
@@ -50,7 +50,10 @@ export const ResultsPage = ({ userData, setUserData }) => {
         </div>
         <div className="results__alternatives">
           <ChoiceStandard></ChoiceStandard>
-          <Alternatives userData={userData}></Alternatives>
+          {/* <Alternatives
+            userData={userData}
+            journeyDistance={journeyDistance}
+          ></Alternatives> */}
         </div>
         <div className="results__methodology">
           <MethodologyResults />
@@ -65,8 +68,8 @@ export const ResultsPage = ({ userData, setUserData }) => {
         <div className="results__data-facts">
           <DataFacts />
         </div>
-        <Footer></Footer>
       </div>
+      <Footer></Footer>
     </>
   );
 };

@@ -20,8 +20,8 @@ export const MethodologyPage = ({ userData, setUserData }) => {
 
   return (
     <>
+      <Header></Header>
       <div className="methodology">
-        <Header></Header>
         <h2 className="methodology__heading">
           Koeficienty použité pro výpočet emisí CO<sub>2</sub>
         </h2>
@@ -41,8 +41,8 @@ export const MethodologyPage = ({ userData, setUserData }) => {
             Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
           </Button>
         </div>
-        <Footer></Footer>
       </div>
+      <Footer></Footer>
     </>
   );
 };
