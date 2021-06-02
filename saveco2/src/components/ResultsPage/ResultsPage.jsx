@@ -16,6 +16,12 @@ import './resultsPage.css';
 export const ResultsPage = ({ userData, setUserData }) => {
   const history = useHistory();
 
+  const { emmissions, tree } = getResults(userData);
+
+  if (!emmissions || !tree) {
+    return <p> Výsledky se po cestě někde zatoulaly.</p>;
+  }
+
   console.log(userData);
   const calculatedResult = getResults(userData);
   console.log(calculatedResult);
@@ -36,7 +42,7 @@ export const ResultsPage = ({ userData, setUserData }) => {
           Zadat trasu
         </Nav>
         <div className="results__selected-transport">
-          <SelectedTransport />
+          <SelectedTransport emmissions={emmissions} tree={tree} />
         </div>
         <div className="results__alternatives">
           <ChoiceStandard></ChoiceStandard>
