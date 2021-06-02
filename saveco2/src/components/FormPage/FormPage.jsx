@@ -86,13 +86,11 @@ export const FormPage = ({ userData, setUserData }) => {
     history.push('/results');
   };
 
-  // useEffect(() => {
-  //   setValue('distance', 100);
-  //   setValue('peopleCount', 1);
-  //   setValue('transportType', 'car');
-  //   setValue('roundTrip', false);
-  //   setValue('fuel', 'petrol');
-  // }, []);
+  useEffect(() => {
+    setValue('peopleCount', 1);
+    setValue('fuel', 'petrol');
+    setValue('busType', 'bus');
+  }, []);
 
   console.log(userData);
 
