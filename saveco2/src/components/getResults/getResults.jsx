@@ -23,7 +23,7 @@ export const getResults = ({
   frequencyPeriod,
   frequencyCount,
 }) => {
-  const results = {};
+  let results = {};
 
   // převod vzdálenosti na float:
   distance = parseFloat(distance);
@@ -38,55 +38,57 @@ export const getResults = ({
     distance = distance * 2;
   }
 
+  // jednorázová vs. pravidelná cesta:
+  if (journeyType === 'singleJourney') {
+    distance = distance;
+  } else {
+    if (frequencyPeriod === 'year') {
+      distance = distance * frequencyCount;
+    } else if (frequencyPeriod === 'month') {
+      distance = distance * frequencyCount * 12;
+    } else {
+      distance = distance * frequencyCount * 52;
+    }
+  }
+
   // výsledky podle jednotlivých dopravních prostředků:
   if (transportType === 'car') {
-    return carResults({ distance, peopleCount, fuel });
+    results = carResults({ distance, peopleCount, fuel });
   }
 
   if (transportType === 'bus') {
-    return busResults({ distance });
+    results = busResults({ distance });
   }
 
   if (transportType === 'train') {
-    return trainResults({ distance });
+    results = trainResults({ distance });
   }
 
   if (transportType === 'motorbike') {
-    return motorbikeResults({ distance, peopleCount });
+    results = motorbikeResults({ distance, peopleCount });
   }
 
   if (transportType === 'walk') {
-    return walkResults({ distance });
+    results = walkResults({ distance });
   }
 
   if (transportType === 'bike') {
-    return bikeResults({ distance });
+    results = bikeResults({ distance });
   }
 
   if (transportType === 'plane') {
-    return planeResults({ distance });
+    results = planeResults({ distance });
   }
 
   if (transportType === 'subway') {
-    return subwayResults({ distance });
+    results = subwayResults({ distance });
   }
 
   if (transportType === 'ferry') {
-    return ferryResults({ distance });
+    results = ferryResults({ distance });
   }
 
-  // jednorázová vs. pravidelná cesta:
-  if (journeyType === 'singleJourney') {
-    return results;
-  } else {
-    if (frequencyPeriod === 'year') {
-      return results.map((result) => result * frequencyCount);
-    } else if (frequencyPeriod === 'month') {
-      return results.map((result) => result * frequencyCount * 12);
-    } else {
-      return results.map((result) => result * frequencyCount * 52);
-    }
-  }
+  return results;
 };
 
 const carResults = ({ distance, peopleCount, fuel }) => {
