@@ -34,12 +34,13 @@ export const FormPage = ({ userData, setUserData }) => {
     }, [userData]),
   });
 
-  const [distanceInput, setDistanceInput] = useState(inputFromTo);
-  const [fuelInput, setFuelInput] = useState('');
+  const [distanceInput, setDistanceInput] = useState('');
 
+  // const watchAllFields = watch();
   const watchedFrom = watch('from');
   const watchedTo = watch('to');
   let distanceFromGM;
+  // const watchedDistanceFromGM = watch(distanceFromGM);
 
   const proxyurl = 'https://cors-anywhere.herokuapp.com/';
   // const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=${AIzaSyCEbWgmX72FRhMPfLre0wYnZdWkcqaaKc4}`;
@@ -81,7 +82,6 @@ export const FormPage = ({ userData, setUserData }) => {
   const watchedDistance =
     watchedRoundTrip === false ? watch('distance') : watch('distance') * 2;
   const watchedTransportType = watch('transportType');
-  const watchedJourneyType = watch('journeyType');
 
   // ukládání a logování dat z formuláře:
   const history = useHistory();
@@ -149,62 +149,43 @@ export const FormPage = ({ userData, setUserData }) => {
                     ))}
                   </div>
                   <div className="form__input">
-                    {distanceInput === inputFromTo && (
-                      <div className="input--from-to">
-                        {Object.values(inputFromTo).map((input) => (
-                          <InputField
-                            htmlFor={input.htmlFor}
-                            id={input.id}
-                            name={input.name}
-                            type={input.type}
-                            required={input.required}
-                            key={input.id}
-                            register={register}
-                            defaultValue={userData.name}
-                          >
-                            {input.text}
-                          </InputField>
-                        ))}
-                        <p className="form--distance">
-                          Chci{' '}
-                          <Link
-                            to="/"
-                            onClick={() => setDistanceInput(inputDistance)}
-                          >
-                            zadat vzdálenost v&nbsp;km
-                          </Link>
-                          .
-                        </p>
-                      </div>
-                    )}
-                    {distanceInput === inputDistance && (
-                      <div className="input--distance">
+                    <div className="input--from-to">
+                      {Object.values(inputFromTo).map((input) => (
                         <InputField
-                          htmlFor={inputDistance.htmlFor}
-                          id={inputDistance.id}
-                          name={inputDistance.name}
-                          type={inputDistance.type}
-                          required={inputDistance.required}
-                          key={inputDistance.id}
+                          htmlFor={input.htmlFor}
+                          id={input.id}
+                          name={input.name}
+                          type={input.type}
+                          required={input.required}
+                          key={input.id}
                           register={register}
                           defaultValue={userData.name}
-                          min={'0'}
                         >
-                          {inputDistance.text}
+                          {input.text}
                         </InputField>
-
-                        <p className="form--distance">
-                          Chci{' '}
-                          <Link
-                            to="/"
-                            onClick={() => setDistanceInput(inputFromTo)}
-                          >
-                            zadat, odkud a kam pojedu
-                          </Link>
-                          .
-                        </p>
-                      </div>
-                    )}
+                      ))}
+                      <p className="form--distance">
+                        Chci <Link to="/">zadat vzdálenost v&nbsp;km</Link>.
+                      </p>
+                    </div>
+                    <div className="input--distance">
+                      <InputField
+                        htmlFor={inputDistance.htmlFor}
+                        id={inputDistance.id}
+                        name={inputDistance.name}
+                        type={inputDistance.type}
+                        required={inputDistance.required}
+                        key={inputDistance.id}
+                        register={register}
+                        defaultValue={userData.name}
+                        min={'0'}
+                      >
+                        {inputDistance.text}
+                      </InputField>
+                    </div>
+                    <p className="form--distance">
+                      Chci <a href="">zadat, odkud a kam pojedu</a>.
+                    </p>
                   </div>
                 </div>
                 <InputBtn
@@ -220,6 +201,9 @@ export const FormPage = ({ userData, setUserData }) => {
                   {watchedDistance
                     ? `Zadaná vzdálenost: ${watchedDistance} km`
                     : `Zadaná vzdálenost:`}
+                  {/* {watchedDistanceFromGM
+                    ? `Zadaná vzdálenost: ${userData.distance} km`
+                    : `Zadaná vzdálenost:`} */}
                 </p>
               </div>
               <div className="starting-page__form--transport-type">
@@ -239,76 +223,69 @@ export const FormPage = ({ userData, setUserData }) => {
                   Zvolený dopravní prostředek: {[vehicle[watchedTransportType]]}
                 </p>
               </div>
-              {watchedTransportType === 'car' && (
-                <div className="starting-page__form--fuel">
-                  <h2>Na co jezdíš?</h2>
-                  <div className="form--fuel">
-                    {Object.values(fuelType).map((fuel) => {
-                      return (
-                        <InputBtn
-                          type={'radio'}
-                          name={'fuel'}
-                          id={fuel}
-                          key={fuel}
-                          required={true}
-                          register={register}
-                          defaultValue={userData.name}
-                          className={'form--fuel-radio'}
-                        >
-                          {fuelInfo[fuel]}
-                        </InputBtn>
-                      );
-                    })}
-                  </div>
+              <div className="starting-page__form--fuel">
+                <h2>Na co jezdíš?</h2>
+                <div className="form--fuel">
+                  {Object.values(fuelType).map((fuel) => {
+                    return (
+                      <InputBtn
+                        type={'radio'}
+                        name={'fuel'}
+                        id={fuel}
+                        key={fuel}
+                        required={true}
+                        register={register}
+                        defaultValue={userData.name}
+                        className={'form--fuel-radio'}
+                      >
+                        {fuelInfo[fuel]}
+                      </InputBtn>
+                    );
+                  })}
                 </div>
-              )}
+              </div>
 
-              {(watchedTransportType === 'car' ||
-                watchedTransportType === 'motorbike') && (
-                <div className="starting-page__form--people">
-                  <h2>Počet cestujících</h2>
-                  <div className="form--people">
+              <div className="starting-page__form--people">
+                <h2>Počet cestujících</h2>
+                <div className="form--people">
+                  <InputField
+                    htmlFor={'people--count'}
+                    id={'people--count'}
+                    name={'peopleCount'}
+                    type={'number'}
+                    required={true}
+                    register={register}
+                    defaultValue={userData.name}
+                    min={'1'}
+                    max={'9'}
+                  >
+                    Kolik vás pojede?
+                  </InputField>
+                </div>
+              </div>
+              <div className="starting-page__form--frequency">
+                <h2>Četnost jízd</h2>
+                <div className="form--frequency">
+                  <p>Jak často se takto přesouváš?</p>
+                  <div className="frequency--count-details">
                     <InputField
-                      htmlFor={'people--count'}
-                      id={'people--count'}
-                      name={'peopleCount'}
+                      htmlFor={'frequency--count'}
+                      id={'frequency--count'}
+                      name={'frequencyCount'}
                       type={'number'}
                       required={true}
                       register={register}
                       defaultValue={userData.name}
                       min={'1'}
-                      max={'9'}
-                    >
-                      Kolik vás pojede?
-                    </InputField>
+                    ></InputField>
+                    <p>krát</p>
+                    <InputSelect
+                      register={register}
+                      defaultValue={userData.name}
+                    ></InputSelect>
                   </div>
                 </div>
-              )}
-              {watchedJourneyType === 'regularJourney' && (
-                <div className="starting-page__form--frequency">
-                  <h2>Četnost jízd</h2>
-                  <div className="form--frequency">
-                    <p>Jak často se takto přesouváš?</p>
-                    <div className="frequency--count-details">
-                      <InputField
-                        htmlFor={'frequency--count'}
-                        id={'frequency--count'}
-                        name={'frequencyCount'}
-                        type={'number'}
-                        required={true}
-                        register={register}
-                        defaultValue={userData.name}
-                        min={'1'}
-                      ></InputField>
-                      <p>krát</p>
-                      <InputSelect
-                        register={register}
-                        defaultValue={userData.name}
-                      ></InputSelect>
-                    </div>
-                  </div>
-                </div>
-              )}
+              </div>
               <div className="starting-page__form--buttons">
                 <div className="form__buttons--submit">
                   <Button
