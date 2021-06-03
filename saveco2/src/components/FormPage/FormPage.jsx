@@ -42,7 +42,7 @@ export const FormPage = ({ userData, setUserData }) => {
   let distanceFromGM;
 
   const proxyurl = 'https://cors-anywhere.herokuapp.com/';
-  const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=AIzaSyCEbWgmX72FRhMPfLre0wYnZdWkcqaaKc4`;
+  // const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=${AIzaSyCEbWgmX72FRhMPfLre0wYnZdWkcqaaKc4}`;
 
   useEffect(() => {
     const delayedWatch = setTimeout(() => {
