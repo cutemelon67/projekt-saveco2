@@ -22,7 +22,12 @@ export const ResultsPage = ({ userData, setUserData }) => {
   const { emmissions, tree } = getResults(userData, journeyDistance);
 
   if (!emmissions || !tree) {
-    return <p> Výsledky se po cestě někde zatoulaly.</p>;
+    return (
+      <>
+        <p> Výsledky se po cestě někde zatoulaly.</p>;
+        <Nav href="/">Zadat novou trasu</Nav>
+      </>
+    );
   }
 
   const onSubmit = (data) => {
@@ -37,9 +42,7 @@ export const ResultsPage = ({ userData, setUserData }) => {
         <h2 className="results--header">
           Jaká je CO<sub>2</sub> stopa tvojí cesty?
         </h2>
-        <Nav href={'/'} onClick={onSubmit}>
-          Zadat trasu
-        </Nav>
+        <Nav href="/">Upravit trasu</Nav>
         <div className="results__selected-transport">
           <SelectedTransport
             emmissions={emmissions}
@@ -59,8 +62,6 @@ export const ResultsPage = ({ userData, setUserData }) => {
           <MethodologyResults />
         </div>
         <div className="results__buttons">
-          <Nav href="/">Upravit trasu</Nav>
-
           <Button onClick={onSubmit}>
             Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
           </Button>

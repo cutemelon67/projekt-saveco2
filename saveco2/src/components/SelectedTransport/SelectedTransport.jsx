@@ -37,7 +37,6 @@ export const SelectedTransport = ({
           <br />
           vyprodukuješ
         </p>
-        <div className="alternative-transport__graph--bar"></div>
         <div className="selected-transport__values">
           <p className="values--number">{emmissions}</p>
           <p>
@@ -46,15 +45,9 @@ export const SelectedTransport = ({
             na osobu
           </p>
         </div>
-        <div className="alternative-transport__graph--bar"></div>
-
-        <p>
-          Na absorbci tebou vytvořeného CO
-          <sub>2</sub>&nbsp; potřebuje jeden strom
-        </p>
+        <p>Kolik stromů stojí tvá volba za jeden rok?</p>
         <div className="selected-transport__values">
           <p className="values--number">{tree}</p>
-          <p>měsíc(e/ů)</p>
         </div>
         <img className="material-icons__tree" src={treeIcon} alt="tree" />
       </div>

@@ -19,7 +19,12 @@ import { inputFromTo } from '../InputField/InputField';
 import { inputDistance } from '../InputField/InputField';
 import { FormButtons, journeyTypeButtons } from '../FormButtons/FormButtons';
 import { useForm } from 'react-hook-form';
-import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Link,
+  useHistory,
+  ActionLink,
+} from 'react-router-dom';
 import './formPage.css';
 
 export const FormPage = ({ userData, setUserData }) => {
@@ -83,10 +88,13 @@ export const FormPage = ({ userData, setUserData }) => {
     history.push('/results');
   };
 
-  /*useEffect(() => {
-    setValue('peopleCount', 1);
+  useEffect(() => {
+    setValue('distance', 100);
+    setValue('transportType', 'car');
     setValue('fuel', 'petrol');
-  }, []);*/
+    setValue('peopleCount', 1);
+    setValue('frequencyCount', 1);
+  }, []);
 
   console.log(userData);
 
@@ -149,12 +157,13 @@ export const FormPage = ({ userData, setUserData }) => {
                         key={input.id}
                         register={register}
                         defaultValue={userData.name}
+                        className="input-from-to"
                       >
                         {input.text}
                       </InputField>
                     ))}
                     <p className="form--distance">
-                      Chci <Link to="#">zadat vzdálenost v&nbsp;km</Link>.
+                      Chci <a href="#">zadat vzdálenost v&nbsp;km</a>.
                     </p>
                     <InputField
                       htmlFor={inputDistance.htmlFor}
@@ -166,12 +175,13 @@ export const FormPage = ({ userData, setUserData }) => {
                       register={register}
                       defaultValue={userData.name}
                       min={'0'}
+                      className="input-distance"
                     >
                       {inputDistance.text}
                     </InputField>
                   </div>
                   <p className="form--distance">
-                    Chci <Link to="#">zadat, odkud a kam pojedu</Link>.
+                    Chci <a href="">zadat, odkud a kam pojedu</a>.
                   </p>
                 </div>
                 <InputBtn
@@ -268,12 +278,6 @@ export const FormPage = ({ userData, setUserData }) => {
                     ></InputSelect>
                   </div>
                 </div>
-                {/*<div className="frequency--period">
-                  <InputSelect
-                    register={register}
-                    defaultValue={userData.name}
-                  ></InputSelect>
-                </div>*/}
               </div>
               <div className="starting-page__form--buttons">
                 <div className="form__buttons--submit">
@@ -283,9 +287,6 @@ export const FormPage = ({ userData, setUserData }) => {
                     type={'submit'}
                   >
                     SPOČÍTEJ
-                  </Button>
-                  <Button type={'submit'} className={'standard'}>
-                    PŘIDEJ DOPRAVNÍ PROSTŘEDEK
                   </Button>
                 </div>
               </div>

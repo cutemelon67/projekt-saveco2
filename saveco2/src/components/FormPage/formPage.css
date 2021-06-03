@@ -125,6 +125,10 @@
   cursor: pointer;
 }
 
+input[type='radio']:checked + .material-icons {
+  color: hsl(86.6, 71.2%, 43.5%);
+}
+
 .transport-type--img {
   display: flex;
   flex-wrap: wrap;
@@ -136,7 +140,7 @@
   visibility: hidden;
 }
 
-.transport-type--img input [type='radio']:checked {
+.transport-type--img input[type='radio']:checked {
   visibility: hidden;
 }
 

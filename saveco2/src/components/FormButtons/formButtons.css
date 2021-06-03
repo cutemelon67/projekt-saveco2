@@ -2,7 +2,15 @@
   visibility: hidden;
 } */
 
-input[type='radio']:checked + label {
+.form__buttons--journey-type label,
+.form__buttons--journey-type input {
+  display: block;
+}
+
+.form__buttons--journey-type:checked
+  .btn--secondary:checked
+  input[type='radio']:checked
+  + label {
   background-color: hsl(86.6, 71.2%, 43.5%);
   border: 1px solid hsl(86.6, 71.2%, 43.5%);
   color: white;
