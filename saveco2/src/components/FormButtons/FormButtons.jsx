@@ -3,19 +3,17 @@ import './formButtons.css';
 
 export const FormButtons = ({ children, register, id }) => {
   return (
-    <>
-      <label className="form__buttons--journey-type btn--secondary">
-        <input
-          {...register('journeyType')}
-          type="radio"
-          name="journeyType"
-          id={id}
-          required
-          defaultValue={id}
-        />
-        <div>{children}</div>
-      </label>
-    </>
+    <div className="form__buttons--journey-type btn--secondary">
+      <input
+        {...register('journeyType')}
+        type="radio"
+        name="journeyType"
+        id={id}
+        required
+        defaultValue={id}
+      />
+      <label>{children}</label>
+    </div>
   );
 };
 

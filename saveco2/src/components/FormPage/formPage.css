@@ -35,6 +35,32 @@
 }
 
 /* Jednorázově, Pravidelně*/
+
+.form__buttons--journey-type input[type='radio'] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.form__buttons--journey-type label {
+  display: inline-block;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
+/* Tlačítko selected*/
+.form__buttons--journey-type input[type='radio']:checked + label,
+.form__buttons--journey-type input[type='radio']:focus + label {
+  background-color: white;
+  opacity: 50%;
+}
+
+.form__buttons--journey-type label:hover {
+  background-color: white;
+  opacity: 50%;
+}
+
 .form__buttons {
   display: flex;
   padding: 0;
