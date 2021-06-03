@@ -71,6 +71,8 @@ export const Alternatives = ({ userData, journeyDistance }) => {
           </React.Fragment>
         );
       })}
+      {getOtherAlternatives(userData)}
+      {getTreeAlternatives(userData)}
     </>
   );
 };
@@ -393,7 +395,7 @@ export const getFerryAlternatives = ({ distance }, journeyDistance) => {
   return alternatives;
 };
 
-const getAlternativeResults = ({ journeyDistance, peopleCount, fuel }) => {
+const getAlternativeResults = ({ journeyDistance, peopleCount }) => {
   return {
     walk: {
       text: 'Máme lepší nápad! Pohyb na čerstvém vzduchu je zdravý.',
@@ -433,39 +435,56 @@ const getAlternativeResults = ({ journeyDistance, peopleCount, fuel }) => {
   };
 };
 
-const CoDrive = () => {
-  return (
-    <>
+export const getOtherAlternatives = ({
+  distance,
+  peopleCount,
+  transportType,
+  fuel,
+}) => {
+  if (transportType === 'car' && peopleCount <= 2) {
+    return (
       <h4 className="alternative--co-drive">
         Nechceš někoho svézt (nebo svést)? Ve&nbsp;více lidech se lépe jede.
       </h4>
-    </>
-  );
+    );
+  }
+
+  if (transportType === 'ferry') {
+    return <h4>To snad přeplaveš, ne?</h4>;
+  }
+
+  if (
+    (transportType === 'car' &&
+      fuel === 'electro' &&
+      peopleCount >= 7 &&
+      peopleCount <= 9) ||
+    (transportType === 'train' && distance > 100) ||
+    transportType === 'bike' ||
+    transportType === 'walk'
+  ) {
+    return <h4>Děkujeme, že pomáháš chránit životní prostředí. </h4>;
+  }
 };
 
-const Tree = () => {
-  return (
-    <>
+export const getTreeAlternatives = ({
+  distance,
+  peopleCount,
+  transportType,
+  fuel,
+}) => {
+  if (
+    (transportType === 'car' && fuel !== 'electro') ||
+    transportType === 'subway' ||
+    transportType === 'motorbike' ||
+    transportType === 'bus' ||
+    transportType === 'plane' ||
+    transportType === 'ferry'
+  ) {
+    return (
       <h4>
         Víš, že se můžeš zapojit do sázení stromů? Vyber si kde na&nbsp;
-        <a href="https://www.sazimebudoucnost.cz/">Sázíme budoucnost</a> .{' '}
+        <a href="https://www.sazimebudoucnost.cz/">Sázíme budoucnost</a> .
       </h4>
-    </>
-  );
-};
-
-const Acknowledgement = () => {
-  return (
-    <>
-      <h4>Děkujeme, že pomáháš chránit životní prostředí. </h4>
-    </>
-  );
-};
-
-const Swim = () => {
-  return (
-    <>
-      <h4>To snad přeplaveš, ne?</h4>
-    </>
-  );
+    );
+  }
 };
