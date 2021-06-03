@@ -1,12 +1,25 @@
 header {
-  height: 3.438rem;
+  height: 2.813rem;
   background-color: hsl(86.4, 71.1%, 32.5%);
   position: relative;
 }
 
 .header__logo {
-  width: 5.938rem;
+  width: 5rem;
   position: absolute;
-  top: 0.782rem;
+  top: 0.78rem;
   left: 1.3rem;
+}
+
+@media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
+  header {
+    height: 2.813rem;
+  }
+
+  .header__logo {
+    width: 9rem;
+    position: absolute;
+    top: -0.3rem;
+    left: 3rem;
+  }
 }

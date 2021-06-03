@@ -207,7 +207,7 @@ input[type='radio']:checked + .material-icons {
 
 #people--count {
   font-size: 1rem;
-  padding: 0.625rem;
+  padding: 0.3rem;
   border: 0, 5px solid black;
   margin-left: 1rem;
   flex-grow: 1;
@@ -222,6 +222,7 @@ input[type='radio']:checked + .material-icons {
 .frequency--count-details {
   display: flex;
   align-items: center;
+  margin-top: 0.625rem;
 }
 
 .frequency--count-details p {
@@ -230,10 +231,11 @@ input[type='radio']:checked + .material-icons {
 
 #frequency--count {
   font-size: 1rem;
-  padding: 0.625rem;
+  padding: 0.3rem;
   border: 0, 5px solid black;
   margin-right: 1rem;
   flex: 1 1 calc(100% / 3);
+  width: 30%;
 }
 
 #frequency--count p {
@@ -243,7 +245,7 @@ input[type='radio']:checked + .material-icons {
 /* za rok/za měsíc*/
 #frequency--period {
   font-size: 1rem;
-  padding: 0.625rem;
+  padding: 0.3rem;
   border: 0, 5px solid black;
   margin-left: 1rem;
   flex: 1 1 calc(100% / 3);
@@ -279,27 +281,6 @@ input[type='radio']:checked + .material-icons {
   border: 1px solid hsl(86.6, 71.2%, 21.8%);
 }
 
-/*Přidej dopravní prostředek*/
-.btn.btn--secondary.standard {
-  border: 1px solid hsl(86.6, 71.2%, 43.5%);
-  margin-top: 0;
-}
-
-.btn.btn--secondary.standard:active,
-.btn.btn--secondary.standard:hover {
-  background-color: hsl(86.6, 71.2%, 43.5%);
-  border: 1px solid hsl(86.6, 71.2%, 43.5%);
-  margin-top: 0;
-  color: white;
-}
-
-/* Media Query - Screen */
-
-/*.container {
-  max-width: 1200px;
-}
-*/
-
 @media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
   body {
     background-image: url(img/road_large.jpg);
@@ -317,15 +298,15 @@ input[type='radio']:checked + .material-icons {
 
   .starting-page__name {
     background-image: none;
-    margin: 6.25rem 0 0 0;
-    padding-right: 30px;
+    margin: 8.5rem 0 0 0;
+    padding: 0 50px 0 0;
     width: 50%;
   }
 
   .starting-page__form {
     align-self: center;
     margin-top: 6.25rem;
-    width: 25%;
+    width: 35%;
     background-color: white;
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
