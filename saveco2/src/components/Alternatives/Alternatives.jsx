@@ -466,12 +466,7 @@ export const getOtherAlternatives = ({
   }
 };
 
-export const getTreeAlternatives = ({
-  distance,
-  peopleCount,
-  transportType,
-  fuel,
-}) => {
+export const getTreeAlternatives = ({ transportType, fuel }) => {
   if (
     (transportType === 'car' && fuel !== 'electro') ||
     transportType === 'subway' ||
