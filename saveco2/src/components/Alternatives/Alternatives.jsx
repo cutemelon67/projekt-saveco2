@@ -49,7 +49,11 @@
 //   );
 // };
 
-// const alternativeResults = getAlternativeResults(journeyDistance);
+// // const alternativeResults = getAlternativeResults({
+// //   journeyDistance,
+// //   peopleCount,
+// //   fuel,
+// // });
 
 // export const getCarAlternatives = ({ distance, peopleCount, fuel }) => {
 //   const alternatives = [];

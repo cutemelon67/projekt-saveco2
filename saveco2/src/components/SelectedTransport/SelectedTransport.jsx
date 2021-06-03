@@ -21,8 +21,6 @@ export const SelectedTransport = ({
   const { from, to, distance, roundTrip, fuel, transportType, journeyType } =
     userData;
 
-  console.log(fuelInfo[fuel]);
-
   return (
     <>
       <div className="results__selected-transport--overview">
