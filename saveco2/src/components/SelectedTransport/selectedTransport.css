@@ -32,7 +32,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 1.25rem;
+}
+
+.selected-transport__values p {
+  margin-bottom: 0;
 }
 
 .values--number {
@@ -52,16 +55,28 @@
   }
 
   .results__selected-transport--overview {
-    color: white;
+    color: black;
+    margin-top: 1.5rem;
   }
 
   .results__selected-transport--details {
-    background-color: white;
+    padding: 30px;
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    justify-content: evenly;
+  }
+
+  .results__selected-transport--details-co2,
+  .results__selected-transport--details-tree {
+    width: calc(100% / 2);
+  }
+
+  .results__selected-transport--details-co2,
+  .results__selected-transport--details-tree p {
+    text-align: center;
   }
 
   .material-icons__tree {
-    height: 80px;
+    height: 60px;
   }
 }

@@ -34,30 +34,32 @@ export const SelectedTransport = ({
         <p>{transportType === 'car' ? fuelInfo[fuel] : ''}</p>
       </div>
       <div className="results__selected-transport--details">
-        <p>
-          Svojí {journeyType === 'regularJourney' ? ' pravidelnou ' : ''} cestou
-          na trase
-          <br />
-          <strong>
-            {distance ? `${distance} km` : `${from} - ${to}`}
-            {roundTrip ? ' a zpět ' : null}
-          </strong>
-          <br />
-          vyprodukuješ
-        </p>
-        <div className="selected-transport__values">
-          <p className="values--number">{emmissions}</p>
+        <div className="results__selected-transport--details-co2">
           <p>
-            kg CO<sub>2</sub>
-            <br />
-            na osobu
+            Svojí {journeyType === 'regularJourney' ? ' pravidelnou ' : ''}{' '}
+            cestou na trase&nbsp;
+            <strong>
+              {distance ? `${distance} km` : `${from} - ${to}`}
+              {roundTrip ? ' a zpět ' : null}
+            </strong>
+            &nbsp;vyprodukuješ
           </p>
+          <div className="selected-transport__values">
+            <p className="values--number">{emmissions}</p>
+            <p>
+              kg CO<sub>2</sub>
+              <br />
+              na osobu
+            </p>
+          </div>
         </div>
-        <p>Kolik stromů stojí tvá volba?</p>
-        <div className="selected-transport__values">
-          <p className="values--number">{tree}</p>
+        <div className="results__selected-transport--details-tree">
+          <p>Kolik stromů stojí tvá volba za jeden rok?</p>
+          <div className="selected-transport__values">
+            <p className="values--number">{tree}</p>
+            <img className="material-icons__tree" src={treeIcon} alt="tree" />
+          </div>
         </div>
-        <img className="material-icons__tree" src={treeIcon} alt="tree" />
       </div>
     </>
   );

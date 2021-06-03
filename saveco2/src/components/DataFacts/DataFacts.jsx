@@ -7,7 +7,7 @@ import imgTurtle from './img/turtle_small.jpg';
 export const DataFacts = (props) => {
   return (
     <>
-      <h2 className="dataFacts__section-name">Víte, že...</h2>
+      <h2 className="dataFacts__section-name">VÍTE, ŽE...</h2>
       <div className="dataFacts__section-name--screen">
         <div className="dataFacts__container">
           <div className="container__img">
@@ -23,11 +23,12 @@ export const DataFacts = (props) => {
           <p className="dataFacts__text">
             Sektor dopravy tvoří přibližně{' '}
             <strong>24&nbsp;% světových emisí </strong>
-            oxidu ohličitého (CO<sub>2</sub>) . Největší podíl na nich má
-            silniční doprava (75&nbsp;%). 45&nbsp;% emisí CO
+            oxidu ohličitého (CO<sub>2</sub>). Největší podíl na nich má
+            silniční doprava (75&nbsp;%). Z toho 45&nbsp;% emisí CO
             <sub>2</sub> pochází přitom z&nbsp;automobilů a&nbsp;autobusů,
-            zbylých 29&nbsp;% tvoří nákladní doprava. Letecká doprava příspívá
-            12&nbsp;% a železniční doprava tvoří 1&nbsp;% celovětových emisí.
+            zbylých 29&nbsp;% připadá na nákladní dopravu. Letecká doprava
+            příspívá 12&nbsp;% a železniční doprava tvoří 1&nbsp;% celovětových
+            emisí.
           </p>
         </div>
         <div className="dataFacts__container">
@@ -42,8 +43,8 @@ export const DataFacts = (props) => {
             </h3>
           </div>
           <p className="dataFacts__text">
-            Během jednoho roku <strong>dospělý strom přijme </strong>
-            z&nbsp;atmosféry asi <strong>22&nbsp;kilogramů </strong>
+            Během jednoho roku <strong>přijme dospělý strom </strong>
+            z&nbsp;atmosféry přibližně <strong>22&nbsp;kilogramů </strong>
             oxidu uhličitého (CO<sub>2</sub>) a výměnou uvolní kyslík. Odhaduje
             se, že každý rok 1,3 milionu stromů odstraní ze&nbsp;vzduchu více
             než 2&nbsp;500 tun znečišťujících látek. Je tedy pravděpodobné, že
@@ -62,14 +63,14 @@ export const DataFacts = (props) => {
             </h3>
           </div>
           <p className="dataFacts__text">
-            Život téměř všech zvířat v&nbsp;oceánu závisí na dostupnosti
+            Život téměř všech živočichů v&nbsp;oceánu závisí na dostupnosti
             kyslíku, který se rozpouští jako plyn v&nbsp;mořské vodě. Oceán však
             již několik desetiletí nepřetržitě kyslík ztrácí. Hlavním důvodem je{' '}
             <strong>globální oteplování</strong>, které vede ke&nbsp;snížení
             rozpustnosti plynů, a tedy i&nbsp;kyslíku. Studie ukazují, že tento
-            proces bude pokračovat po staletí, i&nbsp;kdyby všechny emise oxidu
-            ohličitého (CO
-            <sub>2</sub>) byly okamžitě zastaveny.
+            proces bude pokračovat po staletí, i&nbsp;kdyby byly všechny emise
+            oxidu ohličitého (CO
+            <sub>2</sub>) okamžitě zastaveny.
           </p>
         </div>
       </div>

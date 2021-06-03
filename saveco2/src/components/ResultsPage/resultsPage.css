@@ -2,18 +2,24 @@
 
 .results--header {
   text-align: center;
-  background-image: url(img/road_small_cut.jpg);
-  background-repeat: no-repeat;
+  background-image: url(img/road_medium.jpg);
+  background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  min-height: 3rem;
+  /*background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;*/
   color: white;
-  padding-top: 2.5rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
 }
 
 /*Results buttons*/
 .results__buttons {
   margin: 0 1.875rem;
+  width: 20%;
 }
 
 .results__buttons .nav {
@@ -23,35 +29,53 @@
 
 .results__buttons .btn.btn--secondary {
   margin-top: 0.625rem;
-  width: 100%;
+  padding: 0.625rem 1.25rem;
+  border: 1px solid hsl(86.4, 71.1%, 32.5%);
+  background-color: hsl(86.4, 71.1%, 32.5%);
+  color: white;
 }
 
 .results__buttons .btn.btn--secondary:active,
 .results__buttons .btn.btn--secondary:hover {
-  cursor: pointer;
-  background-color: lightgray;
+  background-color: hsl(86.6, 71.2%, 21.8%);
+  border: 1px solid hsl(86.6, 71.2%, 21.8%);
 }
 
 /*Screen*/
 
 @media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
-  .results--header {
-    background-image: none;
-    margin-left: 6.25rem;
-    margin-right: 6.25rem;
-  }
-
-  .results--header nav {
-    margin-left: 6.25rem;
-    margin-right: 6.25rem;
-  }
-
   .nav a,
   .nav .material-icons {
-    color: white;
+    color: black;
   }
 
   .nav .material-icons {
-    color: white;
+    color: black;
+  }
+
+  .results__buttons .nav {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+
+  .results__buttons {
+    margin: 3rem 6.25rem;
+  }
+
+  .results__buttons .btn.btn--secondary {
+    margin-top: 0;
+  }
+
+  .results--header {
+    background-image: url(img/road_big.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 1.875rem;
+    /*position: fixed;
+    top: 0;
+    width: 100%;*/
   }
 }
