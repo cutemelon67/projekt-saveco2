@@ -2,18 +2,15 @@ import React from 'react';
 import MaterialIcon from 'react-google-material-icons';
 import { vehicleInfo, vehicleType } from '../TransportModes/TransportModes';
 import {
-  carResults,
   busResults,
   trainResults,
   motorbikeResults,
   walkResults,
   bikeResults,
   planeResults,
-  subwayResults,
-  ferryResults,
 } from '../getResults/getResults';
 import { getResults } from '../getResults/getResults';
-import { ChoiceStandard, ChoiceGreat, ChoiceMissing } from '../Choice/Choice';
+// import { ChoiceStandard, ChoiceGreat, ChoiceMissing } from '../Choice/Choice';
 import treeIcon from './img/saveco2-tree-icon.svg';
 import './alternatives.css';
 
@@ -50,6 +47,7 @@ export const Alternatives = ({ userData, journeyDistance }) => {
 
   return (
     <>
+      {getChoices(userData)}
       {alternativeTransport.map((transport, index) => {
         return (
           <React.Fragment key={index}>
@@ -481,5 +479,55 @@ export const getTreeAlternatives = ({ transportType, fuel }) => {
         <a href="https://www.sazimebudoucnost.cz/">Sázíme budoucnost</a> .
       </h4>
     );
+  }
+};
+
+export const getChoices = ({ distance, peopleCount, fuel, transportType }) => {
+  if (
+    (distance > 100 &&
+      ((transportType === 'car' &&
+        peopleCount >= 5 &&
+        peopleCount <= 9 &&
+        (fuel === 'diesel' ||
+          fuel === 'petrol' ||
+          fuel === 'CNG' ||
+          fuel === 'other')) ||
+        (peopleCount >= 4 && peopleCount <= 6 && fuel === 'hybrid') ||
+        (peopleCount >= 6 && peopleCount <= 9 && fuel === 'LPG') ||
+        (peopleCount >= 3 && peopleCount <= 5 && fuel === 'plugInHybrid'))) ||
+    (distance > 100 && transportType === 'subway')
+  ) {
+    return (
+      <h3 className="results__alternatives--choice">
+        Lepší volba nás nenapadá, i&nbsp;když…
+      </h3>
+    );
+  }
+
+  if (
+    (distance > 10 &&
+      transportType === 'car' &&
+      fuel === 'electro' &&
+      peopleCount >= 3 &&
+      peopleCount <= 6) ||
+    (fuel === 'plugInHybrid' && peopleCount >= 6 && peopleCount <= 9) ||
+    (fuel === 'hybrid' && peopleCount >= 7 && peopleCount <= 9)
+  ) {
+    return (
+      <h3 className="results__alternatives--choice">
+        Lepší volba nás nenapadá, i&nbsp;když…
+      </h3>
+    );
+  } else if (
+    (fuel === 'electro' && peopleCount >= 7 && peopleCount <= 9) ||
+    (transportType === 'train' && distance > 100) ||
+    transportType === 'bike' ||
+    transportType === 'walk'
+  ) {
+    return <h3 className="results__alternatives--choice">Skvělá volba!</h3>;
+  } else {
+    <h3 className="results__alternatives--choice">
+      Jsi si svojí volbou jistý? <br /> Zkus raději jednu z&nbsp;alternativ!
+    </h3>;
   }
 };
