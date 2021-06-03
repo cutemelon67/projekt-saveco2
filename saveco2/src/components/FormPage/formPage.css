@@ -34,57 +34,6 @@
   background-color: hsl(86.6, 71.2%, 21.8%);
 }
 
-/* Jednorázově, Pravidelně*/
-
-/* .form__buttons--journey-type input[type='radio'] {
-  opacity: 0;
-  position: fixed;
-  width: 0;
-}
-
-.form__buttons--journey-type label {
-  display: inline-block;
-  background-color: transparent;
-  padding: 10px 20px;
-  border-radius: 2px;
-}
-
-/* Tlačítko selected*/
-.form__buttons--journey-type input[type='radio']:checked + label,
-.form__buttons--journey-type input[type='radio']:focus + label {
-  background-color: white;
-  opacity: 50%;
-}
-
-.form__buttons--journey-type label:hover {
-  background-color: white;
-  opacity: 50%;
-}
-*/ .form__buttons {
-  display: flex;
-  padding: 0;
-}
-
-.btn--secondary {
-  flex: 50%;
-  border: 1px solid black;
-}
-
-/* Jednorázově
-.btn.btn--secondary.random:active,
-.btn.btn--secondary.random:hover {
-  background-color: hsl(86.6, 71.2%, 43.5%);
-  border: 1px solid hsl(86.6, 71.2%, 43.5%);
-  color: white;
-}
-
-.btn.btn--secondary.regular:active,
-.btn.btn--secondary.regular:hover {
-  background-color: hsl(86.6, 71.2%, 43.5%);
-  border: 1px solid hsl(86.6, 71.2%, 43.5%);
-  color: white;
-} */
-
 /* Starting page - Tvoje cesta*/
 .starting-page__form--journey {
   background: white;
@@ -93,9 +42,12 @@
 }
 
 .form__input {
+  margin-top: 1.5rem;
+}
+
+.input--from-to {
   display: flex;
   flex-direction: column;
-  margin-top: 1.5rem;
 }
 
 #input--from {
@@ -116,10 +68,15 @@
   margin-bottom: 0.625rem;
 }
 
+.input--distance {
+  display: flex;
+  flex-direction: column;
+}
+
 .form--distance {
   font-size: 0.875rem;
   text-align: right;
-  margin: 0;
+  margin: 0 0 10px 0;
   padding: 0.313rem;
 }
 
@@ -163,6 +120,9 @@ input[type='radio']:checked + .material-icons {
 
 .transport-type--img [type='radio'] {
   visibility: hidden;
+  position: absolute;
+  height: 0;
+  width: 0;
 }
 
 .transport-type--img input[type='radio']:checked {
@@ -307,7 +267,7 @@ input[type='radio']:checked + .material-icons {
 }
 
 @media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
-  body {
+  .starting-page {
     background-image: url(img/road_large.jpg);
     background-repeat: no-repeat;
     background-position: center;

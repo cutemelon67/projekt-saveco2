@@ -12,7 +12,10 @@ export const FormButtons = ({ children, register, id }) => {
         required
         defaultValue={id}
       />
-      <label className="form__buttons--journey-type btn--secondary">
+      <label
+        htmlFor={id}
+        className="form__buttons--journey-type btn--secondary"
+      >
         {children}
       </label>
     </>

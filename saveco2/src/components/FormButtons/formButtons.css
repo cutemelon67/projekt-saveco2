@@ -1,8 +1,93 @@
-/* .form__buttons--journey-type [type='radio'] {
+.form__buttons {
+  display: flex;
+  padding: 0;
+  margin-top: 1.5rem;
+  gap: 15px;
+}
+
+.btn--secondary {
+  flex: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+}
+
+.form__buttons input {
+  position: fixed;
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.form__buttons input + label {
+  border-radius: 5px;
+}
+
+.form__buttons input:checked + label {
+  background-color: hsl(86.6, 71.2%, 43.5%);
+  border: 1px solid hsl(86.6, 71.2%, 43.5%);
+  color: white;
+}
+
+#singleJourney {
+  border-radius: 5px;
+}
+
+/*.form__buttons input + label {
+  padding: 10px;
+}*/
+
+/*.form__buttons [type='radio'] {
   visibility: hidden;
+}*/
+
+/* Jednorázově, Pravidelně*/
+
+/* .form__buttons--journey-type input[type='radio'] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.form__buttons--journey-type label {
+  display: inline-block;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
+input:checked+label { sem napíšete jak má vypadat stisknutý button(tedy ten label)}
+
+/* Tlačítko selected*/
+/*.form__buttons--journey-type input[type='radio']:checked + label,
+.form__buttons--journey-type input[type='radio']:focus + label {
+  background-color: white;
+  opacity: 50%;
+}
+
+.form__buttons--journey-type label:hover {
+  background-color: white;
+  opacity: 50%;
+}
+*/
+
+/* Jednorázově
+.btn.btn--secondary.random:active,
+.btn.btn--secondary.random:hover {
+  background-color: hsl(86.6, 71.2%, 43.5%);
+  border: 1px solid hsl(86.6, 71.2%, 43.5%);
+  color: white;
+}
+
+.btn.btn--secondary.regular:active,
+.btn.btn--secondary.regular:hover {
+  background-color: hsl(86.6, 71.2%, 43.5%);
+  border: 1px solid hsl(86.6, 71.2%, 43.5%);
+  color: white;
 } */
 
-.form__buttons--journey-type label,
+/*.form__buttons--journey-type label,
 .form__buttons--journey-type input {
   display: inline-block;
 }
@@ -12,3 +97,4 @@
   border: 1px solid hsl(86.6, 71.2%, 43.5%);
   color: white;
 }
+*/
