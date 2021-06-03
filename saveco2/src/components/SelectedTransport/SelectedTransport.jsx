@@ -53,7 +53,7 @@ export const SelectedTransport = ({
             na osobu
           </p>
         </div>
-        <p>Kolik stromů stojí tvá volba za jeden rok?</p>
+        <p>Kolik stromů stojí tvá volba?</p>
         <div className="selected-transport__values">
           <p className="values--number">{tree}</p>
         </div>

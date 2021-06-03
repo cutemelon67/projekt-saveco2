@@ -13,15 +13,39 @@ import {
   ferryResults,
 } from '../getResults/getResults';
 import { getResults } from '../getResults/getResults';
+import { ChoiceStandard, ChoiceGreat, ChoiceMissing } from '../Choice/Choice';
 import treeIcon from './img/saveco2-tree-icon.svg';
 import './alternatives.css';
 
 export const Alternatives = ({ userData, journeyDistance }) => {
   let alternativeTransport = [];
-  console.log(userData);
+
   if (userData.transportType === 'car') {
     alternativeTransport = getCarAlternatives(userData, journeyDistance);
-    console.log(alternativeTransport);
+  }
+
+  if (userData.transportType === 'motorbike') {
+    alternativeTransport = getMotorbikeAlternatives(userData, journeyDistance);
+  }
+
+  if (userData.transportType === 'bus') {
+    alternativeTransport = getBusAlternatives(userData, journeyDistance);
+  }
+
+  if (userData.transportType === 'train') {
+    alternativeTransport = getTrainAlternatives(userData, journeyDistance);
+  }
+
+  if (userData.transportType === 'subway') {
+    alternativeTransport = getSubwayAlternatives(userData, journeyDistance);
+  }
+
+  if (userData.transportType === 'plane') {
+    alternativeTransport = getPlaneAlternatives(userData, journeyDistance);
+  }
+
+  if (userData.transportType === 'ferry') {
+    alternativeTransport = getFerryAlternatives(userData, journeyDistance);
   }
 
   return (
@@ -91,6 +115,280 @@ export const getCarAlternatives = (
       alternatives.push(alternativeResults.bus);
     }
   }
+
+  if (
+    peopleCount === 2 &&
+    (fuel === 'diesel' ||
+      fuel === 'petrol' ||
+      fuel === 'hybrid' ||
+      fuel === 'CNG' ||
+      fuel === 'LPG' ||
+      fuel === 'other')
+  ) {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+      alternatives.push(alternativeResults.bike);
+    } else if (distance <= 100) {
+      alternatives.push(alternativeResults.bike);
+      alternatives.push(alternativeResults.train);
+      alternatives.push(alternativeResults.motorbike);
+    } else if (distance <= 200) {
+      alternatives.push(alternativeResults.train);
+      alternatives.push(alternativeResults.motorbike);
+    } else {
+      alternatives.push(alternativeResults.train);
+    }
+  }
+
+  if (
+    (peopleCount === 3 || peopleCount === 4) &&
+    (fuel === 'diesel' ||
+      fuel === 'petrol' ||
+      fuel === 'CNG' ||
+      fuel === 'other')
+  ) {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+      alternatives.push(alternativeResults.bike);
+    } else if (distance <= 100) {
+      alternatives.push(alternativeResults.bike);
+      alternatives.push(alternativeResults.train);
+    } else {
+      alternatives.push(alternativeResults.train);
+    }
+  }
+
+  if (peopleCount >= 3 && peopleCount <= 5 && fuel === 'LPG') {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+      alternatives.push(alternativeResults.bike);
+    } else if (distance <= 100) {
+      alternatives.push(alternativeResults.bike);
+      alternatives.push(alternativeResults.train);
+    } else {
+      alternatives.push(alternativeResults.train);
+    }
+  }
+
+  if (peopleCount === 3 && fuel === 'hybrid') {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+      alternatives.push(alternativeResults.bike);
+    } else if (distance <= 100) {
+      alternatives.push(alternativeResults.bike);
+      alternatives.push(alternativeResults.train);
+    } else {
+      alternatives.push(alternativeResults.train);
+    }
+  }
+
+  if (
+    peopleCount >= 5 &&
+    peopleCount <= 9 &&
+    (fuel === 'diesel' ||
+      fuel === 'petrol' ||
+      fuel === 'CNG' ||
+      fuel === 'other')
+  ) {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+      alternatives.push(alternativeResults.bike);
+    } else if (distance <= 100) {
+      alternatives.push(alternativeResults.bike);
+    }
+  }
+
+  if (peopleCount >= 4 && peopleCount <= 6 && fuel === 'hybrid') {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+      alternatives.push(alternativeResults.bike);
+    } else if (distance <= 100) {
+      alternatives.push(alternativeResults.bike);
+    }
+  }
+
+  if (peopleCount >= 6 && peopleCount <= 9 && fuel === 'LPG') {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+      alternatives.push(alternativeResults.bike);
+    } else if (distance <= 100) {
+      alternatives.push(alternativeResults.bike);
+    }
+  }
+
+  if (
+    (peopleCount >= 3 && peopleCount <= 5 && fuel === 'plugInHybrid') ||
+    (peopleCount === 2 && fuel === 'electro')
+  ) {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+      alternatives.push(alternativeResults.bike);
+    } else if (distance <= 100) {
+      alternatives.push(alternativeResults.bike);
+    }
+  }
+
+  if (
+    ((peopleCount === 1 || peopleCount === 2) && fuel === 'plugInHybrid') ||
+    (peopleCount === 1 && fuel === 'electro')
+  ) {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+      alternatives.push(alternativeResults.bike);
+    } else if (distance <= 100) {
+      alternatives.push(alternativeResults.bike);
+      alternatives.push(alternativeResults.train);
+    } else {
+      alternatives.push(alternativeResults.train);
+    }
+  }
+
+  if (
+    (peopleCount >= 3 && peopleCount <= 6 && fuel === 'electro') ||
+    (peopleCount >= 6 && peopleCount <= 9 && fuel === 'plugInHybrid') ||
+    (peopleCount >= 7 && peopleCount <= 9 && fuel === 'hybrid')
+  ) {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+    }
+  }
+
+  // return { alternatives, headerType };
+  return alternatives;
+};
+
+export const getMotorbikeAlternatives = (
+  { distance, peopleCount },
+  journeyDistance,
+) => {
+  const alternatives = [];
+  // const headerType = [];
+
+  const alternativeResults = getAlternativeResults({
+    journeyDistance,
+    peopleCount,
+    distance,
+  });
+
+  if (peopleCount === 1) {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+      alternatives.push(alternativeResults.bike);
+    } else if (distance <= 100) {
+      alternatives.push(alternativeResults.bike);
+      alternatives.push(alternativeResults.train);
+      alternatives.push(alternativeResults.bus);
+    } else {
+      alternatives.push(alternativeResults.train);
+      alternatives.push(alternativeResults.bus);
+    }
+  }
+
+  if (peopleCount === 2) {
+    if (distance <= 10) {
+      alternatives.push(alternativeResults.walk);
+      alternatives.push(alternativeResults.bike);
+    } else if (distance <= 100) {
+      alternatives.push(alternativeResults.bike);
+      alternatives.push(alternativeResults.train);
+    } else {
+      alternatives.push(alternativeResults.train);
+    }
+  }
+
+  // return { alternatives, headerType };
+  return alternatives;
+};
+
+export const getBusAlternatives = ({ distance }, journeyDistance) => {
+  const alternatives = [];
+  // const headerType = [];
+
+  const alternativeResults = getAlternativeResults({
+    journeyDistance,
+    distance,
+  });
+
+  if (distance <= 10) {
+    alternatives.push(alternativeResults.walk);
+    alternatives.push(alternativeResults.bike);
+  } else if (distance <= 100) {
+    alternatives.push(alternativeResults.bike);
+    alternatives.push(alternativeResults.train);
+  } else {
+    alternatives.push(alternativeResults.train);
+  }
+
+  // return { alternatives, headerType };
+  return alternatives;
+};
+
+export const getTrainAlternatives = ({ distance }, journeyDistance) => {
+  const alternatives = [];
+  // const headerType = [];
+
+  const alternativeResults = getAlternativeResults({
+    journeyDistance,
+    distance,
+  });
+
+  if (distance <= 10) {
+    alternatives.push(alternativeResults.walk);
+    alternatives.push(alternativeResults.bike);
+  } else if (distance <= 100) {
+    alternatives.push(alternativeResults.bike);
+  }
+
+  // return { alternatives, headerType };
+  return alternatives;
+};
+
+export const getSubwayAlternatives = ({ distance }, journeyDistance) => {
+  const alternatives = [];
+  // const headerType = [];
+
+  const alternativeResults = getAlternativeResults({
+    journeyDistance,
+    distance,
+  });
+
+  if (distance <= 10) {
+    alternatives.push(alternativeResults.walk);
+    alternatives.push(alternativeResults.bike);
+  } else if (distance <= 100) {
+    alternatives.push(alternativeResults.bike);
+  }
+
+  // return { alternatives, headerType };
+  return alternatives;
+};
+
+export const getPlaneAlternatives = ({ distance }, journeyDistance) => {
+  const alternatives = [];
+  // const headerType = [];
+
+  const alternativeResults = getAlternativeResults({
+    journeyDistance,
+    distance,
+  });
+
+  alternatives.push(alternativeResults.trainPlane);
+
+  // return { alternatives, headerType };
+  return alternatives;
+};
+
+export const getFerryAlternatives = ({ distance }, journeyDistance) => {
+  const alternatives = [];
+  // const headerType = [];
+
+  const alternativeResults = getAlternativeResults({
+    journeyDistance,
+    distance,
+  });
+
+  alternatives.push(alternativeResults.plane);
+
   // return { alternatives, headerType };
   return alternatives;
 };
@@ -126,16 +424,6 @@ const getAlternativeResults = ({ journeyDistance, peopleCount, fuel }) => {
       text: 'Máš doma motorku? Tak ji vyvez!',
       icon: 'two_wheeler',
       result: motorbikeResults({ journeyDistance, peopleCount }),
-    },
-    BEV: {
-      text: 'Nestojí ti před domem třeba elektromobil?',
-      icon: 'directions_car',
-      result: carResults({ journeyDistance, peopleCount, fuel }),
-    },
-    plugin: {
-      text: 'Nebo plug-in hybrid elektro? Alespoň na tebe nebude pršet!',
-      icon: 'directions_car',
-      result: carResults({ journeyDistance, peopleCount, fuel }),
     },
     plane: {
       text: 'Sedni na letadlo! Budeš tam rychleji a možná nenarazíš na ledovec.',
