@@ -7,7 +7,7 @@ import { getResults } from '../getResults/getResults';
 import MaterialIcon from 'react-google-material-icons';
 import { SelectedTransport } from '../SelectedTransport/SelectedTransport';
 import { ChoiceStandard, ChoiceGreat, ChoiceMissing } from '../Choice/Choice';
-// import { Alternatives } from '../Alternatives/Alternatives';
+import { Alternatives } from '../Alternatives/Alternatives';
 import { MethodologyResults } from '../MethodologyResults/MethodologyResults';
 import { DataFacts } from '../DataFacts/DataFacts';
 import { useHistory } from 'react-router-dom';
@@ -53,10 +53,10 @@ export const ResultsPage = ({ userData, setUserData }) => {
         </div>
         <div className="results__alternatives">
           <ChoiceStandard></ChoiceStandard>
-          {/* <Alternatives
+          <Alternatives
             userData={userData}
             journeyDistance={journeyDistance}
-          ></Alternatives> */}
+          ></Alternatives>
         </div>
         <div className="results__methodology">
           <MethodologyResults />

@@ -35,7 +35,6 @@ export const FormPage = ({ userData, setUserData }) => {
   });
 
   const [distanceInput, setDistanceInput] = useState(inputFromTo);
-  const [fuelInput, setFuelInput] = useState('');
 
   const watchedFrom = watch('from');
   const watchedTo = watch('to');
