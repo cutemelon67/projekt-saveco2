@@ -3,7 +3,7 @@ import './formButtons.css';
 
 export const FormButtons = ({ children, register, id }) => {
   return (
-    <label className="form__buttons--journey-type btn--secondary">
+    <>
       <input
         {...register('journeyType')}
         type="radio"
@@ -12,8 +12,10 @@ export const FormButtons = ({ children, register, id }) => {
         required
         defaultValue={id}
       />
-      {children}
-    </label>
+      <label className="form__buttons--journey-type btn--secondary">
+        {children}
+      </label>
+    </>
   );
 };
 

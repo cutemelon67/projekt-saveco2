@@ -14,7 +14,6 @@ const App = () => {
   return (
     <Router>
       <ScrollToTop />
-
       <Switch>
         <Route exact path="/results" component={ResultsPage}>
           <ResultsPage userData={userData} setUserData={setUserData} />

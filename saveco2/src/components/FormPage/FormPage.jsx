@@ -34,12 +34,16 @@ export const FormPage = ({ userData, setUserData }) => {
     }, [userData]),
   });
 
+  const [distanceInput, setDistanceInput] = useState('');
+
   // const watchAllFields = watch();
   const watchedFrom = watch('from');
   const watchedTo = watch('to');
+  let distanceFromGM;
+  // const watchedDistanceFromGM = watch(distanceFromGM);
 
   const proxyurl = 'https://cors-anywhere.herokuapp.com/';
-  // const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=${process.env.GOOGLE_MAPS_API_KEY}`;
+  const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=AIzaSyCEbWgmX72FRhMPfLre0wYnZdWkcqaaKc4`;
 
   useEffect(() => {
     const delayedWatch = setTimeout(() => {
@@ -60,7 +64,7 @@ export const FormPage = ({ userData, setUserData }) => {
             if (!distanceFromGMInMeters) {
               setValue('distance', 0);
             } else {
-              const distanceFromGM = parseInt(distanceFromGMInMeters / 1000);
+              distanceFromGM = parseInt(distanceFromGMInMeters / 1000);
               setValue('distance', distanceFromGM);
               console.log(distanceFromGM);
             }
@@ -95,8 +99,6 @@ export const FormPage = ({ userData, setUserData }) => {
     setValue('peopleCount', 1);
     setValue('frequencyCount', 1);
   }, []);
-
-  console.log(userData);
 
   return (
     <Router>
@@ -147,42 +149,44 @@ export const FormPage = ({ userData, setUserData }) => {
                     ))}
                   </div>
                   <div className="form__input">
-                    {Object.values(inputFromTo).map((input) => (
+                    <div className="input--from-to">
+                      {Object.values(inputFromTo).map((input) => (
+                        <InputField
+                          htmlFor={input.htmlFor}
+                          id={input.id}
+                          name={input.name}
+                          type={input.type}
+                          required={input.required}
+                          key={input.id}
+                          register={register}
+                          defaultValue={userData.name}
+                        >
+                          {input.text}
+                        </InputField>
+                      ))}
+                      <p className="form--distance">
+                        Chci <Link to="/">zadat vzdálenost v&nbsp;km</Link>.
+                      </p>
+                    </div>
+                    <div className="input--distance">
                       <InputField
-                        htmlFor={input.htmlFor}
-                        id={input.id}
-                        name={input.name}
-                        type={input.type}
-                        required={input.required}
-                        key={input.id}
+                        htmlFor={inputDistance.htmlFor}
+                        id={inputDistance.id}
+                        name={inputDistance.name}
+                        type={inputDistance.type}
+                        required={inputDistance.required}
+                        key={inputDistance.id}
                         register={register}
                         defaultValue={userData.name}
-                        className="input-from-to"
+                        min={'0'}
                       >
-                        {input.text}
+                        {inputDistance.text}
                       </InputField>
-                    ))}
+                    </div>
                     <p className="form--distance">
-                      Chci <a href="#">zadat vzdálenost v&nbsp;km</a>.
+                      Chci <a href="">zadat, odkud a kam pojedu</a>.
                     </p>
-                    <InputField
-                      htmlFor={inputDistance.htmlFor}
-                      id={inputDistance.id}
-                      name={inputDistance.name}
-                      type={inputDistance.type}
-                      required={inputDistance.required}
-                      key={inputDistance.id}
-                      register={register}
-                      defaultValue={userData.name}
-                      min={'0'}
-                      className="input-distance"
-                    >
-                      {inputDistance.text}
-                    </InputField>
                   </div>
-                  <p className="form--distance">
-                    Chci <a href="">zadat, odkud a kam pojedu</a>.
-                  </p>
                 </div>
                 <InputBtn
                   type={'checkbox'}
@@ -197,6 +201,9 @@ export const FormPage = ({ userData, setUserData }) => {
                   {watchedDistance
                     ? `Zadaná vzdálenost: ${watchedDistance} km`
                     : `Zadaná vzdálenost:`}
+                  {/* {watchedDistanceFromGM
+                    ? `Zadaná vzdálenost: ${userData.distance} km`
+                    : `Zadaná vzdálenost:`} */}
                 </p>
               </div>
               <div className="starting-page__form--transport-type">
