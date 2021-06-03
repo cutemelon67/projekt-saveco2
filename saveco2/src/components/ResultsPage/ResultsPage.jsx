@@ -55,7 +55,6 @@ export const ResultsPage = ({ userData, setUserData }) => {
           />
         </div>
         <div className="results__alternatives">
-          <ChoiceStandard></ChoiceStandard>
           <Alternatives
             userData={userData}
             journeyDistance={journeyDistance}
