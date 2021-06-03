@@ -4,13 +4,10 @@
 
 .form__buttons--journey-type label,
 .form__buttons--journey-type input {
-  display: block;
+  display: inline-block;
 }
 
-.form__buttons--journey-type:checked
-  .btn--secondary:checked
-  input[type='radio']:checked
-  + label {
+.input[type='radio']:checked + .form__buttons--journey-typ {
   background-color: hsl(86.6, 71.2%, 43.5%);
   border: 1px solid hsl(86.6, 71.2%, 43.5%);
   color: white;

@@ -14,19 +14,18 @@ const App = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="container">
-        <Switch>
-          <Route exact path="/results" component={ResultsPage}>
-            <ResultsPage userData={userData} setUserData={setUserData} />
-          </Route>
-          <Route exact path="/" component={FormPage}>
-            <FormPage userData={userData} setUserData={setUserData} />
-          </Route>
-          <Route path="/methodology" component={MethodologyPage}>
-            <MethodologyPage setUserData={setUserData} />
-          </Route>
-        </Switch>
-      </div>
+
+      <Switch>
+        <Route exact path="/results" component={ResultsPage}>
+          <ResultsPage userData={userData} setUserData={setUserData} />
+        </Route>
+        <Route exact path="/" component={FormPage}>
+          <FormPage userData={userData} setUserData={setUserData} />
+        </Route>
+        <Route path="/methodology" component={MethodologyPage}>
+          <MethodologyPage setUserData={setUserData} />
+        </Route>
+      </Switch>
     </Router>
   );
 };
