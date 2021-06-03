@@ -24,8 +24,11 @@ export const ResultsPage = ({ userData, setUserData }) => {
   if (!emmissions || !tree) {
     return (
       <>
-        <p> Výsledky se po cestě někde zatoulaly.</p>;
-        <Nav href="/">Zadat novou trasu</Nav>
+        <div>
+          {' '}
+          Výsledky se po cestě někde zatoulaly.
+          <Nav href="/">Zadat novou trasu</Nav>
+        </div>
       </>
     );
   }

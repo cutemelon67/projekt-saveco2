@@ -32,16 +32,16 @@ export const Alternatives = ({ userData, journeyDistance }) => {
             <h4>{transport.text}</h4>
             <div className="results__alternative-transport">
               <MaterialIcon icon={transport.icon} size={48}></MaterialIcon>
-              <div className="alternative-transport__graph">
-                <div className="alternative-transport__graph--bar"></div>
-                <img src={treeIcon} alt="tree" />
-              </div>
-
               <div className="alternative-transport__details">
                 <p>
                   {transport.result.emmissions} kg CO<sub>2</sub> na osobu
                 </p>
-                <p>{transport.result.tree} měsíc(e/ů)</p>
+                <p>{transport.result.tree}</p>
+                <img
+                  className="material-icons__tree"
+                  src={treeIcon}
+                  alt="tree"
+                />
               </div>
             </div>
           </React.Fragment>
