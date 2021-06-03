@@ -37,7 +37,7 @@ export const inputFromTo = {
     name: 'from',
     type: 'text',
     value: 'České Budějovice',
-    required: false,
+    required: true,
     text: 'Odkud:',
   },
   TO: {
@@ -46,7 +46,7 @@ export const inputFromTo = {
     name: 'to',
     type: 'text',
     value: 'Písek',
-    required: false,
+    required: true,
     text: 'Kam:',
   },
 };
@@ -57,6 +57,6 @@ export const inputDistance = {
   name: 'distance',
   type: 'number',
   value: 100,
-  required: false,
+  required: true,
   text: 'Vzdálenost (km):',
 };
