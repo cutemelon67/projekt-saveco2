@@ -1,5 +1,10 @@
 import React from 'react';
-import { vehicleInfo, vehicleType } from '../TransportModes/TransportModes';
+import {
+  vehicleInfo,
+  vehicleType,
+  fuelInfo,
+  fuelTypeMapping,
+} from '../TransportModes/TransportModes';
 import MaterialIcon from 'react-google-material-icons';
 import treeIcon from './img/saveco2-tree-icon.svg';
 import { useForm } from 'react-hook-form';
@@ -16,14 +21,19 @@ export const SelectedTransport = ({
   const { from, to, distance, roundTrip, fuel, transportType, journeyType } =
     userData;
 
+  console.log(fuelInfo[fuel]);
+
   return (
     <>
       <div className="results__selected-transport--overview">
         <p>Výsledky pro </p>
         <div>
-          <MaterialIcon icon={transportType.icon} size={48}></MaterialIcon>{' '}
+          <MaterialIcon
+            icon={vehicleInfo[transportType].icon}
+            size={48}
+          ></MaterialIcon>{' '}
         </div>
-        <p>{fuel}</p>
+        <p>{transportType === 'car' ? fuelInfo[fuel] : ''}</p>
       </div>
       <div className="results__selected-transport--details">
         <p>

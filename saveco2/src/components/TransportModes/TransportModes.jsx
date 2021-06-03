@@ -31,9 +31,20 @@ export const fuelType = {
   HYBRID: 'hybrid',
   CNG: 'CNG',
   LPG: 'LPG',
-  BEV: 'elektro',
+  BEV: 'electro',
   PLUGIN: 'plugInHybrid',
   UNKNOWN: 'other',
+};
+
+export const fuelTypeMapping = {
+  petrol: 'benzín',
+  diesel: 'diesel',
+  hybrid: 'hybrid',
+  CNG: 'CNG',
+  LPG: 'LPG',
+  electro: 'elektro',
+  plugInHybrid: 'plug in hybrid',
+  other: 'jiné',
 };
 
 export const fuelInfo = {
