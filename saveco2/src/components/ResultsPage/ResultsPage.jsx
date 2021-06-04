@@ -6,10 +6,7 @@ import { Nav } from '../Nav/Nav';
 import { getResults } from '../getResults/getResults';
 import MaterialIcon from 'react-google-material-icons';
 import { SelectedTransport } from '../SelectedTransport/SelectedTransport';
-import {
-  Alternatives,
-  getAlternativeObject,
-} from '../Alternatives/Alternatives';
+import { Alternatives } from '../Alternatives/Alternatives';
 import { MethodologyResults } from '../MethodologyResults/MethodologyResults';
 import { DataFacts } from '../DataFacts/DataFacts';
 import { useHistory } from 'react-router-dom';
