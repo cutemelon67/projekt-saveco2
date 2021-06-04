@@ -10,10 +10,8 @@ import {
   planeResults,
 } from '../getResults/getResults';
 import { getResults } from '../getResults/getResults';
-// import { ChoiceStandard, ChoiceGreat, ChoiceMissing } from '../Choice/Choice';
 import treeIcon from './img/saveco2-tree-icon.svg';
 import './alternatives.css';
-import { journeyTypeButtons } from '../FormButtons/FormButtons';
 
 export const Alternatives = ({ userData, journeyDistance }) => {
   let alternativeTransport = [];
@@ -48,7 +46,7 @@ export const Alternatives = ({ userData, journeyDistance }) => {
 
   return (
     <>
-      {getChoices(userData)}
+      <GetChoices userData={userData} />
       {alternativeTransport.map((transport, index) => {
         return (
           <React.Fragment key={index}>
@@ -82,9 +80,6 @@ export const getCarAlternatives = (
 ) => {
   const alternatives = [];
 
-  console.log(distance, peopleCount, fuel, journeyDistance);
-  // const headerType = [];
-
   const alternativeResults = getAlternativeResults({
     journeyDistance,
     peopleCount,
@@ -110,7 +105,6 @@ export const getCarAlternatives = (
       alternatives.push(alternativeResults.bus);
       alternatives.push(alternativeResults.motorbike);
     } else if (distance <= 200) {
-      console.log('funguje');
       alternatives.push(alternativeResults.train);
       alternatives.push(alternativeResults.bus);
       alternatives.push(alternativeResults.motorbike);
@@ -257,7 +251,6 @@ export const getCarAlternatives = (
     }
   }
 
-  // return { alternatives, headerType };
   return alternatives;
 };
 
@@ -266,7 +259,6 @@ export const getMotorbikeAlternatives = (
   journeyDistance,
 ) => {
   const alternatives = [];
-  // const headerType = [];
 
   const alternativeResults = getAlternativeResults({
     journeyDistance,
@@ -300,13 +292,11 @@ export const getMotorbikeAlternatives = (
     }
   }
 
-  // return { alternatives, headerType };
   return alternatives;
 };
 
 export const getBusAlternatives = ({ distance }, journeyDistance) => {
   const alternatives = [];
-  // const headerType = [];
 
   const alternativeResults = getAlternativeResults({
     journeyDistance,
@@ -323,13 +313,11 @@ export const getBusAlternatives = ({ distance }, journeyDistance) => {
     alternatives.push(alternativeResults.train);
   }
 
-  // return { alternatives, headerType };
   return alternatives;
 };
 
 export const getTrainAlternatives = ({ distance }, journeyDistance) => {
   const alternatives = [];
-  // const headerType = [];
 
   const alternativeResults = getAlternativeResults({
     journeyDistance,
@@ -343,13 +331,11 @@ export const getTrainAlternatives = ({ distance }, journeyDistance) => {
     alternatives.push(alternativeResults.bike);
   }
 
-  // return { alternatives, headerType };
   return alternatives;
 };
 
 export const getSubwayAlternatives = ({ distance }, journeyDistance) => {
   const alternatives = [];
-  // const headerType = [];
 
   const alternativeResults = getAlternativeResults({
     journeyDistance,
@@ -363,13 +349,11 @@ export const getSubwayAlternatives = ({ distance }, journeyDistance) => {
     alternatives.push(alternativeResults.bike);
   }
 
-  // return { alternatives, headerType };
   return alternatives;
 };
 
 export const getPlaneAlternatives = ({ distance }, journeyDistance) => {
   const alternatives = [];
-  // const headerType = [];
 
   const alternativeResults = getAlternativeResults({
     journeyDistance,
@@ -378,13 +362,11 @@ export const getPlaneAlternatives = ({ distance }, journeyDistance) => {
 
   alternatives.push(alternativeResults.trainPlane);
 
-  // return { alternatives, headerType };
   return alternatives;
 };
 
 export const getFerryAlternatives = ({ distance }, journeyDistance) => {
   const alternatives = [];
-  // const headerType = [];
 
   const alternativeResults = getAlternativeResults({
     journeyDistance,
@@ -393,7 +375,6 @@ export const getFerryAlternatives = ({ distance }, journeyDistance) => {
 
   alternatives.push(alternativeResults.plane);
 
-  // return { alternatives, headerType };
   return alternatives;
 };
 
@@ -446,7 +427,7 @@ export const getOtherAlternatives = ({
   if (transportType === 'car' && peopleCount <= 2) {
     return (
       <>
-        {/* <MaterialIcon icon={'person_add'} size={48}></MaterialIcon> */}
+        <MaterialIcon icon={'person_add'} size={48}></MaterialIcon>
         <h4 className="alternative--co-drive">
           Nechceš někoho svézt (nebo svést)? Ve&nbsp;více lidech se lépe jede.
         </h4>
@@ -457,7 +438,7 @@ export const getOtherAlternatives = ({
   if (transportType === 'ferry') {
     return (
       <>
-        {/* <MaterialIcon icon={'person_add'} size={48}></MaterialIcon> */}
+        <MaterialIcon icon={'person_add'} size={48}></MaterialIcon>
         <h4>To snad přeplaveš, ne?</h4>
       </>
     );
@@ -474,7 +455,7 @@ export const getOtherAlternatives = ({
   ) {
     return (
       <>
-        {/* <MaterialIcon icon={'star_rate'} size={48}></MaterialIcon> */}
+        <MaterialIcon icon={'star_rate'} size={48}></MaterialIcon>
         <h4>Děkujeme, že pomáháš chránit životní prostředí. </h4>
       </>
     );
@@ -492,7 +473,7 @@ export const getTreeAlternatives = ({ transportType, fuel }) => {
   ) {
     return (
       <>
-        {/* <MaterialIcon icon={'park'} size={48}></MaterialIcon> */}
+        <MaterialIcon icon={'park'} size={48}></MaterialIcon>
         <h4>
           Víš, že se můžeš zapojit do sázení stromů? Vyber si kde na&nbsp;
           <a href="https://www.sazimebudoucnost.cz/">Sázíme budoucnost</a>.
@@ -502,7 +483,10 @@ export const getTreeAlternatives = ({ transportType, fuel }) => {
   }
 };
 
-export const getChoices = ({ distance, peopleCount, fuel, transportType }) => {
+export const GetChoices = ({
+  userData: { distance, peopleCount, fuel, transportType },
+}) => {
+  let getChoicesText = '';
   if (
     (distance > 100 &&
       ((transportType === 'car' &&
@@ -517,14 +501,8 @@ export const getChoices = ({ distance, peopleCount, fuel, transportType }) => {
         (peopleCount >= 3 && peopleCount <= 5 && fuel === 'plugInHybrid'))) ||
     (distance > 100 && transportType === 'subway')
   ) {
-    return (
-      <h3 className="results__alternatives--choice">
-        Lepší volba nás nenapadá, i&nbsp;když…
-      </h3>
-    );
-  }
-
-  if (
+    getChoicesText = <>Lepší volba nás nenapadá, i&nbsp;když…</>;
+  } else if (
     (distance > 10 &&
       transportType === 'car' &&
       fuel === 'electro' &&
@@ -533,21 +511,20 @@ export const getChoices = ({ distance, peopleCount, fuel, transportType }) => {
     (fuel === 'plugInHybrid' && peopleCount >= 6 && peopleCount <= 9) ||
     (fuel === 'hybrid' && peopleCount >= 7 && peopleCount <= 9)
   ) {
-    return (
-      <h3 className="results__alternatives--choice">
-        Lepší volba nás nenapadá, i&nbsp;když…
-      </h3>
-    );
+    getChoicesText = <>Lepší volba nás nenapadá, i&nbsp;když…</>;
   } else if (
     (fuel === 'electro' && peopleCount >= 7 && peopleCount <= 9) ||
     (transportType === 'train' && distance > 100) ||
     transportType === 'bike' ||
     transportType === 'walk'
   ) {
-    return <h3 className="results__alternatives--choice">Skvělá volba!</h3>;
+    getChoicesText = <>Skvělá volba!</>;
   } else {
-    <h3 className="results__alternatives--choice">
-      Jsi si svojí volbou jistý? <br /> Zkus raději jednu z&nbsp;alternativ!
-    </h3>;
+    getChoicesText = (
+      <>
+        Jsi si svojí volbou jistý? <br /> Zkus raději jednu z&nbsp;alternativ!
+      </>
+    );
   }
+  return <h3 className="results__alternatives--choice">{getChoicesText}</h3>;
 };

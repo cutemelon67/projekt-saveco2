@@ -23,13 +23,24 @@ import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom';
 import './formPage.css';
 
 export const FormPage = ({ userData, setUserData }) => {
-  const { register, handleSubmit, watch, setValue } = useForm({
+  const defaultData = {
+    ...userData,
+    journeyType: 'singleJourney',
+    transportType: 'car',
+    fuel: 'petrol',
+    peopleCount: 1,
+  };
+  const { register, handleSubmit, watch, setValue, getValues } = useForm({
     defaultValues: React.useMemo(() => {
-      return userData;
-    }, [userData]),
+      return defaultData;
+    }, [defaultData]),
   });
 
-  const [distanceInput, setDistanceInput] = useState(inputFromTo);
+  const defaultInput =
+    getValues('distance') && !getValues('from') && !getValues('to')
+      ? inputDistance
+      : inputFromTo;
+  const [distanceInput, setDistanceInput] = useState(defaultInput);
 
   const watchedFrom = watch('from');
   const watchedTo = watch('to');

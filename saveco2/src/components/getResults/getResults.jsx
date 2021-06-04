@@ -75,6 +75,8 @@ export const getResults = (
 ) => {
   let results = {};
 
+  peopleCount = parseInt(peopleCount);
+
   // výsledky podle jednotlivých dopravních prostředků:
   if (transportType === 'car') {
     results = carResults({ journeyDistance, peopleCount, fuel });
