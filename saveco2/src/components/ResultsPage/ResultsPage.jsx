@@ -6,7 +6,10 @@ import { Nav } from '../Nav/Nav';
 import { getResults } from '../getResults/getResults';
 import MaterialIcon from 'react-google-material-icons';
 import { SelectedTransport } from '../SelectedTransport/SelectedTransport';
-import { Alternatives } from '../Alternatives/Alternatives';
+import {
+  Alternatives,
+  getAlternativeObject,
+} from '../Alternatives/Alternatives';
 import { MethodologyResults } from '../MethodologyResults/MethodologyResults';
 import { DataFacts } from '../DataFacts/DataFacts';
 import { useHistory } from 'react-router-dom';
@@ -19,6 +22,14 @@ export const ResultsPage = ({ userData, setUserData }) => {
   const journeyDistance = getJourneyDistance(userData);
 
   const { emmissions, tree } = getResults(userData, journeyDistance);
+  // const { alternativeTransport } = getAlternativeObject(
+  //   userData,
+  //   journeyDistance,
+  // );
+
+  // alternativeTransport.forEach((item) => {
+  //   item.emmissionsShare = item.emmissions / emmissions;
+  // });
 
   if (emmissions < 0 || tree < 0) {
     return (
@@ -56,6 +67,7 @@ export const ResultsPage = ({ userData, setUserData }) => {
           </div>
           <div className="results__alternatives">
             <Alternatives
+              // alternativeTransport={alternativeTransport}
               userData={userData}
               journeyDistance={journeyDistance}
             ></Alternatives>

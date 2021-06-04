@@ -14,6 +14,8 @@ import './alternatives.css';
 export const Alternatives = ({ userData, journeyDistance }) => {
   let alternativeTransport = [];
 
+  // const editedUserData = { ...userData, peopleCount: parseInt(peopleCount) };
+
   if (userData.transportType === 'car') {
     alternativeTransport = getCarAlternatives(userData, journeyDistance);
   }
@@ -41,7 +43,6 @@ export const Alternatives = ({ userData, journeyDistance }) => {
   if (userData.transportType === 'ferry') {
     alternativeTransport = getFerryAlternatives(userData, journeyDistance);
   }
-
   return (
     <>
       <GetChoices userData={userData} />
@@ -55,6 +56,7 @@ export const Alternatives = ({ userData, journeyDistance }) => {
                 <p>
                   {transport.result.emmissions} kg CO<sub>2</sub> na osobu
                 </p>
+                {/* <div style={{ width: emmissionsShare }} /> */}
                 <p>{transport.result.tree}</p>
                 <img
                   className="material-icons__tree"
@@ -436,7 +438,7 @@ export const getOtherAlternatives = ({
   if (transportType === 'ferry') {
     return (
       <>
-        <MaterialIcon icon={'person_add'} size={48}></MaterialIcon>
+        <MaterialIcon icon={'pool'} size={48}></MaterialIcon>
         <h4>To snad přeplaveš, ne?</h4>
       </>
     );
