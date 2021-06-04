@@ -290,7 +290,7 @@ input[type='radio']:checked + .material-icons {
 
   .starting-page__form {
     align-self: center;
-    margin-top: 6.25rem;
+    margin: 6.25rem 0;
     width: 35%;
     background-color: white;
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
@@ -312,39 +312,9 @@ input[type='radio']:checked + .material-icons {
   .btn.btn--primary.main {
     display: none;
   }
-
-  /*Tvoje cesta
-  .starting-page__form--journey {
-    padding: 1.875rem;
-  }*/
-
-  /*Jak se přesuneš?
-  .starting-page__form--transport-type {
-    padding: 1.875rem;
-  }*/
-
-  /*Na co jezdíš
-  .starting-page__form--fuel {
-    padding: 1.875rem;
-  }*/
-
-  /*Jakým druhem autobusu
-  .starting-page__form--bus-type {
-    padding: 1.875rem;
-  }*/
-
-  /*Počet cestujících
-  .starting-page__form--people {
-    padding: 1.875rem;
-  }*/
-
-  /*Četnost jízd*/
-
-  /*Starting page - Spočítej, Přidej dopravní prostředek*/
-
-  /*Přidej dopravní prostředek*/
-  .btn.btn--secondary.standard {
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
-    flex-basis: calc(100%2);
+  /*Spočítej*/
+  .btn.btn--primary.standard {
+    width: 50%;
+    align-self: center;
   }
 }

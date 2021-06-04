@@ -8,7 +8,7 @@ header {
   width: 5rem;
   position: absolute;
   top: 1.09rem;
-  left: 1.3rem;
+  left: 0.5rem;
 }
 
 @media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
@@ -20,6 +20,6 @@ header {
     width: 7rem;
     position: absolute;
     top: 0.4rem;
-    left: 3rem;
+    left: 1.5rem;
   }
 }
