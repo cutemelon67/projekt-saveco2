@@ -454,7 +454,7 @@ export const getOtherAlternatives = ({
     return (
       <>
         {/* <MaterialIcon icon={'person_add'} size={48}></MaterialIcon> */}
-        <h4>To snad přeplaveš, ne?</h4>;
+        <h4>To snad přeplaveš, ne?</h4>
       </>
     );
   }
@@ -491,7 +491,7 @@ export const getTreeAlternatives = ({ transportType, fuel }) => {
         {/* <MaterialIcon icon={'park'} size={48}></MaterialIcon> */}
         <h4>
           Víš, že se můžeš zapojit do sázení stromů? Vyber si kde na&nbsp;
-          <a href="https://www.sazimebudoucnost.cz/">Sázíme budoucnost</a> .
+          <a href="https://www.sazimebudoucnost.cz/">Sázíme budoucnost</a>.
         </h4>
       </>
     );

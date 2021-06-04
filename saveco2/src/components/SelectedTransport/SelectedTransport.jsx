@@ -40,7 +40,7 @@ export const SelectedTransport = ({
             cestou na trase&nbsp;
             <strong>
               {from && to ? `${from} - ${to}` : `${distance} km`}
-              {roundTrip ? ' a zpět ' : null}
+              {roundTrip ? ' a zpět' : null}
             </strong>
             &nbsp;vyprodukuješ
           </p>
