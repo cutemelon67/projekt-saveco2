@@ -1,8 +1,6 @@
 import React from 'react';
 import './button.css';
 
-// href doplnit
-
 const classNames = require('classnames');
 
 export const Button = ({ className, type, variant, children, onClick }) => {

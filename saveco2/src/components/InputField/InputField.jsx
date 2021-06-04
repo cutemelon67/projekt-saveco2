@@ -29,7 +29,6 @@ export const InputField = ({
   );
 };
 
-// změnit na required: true -> až bude na stránce jen jedna možnost
 export const inputFromTo = {
   FROM: {
     htmlFor: 'input--from',

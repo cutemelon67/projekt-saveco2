@@ -6,12 +6,9 @@ import { Icon } from '../Icon/Icon';
 import { InputField } from '../InputField/InputField';
 import { InputBtn } from '../InputBtn/InputBtn';
 import { InputSelect } from '../InputSelect/InputSelect';
-import { getResults } from '../getResults/getResults';
 import {
-  vehicleType,
   fuelType,
   fuelInfo,
-  carSize,
   vehicleInfo,
   vehicle,
 } from '../TransportModes/TransportModes';
@@ -47,7 +44,7 @@ export const FormPage = ({ userData, setUserData }) => {
   let distanceFromGM;
 
   const proxyurl = 'https://cors-anywhere.herokuapp.com/';
-  const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=AIzaSyCEbWgmX72FRhMPfLre0wYnZdWkcqaaKc4`;
+  // const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=${GOOGLE_MAPS_API_KEY}`;
 
   useEffect(() => {
     const delayedWatch = setTimeout(() => {
@@ -97,12 +94,9 @@ export const FormPage = ({ userData, setUserData }) => {
     history.push('/results');
   };
 
+  // předvyplněná data pro testování:
   // useEffect(() => {
   //   setValue('distance', 100);
-  //   setValue('transportType', 'car');
-  //   setValue('fuel', 'petrol');
-  //   setValue('peopleCount', 1);
-  //   setValue('frequencyCount', 1);
   // }, []);
 
   return (

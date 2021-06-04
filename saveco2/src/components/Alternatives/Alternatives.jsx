@@ -1,6 +1,5 @@
 import React from 'react';
 import MaterialIcon from 'react-google-material-icons';
-import { vehicleInfo, vehicleType } from '../TransportModes/TransportModes';
 import {
   busResults,
   trainResults,
@@ -9,7 +8,6 @@ import {
   bikeResults,
   planeResults,
 } from '../getResults/getResults';
-import { getResults } from '../getResults/getResults';
 import treeIcon from './img/saveco2-tree-icon.svg';
 import './alternatives.css';
 

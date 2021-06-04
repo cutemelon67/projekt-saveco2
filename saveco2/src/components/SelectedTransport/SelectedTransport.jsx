@@ -1,16 +1,8 @@
 import React from 'react';
-import {
-  vehicleInfo,
-  vehicleType,
-  fuelInfo,
-  fuelTypeMapping,
-} from '../TransportModes/TransportModes';
+import { vehicleInfo, fuelInfo } from '../TransportModes/TransportModes';
 import MaterialIcon from 'react-google-material-icons';
 import treeIcon from './img/saveco2-tree-icon.svg';
-import { useForm } from 'react-hook-form';
-import { getResults } from '../getResults/getResults';
 import './selectedTransport.css';
-import { ResultsPage } from '../ResultsPage/ResultsPage';
 
 export const SelectedTransport = ({
   emmissions,

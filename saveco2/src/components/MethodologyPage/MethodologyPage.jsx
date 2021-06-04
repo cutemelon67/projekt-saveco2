@@ -7,7 +7,7 @@ import MaterialIcon from 'react-google-material-icons';
 import { Methodology } from '../Methodology/Methodology';
 import { Calculation } from '../Calculation/Calculation';
 import { Sources } from '../Sources/Sources';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './methodologyPage.css';
 
 export const MethodologyPage = ({ userData, setUserData }) => {

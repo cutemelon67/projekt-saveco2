@@ -6,6 +6,7 @@ import './icon.css';
 // Note that size is an optional parameter which is use to set the font size of the icon. Default size is 24px.
 // <MaterialIcon icon="account_circle" size={48} />
 
+// ikonky Google:
 // export const icons = [
 //   { name: 'directions_car' },
 //   { name: 'directions_bus' },

@@ -6,7 +6,6 @@ import { Nav } from '../Nav/Nav';
 import { getResults } from '../getResults/getResults';
 import MaterialIcon from 'react-google-material-icons';
 import { SelectedTransport } from '../SelectedTransport/SelectedTransport';
-import { ChoiceStandard, ChoiceGreat, ChoiceMissing } from '../Choice/Choice';
 import { Alternatives } from '../Alternatives/Alternatives';
 import { MethodologyResults } from '../MethodologyResults/MethodologyResults';
 import { DataFacts } from '../DataFacts/DataFacts';

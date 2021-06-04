@@ -31,14 +31,13 @@
   }
 }
 
-/* .alternative-transport__graph {
+.alternative-transport__graph {
   flex: 0 0 5rem;
   background-color: lightgray;
   height: 0.6rem;
   border-radius: 0.3rem;
-} */
+}
 
-/*
 .skill__bar {
   flex: 0 0 30rem;
   background-color: lightgray;
@@ -52,4 +51,15 @@
   height: 0.6rem;
   border-radius: 0.3rem;
 }
-*/
+
+/* Choices */
+.results__alternatives--choice {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
+  .results__alternatives--choice {
+    margin-bottom: 3rem;
+  }
+}
