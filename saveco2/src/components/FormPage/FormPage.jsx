@@ -19,12 +19,7 @@ import { inputFromTo } from '../InputField/InputField';
 import { inputDistance } from '../InputField/InputField';
 import { FormButtons, journeyTypeButtons } from '../FormButtons/FormButtons';
 import { useForm } from 'react-hook-form';
-import {
-  BrowserRouter as Router,
-  Link,
-  useHistory,
-  ActionLink,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom';
 import './formPage.css';
 
 export const FormPage = ({ userData, setUserData }) => {
@@ -91,13 +86,13 @@ export const FormPage = ({ userData, setUserData }) => {
     history.push('/results');
   };
 
-  useEffect(() => {
-    setValue('distance', 100);
-    setValue('transportType', 'car');
-    setValue('fuel', 'petrol');
-    setValue('peopleCount', 1);
-    setValue('frequencyCount', 1);
-  }, []);
+  // useEffect(() => {
+  //   setValue('distance', 100);
+  //   setValue('transportType', 'car');
+  //   setValue('fuel', 'petrol');
+  //   setValue('peopleCount', 1);
+  //   setValue('frequencyCount', 1);
+  // }, []);
 
   return (
     <Router>

@@ -441,14 +441,22 @@ export const getOtherAlternatives = ({
 }) => {
   if (transportType === 'car' && peopleCount <= 2) {
     return (
-      <h4 className="alternative--co-drive">
-        Nechceš někoho svézt (nebo svést)? Ve&nbsp;více lidech se lépe jede.
-      </h4>
+      <>
+        {/* <MaterialIcon icon={'person_add'} size={48}></MaterialIcon> */}
+        <h4 className="alternative--co-drive">
+          Nechceš někoho svézt (nebo svést)? Ve&nbsp;více lidech se lépe jede.
+        </h4>
+      </>
     );
   }
 
   if (transportType === 'ferry') {
-    return <h4>To snad přeplaveš, ne?</h4>;
+    return (
+      <>
+        {/* <MaterialIcon icon={'person_add'} size={48}></MaterialIcon> */}
+        <h4>To snad přeplaveš, ne?</h4>;
+      </>
+    );
   }
 
   if (
@@ -460,7 +468,12 @@ export const getOtherAlternatives = ({
     transportType === 'bike' ||
     transportType === 'walk'
   ) {
-    return <h4>Děkujeme, že pomáháš chránit životní prostředí. </h4>;
+    return (
+      <>
+        {/* <MaterialIcon icon={'star_rate'} size={48}></MaterialIcon> */}
+        <h4>Děkujeme, že pomáháš chránit životní prostředí. </h4>
+      </>
+    );
   }
 };
 
@@ -474,10 +487,13 @@ export const getTreeAlternatives = ({ transportType, fuel }) => {
     transportType === 'ferry'
   ) {
     return (
-      <h4>
-        Víš, že se můžeš zapojit do sázení stromů? Vyber si kde na&nbsp;
-        <a href="https://www.sazimebudoucnost.cz/">Sázíme budoucnost</a> .
-      </h4>
+      <>
+        {/* <MaterialIcon icon={'park'} size={48}></MaterialIcon> */}
+        <h4>
+          Víš, že se můžeš zapojit do sázení stromů? Vyber si kde na&nbsp;
+          <a href="https://www.sazimebudoucnost.cz/">Sázíme budoucnost</a> .
+        </h4>
+      </>
     );
   }
 };
