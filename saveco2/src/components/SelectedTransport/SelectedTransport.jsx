@@ -39,7 +39,7 @@ export const SelectedTransport = ({
             Svojí {journeyType === 'regularJourney' ? ' pravidelnou ' : ''}{' '}
             cestou na trase&nbsp;
             <strong>
-              {distance ? `${distance} km` : `${from} - ${to}`}
+              {from && to ? `${from} - ${to}` : `${distance} km`}
               {roundTrip ? ' a zpět ' : null}
             </strong>
             &nbsp;vyprodukuješ
@@ -54,7 +54,7 @@ export const SelectedTransport = ({
           </div>
         </div>
         <div className="results__selected-transport--details-tree">
-          <p>Kolik stromů stojí tvá volba za jeden rok?</p>
+          <p>Kolik stromů stojí tvá volba?</p>
           <div className="selected-transport__values">
             <p className="values--number">{tree}</p>
             <img className="material-icons__tree" src={treeIcon} alt="tree" />
