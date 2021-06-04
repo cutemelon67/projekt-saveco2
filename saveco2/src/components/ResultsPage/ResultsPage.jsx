@@ -21,7 +21,7 @@ export const ResultsPage = ({ userData, setUserData }) => {
 
   const { emmissions, tree } = getResults(userData, journeyDistance);
 
-  if (!emmissions || !tree) {
+  if (emmissions < 0 || tree < 0) {
     return (
       <>
         <div>

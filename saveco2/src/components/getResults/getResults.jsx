@@ -13,6 +13,10 @@ const roundResults = (number) => {
   return Math.round(number * 10) / 10;
 };
 
+const roundBikeWalkResults = (number) => {
+  return Math.round(number * 100) / 100;
+};
+
 export const getJourneyDistance = ({
   roundTrip,
   distance,
@@ -24,8 +28,16 @@ export const getJourneyDistance = ({
   distance = parseFloat(distance);
 
   // validace zadané vzdálenosti:
-  if (!(distance && distance > 0)) {
-    return;
+  if (distance < 0) {
+    return (
+      <>
+        <div>
+          {' '}
+          Výsledky se po cestě někde zatoulaly.
+          <Nav href="/">Zadat novou trasu</Nav>
+        </div>
+      </>
+    );
   }
 
   // výpočet vzdálenosti v případě zpáteční cesty:
@@ -189,9 +201,11 @@ export const walkResults = ({ journeyDistance }) => {
 
   const treeAbsorption = 22;
 
-  emmissions = roundResults(journeyDistance * coefficients[vehicleType.WALK]);
+  emmissions = roundBikeWalkResults(
+    journeyDistance * coefficients[vehicleType.WALK],
+  );
 
-  tree = roundResults(emmissions / treeAbsorption);
+  tree = roundBikeWalkResults(emmissions / treeAbsorption);
 
   return {
     emmissions,
@@ -205,9 +219,11 @@ export const bikeResults = ({ journeyDistance }) => {
 
   const treeAbsorption = 22;
 
-  emmissions = roundResults(journeyDistance * coefficients[vehicleType.BIKE]);
+  emmissions = roundBikeWalkResults(
+    journeyDistance * coefficients[vehicleType.BIKE],
+  );
 
-  tree = roundResults(emmissions / treeAbsorption);
+  tree = roundBikeWalkResults(emmissions / treeAbsorption);
 
   return {
     emmissions,
