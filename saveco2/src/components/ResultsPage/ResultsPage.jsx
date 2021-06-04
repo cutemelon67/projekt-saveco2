@@ -42,34 +42,37 @@ export const ResultsPage = ({ userData, setUserData }) => {
     <>
       <Header></Header>
       <div className="results">
-        <h2 className="results--header">
-          Jaká je CO<sub>2</sub> stopa tvojí cesty?
-        </h2>
-        <Nav href="/">Upravit trasu</Nav>
-        <div className="results__selected-transport">
-          <SelectedTransport
-            emmissions={emmissions}
-            tree={tree}
-            journeyDistance={journeyDistance}
-            userData={userData}
-          />
-        </div>
-        <div className="results__alternatives">
-          <Alternatives
-            userData={userData}
-            journeyDistance={journeyDistance}
-          ></Alternatives>
-        </div>
-        <div className="results__methodology">
-          <MethodologyResults />
-        </div>
-        <div className="results__buttons">
-          <Button onClick={onSubmit}>
-            Zadej novou trasu <MaterialIcon icon={'chevron_right'} size={12} />
-          </Button>
-        </div>
-        <div className="results__data-facts">
-          <DataFacts />
+        <div className="results__container">
+          <h2 className="results--header">
+            Jaká je CO<sub>2</sub> stopa tvojí cesty?
+          </h2>
+          <Nav href="/">Upravit trasu</Nav>
+          <div className="results__selected-transport">
+            <SelectedTransport
+              emmissions={emmissions}
+              tree={tree}
+              journeyDistance={journeyDistance}
+              userData={userData}
+            />
+          </div>
+          <div className="results__alternatives">
+            <Alternatives
+              userData={userData}
+              journeyDistance={journeyDistance}
+            ></Alternatives>
+          </div>
+          <div className="results__methodology">
+            <MethodologyResults />
+          </div>
+          <div className="results__buttons">
+            <Button onClick={onSubmit}>
+              Zadej novou trasu{' '}
+              <MaterialIcon icon={'chevron_right'} size={12} />
+            </Button>
+          </div>
+          <div className="results__data-facts">
+            <DataFacts />
+          </div>
         </div>
       </div>
       <Footer></Footer>

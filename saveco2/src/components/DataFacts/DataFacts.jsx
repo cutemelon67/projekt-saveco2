@@ -8,6 +8,7 @@ export const DataFacts = (props) => {
   return (
     <>
       <h2 className="dataFacts__section-name">VÍTE, ŽE...</h2>
+
       <div className="dataFacts__section-name--screen">
         <div className="dataFacts__container">
           <div className="container__img">

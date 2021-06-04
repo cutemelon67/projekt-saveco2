@@ -59,6 +59,20 @@
     margin-top: 2rem;
   }
 
+  .results {
+    background-image: url(img/road_big.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+  }
+
+  .results__container {
+    background-color: white;
+    opacity: 90%;
+  }
+
   .results__buttons {
     margin: 3rem 6.25rem;
   }
@@ -66,7 +80,7 @@
   .results__buttons .btn.btn--secondary {
     margin-top: 0;
   }
-
+  /*
   .results--header {
     background-image: url(img/road_big.jpg);
     background-attachment: fixed;
@@ -74,8 +88,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 1.875rem;
-    /*position: fixed;
-    top: 0;
-    width: 100%;*/
   }
+  */
 }
