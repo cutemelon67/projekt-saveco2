@@ -13,6 +13,7 @@ import { getResults } from '../getResults/getResults';
 // import { ChoiceStandard, ChoiceGreat, ChoiceMissing } from '../Choice/Choice';
 import treeIcon from './img/saveco2-tree-icon.svg';
 import './alternatives.css';
+import { journeyTypeButtons } from '../FormButtons/FormButtons';
 
 export const Alternatives = ({ userData, journeyDistance }) => {
   let alternativeTransport = [];
@@ -80,6 +81,8 @@ export const getCarAlternatives = (
   journeyDistance,
 ) => {
   const alternatives = [];
+
+  console.log(distance, peopleCount, fuel, journeyDistance);
   // const headerType = [];
 
   const alternativeResults = getAlternativeResults({
@@ -107,6 +110,7 @@ export const getCarAlternatives = (
       alternatives.push(alternativeResults.bus);
       alternatives.push(alternativeResults.motorbike);
     } else if (distance <= 200) {
+      console.log('funguje');
       alternatives.push(alternativeResults.train);
       alternatives.push(alternativeResults.bus);
       alternatives.push(alternativeResults.motorbike);
