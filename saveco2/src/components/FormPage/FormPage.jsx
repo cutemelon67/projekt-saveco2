@@ -22,10 +22,10 @@ import './formPage.css';
 export const FormPage = ({ userData, setUserData }) => {
   const defaultData = {
     ...userData,
-    journeyType: 'singleJourney',
-    transportType: 'car',
-    fuel: 'petrol',
-    peopleCount: 1,
+    journeyType: userData.journeyType || 'singleJourney',
+    transportType: userData.transportType || 'car',
+    fuel: userData.fuel || 'petrol',
+    peopleCount: userData.peopleCount || 1,
   };
   const { register, handleSubmit, watch, setValue, getValues } = useForm({
     defaultValues: React.useMemo(() => {
