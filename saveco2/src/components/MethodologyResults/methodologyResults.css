@@ -1,21 +1,22 @@
 /*Methodology Results*/
 
 .results__methodology {
-  margin: 3rem 1.875rem 0 1.875rem;
+  margin: 3rem 1.875rem;
+  padding: 1.5rem;
   background-color: lightgray;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 1.5rem;
+}
+.results__methodology .material-icons {
+  margin-bottom: 1rem;
 }
 
 .results__methodology p {
   text-align: justify;
-  margin: 1.25rem;
 }
 
 .results__methodology h3 {
-  padding-top: 0.625rem;
   text-align: center;
 }
 

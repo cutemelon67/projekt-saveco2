@@ -57,12 +57,14 @@ export const Alternatives = ({ userData, journeyDistance }) => {
                   {transport.result.emmissions} kg CO<sub>2</sub> na osobu
                 </p>
                 {/* <div style={{ width: emmissionsShare }} /> */}
-                <p>{transport.result.tree}</p>
-                <img
-                  className="material-icons__tree"
-                  src={treeIcon}
-                  alt="tree"
-                />
+                <div className="alternative-transport__details-tree">
+                  <p>{transport.result.tree}</p>
+                  <img
+                    className="material-icons__tree"
+                    src={treeIcon}
+                    alt="tree"
+                  />
+                </div>
               </div>
             </div>
           </React.Fragment>
@@ -427,10 +429,14 @@ export const getOtherAlternatives = ({
   if (transportType === 'car' && peopleCount <= 2) {
     return (
       <>
-        <MaterialIcon icon={'person_add'} size={48}></MaterialIcon>
-        <h4 className="alternative--co-drive">
-          Nechceš někoho svézt (nebo svést)? Ve&nbsp;více lidech se lépe jede.
-        </h4>
+        <div className="alternative--others">
+          <MaterialIcon icon={'person_add'} size={48}></MaterialIcon>
+          <h4>
+            {' '}
+            Co třeba někoho svézt (nebo svést)? Ve&nbsp;více lidech se lépe
+            jede.
+          </h4>
+        </div>
       </>
     );
   }
@@ -438,8 +444,10 @@ export const getOtherAlternatives = ({
   if (transportType === 'ferry') {
     return (
       <>
-        <MaterialIcon icon={'pool'} size={48}></MaterialIcon>
-        <h4>To snad přeplaveš, ne?</h4>
+        <div className="alternative--others">
+          <MaterialIcon icon={'pool'} size={48}></MaterialIcon>
+          <h4>To snad přeplaveš, ne?</h4>
+        </div>
       </>
     );
   }
@@ -455,8 +463,10 @@ export const getOtherAlternatives = ({
   ) {
     return (
       <>
-        <MaterialIcon icon={'star_rate'} size={48}></MaterialIcon>
-        <h4>Děkujeme, že pomáháš chránit životní prostředí. </h4>
+        <div className="alternative--others">
+          <MaterialIcon icon={'star_rate'} size={48}></MaterialIcon>
+          <h4>Děkujeme, že pomáháš chránit životní prostředí. </h4>
+        </div>
       </>
     );
   }
@@ -473,11 +483,14 @@ export const getTreeAlternatives = ({ transportType, fuel }) => {
   ) {
     return (
       <>
-        <MaterialIcon icon={'park'} size={48}></MaterialIcon>
-        <h4>
-          Víš, že se můžeš zapojit do sázení stromů? Vyber si kde na&nbsp;
-          <a href="https://www.sazimebudoucnost.cz/">Sázíme budoucnost</a>.
-        </h4>
+        <div className="alternative--others">
+          <MaterialIcon icon={'park'} size={48}></MaterialIcon>
+          <h4>
+            Víš, že se také můžeš zapojit do sázení stromů? Vyber si kde
+            na&nbsp;
+            <a href="https://www.sazimebudoucnost.cz/">Sázíme budoucnost</a>.
+          </h4>
+        </div>
       </>
     );
   }

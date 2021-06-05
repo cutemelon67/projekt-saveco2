@@ -39,6 +39,14 @@ h3 {
   margin: 0;
 }
 
+h4 {
+  margin: 0;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
 @media (max-width: 1023px) {
   .hidden-mobile {
     display: none;

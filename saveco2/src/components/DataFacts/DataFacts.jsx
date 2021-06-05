@@ -7,7 +7,7 @@ import imgTurtle from './img/turtle_small.jpg';
 export const DataFacts = (props) => {
   return (
     <>
-      <h2 className="dataFacts__section-name">VÍTE, ŽE...</h2>
+      <h2 className="dataFacts__section-name">VĚDĚLI JSTE, ŽE...</h2>
 
       <div className="dataFacts__section-name--screen">
         <div className="dataFacts__container">
@@ -26,10 +26,10 @@ export const DataFacts = (props) => {
             <strong>24&nbsp;% světových emisí </strong>
             oxidu ohličitého (CO<sub>2</sub>). Největší podíl na nich má
             silniční doprava (75&nbsp;%). Z toho 45&nbsp;% emisí CO
-            <sub>2</sub> pochází přitom z&nbsp;automobilů a&nbsp;autobusů,
-            zbylých 29&nbsp;% připadá na nákladní dopravu. Letecká doprava
-            příspívá 12&nbsp;% a železniční doprava tvoří 1&nbsp;% celovětových
-            emisí.
+            <sub>2</sub> připadá na&nbsp;automobily a&nbsp;autobusy, zbylých
+            29&nbsp;% tvoří nákladní doprava. Letecká doprava se podílí
+            12&nbsp;% a železniční doprava 1&nbsp;% na&nbsp;celosvětových
+            emisích CO<sub>2</sub>.
           </p>
         </div>
         <div className="dataFacts__container">
