@@ -48,12 +48,13 @@
     background-size: cover;
     min-height: 31.25rem;
     padding-bottom: 6.25rem;
+    padding-top: 3rem;
   }
 
   .dataFacts__section-name--screen {
     display: flex;
-    justify-content: space-between;
     align-items: stretch;
+    justify-content: space-between;
     overflow: hidden;
     margin-left: 6.25rem;
     margin-right: 6.25rem;

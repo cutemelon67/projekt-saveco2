@@ -8,18 +8,22 @@
   flex-direction: column;
   align-items: center;
 }
-.results__methodology .material-icons {
-  margin-bottom: 1rem;
-}
 
 .results__methodology p {
   text-align: justify;
 }
 
-.results__methodology h3 {
-  text-align: center;
+.results__methodology-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.results__methodology-header .material-icons {
+  margin-bottom: 10px;
+}
+
+/*Více k metodice*/
 .btn--center {
   padding: 0.625rem 1.25rem;
   margin-top: 0;
@@ -38,30 +42,4 @@
   }
 
   /*Jak jsme na to přišli?*/
-
-  .results__methodology .material-icons {
-    width: 5%;
-  }
-
-  .results__methodology--info {
-    width: 70%;
-  }
-
-  .results__methodology .btn--secondary .btn--center {
-    width: 30%;
-  }
-
-  .results__methodology--info h3 {
-    padding: 0;
-    margin: 1.25rem;
-    text-align: left;
-  }
-
-  .results__methodology--info p {
-    text-align: justify;
-  }
-
-  .results__methodology--info a {
-    text-decoration: none;
-  }
 }
