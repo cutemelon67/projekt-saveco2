@@ -24,7 +24,7 @@ export const FormPage = ({ userData, setUserData }) => {
     ...userData,
     journeyType: 'singleJourney',
     transportType: 'car',
-    fuel: 'diesel',
+    fuel: 'petrol',
     peopleCount: 1,
   };
   const { register, handleSubmit, watch, setValue, getValues } = useForm({
@@ -44,7 +44,7 @@ export const FormPage = ({ userData, setUserData }) => {
   let distanceFromGM;
 
   const proxyurl = 'https://cors-anywhere.herokuapp.com/';
-  // const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=${AIzaSyCEbWgmX72FRhMPfLre0wYnZdWkcqaaKc4}`;
+  const URL = `https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${watchedFrom}&destinations=${watchedTo}&key=${process.env.GOOGLE_MAPS_API_KEY}`;
 
   useEffect(() => {
     const delayedWatch = setTimeout(() => {
