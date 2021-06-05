@@ -11,10 +11,10 @@ export const Methodology = (props) => {
         koeficient, který zohledňuje mimo jiné stáří dopravních prostředků a
         v&nbsp;případě aut a motorek i&nbsp;jejich velikost, objem motoru a
         třídu vozidel na trhu v&nbsp;aktuálním roce (zde 2020). V&nbsp;případě
-        auta a motorky se jedná o kilogramy CO<sub>2</sub> na celé vozidlo.
+        auta a motorky se jedná o&nbsp;kilogramy CO<sub>2</sub> na celé vozidlo.
         U&nbsp;auta se jednotlivé hodnoty liší dle typu pohonu a pro případ
         většího počtu spolucestujících jsme použili koeficienty pro multivan,
-        který pojme 8 – 9 osob.
+        který pojme 8&nbsp;–&nbsp;9 osob.
       </p>
       <p className="methodology__text">
         U&nbsp;ostatních dopravních prostředků a chůze je uveden koeficient pro
@@ -34,7 +34,7 @@ export const Methodology = (props) => {
         prostředků.
       </p>
       <p className="methodology__text">
-        Pro stanovení koeficientu pro chůzi, běh a plavání jsme vycházeli
+        Pro stanovení koeficientu pro chůzi a běh jsme vycházeli
         z&nbsp;předpokladu Science Focus, na základě kterého průměrný člověk za
         24&nbsp;hodin vydechne 1&nbsp;kg CO<sub>2</sub>, což odpovídá přibližně
         0,042&nbsp;kg CO
@@ -43,13 +43,12 @@ export const Methodology = (props) => {
       </p>
       <ul className="methodology__list">
         <li>ujede 20 km na kole,</li>
-        <li>ujde 5 km,</li>
-        <li>uplave 1 km.</li>
+        <li>ujde 5 km.</li>
       </ul>
       <p className="methodology__text">
         Zároveň, aby člověk mohl vykonávat jakoukoliv fyzickou aktivitu (jízdu
-        na kole nebo plavání), potřebuje k&nbsp;tomu palivo (jídlo). Na základě
-        informace uvedené na stránkách Our Streets MPLS množství CO
+        na kole), potřebuje k&nbsp;tomu palivo (jídlo). Na základě informace
+        uvedené na stránkách Our Streets MPLS množství CO
         <sub>2</sub> pocházející z&nbsp;jídla činí 16&nbsp;g na km.
       </p>
       <table className="methodology__table">
@@ -57,8 +56,8 @@ export const Methodology = (props) => {
       </table>
       <p className="methodology__note">
         * U&nbsp;automobilů s&nbsp;pohonem hybrid a plug-in hybrid elektro byl
-        pro 8 – 9 osob z&nbsp;důvodu nedostatku dat použit stejný koeficient
-        jako pro vozidla určená pro menší počet osob.
+        pro 8&nbsp;–&nbsp;9 osob z&nbsp;důvodu nedostatku dat použit stejný
+        koeficient jako pro vozidla určená pro menší počet osob.
       </p>
     </>
   );

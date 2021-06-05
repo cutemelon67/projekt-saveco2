@@ -6,8 +6,8 @@ export const Sources = (props) => {
     <>
       <p className="sources__text">
         Koeficienty použité pro výpočet emisí CO<sub>2</sub> pro všechny výše
-        uvedené dopravní prostředky (s&nbsp;výjimkou kola, plavání a chůze) jsme
-        převzali z&nbsp;dokumentu{' '}
+        uvedené dopravní prostředky (s&nbsp;výjimkou kola a chůze) jsme převzali
+        z&nbsp;dokumentu{' '}
         <a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2020">
           Greenhouse gas reporting: conversion factors 2020
         </a>

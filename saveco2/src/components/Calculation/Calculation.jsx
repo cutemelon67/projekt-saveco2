@@ -12,7 +12,7 @@ export const Calculation = (props) => {
       </p>
       <ul className="calculation__list">
         <li>
-          Auto: (vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient dle
+          Auto: (vzdálenost v&nbsp;km&nbsp;*&nbsp;koeficient dle typu
           pohonu)&nbsp;/&nbsp;počet cestujících
         </li>
         <li>
@@ -37,7 +37,7 @@ export const Calculation = (props) => {
       </p>
       <ul className="calculation__list">
         <li>
-          v případě roční frekvence jsme takto získanou vzdálenost rovnou
+          v&nbsp;případě roční frekvence jsme takto získanou vzdálenost rovnou
           použili pro výpočet emisí CO<sub>2</sub>
         </li>
         <li>

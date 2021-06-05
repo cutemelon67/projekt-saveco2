@@ -80,17 +80,17 @@ export const Table = () => {
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto plug-in hybrid elektro (1&nbsp;-&nbsp;9&nbsp;osob)*</td>
+          <td>Auto plug-in hybrid (1&nbsp;-&nbsp;9&nbsp;osob)*</td>
           <td>0,09433</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto elektomobil (1&nbsp;-&nbsp;7&nbsp;osob)</td>
+          <td>Auto elektro (1&nbsp;-&nbsp;7&nbsp;osob)</td>
           <td>0,05274</td>
           <td>-</td>
         </tr>
         <tr>
-          <td>Auto elektromobil multivan (8&nbsp;-&nbsp;9&nbsp;osob)</td>
+          <td>Auto elektro multivan (8&nbsp;-&nbsp;9&nbsp;osob)</td>
           <td>0,05497</td>
           <td>-</td>
         </tr>
