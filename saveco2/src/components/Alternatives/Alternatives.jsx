@@ -11,8 +11,10 @@ import {
 import treeIcon from './img/saveco2-tree-icon.svg';
 import './alternatives.css';
 
-export const Alternatives = ({ userData, journeyDistance }) => {
+export const getAlternativeObject = ({ userData, journeyDistance }) => {
   let alternativeTransport = [];
+
+  console.log(userData);
 
   // const editedUserData = { ...userData, peopleCount: parseInt(peopleCount) };
 
@@ -43,10 +45,16 @@ export const Alternatives = ({ userData, journeyDistance }) => {
   if (userData.transportType === 'ferry') {
     alternativeTransport = getFerryAlternatives(userData, journeyDistance);
   }
+  return alternativeTransport;
+};
+
+export const Alternatives = ({ alternativeTransport, userData }) => {
+  console.log(userData);
   return (
     <>
       <GetChoices userData={userData} />
       {alternativeTransport.map((transport, index) => {
+        console.log(transport);
         return (
           <React.Fragment key={index}>
             <h4>{transport.text}</h4>
@@ -56,7 +64,14 @@ export const Alternatives = ({ userData, journeyDistance }) => {
                 <p>
                   {transport.result.emmissions} kg CO<sub>2</sub> na osobu
                 </p>
-                {/* <div style={{ width: emmissionsShare }} /> */}
+                <div
+                  style={{
+                    width: `${transport.result.emmissionsShare * 100}%`,
+                    // do CSS
+                    height: '10px',
+                    background: 'red',
+                  }}
+                />
                 <div className="alternative-transport__details-tree">
                   <p>{transport.result.tree}</p>
                   <img
@@ -70,8 +85,8 @@ export const Alternatives = ({ userData, journeyDistance }) => {
           </React.Fragment>
         );
       })}
-      {getOtherAlternatives(userData)}
-      {getTreeAlternatives(userData)}
+      <GetOtherAlternatives userData={userData} />
+      <GetTreeAlternatives userData={userData} />
     </>
   );
 };
@@ -420,11 +435,8 @@ const getAlternativeResults = ({ journeyDistance, peopleCount }) => {
   };
 };
 
-export const getOtherAlternatives = ({
-  distance,
-  peopleCount,
-  transportType,
-  fuel,
+export const GetOtherAlternatives = ({
+  userData: { distance, peopleCount, transportType, fuel },
 }) => {
   if (transportType === 'car' && peopleCount <= 2) {
     return (
@@ -470,9 +482,10 @@ export const getOtherAlternatives = ({
       </>
     );
   }
+  return null;
 };
 
-export const getTreeAlternatives = ({ transportType, fuel }) => {
+export const GetTreeAlternatives = ({ userData: { transportType, fuel } }) => {
   if (
     (transportType === 'car' && fuel !== 'electro') ||
     transportType === 'subway' ||
@@ -494,6 +507,7 @@ export const getTreeAlternatives = ({ transportType, fuel }) => {
       </>
     );
   }
+  return null;
 };
 
 export const GetChoices = ({

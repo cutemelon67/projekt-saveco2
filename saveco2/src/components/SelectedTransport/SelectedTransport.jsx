@@ -30,7 +30,7 @@ export const SelectedTransport = ({
           <p>
             Svojí {journeyType === 'regularJourney' ? ' pravidelnou ' : ''}{' '}
             cestou na trase&nbsp;
-            <strong>
+            <strong className="result--nowrap">
               {from && to ? `${from} - ${to}` : `${distance} km`}
               {roundTrip ? ' a zpět' : null}
             </strong>
@@ -38,6 +38,14 @@ export const SelectedTransport = ({
           </p>
           <div className="selected-transport__values">
             <p className="values--number">{emmissions}</p>
+            <div
+              style={{
+                width: '100%',
+                // do CSS
+                height: '10px',
+                background: 'red',
+              }}
+            />
             <p>
               kg CO<sub>2</sub>
               <br />

@@ -85,3 +85,7 @@
     height: 60px;
   }
 }
+
+.result--nowrap {
+  white-space: nowrap;
+}
