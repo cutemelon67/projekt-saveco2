@@ -23,7 +23,9 @@ export const MethodologyResults = () => {
         </p>
       </div>
       <Link to="/methodology">
-        <Button className={'btn--center'}>Více k metodice</Button>
+        <Button className={'btn--center btn--methodology'}>
+          Více k metodice
+        </Button>
       </Link>
     </>
   );
