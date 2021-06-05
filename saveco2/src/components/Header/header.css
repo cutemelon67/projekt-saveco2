@@ -1,20 +1,20 @@
-header {
+/*header {
   height: 2.813rem;
   background-color: hsl(86.4, 71.1%, 32.5%);
   position: relative;
-}
+}*/
 
 .header__logo {
-  width: 5rem;
+  width: 3.5rem;
   position: absolute;
-  top: 1.09rem;
-  left: 0.5rem;
+  top: 0.5rem;
+  left: 1rem;
 }
 
 @media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
-  header {
+  /*header {
     height: 2.813rem;
-  }
+  }*/
 
   .header__logo {
     width: 7rem;

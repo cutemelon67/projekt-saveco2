@@ -57,21 +57,24 @@ export const Alternatives = ({ alternativeTransport, userData }) => {
         console.log(transport);
         return (
           <React.Fragment key={index}>
-            <h4>{transport.text}</h4>
             <div className="results__alternative-transport">
               <MaterialIcon icon={transport.icon} size={48}></MaterialIcon>
-              <div className="alternative-transport__details">
-                <p>
-                  {transport.result.emmissions} kg CO<sub>2</sub> na osobu
-                </p>
+              <div className="alternative-transport__phrase">
+                <h4>{transport.text}</h4>
                 <div
                   style={{
                     width: `${transport.result.emmissionsShare * 100}%`,
                     // do CSS
                     height: '10px',
-                    background: 'red',
+                    background: 'hsl(86.4, 71.1%, 32.5%)',
                   }}
                 />
+              </div>
+              <div className="alternative-transport__details">
+                <p>
+                  {transport.result.emmissions} kg CO<sub>2</sub>
+                </p>
+
                 <div className="alternative-transport__details-tree">
                   <p>{transport.result.tree}</p>
                   <img
@@ -408,7 +411,7 @@ const getAlternativeResults = ({ journeyDistance, peopleCount }) => {
       result: bikeResults({ journeyDistance }),
     },
     train: {
-      text: 'Vlak je lepší volba. A během cesty můžeš vyřídit maily.',
+      text: 'Vlak je lepší volba. A můžeš během cesty vyřídit maily.',
       icon: 'train',
       result: trainResults({ journeyDistance }),
     },

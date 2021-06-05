@@ -1,3 +1,11 @@
+/* Whole page*/
+
+.results__container {
+  margin: 0 0.938rem;
+}
+.results .nav {
+  margin: 1.5rem 0.938rem;
+}
 /* Selected Transport*/
 
 .results--header {
@@ -9,12 +17,11 @@
   background-size: cover;
   min-height: 3rem;
   color: white;
-  padding: 3rem 0.5rem 1rem 0.5rem;
+  padding: 4rem 0.938rem 1rem 0.938rem;
 }
 
 /*Results buttons*/
 .results__buttons {
-  margin: 0 1.875rem;
   display: flex;
 }
 
@@ -71,9 +78,12 @@
 
   .results__buttons {
     margin: 3rem 6.25rem;
+    display: flex;
+    justify-content: center;
   }
 
   .results__buttons .btn.btn--secondary {
     margin-top: 0;
+    flex: 0 0 auto;
   }
 }

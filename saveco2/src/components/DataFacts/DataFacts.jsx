@@ -28,7 +28,7 @@ export const DataFacts = (props) => {
             silniční doprava (75&nbsp;%). Z toho 45&nbsp;% emisí CO
             <sub>2</sub> připadá na&nbsp;automobily a&nbsp;autobusy, zbylých
             29&nbsp;% tvoří nákladní doprava. Letecká doprava se podílí
-            12&nbsp;% a železniční doprava 1&nbsp;% na&nbsp;celosvětových
+            12&nbsp;% a železniční doprava pouhým 1&nbsp;% na&nbsp;celosvětových
             emisích CO<sub>2</sub>.
           </p>
         </div>

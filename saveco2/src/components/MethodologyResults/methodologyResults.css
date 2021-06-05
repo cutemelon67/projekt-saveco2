@@ -1,7 +1,7 @@
 /*Methodology Results*/
 
 .results__methodology {
-  margin: 3rem 1.875rem;
+  margin: 3rem 0;
   padding: 1.5rem;
   background-color: lightgray;
   display: flex;
@@ -24,16 +24,21 @@
 }
 
 /*Více k metodice*/
-.btn--center {
+.btn--methodology {
   padding: 0.625rem 1.25rem;
   margin-top: 0;
   border: 1px solid black;
   background-color: white;
 }
-.btn--center:active,
-.btn--center:hover {
+.btn--methodology:active,
+.btn--methodology:hover {
   opacity: 70%;
 }
+
+/*.btn .btn--secondary.btn--center.btn--methodology {
+  text-decoration: none;
+  flex: 0;
+}*/
 
 @media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
   .results__methodology {

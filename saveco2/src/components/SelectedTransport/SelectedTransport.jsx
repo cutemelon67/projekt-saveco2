@@ -38,23 +38,24 @@ export const SelectedTransport = ({
           </p>
           <div className="selected-transport__values">
             <p className="values--number">{emmissions}</p>
-            <div
-              style={{
-                width: '100%',
-                // do CSS
-                height: '10px',
-                background: 'red',
-              }}
-            />
+
             <p>
               kg CO<sub>2</sub>
               <br />
               na osobu
             </p>
           </div>
+          <div
+            style={{
+              width: '100%',
+              // do CSS
+              height: '10px',
+              background: 'hsl(86.4, 71.1%, 32.5%)',
+            }}
+          />
         </div>
         <div className="results__selected-transport--details-tree">
-          <p>Kolik stromů za tebe musí dýchat?</p>
+          <p>Kolik stromů za tebe ročně musí dýchat?</p>
           <div className="selected-transport__values">
             <p className="values--number">{tree}</p>
             <img className="material-icons__tree" src={treeIcon} alt="tree" />

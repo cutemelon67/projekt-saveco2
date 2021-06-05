@@ -1,19 +1,23 @@
 /*Methodology page*/
 
+.methodology .nav {
+  margin: 1.5rem 0.938rem;
+}
+
 .methodology__heading {
   text-align: center;
-  background-image: url(img/road_big.jpg);
+  background-image: url(img/road_medium.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 3rem;
   color: white;
-  padding: 3rem 0.5rem 1rem 0.5rem;
+  padding: 4rem 0.938rem 1rem 0.938rem;
 }
 
 .methodology__overview {
-  margin: 1.5rem;
+  margin: 1.5rem 0.938rem;
   text-align: justify;
 }
 
@@ -59,5 +63,14 @@
 
   .methodology__overview {
     margin: 3rem 9.375rem 0 9.375em;
+  }
+
+  .methodology__button {
+    display: flex;
+    justify-content: center;
+  }
+
+  .methodology__button .btn--secondary {
+    flex: 0 0 auto;
   }
 }

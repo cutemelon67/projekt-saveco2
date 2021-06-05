@@ -1,5 +1,5 @@
 .results__data-facts {
-  margin-top: 3rem;
+  margin: 3rem 0 0 0;
 }
 
 .dataFacts__img {
@@ -56,8 +56,6 @@
     align-items: stretch;
     justify-content: space-between;
     overflow: hidden;
-    margin-left: 6.25rem;
-    margin-right: 6.25rem;
   }
 
   .dataFacts__container {
