@@ -49,9 +49,12 @@
 
 .alternative--others h4 {
   text-align: left;
-  width: 70%;
   margin: 0;
 }
+/*
+.alternative--others .material-icons {
+  margin-right: 30px;
+}*/
 
 @media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
   .results__alternatives {
@@ -91,11 +94,12 @@
     margin: 3rem 0;
   }
 
-  .alternative-transport__details {
-    font-size: 1rem;
+  .alternative-transport__details p {
+    font-size: 1.125rem;
   }
 
   .alternative-transport__details-tree .material-icons__tree {
     margin-left: 10px;
+    padding: 0;
   }
 }
