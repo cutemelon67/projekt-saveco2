@@ -73,7 +73,7 @@ export const FormPage = ({ userData, setUserData }) => {
       } else {
         return;
       }
-    }, 3000);
+    }, 1500);
 
     return () => clearTimeout(delayedWatch);
   }, [watchedFrom, watchedTo]);
