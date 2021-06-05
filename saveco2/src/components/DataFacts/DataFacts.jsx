@@ -1,8 +1,8 @@
 import React from 'react';
 import './dataFacts.css';
-import imgTraffic from './img/traffic_small.jpg';
-import imgTrees from './img/trees_small.jpg';
-import imgTurtle from './img/turtle_small.jpg';
+import imgTraffic from './img/traffic_medium.jpg';
+import imgTrees from './img/trees_medium.jpg';
+import imgTurtle from './img/turtle_medium.jpg';
 
 export const DataFacts = (props) => {
   return (

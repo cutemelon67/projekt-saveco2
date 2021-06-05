@@ -46,7 +46,7 @@ export const SelectedTransport = ({
           </div>
         </div>
         <div className="results__selected-transport--details-tree">
-          <p>Uvědomuješ si, kolik dospělých stromů tvojí volbou musí dýchat?</p>
+          <p>Kolik stromů za tebe musí dýchat?</p>
           <div className="selected-transport__values">
             <p className="values--number">{tree}</p>
             <img className="material-icons__tree" src={treeIcon} alt="tree" />

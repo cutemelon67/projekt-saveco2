@@ -52,7 +52,7 @@
 
   .dataFacts__section-name--screen {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: stretch;
     overflow: hidden;
     margin-left: 6.25rem;
@@ -61,6 +61,7 @@
 
   .dataFacts__container {
     width: 30%;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
 
   .dataFacts__text {
