@@ -29,9 +29,7 @@
 .alternative-transport__container-phrase {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding-left: 15px;
-  width: 190px;
 }
 
 .alternative-transport__container-phrase h4 {
@@ -42,6 +40,8 @@
 .alternative-transport__details {
   display: flex;
   flex-direction: column;
+  width: 70px;
+  flex-shrink: 0;
 }
 
 .alternative-transport__details p {
@@ -94,10 +94,14 @@
   /* x kg CO2, x stromu */
   .alternative-transport__details {
     padding-left: 0;
+    width: 100px;
+    flex-shrink: 0;
   }
-  /* Rodič - hláška + graf*/
-  .alternative-transport__container-phrase {
-    width: 450px;
+
+  /* Graf */
+  .alternative-transport__container-phrase .transport__graph--container {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   /* Choices */

@@ -37,10 +37,26 @@
 }
 
 .methodology__button {
-  margin: 1.5rem 1.875rem;
+  margin: 1.5rem 0;
   display: flex;
 }
 
+.methodology__button .btn--primary {
+  padding: 0.625rem 1.25rem;
+  border: 1px solid hsl(86.4, 71.1%, 32.5%);
+  background-color: hsl(86.4, 71.1%, 32.5%);
+  color: white;
+  flex-grow: 1;
+  margin: 1.5rem 0;
+}
+
+.methodology__button .btn--primary:active,
+.methodology__button .btn--primary:hover {
+  background-color: hsl(86.6, 71.2%, 21.8%);
+  border: 1px solid hsl(86.6, 71.2%, 21.8%);
+}
+
+/*
 .methodology__button .btn--secondary {
   align-self: center;
   margin: 1rem 0;
@@ -55,10 +71,11 @@
   background-color: hsl(86.6, 71.2%, 21.8%);
   border: 1px solid hsl(86.6, 71.2%, 21.8%);
 }
+*/
 
 @media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
   .methodology__heading {
-    padding: 6rem 0 1rem 0;
+    padding: 6rem 0 2rem 0;
     background-image: url(img/road_big.jpg);
   }
 
@@ -72,11 +89,10 @@
   }
 
   .methodology__button {
-    display: flex;
     justify-content: center;
   }
 
-  .methodology__button .btn--secondary {
+  .methodology__button .btn--primary {
     flex: 0 0 auto;
   }
 }
