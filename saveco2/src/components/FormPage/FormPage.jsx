@@ -64,6 +64,7 @@ export const FormPage = ({ userData, setUserData }) => {
             console.log(distanceFromGMInMeters);
             if (!distanceFromGMInMeters) {
               setValue('distance', 0);
+              console.log('Vzdálenost se nepodařilo načíst');
             } else {
               distanceFromGM = parseInt(distanceFromGMInMeters / 1000);
               setValue('distance', distanceFromGM);
@@ -164,6 +165,7 @@ export const FormPage = ({ userData, setUserData }) => {
                             {input.text}
                           </InputField>
                         ))}
+                        {/* <div>{distanceFromGM ? 'chybí' : null}</div> */}
                         <p className="form--distance">
                           Chci{' '}
                           <Link
