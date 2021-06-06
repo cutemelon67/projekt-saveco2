@@ -17,7 +17,8 @@
   background-size: cover;
   min-height: 3rem;
   color: white;
-  padding: 4rem 0.938rem 1rem 0.938rem;
+  padding: 6rem 0.938rem 1rem 0.938rem;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 /*Results buttons*/

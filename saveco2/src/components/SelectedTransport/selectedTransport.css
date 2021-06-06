@@ -13,6 +13,12 @@
   margin-right: 10px;
 }
 
+/* Selected transport - Graf */
+.transport__graph {
+  height: 10px;
+  background-color: hsl(86.4, 71.1%, 32.5%);
+}
+
 /* Selected transport - Rámeček */
 
 .values--number {
@@ -21,10 +27,16 @@
   margin: 0 1.25rem 0 0;
 }
 
-.results__selected-transport--details {
+.results__selected-transport--container {
   background-color: hsl(87, 56%, 86%);
   padding: 20px;
 }
+
+/*
+.results__selected-transport--details {
+  background-color: hsl(87, 56%, 86%);
+  padding: 20px;
+}*/
 
 .results__selected-transport--details p {
   text-align: center;
@@ -71,6 +83,15 @@
 
   .material-icons__tree {
     height: 60px;
+  }
+
+  /* Selected transport - Graf */
+  .graph-selected {
+    margin-left: 43px;
+  }
+
+  .transport__graph--container {
+    width: 500px;
   }
 }
 

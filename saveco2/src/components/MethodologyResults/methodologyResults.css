@@ -24,12 +24,14 @@
 }
 
 /*Více k metodice*/
-.btn--methodology {
+.results-methodology .btn .btn--secondary .btn--center .btn--methodology {
   padding: 0.625rem 1.25rem;
   margin-top: 0;
   border: 1px solid black;
   background-color: white;
+  display: block;
 }
+
 .btn--methodology:active,
 .btn--methodology:hover {
   opacity: 70%;

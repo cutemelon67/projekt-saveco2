@@ -25,41 +25,43 @@ export const SelectedTransport = ({
         </div>
         <p>{transportType === 'car' ? fuelInfo[fuel] : ''}</p>
       </div>
-      <div className="results__selected-transport--details">
-        <div className="results__selected-transport--details-co2">
-          <p>
-            Svojí {journeyType === 'regularJourney' ? ' pravidelnou ' : ''}{' '}
-            cestou na trase&nbsp;
-            <strong className="result--nowrap">
-              {from && to ? `${from} - ${to}` : `${distance} km`}
-              {roundTrip ? ' a zpět' : null}
-            </strong>
-            &nbsp;vyprodukuješ
-          </p>
-          <div className="selected-transport__values">
-            <p className="values--number">{emmissions}</p>
-
+      <div className="results__selected-transport--container">
+        <div className="results__selected-transport--details">
+          <div className="results__selected-transport--details-co2">
             <p>
-              kg CO<sub>2</sub>
-              <br />
-              na osobu
+              Svojí {journeyType === 'regularJourney' ? ' pravidelnou ' : ''}{' '}
+              cestou na trase&nbsp;
+              <strong className="result--nowrap">
+                {from && to ? `${from} - ${to}` : `${distance} km`}
+                {roundTrip ? ' a zpět' : null}
+              </strong>
+              &nbsp;vyprodukuješ
             </p>
+            <div className="selected-transport__values">
+              <p className="values--number">{emmissions}</p>
+
+              <p>
+                kg CO<sub>2</sub>
+                <br />
+                na osobu
+              </p>
+            </div>
           </div>
+          <div className="results__selected-transport--details-tree">
+            <p>Kolik stromů za tebe musí celý rok dýchat?</p>
+            <div className="selected-transport__values">
+              <p className="values--number">{tree}</p>
+              <img className="material-icons__tree" src={treeIcon} alt="tree" />
+            </div>
+          </div>
+        </div>
+        <div className="transport__graph--container">
           <div
+            className="transport__graph graph-selected"
             style={{
               width: '100%',
-              // do CSS
-              height: '10px',
-              background: 'hsl(86.4, 71.1%, 32.5%)',
             }}
           />
-        </div>
-        <div className="results__selected-transport--details-tree">
-          <p>Kolik stromů za tebe ročně musí dýchat?</p>
-          <div className="selected-transport__values">
-            <p className="values--number">{tree}</p>
-            <img className="material-icons__tree" src={treeIcon} alt="tree" />
-          </div>
         </div>
       </div>
     </>

@@ -55,8 +55,9 @@ export const ResultsPage = ({ userData, setUserData }) => {
         <h2 className="results--header">
           Jaká je CO<sub>2</sub> stopa tvojí cesty?
         </h2>
-        <Nav href="/">Upravit trasu</Nav>
+
         <div className="results__container">
+          <Nav href="/">Upravit trasu</Nav>
           <div className="results__selected-transport">
             <SelectedTransport
               emmissions={emmissions}
@@ -76,7 +77,7 @@ export const ResultsPage = ({ userData, setUserData }) => {
             <MethodologyResults />
           </div>
           <div className="results__buttons">
-            <Button onClick={onSubmit}>
+            <Button className={'btn--primary'} onClick={onSubmit}>
               Zadej novou trasu{' '}
               <MaterialIcon icon={'chevron_right'} size={12} />
             </Button>

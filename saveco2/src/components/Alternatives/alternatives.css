@@ -16,16 +16,22 @@
   justify-content: space-between;
   margin: 1.5rem 0;
 }
-
-.alternative-transport__phrase {
+.alternative-transport__container {
   display: flex;
-  flex-direction: column;
-  padding-left: 15px;
+  align-items: center;
 }
 
-/*.results__alternative-transport h4 {
-  padding-left: 20px;
-}*/
+.alternative-transport__container-phrase {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 15px;
+  width: 50px;
+}
+
+.alternative-transport__container-phrase h4 {
+  margin-top: 0;
+}
 
 .alternative-transport__details {
   display: flex;
@@ -76,12 +82,21 @@
     font-size: 1.25rem;
   }
 
+  .alternative-transport__details {
+    padding-left: 0;
+  }
+
+  .alternative-transport__container-phrase {
+    width: 500px;
+  }
+
+  /*
   .alternative-transport__graph {
     flex: 0 0 5rem;
     background-color: lightgray;
     height: 0.6rem;
     border-radius: 0.3rem;
-  }
+  }*/
 
   .skill__bar {
     flex: 0 0 30rem;

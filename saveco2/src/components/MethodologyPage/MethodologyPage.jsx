@@ -38,7 +38,7 @@ export const MethodologyPage = ({ userData, setUserData }) => {
             <Sources />
           </div>
           <div className="methodology__button">
-            <Button onClick={onSubmit}>
+            <Button className={'btn--primary'} onClick={onSubmit}>
               Zadej novou trasu{' '}
               <MaterialIcon icon={'chevron_right'} size={12} />
             </Button>

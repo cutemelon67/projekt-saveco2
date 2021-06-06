@@ -3,12 +3,12 @@ import './button.css';
 
 const classNames = require('classnames');
 
-export const Button = ({ className, type, variant, children, onClick }) => {
+export const Button = ({ className, type, children, onClick }) => {
   return (
     <button
       className={classNames(
         'btn',
-        variant === 'primary' ? 'btn--primary' : 'btn--secondary',
+        /*variant === 'primary' ? 'btn--primary' : 'btn--secondary',*/
         className,
       )}
       type={type}
