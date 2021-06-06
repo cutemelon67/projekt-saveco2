@@ -62,6 +62,6 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(dotenv.config().parsed),
     }),
-    new env({ systemvars: true }),
+    new process.env({ systemvars: true }),
   ],
 };
