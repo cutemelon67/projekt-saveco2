@@ -122,7 +122,7 @@ export const FormPage = ({ userData, setUserData }) => {
                     block: 'start',
                   });
                 }}
-                className={'main'}
+                className={'main btn--primary'}
               >
                 CHCI VĚDĚT VÍC
               </Button>
@@ -312,7 +312,7 @@ export const FormPage = ({ userData, setUserData }) => {
                 <div className="form__buttons--submit">
                   <Button
                     variant={'primary'}
-                    className={'standard'}
+                    className={'standard btn--primary'}
                     type={'submit'}
                   >
                     SPOČÍTEJ
