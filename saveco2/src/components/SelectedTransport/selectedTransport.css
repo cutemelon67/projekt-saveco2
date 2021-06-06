@@ -19,6 +19,14 @@
   background-color: hsl(86.4, 71.1%, 32.5%);
 }
 
+.transport__graph--container {
+  width: 190px;
+}
+
+.graph-selected {
+  margin-left: 43px;
+}
+
 /* Selected transport - Rámeček */
 
 .values--number {
@@ -58,6 +66,15 @@
     margin-right: 6.25rem;
   }
 
+  .values--number {
+    margin: 0 1.25rem 0 0;
+  }
+
+  .selected-transport__values p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   .results__selected-transport--overview {
     color: black;
     margin-top: 1.5rem;
@@ -67,8 +84,12 @@
     padding: 1.875rem;
     display: flex;
     align-items: baseline;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    gap: 30px;
+  }
+
+  .results__selected-transport--details-co2 > p,
+  .results__selected-transport--details-tree > p {
+    font-size: 1.25rem;
   }
 
   .results__selected-transport--details-co2,

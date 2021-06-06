@@ -4,39 +4,44 @@
   margin: 1.5rem 0;
 }
 
+/* Jsi si svojí volbou jistý? Zkus raději jednu z alternativ!*/
 .results__alternatives--choice {
   margin: 3rem 0;
   text-align: center;
   font-size: 1.5rem;
 }
 
+/* Rodič - ikonka + hláska s grafem + x co2, x stromu!*/
 .results__alternative-transport {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 1.5rem 0;
 }
+
+/* Rodič - ikonka + hláška s grafem*/
 .alternative-transport__container {
   display: flex;
   align-items: center;
 }
 
+/* Rodič - hláška s grafem*/
 .alternative-transport__container-phrase {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-left: 15px;
-  width: 50px;
+  width: 190px;
 }
 
 .alternative-transport__container-phrase h4 {
-  margin-top: 0;
+  margin: 0 0 0.5rem 0;
 }
 
+/* x kg CO2, x stromu */
 .alternative-transport__details {
   display: flex;
   flex-direction: column;
-  padding-left: 15px;
 }
 
 .alternative-transport__details p {
@@ -55,7 +60,7 @@
 }
 
 .alternative-transport__details-tree .material-icons__tree {
-  height: 25px;
+  height: 20px;
   margin-left: 5px;
   padding: 0;
 }
@@ -82,34 +87,17 @@
     font-size: 1.25rem;
   }
 
+  .results__alternative-transport {
+    margin: 1.8rem 0;
+  }
+
+  /* x kg CO2, x stromu */
   .alternative-transport__details {
     padding-left: 0;
   }
-
+  /* Rodič - hláška + graf*/
   .alternative-transport__container-phrase {
-    width: 500px;
-  }
-
-  /*
-  .alternative-transport__graph {
-    flex: 0 0 5rem;
-    background-color: lightgray;
-    height: 0.6rem;
-    border-radius: 0.3rem;
-  }*/
-
-  .skill__bar {
-    flex: 0 0 30rem;
-    background-color: lightgray;
-    height: 0.6rem;
-    border-radius: 0.3rem;
-  }
-
-  .skill__progress {
-    background-color: #444;
-    width: 50%;
-    height: 0.6rem;
-    border-radius: 0.3rem;
+    width: 450px;
   }
 
   /* Choices */
