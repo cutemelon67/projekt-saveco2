@@ -1,3 +1,7 @@
+.result--nowrap {
+  white-space: nowrap;
+}
+
 /* Selected transport - Výsledky pro */
 .results__selected-transport--overview {
   display: flex;
@@ -6,29 +10,28 @@
 }
 
 .results__selected-transport--overview p {
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 
 .results__selected-transport--overview div {
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 
 /* Selected transport - Graf */
 .transport__graph {
-  height: 10px;
+  height: 0.625rem;
   background-color: hsl(86.4, 71.1%, 32.5%);
 }
 
 .transport__graph--container {
-  width: 190px;
+  width: 11.875rem;
 }
 
 .graph-selected {
-  margin-left: 43px;
+  margin-left: 2.688rem;
 }
 
 /* Selected transport - Rámeček */
-
 .values--number {
   font-size: 2.25rem;
   font-weight: 800;
@@ -89,6 +92,7 @@
   .results__selected-transport--details-co2 > p,
   .results__selected-transport--details-tree > p {
     font-size: 1.25rem;
+    height: 3.125rem;
   }
 
   .results__selected-transport--details-co2,
@@ -102,20 +106,16 @@
   }
 
   .material-icons__tree {
-    height: 60px;
+    height: 3.75rem;
   }
 
   /* Selected transport - Graf */
   .graph-selected {
-    margin-left: 43px;
+    margin-left: 2.688rem;
   }
 
   .transport__graph--container {
-    width: 500px;
-    margin: 0px 0 10px 0;
+    width: 31.25rem;
+    margin: 0px 0 0.625rem 0;
   }
-}
-
-.result--nowrap {
-  white-space: nowrap;
 }

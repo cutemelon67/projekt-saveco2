@@ -29,18 +29,18 @@
 .alternative-transport__container-phrase {
   display: flex;
   flex-direction: column;
-  padding-left: 15px;
+  padding-left: 0.938rem;
 }
 
 .alternative-transport__container-phrase h4 {
   margin: 0 0 0.5rem 0;
 }
 
-/* x kg CO2, x stromu */
+/* Rodič - x kg CO2 + x stromu */
 .alternative-transport__details {
   display: flex;
   flex-direction: column;
-  width: 70px;
+  width: 4.375rem;
   flex-shrink: 0;
 }
 
@@ -60,8 +60,8 @@
 }
 
 .alternative-transport__details-tree .material-icons__tree {
-  height: 20px;
-  margin-left: 5px;
+  height: 1.25rem;
+  margin-left: 0.313rem;
   padding: 0;
 }
 
@@ -74,7 +74,7 @@
 .alternative--others h4 {
   text-align: left;
   margin: 0;
-  padding-left: 15px;
+  padding-left: 0.938rem;
 }
 
 @media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
@@ -87,14 +87,15 @@
     font-size: 1.25rem;
   }
 
+  /* Rodič - ikonka + hláska s grafem + x co2, x stromu!*/
   .results__alternative-transport {
     margin: 1.8rem 0;
   }
 
-  /* x kg CO2, x stromu */
+  /* x kg CO2 + x stromu */
   .alternative-transport__details {
     padding-left: 0;
-    width: 100px;
+    width: 6.25rem;
     flex-shrink: 0;
   }
 

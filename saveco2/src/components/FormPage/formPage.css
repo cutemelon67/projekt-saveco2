@@ -1,5 +1,10 @@
-/*Headline, Background*/
+/* Starting page - Form*/
+.starting-page__form {
+  margin: 1.5rem 0.938rem;
+  background-color: white;
+}
 
+/*Headline, Background*/
 .starting-page__name {
   text-align: center;
   background-image: url(img/road_small.jpg);
@@ -8,12 +13,15 @@
   background-size: cover;
   padding: 3rem 2rem;
 }
+
+/*Spočti si CO2 stopu tvojí cesty*/
 .starting-page__name--headline {
   color: white;
   text-shadow: 2px 2px 4px #000000;
   margin: 1.5rem;
 }
 
+/*A zjisti, kolik stromů tvá volba stojí*/
 .starting-page__name--subheadline {
   color: white;
   text-shadow: 2px 2px 4px #000000;
@@ -23,28 +31,20 @@
 /*Chci vědět víc*/
 .btn.btn--primary.main {
   background-color: hsl(86.4, 71.1%, 32.5%);
+  border: 1px solid hsl(86.4, 71.1%, 32.5%);
   color: white;
   box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   margin: 0;
 }
 
-.btn--primary.main:active {
-  background-color: hsl(86.6, 71.2%, 21.8%);
-}
-
+.btn--primary.main:active,
 .btn--primary.main:hover {
   background-color: hsl(86.6, 71.2%, 21.8%);
-}
-
-/* Starting page - Form*/
-.starting-page__form {
-  margin: 1.5rem 0.938rem;
+  border: 1px solid hsl(86.4, 71.1%, 21.8%);
 }
 
 /* Starting page - Tvoje cesta*/
 .starting-page__form--journey {
-  background: white;
-  padding: 0.063rem;
   margin: 1.5rem 0;
 }
 
@@ -57,29 +57,21 @@
   flex-direction: column;
 }
 
-#input--from {
-  font-size: 1rem;
-  padding: 0.625rem;
-  margin-bottom: 0.625rem;
+.input--distance {
+  display: flex;
+  flex-direction: column;
 }
 
-#input--to {
-  font-size: 1rem;
-  padding: 0.625rem;
-  margin-bottom: 0.625rem;
-}
-
+/* Label - Odkud, Kam, Vzdálenost*/
+#input--from,
+#input--to,
 #input--distance {
   font-size: 1rem;
   padding: 0.625rem;
   margin-bottom: 0.625rem;
 }
 
-.input--distance {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Chci zadat vzdálenost v km*/
 .form--distance {
   font-size: 0.875rem;
   text-align: right;
@@ -87,6 +79,7 @@
   padding: 0.313rem;
 }
 
+/* Zadaná vzdálenost*/
 .distance-result {
   text-align: center;
   font-weight: 700;
@@ -96,9 +89,9 @@
 /* Starting page - Jak se přesuneš?*/
 .starting-page__form--transport-type {
   margin: 1.5rem 0;
-  background-color: white;
 }
 
+/* Ikonky dopravních prostředků*/
 .transport-type--icon {
   width: calc(100% / 3);
   display: flex;
@@ -136,6 +129,7 @@ input[type='radio']:checked + .material-icons {
   visibility: hidden;
 }
 
+/* Zvolený dopravní prostředek*/
 .transport-result {
   text-align: center;
   font-weight: 700;
@@ -145,9 +139,9 @@ input[type='radio']:checked + .material-icons {
 /* Starting page - Na co jezdíš*/
 .starting-page__form--fuel {
   margin: 1.5rem 0;
-  background-color: white;
 }
 
+/* Rodič - druhy paliva*/
 .form--fuel {
   display: flex;
   flex-wrap: wrap;
@@ -169,7 +163,6 @@ input[type='radio']:checked + .material-icons {
 /*Starting page - Jakým druhem autobusu*/
 .starting-page__form--bus-type {
   margin: 1.5rem 0;
-  background-color: white;
 }
 
 .form--bus-type-radio {
@@ -185,12 +178,11 @@ input[type='radio']:checked + .material-icons {
 }
 
 /*Starting page - Počet cestujících*/
-
 .starting-page__form--people {
   margin: 1.5rem 0;
-  background-color: white;
 }
 
+/*Kolik vás pojede?*/
 .form--people {
   display: flex;
   margin-top: 1.5rem;
@@ -208,7 +200,6 @@ input[type='radio']:checked + .material-icons {
 /*Starting page - Četnost jízd*/
 .starting-page__form--frequency {
   margin: 1.5rem 0;
-  background-color: white;
 }
 
 .frequency--count-details {
@@ -276,16 +267,19 @@ input[type='radio']:checked + .material-icons {
 
 @media only screen and (min-width: 1024px) /*and (orientation: portrait) */ {
   .starting-page {
-    background-image: url(img/road_large.jpg);
+    background-image: url(img/road_screen.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
+    max-width: 125rem;
+    max-height: 93.75rem;
   }
 
   .starting-page__main--container {
     display: flex;
     justify-content: center;
-    max-width: 1300px;
+    max-width: 81.25rem;
     margin: auto;
   }
 
@@ -306,12 +300,14 @@ input[type='radio']:checked + .material-icons {
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
   }
 
+  /*Spočítej si CO2 stopu tvojí cesty*/
   .starting-page__name--headline {
     font-size: 4.5rem;
     line-height: 1.5;
     text-align: left;
   }
 
+  /*A zjisti, kolik stromů tvá volba stojí*/
   .starting-page__name--subheadline {
     font-size: 1.563rem;
     margin-top: 1.4rem;
