@@ -504,8 +504,7 @@ export const GetTreeAlternatives = ({ userData: { transportType, fuel } }) => {
         <div className="alternative--others">
           <MaterialIcon icon={'park'} size={48}></MaterialIcon>
           <h4>
-            Víš, že se také můžeš zapojit do sázení stromů? Vyber si kde
-            na&nbsp;
+            Víš, že se můžeš zapojit do sázení stromů? Vyber si kde na&nbsp;
             <a href="https://www.sazimebudoucnost.cz/">Sázíme budoucnost</a>.
           </h4>
         </div>
