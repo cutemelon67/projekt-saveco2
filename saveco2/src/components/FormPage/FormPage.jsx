@@ -39,6 +39,8 @@ export const FormPage = ({ userData, setUserData }) => {
       : inputFromTo;
   const [distanceInput, setDistanceInput] = useState(defaultInput);
 
+  const [receivedDistance, setReceivedDistance] = useState(true);
+
   const watchedFrom = watch('from');
   const watchedTo = watch('to');
   let distanceFromGM;
@@ -60,15 +62,13 @@ export const FormPage = ({ userData, setUserData }) => {
             // pokud json.rows neexistuje - nespadne
             const distanceFromGMInMeters =
               json?.rows?.[0]?.elements?.[0]?.distance?.value;
-            console.log(json);
-            console.log(distanceFromGMInMeters);
             if (!distanceFromGMInMeters) {
               setValue('distance', 0);
-              console.log('Vzdálenost se nepodařilo načíst');
+              setReceivedDistance(false);
             } else {
               distanceFromGM = parseInt(distanceFromGMInMeters / 1000);
               setValue('distance', distanceFromGM);
-              console.log(distanceFromGM);
+              setReceivedDistance(true);
             }
           });
       } else {
@@ -165,7 +165,12 @@ export const FormPage = ({ userData, setUserData }) => {
                             {input.text}
                           </InputField>
                         ))}
-                        {/* <div>{distanceFromGM ? 'chybí' : null}</div> */}
+                        {receivedDistance === false ? (
+                          <div className="message">
+                            Tuto cestu naše mapy bohužel neumí. <br /> Zkus
+                            zadat vzdálenost v km.
+                          </div>
+                        ) : null}
                         <p className="form--distance">
                           Chci{' '}
                           <Link
