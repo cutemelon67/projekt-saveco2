@@ -492,7 +492,7 @@ export const GetOtherAlternatives = ({
 
 export const GetTreeAlternatives = ({ userData: { transportType, fuel } }) => {
   if (
-    (transportType === 'car' && fuel !== 'electro') ||
+    transportType === 'car' ||
     transportType === 'subway' ||
     transportType === 'motorbike' ||
     transportType === 'bus' ||
@@ -540,8 +540,11 @@ export const GetChoices = ({
       fuel === 'electro' &&
       peopleCount >= 3 &&
       peopleCount <= 6) ||
-    (fuel === 'plugInHybrid' && peopleCount >= 6 && peopleCount <= 9) ||
-    (fuel === 'hybrid' && peopleCount >= 7 && peopleCount <= 9)
+    (distance > 10 &&
+      fuel === 'plugInHybrid' &&
+      peopleCount >= 6 &&
+      peopleCount <= 9) ||
+    (distance > 10 && fuel === 'hybrid' && peopleCount >= 7 && peopleCount <= 9)
   ) {
     getChoicesText = <>Lepší volba nás nenapadá, i&nbsp;když…</>;
   } else if (
