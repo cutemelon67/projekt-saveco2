@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { Header } from '../Header/Header';
-import { Button } from '../Button/Button';
-import { Footer } from '../Footer/Footer';
-import { Icon } from '../Icon/Icon';
-import { InputField } from '../InputField/InputField';
-import { InputBtn } from '../InputBtn/InputBtn';
-import { InputSelect } from '../InputSelect/InputSelect';
+import { Header } from '../../components/Header/Header';
+import { Button } from '../../components/Button/Button';
+import { Footer } from '../../components/Footer/Footer';
+import { Icon } from '../../components/Icon/Icon';
+import { InputField } from '../../components/InputField/InputField';
+import { InputBtn } from '../../components/InputBtn/InputBtn';
+import { InputSelect } from '../../components/InputSelect/InputSelect';
 import {
   fuelType,
   fuelInfo,
   vehicleInfo,
   vehicle,
-} from '../TransportModes/TransportModes';
-import { inputFromTo } from '../InputField/InputField';
-import { inputDistance } from '../InputField/InputField';
-import { FormButtons, journeyTypeButtons } from '../FormButtons/FormButtons';
+} from '../../components/TransportModes/TransportModes';
+import { inputFromTo } from '../../components/InputField/InputField';
+import { inputDistance } from '../../components/InputField/InputField';
+import { FormButtons, journeyTypeButtons } from '../../components/FormButtons/FormButtons';
 import { useForm } from 'react-hook-form';
 import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom';
 import './formPage.css';

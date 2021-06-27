@@ -1,19 +1,19 @@
 import React from 'react';
-import { Header } from '../Header/Header';
-import { Button } from '../Button/Button';
-import { Footer } from '../Footer/Footer';
-import { Nav } from '../Nav/Nav';
-import { getResults } from '../getResults/getResults';
+import { Header } from '../../components/Header/Header';
+import { Button } from '../../components/Button/Button';
+import { Footer } from '../../components/Footer/Footer';
+import { Nav } from '../../components/Nav/Nav';
+import { getResults } from '../../components/getResults/getResults';
 import MaterialIcon from 'react-google-material-icons';
-import { SelectedTransport } from '../SelectedTransport/SelectedTransport';
+import { SelectedTransport } from '../../components/SelectedTransport/SelectedTransport';
 import {
   Alternatives,
   getAlternativeObject,
-} from '../Alternatives/Alternatives';
-import { MethodologyResults } from '../MethodologyResults/MethodologyResults';
-import { DataFacts } from '../DataFacts/DataFacts';
+} from '../../components/Alternatives/Alternatives';
+import { MethodologyResults } from '../../components/MethodologyResults/MethodologyResults';
+import { DataFacts } from '../../components/DataFacts/DataFacts';
 import { useHistory } from 'react-router-dom';
-import { getJourneyDistance } from '../getResults/getResults';
+import { getJourneyDistance } from '../../components/getResults/getResults';
 import './resultsPage.css';
 
 export const ResultsPage = ({ userData, setUserData }) => {

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Header } from '../Header/Header';
-import { Button } from '../Button/Button';
-import { Footer } from '../Footer/Footer';
-import { Nav } from '../Nav/Nav';
+import { Header } from '../../components/Header/Header';
+import { Button } from '../../components/Button/Button';
+import { Footer } from '../../components/Footer/Footer';
+import { Nav } from '../../components/Nav/Nav';
 import MaterialIcon from 'react-google-material-icons';
-import { Methodology } from '../Methodology/Methodology';
-import { Calculation } from '../Calculation/Calculation';
-import { Sources } from '../Sources/Sources';
+import { Methodology } from '../../components/Methodology/Methodology';
+import { Calculation } from '../../components/Calculation/Calculation';
+import { Sources } from '../../components/Sources/Sources';
 import { useHistory } from 'react-router-dom';
 import './methodologyPage.css';
 
